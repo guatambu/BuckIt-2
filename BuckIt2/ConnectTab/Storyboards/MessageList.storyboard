@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5AT-zJ-UD2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Connect Home-->
+        <scene sceneID="IFj-PK-yIu">
+            <objects>
+                <viewController id="5AT-zJ-UD2" userLabel="Connect Home" customClass="MessageListViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4nJ-ig-CcF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsm-pN-Y5j" userLabel="Connect Messages Label">
+                                <rect key="frame" x="44" y="43" width="133" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="ani-dG-mf3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otY-wl-4gv" userLabel="Connect Compose Message Label">
+                                <rect key="frame" x="299" y="38" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="rxB-Od-2LE"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="compose"/>
+                                <connections>
+                                    <action selector="newMessageButtonTapped:" destination="5AT-zJ-UD2" eventType="touchUpInside" id="Hsx-jV-O5o"/>
+                                    <segue destination="cov-fT-C3e" kind="show" id="Xf5-0w-OX6"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NuR-cu-znj" userLabel="Connect Message List Table View">
+                                <rect key="frame" x="0.0" y="105" width="375" height="513"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectMessagesListCell" textLabel="3xR-Ky-wfg" detailTextLabel="WIy-Wq-wNL" imageView="WRw-d8-4VB" rowHeight="89" style="IBUITableViewCellStyleSubtitle" id="RvM-mV-G0s">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="89"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RvM-mV-G0s" id="5E1-yv-6xg" userLabel="Connect Message List Content View">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3xR-Ky-wfg" userLabel="Connect Message List Name Label">
+                                                    <rect key="frame" x="118" y="24" width="45" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Message Glimpse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WIy-Wq-wNL" userLabel="Connect Message List Glimpse">
+                                                    <rect key="frame" x="118" y="47.5" width="100" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profileIcon" id="WRw-d8-4VB" userLabel="Connect Message List Profile Image View">
+                                                    <rect key="frame" x="15" y="0.0" width="88" height="88.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ll0-BM-UhR" firstAttribute="trailing" secondItem="otY-wl-4gv" secondAttribute="trailing" constant="36" id="5wF-iE-Z9d"/>
+                            <constraint firstItem="NuR-cu-znj" firstAttribute="top" secondItem="Hsm-pN-Y5j" secondAttribute="bottom" constant="26" id="8Jo-nA-69T"/>
+                            <constraint firstItem="NuR-cu-znj" firstAttribute="bottom" secondItem="Ll0-BM-UhR" secondAttribute="bottom" id="FcQ-am-U9L"/>
+                            <constraint firstItem="Hsm-pN-Y5j" firstAttribute="top" secondItem="Ll0-BM-UhR" secondAttribute="top" constant="23" id="QvC-eN-3TX"/>
+                            <constraint firstAttribute="trailing" secondItem="NuR-cu-znj" secondAttribute="trailing" id="eBR-Nw-yzw"/>
+                            <constraint firstItem="Hsm-pN-Y5j" firstAttribute="leading" secondItem="Ll0-BM-UhR" secondAttribute="leading" constant="44" id="fCb-dF-7eT"/>
+                            <constraint firstItem="otY-wl-4gv" firstAttribute="top" secondItem="Ll0-BM-UhR" secondAttribute="top" constant="18" id="jPr-Tn-J4b"/>
+                            <constraint firstItem="NuR-cu-znj" firstAttribute="top" secondItem="otY-wl-4gv" secondAttribute="bottom" constant="27" id="rMw-o0-HZI"/>
+                            <constraint firstItem="NuR-cu-znj" firstAttribute="leading" secondItem="4nJ-ig-CcF" secondAttribute="leading" id="w3L-oa-zRi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ll0-BM-UhR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Connect" id="ygB-4x-Rdj"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Evh-fy-0Km" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725.60000000000002" y="1354.2728635682161"/>
+        </scene>
+        <!--MessageSearchUser-->
+        <scene sceneID="lPs-L7-Yv7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MessageSearchUser" id="cov-fT-C3e" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2c-wM-HDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1504.8" y="1356.9715142428786"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compose" width="700" height="700"/>
+        <image name="profileIcon" width="700" height="700"/>
+    </resources>
+</document>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rtn-Wr-4Pe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Inspiration Collection View-->
+        <scene sceneID="j24-PF-a1e">
+            <objects>
+                <viewController storyboardIdentifier="InspirationHome" id="nwg-fG-FIX" userLabel="Inspiration Collection View" customClass="InspirationHomeViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vQY-WH-pMY" userLabel="Inspiration View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o68-00-cPF" userLabel="Inspiration Collection View">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T4F-DR-Qpn">
+                                    <size key="itemSize" width="180" height="228"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="inspirationCell" id="3N6-2l-RBl" customClass="InspirationCollectionViewCell" customModule="BuckIt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="228"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="228"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="hPH-h7-nKx" userLabel="Inspiration Photo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEk-FH-vgr" userLabel="Inspiration Title View">
+                                                    <rect key="frame" x="0.0" y="179" width="180" height="49"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3W-HO-14r" userLabel="Inspiration Item Title Label">
+                                                            <rect key="frame" x="8" y="9" width="143" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWs-fq-D7W" userLabel="Inspiration Quick Add">
+                                                            <rect key="frame" x="142" y="-8" width="30" height="27"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="g4Z-Q1-wIc"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="addBucketListItem"/>
+                                                            <connections>
+                                                                <action selector="quickAddButtonTapped:" destination="3N6-2l-RBl" eventType="touchUpInside" id="9Ul-qX-CzN"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="q3W-HO-14r" firstAttribute="leading" secondItem="LEk-FH-vgr" secondAttribute="leadingMargin" id="3dM-Vh-9ZX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="q3W-HO-14r" secondAttribute="trailing" constant="29" id="GJM-M2-j3b"/>
+                                                        <constraint firstItem="LWs-fq-D7W" firstAttribute="trailing" secondItem="LEk-FH-vgr" secondAttribute="trailingMargin" id="JC8-xF-IKY"/>
+                                                        <constraint firstItem="LWs-fq-D7W" firstAttribute="top" secondItem="LEk-FH-vgr" secondAttribute="top" constant="-8" id="MnH-91-7qq"/>
+                                                        <constraint firstItem="q3W-HO-14r" firstAttribute="top" secondItem="LEk-FH-vgr" secondAttribute="top" constant="9" id="fSk-bc-nGO"/>
+                                                        <constraint firstItem="q3W-HO-14r" firstAttribute="centerY" secondItem="LEk-FH-vgr" secondAttribute="centerY" id="guB-mb-vIe"/>
+                                                        <constraint firstAttribute="bottom" secondItem="LWs-fq-D7W" secondAttribute="bottom" constant="30" id="lSg-yQ-Ucw"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="hPH-h7-nKx" firstAttribute="trailing" secondItem="LEk-FH-vgr" secondAttribute="trailing" id="GOh-Ql-d6S"/>
+                                            <constraint firstAttribute="bottom" secondItem="LEk-FH-vgr" secondAttribute="bottom" id="Gho-Eh-VXT"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="hPH-h7-nKx" secondAttribute="bottom" constant="48" id="O3i-Zo-cbr"/>
+                                            <constraint firstAttribute="trailing" secondItem="hPH-h7-nKx" secondAttribute="trailing" id="RBM-8x-GWa"/>
+                                            <constraint firstItem="LEk-FH-vgr" firstAttribute="top" secondItem="3N6-2l-RBl" secondAttribute="top" constant="179" id="RP5-uW-qzo"/>
+                                            <constraint firstItem="hPH-h7-nKx" firstAttribute="top" secondItem="3N6-2l-RBl" secondAttribute="top" id="tAP-b9-W4y"/>
+                                            <constraint firstItem="hPH-h7-nKx" firstAttribute="leading" secondItem="LEk-FH-vgr" secondAttribute="leading" id="xiK-dh-PBI"/>
+                                            <constraint firstItem="hPH-h7-nKx" firstAttribute="leading" secondItem="3N6-2l-RBl" secondAttribute="leading" id="z3Q-JG-9J5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="inspirationImageView" destination="hPH-h7-nKx" id="IwZ-Mu-BIK"/>
+                                            <outlet property="itemTitleLabel" destination="q3W-HO-14r" id="d7g-AT-WrJ"/>
+                                            <segue destination="Hsd-Sw-aIO" kind="show" id="oHU-2G-Vpo"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Qpo-Ma-wCJ" userLabel="Inspiration Search Bar">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qpo-Ma-wCJ" firstAttribute="leading" secondItem="o68-00-cPF" secondAttribute="leading" id="O64-ry-xm1"/>
+                            <constraint firstItem="Qpo-Ma-wCJ" firstAttribute="top" secondItem="0Pq-UH-oMm" secondAttribute="top" id="Sij-IY-R9S"/>
+                            <constraint firstItem="o68-00-cPF" firstAttribute="top" secondItem="Qpo-Ma-wCJ" secondAttribute="bottom" id="Y4A-5s-QNh"/>
+                            <constraint firstItem="Qpo-Ma-wCJ" firstAttribute="trailing" secondItem="o68-00-cPF" secondAttribute="trailing" id="gaG-VQ-sNZ"/>
+                            <constraint firstItem="Qpo-Ma-wCJ" firstAttribute="leading" secondItem="vQY-WH-pMY" secondAttribute="leading" id="spC-c2-mkQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Qpo-Ma-wCJ" secondAttribute="trailing" id="t3r-x3-yLh"/>
+                            <constraint firstItem="o68-00-cPF" firstAttribute="bottom" secondItem="0Pq-UH-oMm" secondAttribute="bottom" id="utb-xY-6YM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Pq-UH-oMm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Inspiration" id="xxb-xa-W2h"/>
+                    <navigationItem key="navigationItem" title="Inspiration" id="wDF-oa-y4I"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="inspirationSearchBar" destination="Qpo-Ma-wCJ" id="bW8-0L-QBd"/>
+                        <segue destination="BaC-fA-vaT" kind="show" id="lav-HU-GvI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g1U-8V-9aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1144.8" y="1121.2893553223389"/>
+        </scene>
+        <!--Inspiration Item Detail-->
+        <scene sceneID="kgL-pd-cCI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InspirationItemDetail" id="Hsd-Sw-aIO" userLabel="Inspiration Item Detail" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yK2-Bn-WEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="1142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hFa-yf-1r6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rtn-Wr-4Pe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="beO-4S-2Lh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="noR-bf-HFA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="nwg-fG-FIX" kind="relationship" relationship="rootViewController" id="q6i-rN-3pd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zVl-CL-9Mx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.59999999999999" y="1121.2893553223389"/>
+        </scene>
+        <!--InspirationSearch-->
+        <scene sceneID="U4b-ck-icj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InspirationSearch" id="BaC-fA-vaT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FOy-Av-m2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1834" y="1100"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="addBucketListItem" width="700" height="700"/>
+        <image name="defaultPhoto" width="700" height="700"/>
+    </resources>
+</document>

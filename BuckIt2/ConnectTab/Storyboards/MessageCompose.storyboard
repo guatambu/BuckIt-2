@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="awJ-iw-Wo5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Connect Compose->Write-->
+        <scene sceneID="MzL-mx-2Gs">
+            <objects>
+                <viewController id="awJ-iw-Wo5" userLabel="Connect Compose-&gt;Write" customClass="MessageComposeViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Rb-N0-UUR" userLabel="Connect New Message Compose View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSi-r0-diH" userLabel="Connect New Message Compose Title Label">
+                                <rect key="frame" x="72" y="34" width="184" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="TU2-jp-Fbq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGG-xl-NdG" userLabel="Connect New Message Compose Back Button">
+                                <rect key="frame" x="11" y="34" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="45b-Tq-pi8"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="awJ-iw-Wo5" eventType="touchUpInside" id="INb-ew-N4O"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" placeholder="Search people..." translatesAutoresizingMaskIntoConstraints="NO" id="MtH-Bd-fCu" userLabel="Connect New Message Compose Search Bar">
+                                <rect key="frame" x="0.0" y="93" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ym0-Bb-r4Q" userLabel="Connect New Message Compose Text View">
+                                <rect key="frame" x="16" y="149" width="343" height="264"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MtH-Bd-fCu" secondAttribute="trailing" id="2Xo-jh-O1A"/>
+                            <constraint firstItem="ZSi-r0-diH" firstAttribute="leading" secondItem="AGG-xl-NdG" secondAttribute="trailing" constant="21" id="4JH-zV-inI"/>
+                            <constraint firstItem="A97-9m-U2P" firstAttribute="bottom" secondItem="ym0-Bb-r4Q" secondAttribute="bottom" constant="254" id="5dC-0y-r2A"/>
+                            <constraint firstItem="MtH-Bd-fCu" firstAttribute="centerX" secondItem="ym0-Bb-r4Q" secondAttribute="centerX" id="AXw-cm-Bjh"/>
+                            <constraint firstItem="MtH-Bd-fCu" firstAttribute="leading" secondItem="7Rb-N0-UUR" secondAttribute="leading" id="Hzg-00-M7q"/>
+                            <constraint firstItem="ym0-Bb-r4Q" firstAttribute="top" secondItem="MtH-Bd-fCu" secondAttribute="bottom" id="Ic1-ZS-xgH"/>
+                            <constraint firstItem="MtH-Bd-fCu" firstAttribute="top" secondItem="ZSi-r0-diH" secondAttribute="bottom" constant="23" id="OSg-yn-vuY"/>
+                            <constraint firstItem="ym0-Bb-r4Q" firstAttribute="leading" secondItem="7Rb-N0-UUR" secondAttribute="leadingMargin" id="aW5-DK-Slj"/>
+                            <constraint firstItem="MtH-Bd-fCu" firstAttribute="top" secondItem="AGG-xl-NdG" secondAttribute="bottom" constant="19" id="nOO-2q-FG2"/>
+                            <constraint firstItem="AGG-xl-NdG" firstAttribute="top" secondItem="A97-9m-U2P" secondAttribute="top" constant="14" id="nbm-79-VGe"/>
+                            <constraint firstItem="AGG-xl-NdG" firstAttribute="leading" secondItem="A97-9m-U2P" secondAttribute="leading" constant="11" id="tea-2F-bi1"/>
+                            <constraint firstItem="AGG-xl-NdG" firstAttribute="top" secondItem="ZSi-r0-diH" secondAttribute="top" id="x4R-ML-WYc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A97-9m-U2P"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iPw-d6-mtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2343.1999999999998" y="1356.9715142428786"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="700" height="700"/>
+    </resources>
+</document>

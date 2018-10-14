@@ -1,0 +1,948 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */; };
+		FA270D772172F66D001643D0 /* BuckIt2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D762172F66D001643D0 /* BuckIt2Tests.swift */; };
+		FA270D822172F7EF001643D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA270D812172F7EF001643D0 /* Assets.xcassets */; };
+		FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D892172F82C001643D0 /* LaunchScreen.storyboard */; };
+		FA270D962172F866001643D0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA270D952172F866001643D0 /* Info.plist */; };
+		FA270D9A2172F8AD001643D0 /* UserCreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */; };
+		FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D982172F8AD001643D0 /* UserLoginViewController.swift */; };
+		FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */; };
+		FA270DA42172F8D5001643D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D9E2172F8D4001643D0 /* AppDelegate.swift */; };
+		FA270DA52172F8D5001643D0 /* BuckIt2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA270D9F2172F8D4001643D0 /* BuckIt2.xcdatamodeld */; };
+		FA270DA62172F8D5001643D0 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270DA12172F8D4001643D0 /* IBDesignables.swift */; };
+		FA270DA72172F8D5001643D0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA270DA22172F8D5001643D0 /* Info.plist */; };
+		FA270DA82172F8D5001643D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA270DA32172F8D5001643D0 /* GoogleService-Info.plist */; };
+		FA270DC62172F929001643D0 /* kids_book.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DAD2172F927001643D0 /* kids_book.jpg */; };
+		FA270DC72172F929001643D0 /* ted_talk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DAE2172F927001643D0 /* ted_talk.jpg */; };
+		FA270DC82172F929001643D0 /* food_cart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DAF2172F927001643D0 /* food_cart.jpg */; };
+		FA270DC92172F929001643D0 /* color_run.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB02172F927001643D0 /* color_run.jpg */; };
+		FA270DCA2172F929001643D0 /* milk_cow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB12172F927001643D0 /* milk_cow.jpg */; };
+		FA270DCB2172F929001643D0 /* nude_beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB22172F928001643D0 /* nude_beach.jpg */; };
+		FA270DCC2172F929001643D0 /* sleep_yurt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB32172F928001643D0 /* sleep_yurt.jpg */; };
+		FA270DCD2172F929001643D0 /* polar_plunge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB42172F928001643D0 /* polar_plunge.jpg */; };
+		FA270DCE2172F929001643D0 /* see_indycar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB52172F928001643D0 /* see_indycar.jpg */; };
+		FA270DCF2172F929001643D0 /* snowboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB62172F928001643D0 /* snowboard.jpg */; };
+		FA270DD02172F929001643D0 /* fire_eat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB72172F928001643D0 /* fire_eat.jpg */; };
+		FA270DD12172F929001643D0 /* molecular_gastronomy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB82172F928001643D0 /* molecular_gastronomy.jpg */; };
+		FA270DD22172F929001643D0 /* make_perfume.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DB92172F928001643D0 /* make_perfume.jpg */; };
+		FA270DD32172F929001643D0 /* dalai_lama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DBA2172F928001643D0 /* dalai_lama.jpg */; };
+		FA270DD42172F929001643D0 /* hang_glide.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DBB2172F928001643D0 /* hang_glide.jpg */; };
+		FA270DD52172F929001643D0 /* meet_leader.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DBC2172F928001643D0 /* meet_leader.jpg */; };
+		FA270DD62172F929001643D0 /* charter_yacht.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DBD2172F928001643D0 /* charter_yacht.jpg */; };
+		FA270DD72172F929001643D0 /* message_bottle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DBE2172F928001643D0 /* message_bottle.jpg */; };
+		FA270DD82172F929001643D0 /* feed_homeless.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DBF2172F928001643D0 /* feed_homeless.jpg */; };
+		FA270DD92172F929001643D0 /* improv_class.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DC02172F928001643D0 /* improv_class.jpg */; };
+		FA270DDA2172F929001643D0 /* seaplane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DC12172F929001643D0 /* seaplane.jpg */; };
+		FA270DDB2172F929001643D0 /* opera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DC22172F929001643D0 /* opera.jpg */; };
+		FA270DDC2172F929001643D0 /* see_eclipse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DC32172F929001643D0 /* see_eclipse.jpg */; };
+		FA270DDD2172F929001643D0 /* palm_read.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DC42172F929001643D0 /* palm_read.jpg */; };
+		FA270DDE2172F929001643D0 /* trapeze.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DC52172F929001643D0 /* trapeze.jpg */; };
+		FA270DE52172F938001643D0 /* sangita.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DDF2172F938001643D0 /* sangita.jpg */; };
+		FA270DE62172F938001643D0 /* rodrigo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DE02172F938001643D0 /* rodrigo.jpg */; };
+		FA270DE72172F938001643D0 /* dylon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DE12172F938001643D0 /* dylon.jpg */; };
+		FA270DE82172F938001643D0 /* maggie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DE22172F938001643D0 /* maggie.jpg */; };
+		FA270DE92172F938001643D0 /* park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DE32172F938001643D0 /* park.jpg */; };
+		FA270DEA2172F938001643D0 /* luisa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA270DE42172F938001643D0 /* luisa.jpg */; };
+		FA270DEF2172F95B001643D0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270DEB2172F95A001643D0 /* DatabaseManager.swift */; };
+		FA270DF02172F95B001643D0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270DEC2172F95B001643D0 /* Endpoint.swift */; };
+		FA270DF12172F95B001643D0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270DED2172F95B001643D0 /* StorageManager.swift */; };
+		FA270DF22172F95B001643D0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270DEE2172F95B001643D0 /* AuthManager.swift */; };
+		FA270DFA2172F99D001643D0 /* MyList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270DF52172F99D001643D0 /* MyList.storyboard */; };
+		FA270DFB2172F99D001643D0 /* MyBucket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270DF62172F99D001643D0 /* MyBucket.storyboard */; };
+		FA270DFC2172F99D001643D0 /* MyListNewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270DF72172F99D001643D0 /* MyListNewItem.storyboard */; };
+		FA270DFD2172F99D001643D0 /* MyListDetailItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270DF82172F99D001643D0 /* MyListDetailItem.storyboard */; };
+		FA270DFE2172F99D001643D0 /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270DF92172F99D001643D0 /* MyListSettings.storyboard */; };
+		FA270E072172F9B5001643D0 /* MyListSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E002172F9B4001643D0 /* MyListSettingsViewController.swift */; };
+		FA270E082172F9B5001643D0 /* MyListDetailItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E012172F9B5001643D0 /* MyListDetailItemViewController.swift */; };
+		FA270E092172F9B5001643D0 /* MyListPhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E022172F9B5001643D0 /* MyListPhotoPickerViewController.swift */; };
+		FA270E0A2172F9B5001643D0 /* MyBucketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E032172F9B5001643D0 /* MyBucketViewController.swift */; };
+		FA270E0B2172F9B5001643D0 /* MyBucketNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E042172F9B5001643D0 /* MyBucketNewItemViewController.swift */; };
+		FA270E0C2172F9B5001643D0 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E052172F9B5001643D0 /* MyListViewController.swift */; };
+		FA270E0D2172F9B5001643D0 /* MyListNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E062172F9B5001643D0 /* MyListNewItemViewController.swift */; };
+		FA270E182172FA00001643D0 /* BucketListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E102172FA00001643D0 /* BucketListItem.swift */; };
+		FA270E192172FA00001643D0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E112172FA00001643D0 /* Message.swift */; };
+		FA270E1A2172FA00001643D0 /* BucketListItemComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E122172FA00001643D0 /* BucketListItemComment.swift */; };
+		FA270E1B2172FA00001643D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E132172FA00001643D0 /* User.swift */; };
+		FA270E1C2172FA00001643D0 /* guatambuToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E142172FA00001643D0 /* guatambuToDo.swift */; };
+		FA270E1D2172FA00001643D0 /* MockDataUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E152172FA00001643D0 /* MockDataUsers.swift */; };
+		FA270E1E2172FA00001643D0 /* MockDataBucketListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E162172FA00001643D0 /* MockDataBucketListItems.swift */; };
+		FA270E1F2172FA00001643D0 /* BucketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E172172FA00001643D0 /* BucketList.swift */; };
+		FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E202172FA1A001643D0 /* InspirationLayout.swift */; };
+		FA270E232172FA1F001643D0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E222172FA1F001643D0 /* Photo.swift */; };
+		FA270E282172FA28001643D0 /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
+		FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */; };
+		FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E262172FA28001643D0 /* InspirationHome.storyboard */; };
+		FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E272172FA28001643D0 /* InspirationSearch.storyboard */; };
+		FA270E302172FA32001643D0 /* InspirationOtherUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2C2172FA31001643D0 /* InspirationOtherUserViewController.swift */; };
+		FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2D2172FA31001643D0 /* InspirationDetailViewController.swift */; };
+		FA270E322172FA32001643D0 /* InspirationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2E2172FA31001643D0 /* InspirationHomeViewController.swift */; };
+		FA270E332172FA32001643D0 /* InspirationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2F2172FA31001643D0 /* InspirationSearchViewController.swift */; };
+		FA270E362172FA3A001643D0 /* InspirationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */; };
+		FA270E372172FA3A001643D0 /* IspirationUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E352172FA3A001643D0 /* IspirationUsersTableViewCell.swift */; };
+		FA270E422172FAE9001643D0 /* MessageCompose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E3E2172FAE8001643D0 /* MessageCompose.storyboard */; };
+		FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E3F2172FAE8001643D0 /* MessageSearchandCompose.storyboard */; };
+		FA270E442172FAE9001643D0 /* MessageList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E402172FAE8001643D0 /* MessageList.storyboard */; };
+		FA270E452172FAE9001643D0 /* MessageSearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E412172FAE9001643D0 /* MessageSearchUser.storyboard */; };
+		FA270E492172FAF0001643D0 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E462172FAEF001643D0 /* MessageListViewController.swift */; };
+		FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E472172FAEF001643D0 /* MessageSearchUserViewController.swift */; };
+		FA270E4B2172FAF0001643D0 /* MessageComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E482172FAF0001643D0 /* MessageComposeViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA270D732172F66D001643D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA270D532172F66B001643D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA270D5A2172F66B001643D0;
+			remoteInfo = BuckIt2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA270D5B2172F66B001643D0 /* BuckIt2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuckIt2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA270D662172F66B001643D0 /* BuckIt2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuckIt2.xcdatamodel; sourceTree = "<group>"; };
+		FA270D722172F66D001643D0 /* BuckIt2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuckIt2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA270D762172F66D001643D0 /* BuckIt2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuckIt2Tests.swift; sourceTree = "<group>"; };
+		FA270D782172F66D001643D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA270D812172F7EF001643D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA270D892172F82C001643D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA270D952172F866001643D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreateAccountViewController.swift; sourceTree = "<group>"; };
+		FA270D982172F8AD001643D0 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
+		FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuthentication.storyboard; sourceTree = "<group>"; };
+		FA270D9E2172F8D4001643D0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA270DA02172F8D4001643D0 /* BuckIt2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuckIt2.xcdatamodel; sourceTree = "<group>"; };
+		FA270DA12172F8D4001643D0 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignables.swift; sourceTree = "<group>"; };
+		FA270DA22172F8D5001643D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA270DA32172F8D5001643D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA270DAD2172F927001643D0 /* kids_book.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kids_book.jpg; sourceTree = "<group>"; };
+		FA270DAE2172F927001643D0 /* ted_talk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ted_talk.jpg; sourceTree = "<group>"; };
+		FA270DAF2172F927001643D0 /* food_cart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food_cart.jpg; sourceTree = "<group>"; };
+		FA270DB02172F927001643D0 /* color_run.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = color_run.jpg; sourceTree = "<group>"; };
+		FA270DB12172F927001643D0 /* milk_cow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = milk_cow.jpg; sourceTree = "<group>"; };
+		FA270DB22172F928001643D0 /* nude_beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nude_beach.jpg; sourceTree = "<group>"; };
+		FA270DB32172F928001643D0 /* sleep_yurt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sleep_yurt.jpg; sourceTree = "<group>"; };
+		FA270DB42172F928001643D0 /* polar_plunge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = polar_plunge.jpg; sourceTree = "<group>"; };
+		FA270DB52172F928001643D0 /* see_indycar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = see_indycar.jpg; sourceTree = "<group>"; };
+		FA270DB62172F928001643D0 /* snowboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snowboard.jpg; sourceTree = "<group>"; };
+		FA270DB72172F928001643D0 /* fire_eat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fire_eat.jpg; sourceTree = "<group>"; };
+		FA270DB82172F928001643D0 /* molecular_gastronomy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = molecular_gastronomy.jpg; sourceTree = "<group>"; };
+		FA270DB92172F928001643D0 /* make_perfume.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = make_perfume.jpg; sourceTree = "<group>"; };
+		FA270DBA2172F928001643D0 /* dalai_lama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dalai_lama.jpg; sourceTree = "<group>"; };
+		FA270DBB2172F928001643D0 /* hang_glide.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hang_glide.jpg; sourceTree = "<group>"; };
+		FA270DBC2172F928001643D0 /* meet_leader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meet_leader.jpg; sourceTree = "<group>"; };
+		FA270DBD2172F928001643D0 /* charter_yacht.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charter_yacht.jpg; sourceTree = "<group>"; };
+		FA270DBE2172F928001643D0 /* message_bottle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = message_bottle.jpg; sourceTree = "<group>"; };
+		FA270DBF2172F928001643D0 /* feed_homeless.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feed_homeless.jpg; sourceTree = "<group>"; };
+		FA270DC02172F928001643D0 /* improv_class.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = improv_class.jpg; sourceTree = "<group>"; };
+		FA270DC12172F929001643D0 /* seaplane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seaplane.jpg; sourceTree = "<group>"; };
+		FA270DC22172F929001643D0 /* opera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = opera.jpg; sourceTree = "<group>"; };
+		FA270DC32172F929001643D0 /* see_eclipse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = see_eclipse.jpg; sourceTree = "<group>"; };
+		FA270DC42172F929001643D0 /* palm_read.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = palm_read.jpg; sourceTree = "<group>"; };
+		FA270DC52172F929001643D0 /* trapeze.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trapeze.jpg; sourceTree = "<group>"; };
+		FA270DDF2172F938001643D0 /* sangita.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sangita.jpg; sourceTree = "<group>"; };
+		FA270DE02172F938001643D0 /* rodrigo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rodrigo.jpg; sourceTree = "<group>"; };
+		FA270DE12172F938001643D0 /* dylon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dylon.jpg; sourceTree = "<group>"; };
+		FA270DE22172F938001643D0 /* maggie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maggie.jpg; sourceTree = "<group>"; };
+		FA270DE32172F938001643D0 /* park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = park.jpg; sourceTree = "<group>"; };
+		FA270DE42172F938001643D0 /* luisa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = luisa.jpg; sourceTree = "<group>"; };
+		FA270DEB2172F95A001643D0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		FA270DEC2172F95B001643D0 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FA270DED2172F95B001643D0 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FA270DEE2172F95B001643D0 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		FA270DF52172F99D001643D0 /* MyList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyList.storyboard; sourceTree = "<group>"; };
+		FA270DF62172F99D001643D0 /* MyBucket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyBucket.storyboard; sourceTree = "<group>"; };
+		FA270DF72172F99D001643D0 /* MyListNewItem.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyListNewItem.storyboard; sourceTree = "<group>"; };
+		FA270DF82172F99D001643D0 /* MyListDetailItem.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyListDetailItem.storyboard; sourceTree = "<group>"; };
+		FA270DF92172F99D001643D0 /* MyListSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyListSettings.storyboard; sourceTree = "<group>"; };
+		FA270E002172F9B4001643D0 /* MyListSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListSettingsViewController.swift; sourceTree = "<group>"; };
+		FA270E012172F9B5001643D0 /* MyListDetailItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListDetailItemViewController.swift; sourceTree = "<group>"; };
+		FA270E022172F9B5001643D0 /* MyListPhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListPhotoPickerViewController.swift; sourceTree = "<group>"; };
+		FA270E032172F9B5001643D0 /* MyBucketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBucketViewController.swift; sourceTree = "<group>"; };
+		FA270E042172F9B5001643D0 /* MyBucketNewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBucketNewItemViewController.swift; sourceTree = "<group>"; };
+		FA270E052172F9B5001643D0 /* MyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
+		FA270E062172F9B5001643D0 /* MyListNewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListNewItemViewController.swift; sourceTree = "<group>"; };
+		FA270E102172FA00001643D0 /* BucketListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItem.swift; sourceTree = "<group>"; };
+		FA270E112172FA00001643D0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FA270E122172FA00001643D0 /* BucketListItemComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItemComment.swift; sourceTree = "<group>"; };
+		FA270E132172FA00001643D0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA270E142172FA00001643D0 /* guatambuToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guatambuToDo.swift; sourceTree = "<group>"; };
+		FA270E152172FA00001643D0 /* MockDataUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataUsers.swift; sourceTree = "<group>"; };
+		FA270E162172FA00001643D0 /* MockDataBucketListItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataBucketListItems.swift; sourceTree = "<group>"; };
+		FA270E172172FA00001643D0 /* BucketList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketList.swift; sourceTree = "<group>"; };
+		FA270E202172FA1A001643D0 /* InspirationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationLayout.swift; sourceTree = "<group>"; };
+		FA270E222172FA1F001643D0 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationItemDetail.storyboard; sourceTree = "<group>"; };
+		FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationOtherUser.storyboard; sourceTree = "<group>"; };
+		FA270E262172FA28001643D0 /* InspirationHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationHome.storyboard; sourceTree = "<group>"; };
+		FA270E272172FA28001643D0 /* InspirationSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationSearch.storyboard; sourceTree = "<group>"; };
+		FA270E2C2172FA31001643D0 /* InspirationOtherUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationOtherUserViewController.swift; sourceTree = "<group>"; };
+		FA270E2D2172FA31001643D0 /* InspirationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationDetailViewController.swift; sourceTree = "<group>"; };
+		FA270E2E2172FA31001643D0 /* InspirationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationHomeViewController.swift; sourceTree = "<group>"; };
+		FA270E2F2172FA31001643D0 /* InspirationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationSearchViewController.swift; sourceTree = "<group>"; };
+		FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA270E352172FA3A001643D0 /* IspirationUsersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IspirationUsersTableViewCell.swift; sourceTree = "<group>"; };
+		FA270E3E2172FAE8001643D0 /* MessageCompose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageCompose.storyboard; sourceTree = "<group>"; };
+		FA270E3F2172FAE8001643D0 /* MessageSearchandCompose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageSearchandCompose.storyboard; sourceTree = "<group>"; };
+		FA270E402172FAE8001643D0 /* MessageList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageList.storyboard; sourceTree = "<group>"; };
+		FA270E412172FAE9001643D0 /* MessageSearchUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageSearchUser.storyboard; sourceTree = "<group>"; };
+		FA270E462172FAEF001643D0 /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
+		FA270E472172FAEF001643D0 /* MessageSearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSearchUserViewController.swift; sourceTree = "<group>"; };
+		FA270E482172FAF0001643D0 /* MessageComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposeViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA270D582172F66B001643D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA270D6F2172F66D001643D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA270D522172F66B001643D0 = {
+			isa = PBXGroup;
+			children = (
+				FA270D5D2172F66B001643D0 /* BuckIt2 */,
+				FA270D752172F66D001643D0 /* BuckIt2Tests */,
+				FA270D5C2172F66B001643D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA270D5C2172F66B001643D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D5B2172F66B001643D0 /* BuckIt2.app */,
+				FA270D722172F66D001643D0 /* BuckIt2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA270D5D2172F66B001643D0 /* BuckIt2 */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */,
+				FA270E0F2172F9F3001643D0 /* Models */,
+				FA270E4E2172FB1A001643D0 /* ConnectTab */,
+				FA270E382172FA48001643D0 /* InspirationTab */,
+				FA270DF42172F98B001643D0 /* MyListTab */,
+				FA270D9D2172F8B4001643D0 /* UserAuthentication */,
+				FA270DF32172F960001643D0 /* Networking */,
+				FA270DA92172F8DF001643D0 /* Resources */,
+				FA270D952172F866001643D0 /* Info.plist */,
+				FA270D892172F82C001643D0 /* LaunchScreen.storyboard */,
+			);
+			path = BuckIt2;
+			sourceTree = "<group>";
+		};
+		FA270D752172F66D001643D0 /* BuckIt2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D762172F66D001643D0 /* BuckIt2Tests.swift */,
+				FA270D782172F66D001643D0 /* Info.plist */,
+			);
+			path = BuckIt2Tests;
+			sourceTree = "<group>";
+		};
+		FA270D9D2172F8B4001643D0 /* UserAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */,
+				FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */,
+				FA270D982172F8AD001643D0 /* UserLoginViewController.swift */,
+			);
+			path = UserAuthentication;
+			sourceTree = "<group>";
+		};
+		FA270DA92172F8DF001643D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D812172F7EF001643D0 /* Assets.xcassets */,
+				FA270DAA2172F8F6001643D0 /* MockData Files */,
+				FA270D9E2172F8D4001643D0 /* AppDelegate.swift */,
+				FA270D9F2172F8D4001643D0 /* BuckIt2.xcdatamodeld */,
+				FA270DA32172F8D5001643D0 /* GoogleService-Info.plist */,
+				FA270DA12172F8D4001643D0 /* IBDesignables.swift */,
+				FA270DA22172F8D5001643D0 /* Info.plist */,
+			);
+			name = Resources;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		FA270DAA2172F8F6001643D0 /* MockData Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA270DAC2172F913001643D0 /* User Images */,
+				FA270DAB2172F903001643D0 /* Bucket List Images */,
+			);
+			path = "MockData Files";
+			sourceTree = "<group>";
+		};
+		FA270DAB2172F903001643D0 /* Bucket List Images */ = {
+			isa = PBXGroup;
+			children = (
+				FA270DBD2172F928001643D0 /* charter_yacht.jpg */,
+				FA270DB02172F927001643D0 /* color_run.jpg */,
+				FA270DBA2172F928001643D0 /* dalai_lama.jpg */,
+				FA270DBF2172F928001643D0 /* feed_homeless.jpg */,
+				FA270DB72172F928001643D0 /* fire_eat.jpg */,
+				FA270DAF2172F927001643D0 /* food_cart.jpg */,
+				FA270DBB2172F928001643D0 /* hang_glide.jpg */,
+				FA270DC02172F928001643D0 /* improv_class.jpg */,
+				FA270DAD2172F927001643D0 /* kids_book.jpg */,
+				FA270DB92172F928001643D0 /* make_perfume.jpg */,
+				FA270DBC2172F928001643D0 /* meet_leader.jpg */,
+				FA270DBE2172F928001643D0 /* message_bottle.jpg */,
+				FA270DB12172F927001643D0 /* milk_cow.jpg */,
+				FA270DB82172F928001643D0 /* molecular_gastronomy.jpg */,
+				FA270DB22172F928001643D0 /* nude_beach.jpg */,
+				FA270DC22172F929001643D0 /* opera.jpg */,
+				FA270DC42172F929001643D0 /* palm_read.jpg */,
+				FA270DB42172F928001643D0 /* polar_plunge.jpg */,
+				FA270DC12172F929001643D0 /* seaplane.jpg */,
+				FA270DC32172F929001643D0 /* see_eclipse.jpg */,
+				FA270DB52172F928001643D0 /* see_indycar.jpg */,
+				FA270DB32172F928001643D0 /* sleep_yurt.jpg */,
+				FA270DB62172F928001643D0 /* snowboard.jpg */,
+				FA270DAE2172F927001643D0 /* ted_talk.jpg */,
+				FA270DC52172F929001643D0 /* trapeze.jpg */,
+			);
+			path = "Bucket List Images";
+			sourceTree = "<group>";
+		};
+		FA270DAC2172F913001643D0 /* User Images */ = {
+			isa = PBXGroup;
+			children = (
+				FA270DE12172F938001643D0 /* dylon.jpg */,
+				FA270DE42172F938001643D0 /* luisa.jpg */,
+				FA270DE22172F938001643D0 /* maggie.jpg */,
+				FA270DE32172F938001643D0 /* park.jpg */,
+				FA270DE02172F938001643D0 /* rodrigo.jpg */,
+				FA270DDF2172F938001643D0 /* sangita.jpg */,
+			);
+			path = "User Images";
+			sourceTree = "<group>";
+		};
+		FA270DF32172F960001643D0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FA270DEE2172F95B001643D0 /* AuthManager.swift */,
+				FA270DEB2172F95A001643D0 /* DatabaseManager.swift */,
+				FA270DEC2172F95B001643D0 /* Endpoint.swift */,
+				FA270DED2172F95B001643D0 /* StorageManager.swift */,
+			);
+			name = Networking;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		FA270DF42172F98B001643D0 /* MyListTab */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E0E2172F9BB001643D0 /* ViewControllers */,
+				FA270DFF2172F9A3001643D0 /* Storyboards */,
+			);
+			name = MyListTab;
+			path = "New Group2";
+			sourceTree = "<group>";
+		};
+		FA270DFF2172F9A3001643D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA270DF62172F99D001643D0 /* MyBucket.storyboard */,
+				FA270DF52172F99D001643D0 /* MyList.storyboard */,
+				FA270DF82172F99D001643D0 /* MyListDetailItem.storyboard */,
+				FA270DF72172F99D001643D0 /* MyListNewItem.storyboard */,
+				FA270DF92172F99D001643D0 /* MyListSettings.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA270E0E2172F9BB001643D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E042172F9B5001643D0 /* MyBucketNewItemViewController.swift */,
+				FA270E032172F9B5001643D0 /* MyBucketViewController.swift */,
+				FA270E012172F9B5001643D0 /* MyListDetailItemViewController.swift */,
+				FA270E062172F9B5001643D0 /* MyListNewItemViewController.swift */,
+				FA270E022172F9B5001643D0 /* MyListPhotoPickerViewController.swift */,
+				FA270E002172F9B4001643D0 /* MyListSettingsViewController.swift */,
+				FA270E052172F9B5001643D0 /* MyListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA270E0F2172F9F3001643D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E172172FA00001643D0 /* BucketList.swift */,
+				FA270E102172FA00001643D0 /* BucketListItem.swift */,
+				FA270E122172FA00001643D0 /* BucketListItemComment.swift */,
+				FA270E142172FA00001643D0 /* guatambuToDo.swift */,
+				FA270E112172FA00001643D0 /* Message.swift */,
+				FA270E162172FA00001643D0 /* MockDataBucketListItems.swift */,
+				FA270E152172FA00001643D0 /* MockDataUsers.swift */,
+				FA270E132172FA00001643D0 /* User.swift */,
+			);
+			name = Models;
+			path = "New Group3";
+			sourceTree = "<group>";
+		};
+		FA270E382172FA48001643D0 /* InspirationTab */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E3C2172FA92001643D0 /* Layout */,
+				FA270E3D2172FA9C001643D0 /* Model */,
+				FA270E392172FA60001643D0 /* Storyboards */,
+				FA270E3A2172FA70001643D0 /* ViewControllers */,
+				FA270E3B2172FA80001643D0 /* Views */,
+			);
+			path = InspirationTab;
+			sourceTree = "<group>";
+		};
+		FA270E392172FA60001643D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E262172FA28001643D0 /* InspirationHome.storyboard */,
+				FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */,
+				FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */,
+				FA270E272172FA28001643D0 /* InspirationSearch.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA270E3A2172FA70001643D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E2D2172FA31001643D0 /* InspirationDetailViewController.swift */,
+				FA270E2E2172FA31001643D0 /* InspirationHomeViewController.swift */,
+				FA270E2C2172FA31001643D0 /* InspirationOtherUserViewController.swift */,
+				FA270E2F2172FA31001643D0 /* InspirationSearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA270E3B2172FA80001643D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */,
+				FA270E352172FA3A001643D0 /* IspirationUsersTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA270E3C2172FA92001643D0 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E202172FA1A001643D0 /* InspirationLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		FA270E3D2172FA9C001643D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E222172FA1F001643D0 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA270E4C2172FAFF001643D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E3E2172FAE8001643D0 /* MessageCompose.storyboard */,
+				FA270E402172FAE8001643D0 /* MessageList.storyboard */,
+				FA270E3F2172FAE8001643D0 /* MessageSearchandCompose.storyboard */,
+				FA270E412172FAE9001643D0 /* MessageSearchUser.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA270E4D2172FB0E001643D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E482172FAF0001643D0 /* MessageComposeViewController.swift */,
+				FA270E462172FAEF001643D0 /* MessageListViewController.swift */,
+				FA270E472172FAEF001643D0 /* MessageSearchUserViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA270E4E2172FB1A001643D0 /* ConnectTab */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E4C2172FAFF001643D0 /* Storyboards */,
+				FA270E4D2172FB0E001643D0 /* ViewControllers */,
+			);
+			path = ConnectTab;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA270D5A2172F66B001643D0 /* BuckIt2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA270D7B2172F66D001643D0 /* Build configuration list for PBXNativeTarget "BuckIt2" */;
+			buildPhases = (
+				FA270D572172F66B001643D0 /* Sources */,
+				FA270D582172F66B001643D0 /* Frameworks */,
+				FA270D592172F66B001643D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuckIt2;
+			productName = BuckIt2;
+			productReference = FA270D5B2172F66B001643D0 /* BuckIt2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA270D712172F66D001643D0 /* BuckIt2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA270D7E2172F66D001643D0 /* Build configuration list for PBXNativeTarget "BuckIt2Tests" */;
+			buildPhases = (
+				FA270D6E2172F66D001643D0 /* Sources */,
+				FA270D6F2172F66D001643D0 /* Frameworks */,
+				FA270D702172F66D001643D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA270D742172F66D001643D0 /* PBXTargetDependency */,
+			);
+			name = BuckIt2Tests;
+			productName = BuckIt2Tests;
+			productReference = FA270D722172F66D001643D0 /* BuckIt2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA270D532172F66B001643D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "DunDak, LLC";
+				TargetAttributes = {
+					FA270D5A2172F66B001643D0 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					FA270D712172F66D001643D0 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = FA270D5A2172F66B001643D0;
+					};
+				};
+			};
+			buildConfigurationList = FA270D562172F66B001643D0 /* Build configuration list for PBXProject "BuckIt2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA270D522172F66B001643D0;
+			productRefGroup = FA270D5C2172F66B001643D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA270D5A2172F66B001643D0 /* BuckIt2 */,
+				FA270D712172F66D001643D0 /* BuckIt2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA270D592172F66B001643D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA270DD12172F929001643D0 /* molecular_gastronomy.jpg in Resources */,
+				FA270DA82172F8D5001643D0 /* GoogleService-Info.plist in Resources */,
+				FA270DCF2172F929001643D0 /* snowboard.jpg in Resources */,
+				FA270DC62172F929001643D0 /* kids_book.jpg in Resources */,
+				FA270DD22172F929001643D0 /* make_perfume.jpg in Resources */,
+				FA270DEA2172F938001643D0 /* luisa.jpg in Resources */,
+				FA270DD52172F929001643D0 /* meet_leader.jpg in Resources */,
+				FA270DC72172F929001643D0 /* ted_talk.jpg in Resources */,
+				FA270E452172FAE9001643D0 /* MessageSearchUser.storyboard in Resources */,
+				FA270DDE2172F929001643D0 /* trapeze.jpg in Resources */,
+				FA270E442172FAE9001643D0 /* MessageList.storyboard in Resources */,
+				FA270DDC2172F929001643D0 /* see_eclipse.jpg in Resources */,
+				FA270DFB2172F99D001643D0 /* MyBucket.storyboard in Resources */,
+				FA270DD42172F929001643D0 /* hang_glide.jpg in Resources */,
+				FA270DE82172F938001643D0 /* maggie.jpg in Resources */,
+				FA270DE92172F938001643D0 /* park.jpg in Resources */,
+				FA270E282172FA28001643D0 /* InspirationItemDetail.storyboard in Resources */,
+				FA270DFD2172F99D001643D0 /* MyListDetailItem.storyboard in Resources */,
+				FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */,
+				FA270DE62172F938001643D0 /* rodrigo.jpg in Resources */,
+				FA270DCB2172F929001643D0 /* nude_beach.jpg in Resources */,
+				FA270DFA2172F99D001643D0 /* MyList.storyboard in Resources */,
+				FA270DCD2172F929001643D0 /* polar_plunge.jpg in Resources */,
+				FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */,
+				FA270DD72172F929001643D0 /* message_bottle.jpg in Resources */,
+				FA270DDB2172F929001643D0 /* opera.jpg in Resources */,
+				FA270DDA2172F929001643D0 /* seaplane.jpg in Resources */,
+				FA270D962172F866001643D0 /* Info.plist in Resources */,
+				FA270DD82172F929001643D0 /* feed_homeless.jpg in Resources */,
+				FA270DC92172F929001643D0 /* color_run.jpg in Resources */,
+				FA270E422172FAE9001643D0 /* MessageCompose.storyboard in Resources */,
+				FA270DFE2172F99D001643D0 /* MyListSettings.storyboard in Resources */,
+				FA270DCE2172F929001643D0 /* see_indycar.jpg in Resources */,
+				FA270DCA2172F929001643D0 /* milk_cow.jpg in Resources */,
+				FA270DD62172F929001643D0 /* charter_yacht.jpg in Resources */,
+				FA270DA72172F8D5001643D0 /* Info.plist in Resources */,
+				FA270DE72172F938001643D0 /* dylon.jpg in Resources */,
+				FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */,
+				FA270DD02172F929001643D0 /* fire_eat.jpg in Resources */,
+				FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */,
+				FA270D822172F7EF001643D0 /* Assets.xcassets in Resources */,
+				FA270DDD2172F929001643D0 /* palm_read.jpg in Resources */,
+				FA270DC82172F929001643D0 /* food_cart.jpg in Resources */,
+				FA270DCC2172F929001643D0 /* sleep_yurt.jpg in Resources */,
+				FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */,
+				FA270DFC2172F99D001643D0 /* MyListNewItem.storyboard in Resources */,
+				FA270DD32172F929001643D0 /* dalai_lama.jpg in Resources */,
+				FA270DD92172F929001643D0 /* improv_class.jpg in Resources */,
+				FA270DE52172F938001643D0 /* sangita.jpg in Resources */,
+				FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA270D702172F66D001643D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA270D572172F66B001643D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA270E1E2172FA00001643D0 /* MockDataBucketListItems.swift in Sources */,
+				FA270E0A2172F9B5001643D0 /* MyBucketViewController.swift in Sources */,
+				FA270DA42172F8D5001643D0 /* AppDelegate.swift in Sources */,
+				FA270E232172FA1F001643D0 /* Photo.swift in Sources */,
+				FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */,
+				FA270DF02172F95B001643D0 /* Endpoint.swift in Sources */,
+				FA270E322172FA32001643D0 /* InspirationHomeViewController.swift in Sources */,
+				FA270E1D2172FA00001643D0 /* MockDataUsers.swift in Sources */,
+				FA270DF12172F95B001643D0 /* StorageManager.swift in Sources */,
+				FA270E092172F9B5001643D0 /* MyListPhotoPickerViewController.swift in Sources */,
+				FA270E1A2172FA00001643D0 /* BucketListItemComment.swift in Sources */,
+				FA270E1C2172FA00001643D0 /* guatambuToDo.swift in Sources */,
+				FA270E0C2172F9B5001643D0 /* MyListViewController.swift in Sources */,
+				FA270E192172FA00001643D0 /* Message.swift in Sources */,
+				FA270E1F2172FA00001643D0 /* BucketList.swift in Sources */,
+				FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */,
+				FA270E182172FA00001643D0 /* BucketListItem.swift in Sources */,
+				FA270E372172FA3A001643D0 /* IspirationUsersTableViewCell.swift in Sources */,
+				FA270E0D2172F9B5001643D0 /* MyListNewItemViewController.swift in Sources */,
+				FA270E4B2172FAF0001643D0 /* MessageComposeViewController.swift in Sources */,
+				FA270D9A2172F8AD001643D0 /* UserCreateAccountViewController.swift in Sources */,
+				FA270E082172F9B5001643D0 /* MyListDetailItemViewController.swift in Sources */,
+				FA270E332172FA32001643D0 /* InspirationSearchViewController.swift in Sources */,
+				FA270E492172FAF0001643D0 /* MessageListViewController.swift in Sources */,
+				FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */,
+				FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */,
+				FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */,
+				FA270DA62172F8D5001643D0 /* IBDesignables.swift in Sources */,
+				FA270E0B2172F9B5001643D0 /* MyBucketNewItemViewController.swift in Sources */,
+				FA270DA52172F8D5001643D0 /* BuckIt2.xcdatamodeld in Sources */,
+				FA270E302172FA32001643D0 /* InspirationOtherUserViewController.swift in Sources */,
+				FA270DEF2172F95B001643D0 /* DatabaseManager.swift in Sources */,
+				FA270E072172F9B5001643D0 /* MyListSettingsViewController.swift in Sources */,
+				FA270E362172FA3A001643D0 /* InspirationCollectionViewCell.swift in Sources */,
+				FA270DF22172F95B001643D0 /* AuthManager.swift in Sources */,
+				FA270E1B2172FA00001643D0 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA270D6E2172F66D001643D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA270D772172F66D001643D0 /* BuckIt2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA270D742172F66D001643D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA270D5A2172F66B001643D0 /* BuckIt2 */;
+			targetProxy = FA270D732172F66D001643D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FA270D792172F66D001643D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA270D7A2172F66D001643D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA270D7C2172F66D001643D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BuckIt2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dundak.BuckIt2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA270D7D2172F66D001643D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BuckIt2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dundak.BuckIt2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA270D7F2172F66D001643D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BuckIt2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dundak.BuckIt2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuckIt2.app/BuckIt2";
+			};
+			name = Debug;
+		};
+		FA270D802172F66D001643D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BuckIt2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dundak.BuckIt2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuckIt2.app/BuckIt2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA270D562172F66B001643D0 /* Build configuration list for PBXProject "BuckIt2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA270D792172F66D001643D0 /* Debug */,
+				FA270D7A2172F66D001643D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA270D7B2172F66D001643D0 /* Build configuration list for PBXNativeTarget "BuckIt2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA270D7C2172F66D001643D0 /* Debug */,
+				FA270D7D2172F66D001643D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA270D7E2172F66D001643D0 /* Build configuration list for PBXNativeTarget "BuckIt2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA270D7F2172F66D001643D0 /* Debug */,
+				FA270D802172F66D001643D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA270D662172F66B001643D0 /* BuckIt2.xcdatamodel */,
+			);
+			currentVersion = FA270D662172F66B001643D0 /* BuckIt2.xcdatamodel */;
+			path = BuckIt2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		FA270D9F2172F8D4001643D0 /* BuckIt2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA270DA02172F8D4001643D0 /* BuckIt2.xcdatamodel */,
+			);
+			currentVersion = FA270DA02172F8D4001643D0 /* BuckIt2.xcdatamodel */;
+			path = BuckIt2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA270D532172F66B001643D0 /* Project object */;
+}
