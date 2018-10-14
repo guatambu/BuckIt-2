@@ -18,6 +18,6 @@ import Foundation
 
 // TODO
 
-    // 5 users
+    // 5 users  ****** COMPLETE!
         // profile pic switch to hard coded mockdata profile pic
-    // 25 bucket list items
+    // 25 bucket list items  ****** COMPLETE!
