@@ -57,10 +57,10 @@ class BucketListItemComment {
     }
     
     convenience init?(BucketListItemCommentDictionary: [String : Any]) {
-        guard let uid = firebaseDictionary[BucketListItemCommentKey.uid] as? String,
-            let text = firebaseDictionary[BucketListItemCommentKey.text] as? String,
-            let timestamp = firebaseDictionary[BucketListItemCommentKey.timestamp] as? Date,
-            let user = firebaseDictionary[BucketListItemCommentKey.user] as? User else { return nil }
+        guard let uid = BucketListItemCommentDictionary[BucketListItemCommentKey.uid] as? String,
+            let text = BucketListItemCommentDictionary[BucketListItemCommentKey.text] as? String,
+            let timestamp = BucketListItemCommentDictionary[BucketListItemCommentKey.timestamp] as? Date,
+            let user = BucketListItemCommentDictionary[BucketListItemCommentKey.user] as? User else { return nil }
         
         self.init(uid: uid,
                   text: text,

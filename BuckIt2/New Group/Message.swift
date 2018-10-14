@@ -61,11 +61,11 @@ class Message {
     }
     
     convenience init?(messageDictionary: [String : Any]) {
-        guard let uid = firebaseDictionary[MessageKey.uid] as? String,
-            let sender = firebaseDictionary[MessageKey.sender] as? User,
-            let receiver = firebaseDictionary[MessageKey.receiver] as? User,
-            let text = firebaseDictionary[MessageKey.text] as? String,
-            let timestamp = firebaseDictionary[MessageKey.timestamp] as? Date else { return nil }
+        guard let uid = messageDictionary[MessageKey.uid] as? String,
+            let sender = messageDictionary[MessageKey.sender] as? User,
+            let receiver = messageDictionary[MessageKey.receiver] as? User,
+            let text = messageDictionary[MessageKey.text] as? String,
+            let timestamp = messageDictionary[MessageKey.timestamp] as? Date else { return nil }
         
         self.init(uid: uid,
                   sender: sender,

@@ -73,23 +73,23 @@ class BucketListItem {
         self.experienceDescription = experienceDescription
     }
     
-//    convenience init?(bucketListItemDictionary: [String : Any]) {
-//        guard let uid = firebaseDictionary[BucketListItemKey.uid] as? String,
-//            let user = firebaseDictionary[BucketListItemKey.user] as? User,
-//            let timestamp = firebaseDictionary[BucketListItemKey.timestamp] as? Date,
-//            let title = firebaseDictionary[BucketListItemKey.title] as? String,
-//            let isComplete = firebaseDictionary[BucketListItemKey.isComplete] as? Bool,
-//            let photoURLs = firebaseDictionary[BucketListItemKey.photoURLs] as? [String],
-//            let experienceDescription = firebaseDictionary[BucketListItemKey.experienceDescription] as? String else { return nil }
-//
-//        self.init(uid: uid,
-//                  user: user,
-//                  timestamp: timestamp,
-//                  title: title,
-//                  isComplete: isComplete,
-//                  photoURLs: photoURLs,
-//                  experienceDescription: experienceDescription)
-//    }
+    convenience init?(bucketListItemDictionary: [String : Any]) {
+        guard let uid = bucketListItemDictionary[BucketListItemKey.uid] as? String,
+            let user = bucketListItemDictionary[BucketListItemKey.user] as? User,
+            let timestamp = bucketListItemDictionary[BucketListItemKey.timestamp] as? Date,
+            let title = bucketListItemDictionary[BucketListItemKey.title] as? String,
+            let isComplete = bucketListItemDictionary[BucketListItemKey.isComplete] as? Bool,
+            let photoURLs = bucketListItemDictionary[BucketListItemKey.photoURLs] as? [String],
+            let experienceDescription = bucketListItemDictionary[BucketListItemKey.experienceDescription] as? String else { return nil }
+
+        self.init(uid: uid,
+                  user: user,
+                  timestamp: timestamp,
+                  title: title,
+                  isComplete: isComplete,
+                  photoURLs: photoURLs,
+                  experienceDescription: experienceDescription)
+    }
     
     
     

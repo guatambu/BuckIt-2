@@ -44,8 +44,8 @@ class BucketList {
     }
     
     convenience init?(bucketListDictionary: [String : Any]) {
-        guard let items = firebaseDictionary[BucketListKey.items] as? [BucketListItem],
-            let isPrivate = firebaseDictionary[BucketListKey.isPrivate] as? Bool else { return nil }
+        guard let items = bucketListDictionary[BucketListKey.items] as? [BucketListItem],
+            let isPrivate = bucketListDictionary[BucketListKey.isPrivate] as? Bool else { return nil }
         
         self.init(items: items,
                   isPrivate: isPrivate)

@@ -83,29 +83,29 @@ class User {
         self.age = age
     }
     
-    
-//    convenience init?(userDictionary: [String : Any]) {
-//        guard let uid = firebaseDictionary[UserKey.uid] as? String,
-//            let email = firebaseDictionary[UserKey.email] as? String,
-//            let username = firebaseDictionary[UserKey.username] as? String,
-//            let isPrivate = firebaseDictionary[UserKey.isPrivate] as? Bool,
-//            let firstName = firebaseDictionary[UserKey.firstName] as? String,
-//            let lastName = firebaseDictionary[UserKey.lastName] as? String,
-//            let profileImageURL = firebaseDictionary[UserKey.profileImageURL] as? String,
-//            let location = firebaseDictionary[UserKey.location] as? String,
-//            let age = firebaseDictionary[UserKey.age] as? String else { return nil }
-//
-//        self.init(uid: uid,
-//                  email: email,
-//                  username: username,
-//                  isPrivate: isPrivate,
-//                  firstName: firstName,
-//                  lastName: lastName,
-//                  profileImageURL: profileImageURL,
-//                  location: location,
-//                  age: age)
-//    }
-    
+    convenience init?(userDictionary: [String : Any]) {
+        guard let uid = userDictionary[UserKey.uid] as? String,
+            let email = userDictionary[UserKey.email] as? String,
+            let username = userDictionary[UserKey.username] as? String,
+            let isPrivate = userDictionary[UserKey.isPrivate] as? Bool,
+            let firstName = userDictionary[UserKey.firstName] as? String,
+            let lastName = userDictionary[UserKey.lastName] as? String,
+            let profileImageURL = userDictionary[UserKey.profileImageURL] as? String,
+            let location = userDictionary[UserKey.location] as? String,
+            let age = userDictionary[UserKey.age] as? String else { return nil }
+        
+        self.init(uid: uid,
+                  email: email,
+                  username: username,
+                  isPrivate: isPrivate,
+                  firstName: firstName,
+                  lastName: lastName,
+                  profileImageURL: profileImageURL,
+                  location: location,
+                  age: age)
+    }
+
+
 
     
 }
