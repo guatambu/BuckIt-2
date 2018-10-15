@@ -109,9 +109,7 @@ class User {
 
 // Firebase Initializer
 extension User {
-    
-    
-    
+
     convenience init?(userDictionary: [String : Any]) {
         guard let uid = userDictionary[UserKey.uid] as? String,
             let email = userDictionary[UserKey.email] as? String,

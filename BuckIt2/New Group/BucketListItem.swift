@@ -18,20 +18,20 @@ class BucketListItem {
     var title: String
     var isComplete: Bool
     var mockPhoto: [UIImage]?
-    var photoURLs: [String]
-    var experienceDescription: String
+    var photoURLs: [String]?
+    var experienceDescription: String?
     
-//    var firebaseDictionary: [String: Any] {
-//        return [
-//            BucketListItemKey.uid: uid,
-//            BucketListItemKey.user: user,
-//            BucketListItemKey.timestamp: timestamp,
-//            BucketListItemKey.title: title,
-//            BucketListItemKey.isComplete: isComplete,
-//            BucketListItemKey.photoURLs: photoURLs,
-//            BucketListItemKey.experienceDescription: experienceDescription,
-//        ]
-//    }
+    var firebaseDictionary: [String: Any] {
+        return [
+            BucketListItemKey.uid: uid,
+            BucketListItemKey.user: user,
+            BucketListItemKey.timestamp: timestamp,
+            BucketListItemKey.title: title,
+            BucketListItemKey.isComplete: isComplete,
+            BucketListItemKey.photoURLs: photoURLs as Any,
+            BucketListItemKey.experienceDescription: experienceDescription as Any,
+        ]
+    }
     
     // MARK: - Firebase Keys
     
@@ -53,13 +53,13 @@ class BucketListItem {
     
     // MARK: - Initialization
     
+    // MockData
     init(uid: String,
         user: User,
         timestamp: Date,
         title: String,
         isComplete: Bool,
-//        mockPhoto: [UIImage]?,
-        photoURLs: [String],
+        mockPhoto: [UIImage]?,
         experienceDescription: String
         ) {
         
@@ -68,11 +68,37 @@ class BucketListItem {
         self.timestamp = timestamp
         self.title = title
         self.isComplete = isComplete
-//        self.mockPhoto = mockPhoto
+        self.mockPhoto = mockPhoto
+        self.experienceDescription = experienceDescription
+    }
+    
+    // Firebase
+    init(uid: String,
+         user: User,
+         timestamp: Date,
+         title: String,
+         isComplete: Bool,
+         photoURLs: [String],
+         experienceDescription: String
+        ) {
+        
+        self.uid = uid
+        self.user = user
+        self.timestamp = timestamp
+        self.title = title
+        self.isComplete = isComplete
         self.photoURLs = photoURLs
         self.experienceDescription = experienceDescription
     }
     
+    
+    
+    
+    
+}
+
+// Firebase Initialization
+extension BucketListItem {
     convenience init?(bucketListItemDictionary: [String : Any]) {
         guard let uid = bucketListItemDictionary[BucketListItemKey.uid] as? String,
             let user = bucketListItemDictionary[BucketListItemKey.user] as? User,
@@ -81,7 +107,7 @@ class BucketListItem {
             let isComplete = bucketListItemDictionary[BucketListItemKey.isComplete] as? Bool,
             let photoURLs = bucketListItemDictionary[BucketListItemKey.photoURLs] as? [String],
             let experienceDescription = bucketListItemDictionary[BucketListItemKey.experienceDescription] as? String else { return nil }
-
+        
         
         self.init(uid: uid,
                   user: user,
@@ -91,9 +117,6 @@ class BucketListItem {
                   photoURLs: photoURLs,
                   experienceDescription: experienceDescription)
     }
-    
-    
-    
 }
 
 extension BucketListItem: Equatable {
