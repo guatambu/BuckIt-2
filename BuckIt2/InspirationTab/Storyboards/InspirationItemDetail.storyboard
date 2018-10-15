@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--Inspiration Detail View Controller-->
         <scene sceneID="YBR-Xx-fET">
             <objects>
-                <viewController providesPresentationContextTransitionStyle="YES" id="eXQ-Z0-XlA" userLabel="Inspiration Detail View Controller" customClass="InspirationDetailViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Inspiration Item Detail" providesPresentationContextTransitionStyle="YES" id="eXQ-Z0-XlA" userLabel="Inspiration Detail View Controller" customClass="InspirationDetailViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4ma-71-q7Z" userLabel="Inspiration Item Detail View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,15 +25,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mab-1W-ISF" userLabel="Inspiration Item View">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mab-1W-ISF" userLabel="Inspiration Item View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaB-o6-cfz" userLabel="Inspiration Close View Button">
-                                                <rect key="frame" x="8" y="8" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="cancelButton"/>
-                                            </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CUu-Hk-E2S" userLabel="Inspiration Item Photo Collection View">
                                                 <rect key="frame" x="40" y="44" width="300" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,12 +46,19 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="305" height="250"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="dtj-Cf-rph" userLabel="Inspiration Item Photo">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="dtj-Cf-rph" userLabel="Inspiration Item Photo">
                                                                     <rect key="frame" x="2" y="0.0" width="300" height="250"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="250" id="Z3V-EJ-lHS"/>
+                                                                        <constraint firstAttribute="width" constant="300" id="brN-kA-34c"/>
+                                                                    </constraints>
                                                                 </imageView>
                                                             </subviews>
                                                         </view>
+                                                        <constraints>
+                                                            <constraint firstItem="dtj-Cf-rph" firstAttribute="leading" secondItem="49D-yT-q4j" secondAttribute="leading" constant="2" id="4gX-rl-pqx"/>
+                                                            <constraint firstItem="dtj-Cf-rph" firstAttribute="top" secondItem="49D-yT-q4j" secondAttribute="top" id="VTm-VO-GCP"/>
+                                                        </constraints>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -130,7 +130,7 @@
                                                     </segments>
                                                 </segmentedControl>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="AyA-xJ-81M" imageView="635-tE-G4p" style="IBUITableViewCellStyleDefault" id="fBa-d6-RoA" customClass="InspirationUsersTableViewCell" customModule="BuckIt" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="AyA-xJ-81M" imageView="635-tE-G4p" style="IBUITableViewCellStyleDefault" id="fBa-d6-RoA" customClass="InspirationUsersTableViewCell" customModule="BuckIt2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="58" width="300" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fBa-d6-RoA" id="roi-W2-prV">
@@ -161,7 +161,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Wwl-Zc-hsH" detailTextLabel="Rg5-l1-WT2" imageView="ybJ-Ax-vjC" rowHeight="49" style="IBUITableViewCellStyleSubtitle" id="yPf-sk-pqQ" customClass="InspirationUsersTableViewCell" customModule="BuckIt" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Wwl-Zc-hsH" detailTextLabel="Rg5-l1-WT2" imageView="ybJ-Ax-vjC" rowHeight="49" style="IBUITableViewCellStyleSubtitle" id="yPf-sk-pqQ" customClass="InspirationUsersTableViewCell" customModule="BuckIt2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="300" height="49"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yPf-sk-pqQ" id="uNt-op-yeA">
@@ -207,28 +207,51 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PgJ-JF-m4u" userLabel="Inspiration Item Tags">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgJ-JF-m4u" userLabel="Inspiration Item Tags">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tag Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPv-hq-SIm" userLabel="Inspiartion Tag Label">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPv-hq-SIm" userLabel="Inspiartion Tag Label">
                                                                             <rect key="frame" x="17" y="6" width="66" height="18"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="LPv-hq-SIm" firstAttribute="centerY" secondItem="PgJ-JF-m4u" secondAttribute="centerY" id="3R0-qh-Uae"/>
+                                                                        <constraint firstItem="LPv-hq-SIm" firstAttribute="centerX" secondItem="PgJ-JF-m4u" secondAttribute="centerX" id="Htg-RS-Lzv"/>
+                                                                    </constraints>
                                                                 </view>
                                                             </subviews>
                                                         </view>
+                                                        <constraints>
+                                                            <constraint firstItem="PgJ-JF-m4u" firstAttribute="leading" secondItem="4GO-8s-V0n" secondAttribute="leading" id="Rde-3T-dAM"/>
+                                                            <constraint firstItem="PgJ-JF-m4u" firstAttribute="top" secondItem="4GO-8s-V0n" secondAttribute="top" id="drt-Ql-RDE"/>
+                                                            <constraint firstAttribute="bottom" secondItem="PgJ-JF-m4u" secondAttribute="bottom" id="fN7-7S-B60"/>
+                                                            <constraint firstAttribute="trailing" secondItem="PgJ-JF-m4u" secondAttribute="trailing" id="sBu-67-11h"/>
+                                                        </constraints>
                                                         <size key="customSize" width="100" height="30"/>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-du-hDV">
+                                                <rect key="frame" x="13" y="17" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="PeO-RY-c3d"/>
+                                                    <constraint firstAttribute="height" constant="30" id="uEa-N8-1Sb"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="cancelButton"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="eXQ-Z0-XlA" eventType="touchUpInside" id="fft-nG-PhE"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="tHV-du-hDV" firstAttribute="top" secondItem="Mab-1W-ISF" secondAttribute="top" constant="17" id="8IR-6w-vBi"/>
+                                            <constraint firstItem="tHV-du-hDV" firstAttribute="leading" secondItem="Mab-1W-ISF" secondAttribute="leading" constant="13" id="B0y-mu-bVF"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </scrollView>
@@ -240,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63E-q7-6jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1269.5999999999999" y="1121.7391304347827"/>
+            <point key="canvasLocation" x="1256.8" y="1094.7526236881561"/>
         </scene>
         <!--InspirationOtherUser-->
         <scene sceneID="FPL-YT-qac">
