@@ -18,7 +18,7 @@ class BucketListItem {
     var title: String
     var isComplete: Bool
     var mockPhoto: [UIImage]?
-    //var photoURLs: [String]
+    var photoURLs: [String]
     var experienceDescription: String
     
 //    var firebaseDictionary: [String: Any] {
@@ -58,8 +58,8 @@ class BucketListItem {
         timestamp: Date,
         title: String,
         isComplete: Bool,
-        mockPhoto: [UIImage]?,
-        //photoURLs: [String],
+//        mockPhoto: [UIImage]?,
+        photoURLs: [String],
         experienceDescription: String
         ) {
         
@@ -68,8 +68,8 @@ class BucketListItem {
         self.timestamp = timestamp
         self.title = title
         self.isComplete = isComplete
-        self.mockPhoto = mockPhoto
-        //self.photoURLs = photoURLs
+//        self.mockPhoto = mockPhoto
+        self.photoURLs = photoURLs
         self.experienceDescription = experienceDescription
     }
     
@@ -82,6 +82,7 @@ class BucketListItem {
             let photoURLs = bucketListItemDictionary[BucketListItemKey.photoURLs] as? [String],
             let experienceDescription = bucketListItemDictionary[BucketListItemKey.experienceDescription] as? String else { return nil }
 
+        
         self.init(uid: uid,
                   user: user,
                   timestamp: timestamp,
