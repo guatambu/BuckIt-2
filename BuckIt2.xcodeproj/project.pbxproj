@@ -11,7 +11,6 @@
 		FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */; };
 		FA270D772172F66D001643D0 /* BuckIt2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D762172F66D001643D0 /* BuckIt2Tests.swift */; };
 		FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D892172F82C001643D0 /* LaunchScreen.storyboard */; };
-		FA270D962172F866001643D0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA270D952172F866001643D0 /* Info.plist */; };
 		FA270D9A2172F8AD001643D0 /* UserCreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */; };
 		FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D982172F8AD001643D0 /* UserLoginViewController.swift */; };
 		FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */; };
@@ -54,6 +53,7 @@
 		FA270ECB21730224001643D0 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC421730223001643D0 /* MyListViewController.swift */; };
 		FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC521730223001643D0 /* MyListSettingsViewController.swift */; };
 		FA270ECD21730224001643D0 /* MyBucketNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */; };
+		FA881C312174118700236163 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C302174118700236163 /* IBDesignables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +191,7 @@
 		FA270EC421730223001643D0 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		FA270EC521730223001643D0 /* MyListSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListSettingsViewController.swift; sourceTree = "<group>"; };
 		FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBucketNewItemViewController.swift; sourceTree = "<group>"; };
+		FA881C302174118700236163 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBDesignables.swift; path = BuckIt2/Resources/IBDesignables.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,6 +502,7 @@
 		FA270EAD2173015A001643D0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA881C302174118700236163 /* IBDesignables.swift */,
 				FA270EAE217301A0001643D0 /* AppDelegate.swift */,
 				FA270EAC21730111001643D0 /* Assets.xcassets */,
 				FA270EA921730110001643D0 /* Base.lproj */,
@@ -658,7 +660,6 @@
 				FA270E282172FA28001643D0 /* InspirationItemDetail.storyboard in Resources */,
 				FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */,
 				FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */,
-				FA270D962172F866001643D0 /* Info.plist in Resources */,
 				FA270E422172FAE9001643D0 /* MessageCompose.storyboard in Resources */,
 				FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */,
 				FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */,
@@ -775,6 +776,7 @@
 				FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */,
 				FA270EC921730224001643D0 /* MyListDetailItemViewController.swift in Sources */,
 				FA270EC721730224001643D0 /* MyBucketViewController.swift in Sources */,
+				FA881C312174118700236163 /* IBDesignables.swift in Sources */,
 				FA270E5A21730070001643D0 /* guatambuToDo.swift in Sources */,
 				FA270E302172FA32001643D0 /* InspirationOtherUserViewController.swift in Sources */,
 				FA270E362172FA3A001643D0 /* InspirationCollectionViewCell.swift in Sources */,
