@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--My List-->
         <scene sceneID="u7I-rB-nqP">
             <objects>
-                <viewController id="T1J-Sj-pGT" userLabel="My List" customClass="MyListViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyList" id="T1J-Sj-pGT" userLabel="My List" customClass="MyListViewController" customModule="BuckIt2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Haj-nh-7hI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="868"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +101,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uh6-dU-stQ" userLabel="My List Table View">
-                                                <rect key="frame" x="0.0" y="155" width="335" height="376"/>
+                                                <rect key="frame" x="0.0" y="155" width="335" height="364"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myBucketCell" textLabel="faO-bv-6uf" style="IBUITableViewCellStyleDefault" id="98i-az-P4P">
@@ -141,7 +140,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="uh6-dU-stQ" secondAttribute="bottom" constant="-12" id="08G-uD-5J1"/>
+                                            <constraint firstAttribute="bottom" secondItem="uh6-dU-stQ" secondAttribute="bottom" id="08G-uD-5J1"/>
                                             <constraint firstItem="sdR-Kr-Axf" firstAttribute="top" secondItem="twU-bD-17e" secondAttribute="topMargin" id="2ht-Xe-R7e"/>
                                             <constraint firstItem="WWh-ne-g6i" firstAttribute="leading" secondItem="uh6-dU-stQ" secondAttribute="leading" id="6fc-Op-SoZ"/>
                                             <constraint firstItem="9nb-un-v53" firstAttribute="top" secondItem="WWh-ne-g6i" secondAttribute="bottom" constant="27" id="BW1-8t-bDl"/>
@@ -349,7 +348,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="lB5-z7-p4L" kind="relationship" relationship="viewControllers" id="Tc7-gi-XUE"/>
-                        <segue destination="mfz-XE-xgJ" kind="relationship" relationship="viewControllers" id="DRT-DZ-ERg"/>
+                        <segue destination="mfz-XE-xgJ" kind="relationship" relationship="viewControllers" id="WEU-iR-oQY"/>
                         <segue destination="mdF-bB-5BZ" kind="relationship" relationship="viewControllers" id="vqh-TZ-PdO"/>
                     </connections>
                 </tabBarController>
