@@ -10,7 +10,7 @@ import Foundation
 
 struct MockDataMessages {
     
-    static let mockMessage = [MockDataMessages.message1, MockDataMessages.message2, MockDataMessages.message3, MockDataMessages.message4, MockDataMessages.message5, MockDataMessages.message6, MockDataMessages.message7, MockDataMessages.message8]
+    static let mockMessages = [MockDataMessages.message1, MockDataMessages.message2, MockDataMessages.message3, MockDataMessages.message4, MockDataMessages.message5, MockDataMessages.message6, MockDataMessages.message7, MockDataMessages.message8]
     
     static let message1 = Message(uid: UUID().uuidString, sender: MockDataUsers.dylon, receiver: MockDataUsers.luisa, text: "How did you like the nude beach", timestamp: Date())
     
