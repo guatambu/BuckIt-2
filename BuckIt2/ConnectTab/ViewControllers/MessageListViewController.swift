@@ -9,7 +9,11 @@
 import UIKit
 
 class MessageListViewController: UIViewController {
+    
+    private let cellId = MessageListCell.reuseIdentifier
 
+    @IBOutlet weak var messageListTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,5 +32,18 @@ class MessageListViewController: UIViewController {
     */
 
     @IBAction func newMessageButtonTapped(_ sender: UIButton) {
+    }
+}
+
+// MARK: - UITableViewDataSouce
+extension MessageListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        
+        return cell
     }
 }

@@ -36,6 +36,7 @@ class MessageSearchUserViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func backButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

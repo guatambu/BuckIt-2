@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="105" width="375" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectMessagesListCell" textLabel="3xR-Ky-wfg" detailTextLabel="WIy-Wq-wNL" imageView="WRw-d8-4VB" rowHeight="89" style="IBUITableViewCellStyleSubtitle" id="RvM-mV-G0s">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageListCell" textLabel="3xR-Ky-wfg" detailTextLabel="WIy-Wq-wNL" imageView="WRw-d8-4VB" rowHeight="89" style="IBUITableViewCellStyleSubtitle" id="RvM-mV-G0s" customClass="MessageListCell" customModule="BuckIt2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RvM-mV-G0s" id="5E1-yv-6xg" userLabel="Connect Message List Content View">
@@ -57,6 +57,11 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageGlimpseLabel" destination="WIy-Wq-wNL" id="Ps6-gL-zL1"/>
+                                            <outlet property="profileImageView" destination="WRw-d8-4VB" id="fMZ-sT-wWB"/>
+                                            <outlet property="usernameLabel" destination="3xR-Ky-wfg" id="FeO-Pd-ml3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -86,6 +91,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Connect" id="ygB-4x-Rdj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="messageListTableView" destination="NuR-cu-znj" id="pdd-CY-d5V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Evh-fy-0Km" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

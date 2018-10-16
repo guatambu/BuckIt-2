@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--Connect Compose->Write-->
         <scene sceneID="MzL-mx-2Gs">
             <objects>
-                <viewController id="awJ-iw-Wo5" userLabel="Connect Compose-&gt;Write" customClass="MessageComposeViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="awJ-iw-Wo5" userLabel="Connect Compose-&gt;Write" customClass="MessageComposeViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Rb-N0-UUR" userLabel="Connect New Message Compose View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
