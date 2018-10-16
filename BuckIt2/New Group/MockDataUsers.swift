@@ -24,5 +24,7 @@ struct MockDataUsers {
     
     static let sangita = User(uid: "06", email: "sangita@email.com", username: "sangiji", isPrivate: false, firstName: "Sangita", lastName: "Chaudry", mockProfilePic: UIImage(named: "sangita"), location: "London, England, UK", age: "51")
     
+    static let sam = User(uid: "07", email: "sam@email.com", username: "sam01", isPrivate: false, firstName: "Sam", lastName: "Russo", mockProfilePic: UIImage(named: "samantha"), location: "Seattle, Washington", age: "26", bioBlurb: "Working toward her dream job in Seattle.  She lives with roomates and just got done with college at UW.")
+    
 }
 
