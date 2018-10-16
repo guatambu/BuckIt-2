@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageKit
 
 class MessageListCell: UITableViewCell, ReuseIdentifiable {
 
@@ -79,3 +80,5 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
         profileImageView.clipsToBounds = true
     }
 }
+
+

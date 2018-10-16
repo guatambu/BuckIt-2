@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageKit
 
 class Message {
     
@@ -77,6 +78,27 @@ class Message {
     
     
     
+}
+
+extension Message: MessageType {
+    var sender: Sender {
+        
+        return Sender(id: sender.uid, displayName: sender.username)
+    }
+    
+    var messageId: String {
+        
+        return uid
+    }
+    
+    var sentDate: Date {
+        
+        return timestamp
+    }
+    
+    var kind: MessageKind {
+        return .text(text)
+    }
 }
 
 extension Message: Equatable {

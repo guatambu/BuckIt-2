@@ -7,24 +7,58 @@
 //
 
 import UIKit
+import MessageKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: MessagesViewController {
 
+    private var user: User
+    private var messages: [Message] = []
+
+    
+    init(user: User) {
+        self.user = user
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    convenience init(user: User, messages: [Message]) {
+        self.init(user: user)
+        
+        self.messages = messages
+        
+        title = user.username
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - MessageDataSource
+extension ChatViewController: MessagesDataSource {
+    func currentSender() -> Sender {
+        return Sender(id: user.uid, displayName: user.username)
     }
-    */
-
+    
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        return messages[indexPath.row]
+    }
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        return 1
+    }
+    
+    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
+        return messages.count
+    }
+    
+    
 }

@@ -51,3 +51,13 @@ extension MessageListViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+extension MessageListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mockMessage = MockDataMessages.mockMessages[indexPath.row]
+        let user = mockMessage.sender
+        let chatViewController = ChatViewController(user: user, messages: MockDataMessages.mockMessages)
+        navigationController?.pushViewController(chatViewController, animated: true)
+        
+    }
+}
