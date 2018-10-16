@@ -50,3 +50,4 @@ extension MessageListViewController: UITableViewDataSource {
         return cell
     }
 }
+
