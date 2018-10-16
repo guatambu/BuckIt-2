@@ -285,9 +285,8 @@
 		FA270D9D2172F8B4001643D0 /* UserAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */,
-				FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */,
-				FA270D982172F8AD001643D0 /* UserLoginViewController.swift */,
+				FA881C32217557B100236163 /* Storyboards */,
+				FA881C33217557C900236163 /* ViewControllers */,
 			);
 			path = UserAuthentication;
 			sourceTree = "<group>";
@@ -575,6 +574,23 @@
 				FA270EBE21730216001643D0 /* MyListSettings.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA881C32217557B100236163 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA881C33217557C900236163 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */,
+				FA270D982172F8AD001643D0 /* UserLoginViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		FEA2C744C91B8B24223C4355 /* Frameworks */ = {

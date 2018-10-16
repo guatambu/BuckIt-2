@@ -17,13 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xid-ll-4pF" userLabel="My List New Item Scroll View">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xid-ll-4pF" userLabel="My List New Item Scroll View">
                                 <rect key="frame" x="0.0" y="56" width="375" height="611"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbL-MH-9sd" userLabel="Add Item View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbL-MH-9sd" userLabel="Add Item View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="611"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvI-5V-s4v" userLabel="Add Item Label">
                                                 <rect key="frame" x="79" y="8" width="112" height="35"/>
@@ -245,9 +243,23 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="kbL-MH-9sd" firstAttribute="height" secondItem="xid-ll-4pF" secondAttribute="height" priority="250" id="3dX-z4-FAl"/>
+                                    <constraint firstItem="kbL-MH-9sd" firstAttribute="width" secondItem="xid-ll-4pF" secondAttribute="width" id="eeL-TR-0DB"/>
+                                    <constraint firstAttribute="trailing" secondItem="kbL-MH-9sd" secondAttribute="trailing" id="m1N-cT-mOv"/>
+                                    <constraint firstAttribute="bottom" secondItem="kbL-MH-9sd" secondAttribute="bottom" id="nfN-MU-hhX"/>
+                                    <constraint firstItem="kbL-MH-9sd" firstAttribute="leading" secondItem="xid-ll-4pF" secondAttribute="leading" id="ni5-HQ-jbN"/>
+                                    <constraint firstItem="kbL-MH-9sd" firstAttribute="top" secondItem="xid-ll-4pF" secondAttribute="top" id="shU-nq-R4g"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xid-ll-4pF" firstAttribute="leading" secondItem="TUh-an-1K6" secondAttribute="leading" id="3dL-Hp-ez4"/>
+                            <constraint firstItem="xid-ll-4pF" firstAttribute="top" secondItem="TUh-an-1K6" secondAttribute="top" constant="36" id="IUD-08-hyK"/>
+                            <constraint firstItem="xid-ll-4pF" firstAttribute="trailing" secondItem="TUh-an-1K6" secondAttribute="trailing" id="nev-Wv-U4D"/>
+                            <constraint firstItem="xid-ll-4pF" firstAttribute="bottom" secondItem="TUh-an-1K6" secondAttribute="bottom" id="wbN-pd-n7G"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TUh-an-1K6"/>
                     </view>
                     <connections>
@@ -263,7 +275,7 @@
         <!--My List Photo Picker View Controller-->
         <scene sceneID="YmA-e4-0vN">
             <objects>
-                <viewController id="7TN-ND-v5x" customClass="MyListPhotoPickerViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7TN-ND-v5x" customClass="MyListPhotoPickerViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KTD-wO-og0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
