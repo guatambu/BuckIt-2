@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3821021B2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */; };
 		384F2B4421751320003DC49B /* MyList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBC21730215001643D0 /* MyList.storyboard */; };
 		384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */; };
 		384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBF21730216001643D0 /* MyListNewItem.storyboard */; };
 		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
-		384F2B4A2175162B003DC49B /* InspirationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F2B492175162B003DC49B /* InspirationController.swift */; };
 		38ABCCFD21754B7300608F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA270EAC21730111001643D0 /* Assets.xcassets */; };
+		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
 		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
 		D758FDD72173EC3600A3B11D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */; };
 		FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */; };
@@ -22,8 +23,6 @@
 		FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D982172F8AD001643D0 /* UserLoginViewController.swift */; };
 		FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */; };
 		FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E202172FA1A001643D0 /* InspirationLayout.swift */; };
-		FA270E232172FA1F001643D0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E222172FA1F001643D0 /* Photo.swift */; };
-		FA270E282172FA28001643D0 /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
 		FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */; };
 		FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E262172FA28001643D0 /* InspirationHome.storyboard */; };
 		FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E272172FA28001643D0 /* InspirationSearch.storyboard */; };
@@ -32,7 +31,6 @@
 		FA270E322172FA32001643D0 /* InspirationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2E2172FA31001643D0 /* InspirationHomeViewController.swift */; };
 		FA270E332172FA32001643D0 /* InspirationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2F2172FA31001643D0 /* InspirationSearchViewController.swift */; };
 		FA270E362172FA3A001643D0 /* InspirationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */; };
-		FA270E372172FA3A001643D0 /* IspirationUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E352172FA3A001643D0 /* IspirationUsersTableViewCell.swift */; };
 		FA270E422172FAE9001643D0 /* MessageCompose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E3E2172FAE8001643D0 /* MessageCompose.storyboard */; };
 		FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E3F2172FAE8001643D0 /* MessageSearchandCompose.storyboard */; };
 		FA270E442172FAE9001643D0 /* MessageList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E402172FAE8001643D0 /* MessageList.storyboard */; };
@@ -74,7 +72,7 @@
 
 /* Begin PBXFileReference section */
 		337F76051CD56D4F0C968831 /* Pods-BuckIt2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.release.xcconfig"; sourceTree = "<group>"; };
-		384F2B492175162B003DC49B /* InspirationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationController.swift; sourceTree = "<group>"; };
+		3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemDetailPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.debug.xcconfig"; sourceTree = "<group>"; };
 		87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuckIt2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 		FA270D982172F8AD001643D0 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuthentication.storyboard; sourceTree = "<group>"; };
 		FA270E202172FA1A001643D0 /* InspirationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationLayout.swift; sourceTree = "<group>"; };
-		FA270E222172FA1F001643D0 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationItemDetail.storyboard; sourceTree = "<group>"; };
 		FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationOtherUser.storyboard; sourceTree = "<group>"; };
 		FA270E262172FA28001643D0 /* InspirationHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationHome.storyboard; sourceTree = "<group>"; };
@@ -99,7 +96,6 @@
 		FA270E2E2172FA31001643D0 /* InspirationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationHomeViewController.swift; sourceTree = "<group>"; };
 		FA270E2F2172FA31001643D0 /* InspirationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationSearchViewController.swift; sourceTree = "<group>"; };
 		FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationCollectionViewCell.swift; sourceTree = "<group>"; };
-		FA270E352172FA3A001643D0 /* IspirationUsersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IspirationUsersTableViewCell.swift; sourceTree = "<group>"; };
 		FA270E3E2172FAE8001643D0 /* MessageCompose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageCompose.storyboard; sourceTree = "<group>"; };
 		FA270E3F2172FAE8001643D0 /* MessageSearchandCompose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageSearchandCompose.storyboard; sourceTree = "<group>"; };
 		FA270E402172FAE8001643D0 /* MessageList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageList.storyboard; sourceTree = "<group>"; };
@@ -217,14 +213,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		384F2B482175160C003DC49B /* ModelControllers */ = {
-			isa = PBXGroup;
-			children = (
-				384F2B492175162B003DC49B /* InspirationController.swift */,
-			);
-			path = ModelControllers;
-			sourceTree = "<group>";
-		};
 		E10A3A576B0B2A143FB855E2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,12 +281,10 @@
 		FA270E382172FA48001643D0 /* InspirationTab */ = {
 			isa = PBXGroup;
 			children = (
-				FA270E3C2172FA92001643D0 /* Layout */,
-				FA270E3D2172FA9C001643D0 /* Model */,
-				384F2B482175160C003DC49B /* ModelControllers */,
-				FA270E392172FA60001643D0 /* Storyboards */,
 				FA270E3A2172FA70001643D0 /* ViewControllers */,
 				FA270E3B2172FA80001643D0 /* Views */,
+				FA270E3C2172FA92001643D0 /* Layout */,
+				FA270E392172FA60001643D0 /* Storyboards */,
 			);
 			path = InspirationTab;
 			sourceTree = "<group>";
@@ -329,7 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */,
-				FA270E352172FA3A001643D0 /* IspirationUsersTableViewCell.swift */,
+				3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,14 +326,6 @@
 				FA270E202172FA1A001643D0 /* InspirationLayout.swift */,
 			);
 			path = Layout;
-			sourceTree = "<group>";
-		};
-		FA270E3D2172FA9C001643D0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FA270E222172FA1F001643D0 /* Photo.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FA270E4C2172FAFF001643D0 /* Storyboards */ = {
@@ -554,11 +532,11 @@
 			children = (
 				FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */,
 				FA270EC021730221001643D0 /* MyBucketViewController.swift */,
+				FA270EC421730223001643D0 /* MyListViewController.swift */,
 				FA270EC221730222001643D0 /* MyListDetailItemViewController.swift */,
 				FA270EC321730222001643D0 /* MyListNewItemViewController.swift */,
 				FA270EC121730222001643D0 /* MyListPhotoPickerViewController.swift */,
 				FA270EC521730223001643D0 /* MyListSettingsViewController.swift */,
-				FA270EC421730223001643D0 /* MyListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -667,8 +645,8 @@
 			files = (
 				FA270E452172FAE9001643D0 /* MessageSearchUser.storyboard in Resources */,
 				FA270E442172FAE9001643D0 /* MessageList.storyboard in Resources */,
+				38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */,
 				384F2B4421751320003DC49B /* MyList.storyboard in Resources */,
-				FA270E282172FA28001643D0 /* InspirationItemDetail.storyboard in Resources */,
 				384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */,
 				FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */,
 				FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */,
@@ -765,9 +743,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				384F2B4A2175162B003DC49B /* InspirationController.swift in Sources */,
 				FA270E5D21730070001643D0 /* BucketList.swift in Sources */,
-				FA270E232172FA1F001643D0 /* Photo.swift in Sources */,
 				FA270ECB21730224001643D0 /* MyListViewController.swift in Sources */,
 				FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */,
 				FA270E322172FA32001643D0 /* InspirationHomeViewController.swift in Sources */,
@@ -780,7 +756,6 @@
 				FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */,
 				FA270E5821730070001643D0 /* BucketListItem.swift in Sources */,
 				FA270EB4217301B1001643D0 /* Endpoint.swift in Sources */,
-				FA270E372172FA3A001643D0 /* IspirationUsersTableViewCell.swift in Sources */,
 				FA270E4B2172FAF0001643D0 /* MessageComposeViewController.swift in Sources */,
 				FA270D9A2172F8AD001643D0 /* UserCreateAccountViewController.swift in Sources */,
 				FA270ECD21730224001643D0 /* MyBucketNewItemViewController.swift in Sources */,
@@ -790,6 +765,7 @@
 				FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */,
 				FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */,
 				FA270E5C21730070001643D0 /* BucketListItemComment.swift in Sources */,
+				3821021B2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift in Sources */,
 				FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */,
 				FA270EC921730224001643D0 /* MyListDetailItemViewController.swift in Sources */,
 				FA270EC721730224001643D0 /* MyBucketViewController.swift in Sources */,
