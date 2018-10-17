@@ -14,7 +14,10 @@ class InspirationHomeViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var inspirationSearchBar: UISearchBar!
     @IBOutlet weak var inspirationCollectionView: UICollectionView!
     
+    
     // MARK: - Properties
+    var bucketListItem: BucketListItem?
+    
     
     // MARK: - Lifecycle Functions
     override func viewDidLoad() {
@@ -22,17 +25,6 @@ class InspirationHomeViewController: UIViewController, UICollectionViewDelegate,
         
         setUPUI()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -41,21 +33,38 @@ extension InspirationHomeViewController: InspirationLayoutDelegate {
     func setUPUI() {
         inspirationCollectionView.delegate = self
         inspirationCollectionView.dataSource = self
+        inspirationCollectionView.contentInset = UIEdgeInsets(top: 23, left: 10, bottom: 10, right: 10)
         guard let layout = inspirationCollectionView.collectionViewLayout as? InspirationLayout else { return }
         layout.delegate = self
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return 225
+        return (MockDataBucketListItems.shared.bucketListItems[indexPath.row].mockPhoto?.first?.size.height)! / 2
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return MockDataBucketListItems.shared.bucketListItems.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "inspirationCell", for: indexPath) as? InspirationCollectionViewCell
+        let bucketListitem = MockDataBucketListItems.shared.bucketListItems[indexPath.row]
+        cell?.bucketListItem = bucketListitem
+        
         return cell ?? UICollectionViewCell()
     }
+
+    
+     // MARK: - Navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "cellToInspirationDetailVC" {
+            let destinationVC = segue.destination as? InspirationDetailViewController
+            guard let cell = sender as? InspirationCollectionViewCell,
+                let indexPath = inspirationCollectionView.indexPath(for: cell) else { return }
+            let bucketListItem = MockDataBucketListItems.shared.bucketListItems[indexPath.row] as BucketListItem
+            destinationVC?.bucketListItem = bucketListItem
+        }
+     }
+
     
 }
