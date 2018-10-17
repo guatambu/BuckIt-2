@@ -19,7 +19,12 @@ class MyListViewController: UIViewController {
     @IBOutlet weak var todoCompletedSegmentedControl: UISegmentedControl!
     
     
-    // MARK: - Lifecycle Functions
+    // MARK: - ViewController Lifecycle Functions
+    
+    override func viewWillAppear(_ animated: Bool) {
+        <#code#>
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,3 +54,4 @@ class MyListViewController: UIViewController {
     @IBAction func changedSegmentController(_ sender: UISegmentedControl) {
     }
 }
+

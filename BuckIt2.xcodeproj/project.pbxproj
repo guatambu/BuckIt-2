@@ -60,6 +60,7 @@
 		FA270ECB21730224001643D0 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC421730223001643D0 /* MyListViewController.swift */; };
 		FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC521730223001643D0 /* MyListSettingsViewController.swift */; };
 		FA270ECD21730224001643D0 /* MyBucketNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */; };
+		FA2921722177E67B00053E8E /* MyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2921712177E67B00053E8E /* MyListController.swift */; };
 		FA881C312174118700236163 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C302174118700236163 /* IBDesignables.swift */; };
 		FA881C352177AEFF00236163 /* MockDataMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C342177AEFF00236163 /* MockDataMessages.swift */; };
 /* End PBXBuildFile section */
@@ -198,6 +199,7 @@
 		FA270EC421730223001643D0 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		FA270EC521730223001643D0 /* MyListSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListSettingsViewController.swift; sourceTree = "<group>"; };
 		FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBucketNewItemViewController.swift; sourceTree = "<group>"; };
+		FA2921712177E67B00053E8E /* MyListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListController.swift; sourceTree = "<group>"; };
 		FA881C302174118700236163 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBDesignables.swift; path = BuckIt2/Resources/IBDesignables.swift; sourceTree = SOURCE_ROOT; };
 		FA881C342177AEFF00236163 /* MockDataMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -545,6 +547,7 @@
 		FA270ECE2173023A001643D0 /* MyListTab */ = {
 			isa = PBXGroup;
 			children = (
+				FA2921702177E64C00053E8E /* ModelController */,
 				FA270ECF2173024E001643D0 /* ViewControllers */,
 				FA270ED021730262001643D0 /* Storyboards */,
 			);
@@ -575,6 +578,14 @@
 				FA270EBE21730216001643D0 /* MyListSettings.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA2921702177E64C00053E8E /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				FA2921712177E67B00053E8E /* MyListController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 		FA881C32217557B100236163 /* Storyboards */ = {
@@ -830,6 +841,7 @@
 				FA270E362172FA3A001643D0 /* InspirationCollectionViewCell.swift in Sources */,
 				FA270ECA21730224001643D0 /* MyListNewItemViewController.swift in Sources */,
 				FA270EC821730224001643D0 /* MyListPhotoPickerViewController.swift in Sources */,
+				FA2921722177E67B00053E8E /* MyListController.swift in Sources */,
 				FA270EB6217301B1001643D0 /* AuthManager.swift in Sources */,
 				FA270EAF217301A0001643D0 /* AppDelegate.swift in Sources */,
 			);
