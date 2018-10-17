@@ -12,10 +12,19 @@
 		384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */; };
 		384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBF21730216001643D0 /* MyListNewItem.storyboard */; };
 		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
+
 		38ABCCFD21754B7300608F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA270EAC21730111001643D0 /* Assets.xcassets */; };
 		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
+
+		384F2B4A2175162B003DC49B /* InspirationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F2B492175162B003DC49B /* InspirationController.swift */; };
+		38ABCCFD21754B7300608F0F /* (null) in Resources */ = {isa = PBXBuildFile; };
+
 		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
 		D758FDD72173EC3600A3B11D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */; };
+		D7A151E4217522D400520CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A151E3217522D400520CEA /* Assets.xcassets */; };
+		D7A151E621757DA900520CEA /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E521757DA900520CEA /* MessageListCell.swift */; };
+		D7A151EA21757DF300520CEA /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */; };
+		D7A151EC2175856C00520CEA /* MockDataMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151EB2175856C00520CEA /* MockDataMessages.swift */; };
 		FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */; };
 		FA270D772172F66D001643D0 /* BuckIt2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D762172F66D001643D0 /* BuckIt2Tests.swift */; };
 		FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D892172F82C001643D0 /* LaunchScreen.storyboard */; };
@@ -76,6 +85,10 @@
 		38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.debug.xcconfig"; sourceTree = "<group>"; };
 		87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuckIt2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D7A151E3217522D400520CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7A151E521757DA900520CEA /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
+		D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		D7A151EB2175856C00520CEA /* MockDataMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessages.swift; sourceTree = "<group>"; };
 		FA270D5B2172F66B001643D0 /* BuckIt2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuckIt2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA270D662172F66B001643D0 /* BuckIt2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuckIt2.xcdatamodel; sourceTree = "<group>"; };
 		FA270D722172F66D001643D0 /* BuckIt2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuckIt2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +188,6 @@
 		FA270EA721730110001643D0 /* kids_book.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kids_book.jpg; sourceTree = "<group>"; };
 		FA270EA821730110001643D0 /* ted_talk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ted_talk.jpg; sourceTree = "<group>"; };
 		FA270EAB21730110001643D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FA270EAC21730111001643D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA270EAE217301A0001643D0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA270EB0217301B0001643D0 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FA270EB1217301B0001643D0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -213,6 +225,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
+		384F2B482175160C003DC49B /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				384F2B492175162B003DC49B /* InspirationController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		D7A151E721757DB900520CEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7A151E521757DA900520CEA /* MessageListCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7A151E821757DD900520CEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+
 		E10A3A576B0B2A143FB855E2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +290,7 @@
 				FA270ECE2173023A001643D0 /* MyListTab */,
 				FA270D9D2172F8B4001643D0 /* UserAuthentication */,
 				FA270EB8217301BC001643D0 /* Networking */,
+				D7A151E821757DD900520CEA /* Extensions */,
 				FA270EAD2173015A001643D0 /* Resources */,
 				FA270D952172F866001643D0 /* Info.plist */,
 				FA270D892172F82C001643D0 /* LaunchScreen.storyboard */,
@@ -354,6 +393,7 @@
 			children = (
 				FA270E4C2172FAFF001643D0 /* Storyboards */,
 				FA270E4D2172FB0E001643D0 /* ViewControllers */,
+				D7A151E721757DB900520CEA /* View */,
 			);
 			path = ConnectTab;
 			sourceTree = "<group>";
@@ -366,6 +406,7 @@
 				FA270E542173006F001643D0 /* BucketListItemComment.swift */,
 				FA270E522173006D001643D0 /* guatambuToDo.swift */,
 				FA270E562173006F001643D0 /* Message.swift */,
+				D7A151EB2175856C00520CEA /* MockDataMessages.swift */,
 				FA270E532173006E001643D0 /* MockDataBucketListItems.swift */,
 				FA270E4F2173006D001643D0 /* MockDataUsers.swift */,
 				FA270E512173006D001643D0 /* User.swift */,
@@ -494,7 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				FA270EAE217301A0001643D0 /* AppDelegate.swift */,
-				FA270EAC21730111001643D0 /* Assets.xcassets */,
+				D7A151E3217522D400520CEA /* Assets.xcassets */,
 				FA270EA921730110001643D0 /* Base.lproj */,
 				D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */,
 				FA270E8721730110001643D0 /* Mock Data Files */,
@@ -649,6 +690,7 @@
 				384F2B4421751320003DC49B /* MyList.storyboard in Resources */,
 				384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */,
 				FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */,
+				D7A151E4217522D400520CEA /* Assets.xcassets in Resources */,
 				FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */,
 				384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */,
 				384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */,
@@ -657,7 +699,7 @@
 				FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */,
 				FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */,
 				FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */,
-				38ABCCFD21754B7300608F0F /* Assets.xcassets in Resources */,
+				38ABCCFD21754B7300608F0F /* (null) in Resources */,
 				FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,8 +801,11 @@
 				FA270E4B2172FAF0001643D0 /* MessageComposeViewController.swift in Sources */,
 				FA270D9A2172F8AD001643D0 /* UserCreateAccountViewController.swift in Sources */,
 				FA270ECD21730224001643D0 /* MyBucketNewItemViewController.swift in Sources */,
+				D7A151EC2175856C00520CEA /* MockDataMessages.swift in Sources */,
 				FA270E332172FA32001643D0 /* InspirationSearchViewController.swift in Sources */,
 				FA270E492172FAF0001643D0 /* MessageListViewController.swift in Sources */,
+				D7A151EA21757DF300520CEA /* ReuseIdentifiable.swift in Sources */,
+				D7A151E621757DA900520CEA /* MessageListCell.swift in Sources */,
 				FA270E5921730070001643D0 /* User.swift in Sources */,
 				FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */,
 				FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */,
@@ -930,8 +975,9 @@
 			baseConfigurationReference = 38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S2V96BB45E;
+				DEVELOPMENT_TEAM = K2R548H5LT;
 				INFOPLIST_FILE = BuckIt2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -949,8 +995,9 @@
 			baseConfigurationReference = 337F76051CD56D4F0C968831 /* Pods-BuckIt2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S2V96BB45E;
+				DEVELOPMENT_TEAM = K2R548H5LT;
 				INFOPLIST_FILE = BuckIt2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
