@@ -61,6 +61,7 @@
 		FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC521730223001643D0 /* MyListSettingsViewController.swift */; };
 		FA270ECD21730224001643D0 /* MyBucketNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */; };
 		FA881C312174118700236163 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C302174118700236163 /* IBDesignables.swift */; };
+		FA881C352177AEFF00236163 /* MockDataMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C342177AEFF00236163 /* MockDataMessages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		FA270EC521730223001643D0 /* MyListSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListSettingsViewController.swift; sourceTree = "<group>"; };
 		FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBucketNewItemViewController.swift; sourceTree = "<group>"; };
 		FA881C302174118700236163 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBDesignables.swift; path = BuckIt2/Resources/IBDesignables.swift; sourceTree = SOURCE_ROOT; };
+		FA881C342177AEFF00236163 /* MockDataMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,13 +386,12 @@
 		FA270E5F2173007C001643D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA881C362177AF2600236163 /* MockData Structs */,
 				FA270E552173006F001643D0 /* BucketList.swift */,
 				FA270E502173006D001643D0 /* BucketListItem.swift */,
 				FA270E542173006F001643D0 /* BucketListItemComment.swift */,
 				FA270E522173006D001643D0 /* guatambuToDo.swift */,
 				FA270E562173006F001643D0 /* Message.swift */,
-				FA270E532173006E001643D0 /* MockDataBucketListItems.swift */,
-				FA270E4F2173006D001643D0 /* MockDataUsers.swift */,
 				FA270E512173006D001643D0 /* User.swift */,
 			);
 			name = Models;
@@ -591,6 +592,16 @@
 				FA270D982172F8AD001643D0 /* UserLoginViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA881C362177AF2600236163 /* MockData Structs */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E4F2173006D001643D0 /* MockDataUsers.swift */,
+				FA270E532173006E001643D0 /* MockDataBucketListItems.swift */,
+				FA881C342177AEFF00236163 /* MockDataMessages.swift */,
+			);
+			path = "MockData Structs";
 			sourceTree = "<group>";
 		};
 		FEA2C744C91B8B24223C4355 /* Frameworks */ = {
@@ -797,6 +808,7 @@
 				FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */,
 				FA270E5E21730070001643D0 /* Message.swift in Sources */,
 				FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */,
+				FA881C352177AEFF00236163 /* MockDataMessages.swift in Sources */,
 				FA270E5821730070001643D0 /* BucketListItem.swift in Sources */,
 				FA270EB4217301B1001643D0 /* Endpoint.swift in Sources */,
 				FA270E372172FA3A001643D0 /* IspirationUsersTableViewCell.swift in Sources */,
