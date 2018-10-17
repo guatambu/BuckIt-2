@@ -16,41 +16,46 @@ class MyListController {
     
     var myBucketListItems: [BucketListItem] = []
     
+    var completedItems: [BucketListItem] = []
+    
+    var toDoItems: [BucketListItem] = []
+    
     
     // MARK: CRUD Functions
     
-    // Create
-    
-    func createBucketList(, isPrivate: Bool) {
-        var newBucketList = BucketList(items: <#T##[BucketListItem]#>, isPrivate: <#T##Bool#>)
-        myBucketListItems = newBucketList
-    }
+    // Create - no need to create one.  user gets one and only one by default.
     
     // Read
     
     // Update
     
-    func addItemToBucketList() {
-        
+    func addItemToBucketList(_ item: BucketListItem) {
+        myBucketListItems.append(item)
     }
     
     // Delete
     
-    func deleteItemFromBucketList() {
+    func deleteItemFromBucketList(_ item: BucketListItem) {
+        guard let index = self.myBucketListItems.index(of: item) else { return }
+        self.myBucketListItems.remove(at: index)
         
     }
     
     
     // MARK: - Helper Methods
     
-    func filterToDo(<#parameters#>) -> <#return type#> {
+    func filterCompleted(bucketListItems: [BucketListItem]) {
         
-        <#function body#>
-    }
-    
-    func filterCompleted(<#parameters#>) -> <#return type#> {
-        
-        <#function body#>
+        if !bucketListItems.isEmpty {
+            
+            for item in bucketListItems {
+                if item.isComplete {
+                    completedItems.append(item)
+                } else {
+                    toDoItems.append(item)
+                }
+            }
+        }
     }
     
 }

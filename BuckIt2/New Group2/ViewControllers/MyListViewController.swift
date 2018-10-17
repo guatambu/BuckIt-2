@@ -18,11 +18,18 @@ class MyListViewController: UIViewController {
     @IBOutlet weak var myBioTextView: UITextView!
     @IBOutlet weak var todoCompletedSegmentedControl: UISegmentedControl!
     
+    var bucketList: [BucketListItem] = []
+    var toDoItems: [BucketListItem] = []
+    var completedItems: [BucketListItem] = []
+    
     
     // MARK: - ViewController Lifecycle Functions
     
     override func viewWillAppear(_ animated: Bool) {
-        <#code#>
+        MyListController.shared.filterCompleted(bucketListItems: MyListController.shared.myBucketListItems)
+        toDoItems = MyListController.shared.toDoItems
+        completedItems = MyListController.shared.completedItems
+        bucketList = MyListController.shared.myBucketListItems
     }
     
     override func viewDidLoad() {
