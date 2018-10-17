@@ -48,6 +48,14 @@ class UserLoginViewController: UIViewController {
     
     @IBAction func forgotButtonTapped(_ sender: UIButton) {
         
+    // we have the option of either popping off this viewController or performing a programmatic segue....
+        
+        // pop viewController
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    // or
+        
         // programmatically performing the segue
         
         // instantiate the relevant storyboard
@@ -65,7 +73,13 @@ class UserLoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
-        if 
+    // we have the option of either popping off this viewController or performing a programmatic segue....
+        
+        // pop viewController
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    // or
         
         // programmatically performing the segue
         

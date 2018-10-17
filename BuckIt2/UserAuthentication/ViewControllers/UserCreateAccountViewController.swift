@@ -36,6 +36,13 @@ class UserCreateAccountViewController: UIViewController {
     
     @IBAction func closeXButtonTapped(_ sender: Any) {
         
+    // we have the option of either popping off this viewController or performing a programmatic segue....
+        
+        // pop viewController
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    // or
         
         // programmatically performing the segue
         
@@ -52,6 +59,14 @@ class UserCreateAccountViewController: UIViewController {
     }
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
+        
+    // we have the option of either popping off this viewController or performing a programmatic segue....
+        
+        // pop viewController
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    // or
         
         // programmatically performing the segue
         
