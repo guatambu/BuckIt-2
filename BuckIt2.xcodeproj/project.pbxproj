@@ -43,7 +43,6 @@
 		FA270E5721730070001643D0 /* MockDataUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E4F2173006D001643D0 /* MockDataUsers.swift */; };
 		FA270E5821730070001643D0 /* BucketListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E502173006D001643D0 /* BucketListItem.swift */; };
 		FA270E5921730070001643D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E512173006D001643D0 /* User.swift */; };
-		FA270E5A21730070001643D0 /* guatambuToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E522173006D001643D0 /* guatambuToDo.swift */; };
 		FA270E5B21730070001643D0 /* MockDataBucketListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E532173006E001643D0 /* MockDataBucketListItems.swift */; };
 		FA270E5C21730070001643D0 /* BucketListItemComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E542173006F001643D0 /* BucketListItemComment.swift */; };
 		FA270E5D21730070001643D0 /* BucketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E552173006F001643D0 /* BucketList.swift */; };
@@ -62,6 +61,7 @@
 		FA270ECD21730224001643D0 /* MyBucketNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */; };
 		FA881C312174118700236163 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C302174118700236163 /* IBDesignables.swift */; };
 		FA881C352177AEFF00236163 /* MockDataMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C342177AEFF00236163 /* MockDataMessages.swift */; };
+		FA881C382177B3D800236163 /* MockDataUserBucketLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C372177B3D800236163 /* MockDataUserBucketLists.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +112,6 @@
 		FA270E4F2173006D001643D0 /* MockDataUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataUsers.swift; sourceTree = "<group>"; };
 		FA270E502173006D001643D0 /* BucketListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItem.swift; sourceTree = "<group>"; };
 		FA270E512173006D001643D0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		FA270E522173006D001643D0 /* guatambuToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guatambuToDo.swift; sourceTree = "<group>"; };
 		FA270E532173006E001643D0 /* MockDataBucketListItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataBucketListItems.swift; sourceTree = "<group>"; };
 		FA270E542173006F001643D0 /* BucketListItemComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItemComment.swift; sourceTree = "<group>"; };
 		FA270E552173006F001643D0 /* BucketList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketList.swift; sourceTree = "<group>"; };
@@ -200,6 +199,7 @@
 		FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBucketNewItemViewController.swift; sourceTree = "<group>"; };
 		FA881C302174118700236163 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBDesignables.swift; path = BuckIt2/Resources/IBDesignables.swift; sourceTree = SOURCE_ROOT; };
 		FA881C342177AEFF00236163 /* MockDataMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessages.swift; sourceTree = "<group>"; };
+		FA881C372177B3D800236163 /* MockDataUserBucketLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataUserBucketLists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,7 +390,6 @@
 				FA270E552173006F001643D0 /* BucketList.swift */,
 				FA270E502173006D001643D0 /* BucketListItem.swift */,
 				FA270E542173006F001643D0 /* BucketListItemComment.swift */,
-				FA270E522173006D001643D0 /* guatambuToDo.swift */,
 				FA270E562173006F001643D0 /* Message.swift */,
 				FA270E512173006D001643D0 /* User.swift */,
 			);
@@ -600,6 +599,7 @@
 				FA270E4F2173006D001643D0 /* MockDataUsers.swift */,
 				FA270E532173006E001643D0 /* MockDataBucketListItems.swift */,
 				FA881C342177AEFF00236163 /* MockDataMessages.swift */,
+				FA881C372177B3D800236163 /* MockDataUserBucketLists.swift */,
 			);
 			path = "MockData Structs";
 			sourceTree = "<group>";
@@ -819,13 +819,13 @@
 				FA270E492172FAF0001643D0 /* MessageListViewController.swift in Sources */,
 				FA270E5921730070001643D0 /* User.swift in Sources */,
 				FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */,
+				FA881C382177B3D800236163 /* MockDataUserBucketLists.swift in Sources */,
 				FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */,
 				FA270E5C21730070001643D0 /* BucketListItemComment.swift in Sources */,
 				FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */,
 				FA270EC921730224001643D0 /* MyListDetailItemViewController.swift in Sources */,
 				FA270EC721730224001643D0 /* MyBucketViewController.swift in Sources */,
 				FA881C312174118700236163 /* IBDesignables.swift in Sources */,
-				FA270E5A21730070001643D0 /* guatambuToDo.swift in Sources */,
 				FA270E302172FA32001643D0 /* InspirationOtherUserViewController.swift in Sources */,
 				FA270E362172FA3A001643D0 /* InspirationCollectionViewCell.swift in Sources */,
 				FA270ECA21730224001643D0 /* MyListNewItemViewController.swift in Sources */,
