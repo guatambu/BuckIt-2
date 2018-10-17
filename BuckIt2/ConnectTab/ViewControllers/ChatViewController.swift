@@ -27,7 +27,7 @@ class ChatViewController: MessagesViewController {
         
         self.messages = messages
         
-        title = currentUser.username
+        title = chatPartner.username
     }
     
     required init?(coder aDecoder: NSCoder) {

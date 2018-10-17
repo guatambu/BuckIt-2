@@ -60,13 +60,11 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
         guard let message = message else { return }
         guard let chatPartner = chatPartner else { return }
         
-        var senderUsername = chatPartner.username
-        
         if message.sender.displayName != chatPartner.username {
-            senderUsername = "You"
+            messageGlimpseLabel.text = "You: \(message.text)"
+        } else {
+            messageGlimpseLabel.text = "\(message.text)"
         }
-        
-        messageGlimpseLabel.text = "\(senderUsername): \(message.text)"
     
         updateUserDetails()
     }

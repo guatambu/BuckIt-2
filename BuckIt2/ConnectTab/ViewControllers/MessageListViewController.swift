@@ -12,6 +12,7 @@ class MessageListViewController: UIViewController {
     
     private let cellId = MessageListCell.reuseIdentifier
 
+    @IBOutlet weak var messageTitleLabel: UILabel!
     @IBOutlet weak var messageListTableView: UITableView!
     
     override func viewDidLoad() {
@@ -26,26 +27,35 @@ class MessageListViewController: UIViewController {
     }
 }
 
+// MARK: - Setup UI
+private extension MessageListViewController {
+    func updateView() {
+        
+    }
+    
+    func setupNavigationView() {
+        let titleItem = UIBarButtonItem(customView: messageTitleLabel)
+        navigationItem.leftBarButtonItem = titleItem
+        
+        let newMessageButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(newMessageButtonTapped))
+        navigationItem.rightBarButtonItem = newMessageButton
+    }
+}
+
 // MARK: - UITableViewDataSouce
 extension MessageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MockDataMessages.mockMessages.count
+        return Conversation.all.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? MessageListCell
             else { return UITableViewCell() }
         
-        let mockMessage = MockDataMessages.mockMessages[indexPath.row]
+        let mockConversation = Conversation.all[indexPath.row]
         
-        #warning("Temp Cell view setup")
-//        cell.messageGlimpseLabel.text = mockMessage.text
-//        cell.usernameLabel.text = mockMessage.receiver.username
-//        cell.profileImageView.image = mockMessage.receiver.mockProfilePic
-//
-//        cell.roundImageView()
-        
-        cell.message = mockMessage
+        let recentMessage = mockConversation.first!
+        cell.message = recentMessage
         
         return cell
     }
@@ -54,9 +64,16 @@ extension MessageListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension MessageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mockMessage = MockDataMessages.mockMessages[indexPath.row]
-        let user = mockMessage.currentUser
-        let chatViewController = ChatViewController(currentUser: user, chatPartner: mockMessage.chatPartner, messages: MockDataMessages.mockMessages)
+        
+        
+        let mockConversation = Conversation.all[indexPath.row]
+        
+        let currentUser = mockConversation[0].currentUser
+        let chatPartner = mockConversation[0].chatPartner
+        
+        let chatViewController = ChatViewController(
+            currentUser: currentUser, chatPartner: chatPartner, messages: mockConversation)
+        
         navigationController?.pushViewController(chatViewController, animated: true)
 //        present(chatViewController, animated: true, completion: nil)
         

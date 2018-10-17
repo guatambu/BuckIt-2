@@ -23,12 +23,8 @@ struct MockDataUsers {
     static let park = User(uid: "05", email: "park@email.com", username: "parkhan", isPrivate: true, firstName: "Park", lastName: "Han", mockProfilePic: UIImage(named: "park"), location: "Tokyo, Japan", age: "40")
     
     static let sangita = User(uid: "06", email: "sangita@email.com", username: "sangiji", isPrivate: false, firstName: "Sangita", lastName: "Chaudry", mockProfilePic: UIImage(named: "sangita"), location: "London, England, UK", age: "51")
-<<<<<<< HEAD
-        
-=======
-    
+
     static let sam = User(uid: "07", email: "sam@email.com", username: "sam01", isPrivate: false, firstName: "Sam", lastName: "Russo", mockProfilePic: UIImage(named: "samantha"), location: "Seattle, Washington", age: "26", bioBlurb: "Working toward her dream job in Seattle.  She lives with roomates and just got done with college at UW.")
     
->>>>>>> 3fb32513f3d121f52569901fad74f2373b837fed
 }
 
