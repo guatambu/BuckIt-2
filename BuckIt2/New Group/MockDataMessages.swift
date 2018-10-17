@@ -12,7 +12,11 @@ struct MockDataMessages {
     
     static let mockMessages = [MockDataMessages.message1, MockDataMessages.message2, MockDataMessages.message3, MockDataMessages.message4, MockDataMessages.message5, MockDataMessages.message6, MockDataMessages.message7, MockDataMessages.message8]
     
+<<<<<<< HEAD
     static let message1 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.dylon, chatPartner: MockDataUsers.sam, text: "How did you like the nude beach", timestamp: Date())
+=======
+    static let message1 = Message(uid: UUID().uuidString, sender: MockDataUsers.dylon, receiver: MockDataUsers.sam, text: "How did you like the nude beach", timestamp: Date())
+>>>>>>> 3fb32513f3d121f52569901fad74f2373b837fed
     
     static let message2 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.dylon, chatPartner: MockDataUsers.sam, text: "How did you like the nude beach", timestamp: Date())
     
