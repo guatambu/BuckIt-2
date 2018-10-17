@@ -21,6 +21,9 @@ class UserCreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
     @IBOutlet weak var alreadyHaveAccountLabelOutlet: UILabel!
     
+    var newUserAccount: User?
+    var uid: String?
+    
     
     
     // MARK: ViewController Lifecycle Functions
@@ -59,6 +62,35 @@ class UserCreateAccountViewController: UIViewController {
     }
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
+        
+        guard let uid = uid else {
+            
+            // error handling from Firebase
+            
+            return
+            
+        }
+        guard let username = usernameTextFieldOutlet.text, usernameTextFieldOutlet.text!= "" else {
+            
+            // error handling
+            
+            // throw up alert controller or error message per design preference
+            
+            return
+            
+        }
+        guard let email = usernameTextFieldOutlet.text, emailTextFieldOutlet.text!= "" else {
+            
+            // error handling
+            
+            // throw up alert controller or error message per design preference
+            
+            return
+            
+        }
+        
+        newUserAccount = User(uid: uid, email: email, username: username, isPrivate: true, firstName: nil, lastName: nil, mockProfilePic: nil, location: nil, age: nil)
+        
         
     // we have the option of either popping off this viewController or performing a programmatic segue....
         
