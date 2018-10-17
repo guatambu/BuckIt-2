@@ -17,9 +17,9 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
             updateMessageDetails()
         }
     }
-    
-    var user: User? {
-        return message?.receiver
+
+    var chatPartner: User? {
+        return message?.chatPartner
     }
     
     // MARK: - Subviews
@@ -47,10 +47,10 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
     }
 
     func updateUserDetails() {
-        guard let user = user else { return }
+        guard let chatPartner = chatPartner else { return }
         
-        profileImageView.image = user.mockProfilePic
-        usernameLabel.text = user.username
+        profileImageView.image = chatPartner.mockProfilePic
+        usernameLabel.text = chatPartner.username
         
         roundImageView()
         
@@ -58,11 +58,11 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
     
     func updateMessageDetails() {
         guard let message = message else { return }
-        guard let user = user else { return }
+        guard let chatPartner = chatPartner else { return }
         
-        var senderUsername = message.sender.username
+        var senderUsername = chatPartner.username
         
-        if message.sender.username == user.username {
+        if message.sender.displayName != chatPartner.username {
             senderUsername = "You"
         }
         

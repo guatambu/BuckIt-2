@@ -18,7 +18,7 @@ class MessageListViewController: UIViewController {
         super.viewDidLoad()
         
         messageListTableView.dataSource = self
-
+        messageListTableView.delegate = self
     }
 
 
@@ -55,9 +55,16 @@ extension MessageListViewController: UITableViewDataSource {
 extension MessageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mockMessage = MockDataMessages.mockMessages[indexPath.row]
-        let user = mockMessage.sender
-        let chatViewController = ChatViewController(user: user, messages: MockDataMessages.mockMessages)
+        let user = mockMessage.currentUser
+        let chatViewController = ChatViewController(currentUser: user, chatPartner: mockMessage.chatPartner, messages: MockDataMessages.mockMessages)
         navigationController?.pushViewController(chatViewController, animated: true)
+//        present(chatViewController, animated: true, completion: nil)
         
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+        }
     }
 }

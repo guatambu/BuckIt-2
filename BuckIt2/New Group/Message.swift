@@ -14,8 +14,8 @@ class Message {
     // MARK: - Properties
     
     let uid: String
-    let sender: User
-    let receiver: User
+    let currentUser: User
+    var chatPartner: User
     let text: String
     let timestamp: Date
     
@@ -23,7 +23,7 @@ class Message {
         return [
             MessageKey.uid: uid,
             MessageKey.sender: sender,
-            MessageKey.receiver: receiver,
+            MessageKey.chatPartner: chatPartner,
             MessageKey.text: text,
             MessageKey.timestamp: timestamp,
         ]
@@ -39,7 +39,7 @@ class Message {
         // Properties
         static let uid = "uid"
         static let sender = "sender"
-        static let receiver = "receiver"
+        static let chatPartner = "chatPartner"
         static let text = "text"
         static let timestamp = "timestamp"
     }
@@ -48,42 +48,40 @@ class Message {
     // MARK: - Initialization
     
     init(uid: String,
-        sender: User,
-        receiver: User,
+        currentUser: User,
+        chatPartner: User,
         text: String,
         timestamp: Date
         ) {
         
         self.uid = uid
-        self.sender = sender
-        self.receiver = receiver
+        self.currentUser = currentUser
+        self.chatPartner = chatPartner
         self.text = text
         self.timestamp = timestamp
     }
     
     convenience init?(messageDictionary: [String : Any]) {
         guard let uid = messageDictionary[MessageKey.uid] as? String,
-            let sender = messageDictionary[MessageKey.sender] as? User,
-            let receiver = messageDictionary[MessageKey.receiver] as? User,
+            let currentUser = messageDictionary[MessageKey.sender] as? User,
+            let chatPartner = messageDictionary[MessageKey.chatPartner] as? User,
             let text = messageDictionary[MessageKey.text] as? String,
             let timestamp = messageDictionary[MessageKey.timestamp] as? Date else { return nil }
         
         self.init(uid: uid,
-                  sender: sender,
-                  receiver: receiver,
+                  currentUser: currentUser,
+                  chatPartner: chatPartner,
                   text: text,
                   timestamp: timestamp)
     }
-    
-    
-    
+
     
 }
 
 extension Message: MessageType {
     var sender: Sender {
         
-        return Sender(id: sender.uid, displayName: sender.username)
+        return Sender(id: currentUser.uid, displayName: currentUser.username)
     }
     
     var messageId: String {
