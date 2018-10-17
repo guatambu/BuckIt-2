@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NuR-cu-znj" userLabel="Connect Message List Table View">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NuR-cu-znj" userLabel="Connect Message List Table View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -73,13 +73,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NuR-cu-znj" firstAttribute="leading" secondItem="4nJ-ig-CcF" secondAttribute="leading" id="cEQ-BM-IYK"/>
-                            <constraint firstAttribute="trailing" secondItem="NuR-cu-znj" secondAttribute="trailing" id="dyg-U8-azy"/>
-                            <constraint firstItem="NuR-cu-znj" firstAttribute="bottom" secondItem="Ll0-BM-UhR" secondAttribute="bottom" id="tQv-9S-shP"/>
+                            <constraint firstAttribute="trailing" secondItem="NuR-cu-znj" secondAttribute="trailing" id="3Qo-RU-mzX"/>
+                            <constraint firstItem="NuR-cu-znj" firstAttribute="leading" secondItem="4nJ-ig-CcF" secondAttribute="leading" id="TwW-E9-yTz"/>
+                            <constraint firstAttribute="bottom" secondItem="NuR-cu-znj" secondAttribute="bottom" id="Twp-qO-uf8"/>
+                            <constraint firstItem="NuR-cu-znj" firstAttribute="top" secondItem="Ll0-BM-UhR" secondAttribute="top" id="lI3-hC-Qmj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ll0-BM-UhR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WqX-hI-jfS"/>
+                    <navigationItem key="navigationItem" title="Messages" id="WqX-hI-jfS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="6SX-CB-sDf">
+                            <connections>
+                                <segue destination="cov-fT-C3e" kind="show" id="jzs-Yh-lX9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="messageListTableView" destination="NuR-cu-znj" id="pdd-CY-d5V"/>

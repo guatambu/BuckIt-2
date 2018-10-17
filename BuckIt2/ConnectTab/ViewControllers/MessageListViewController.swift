@@ -23,7 +23,8 @@ class MessageListViewController: UIViewController {
     }
 
 
-    @IBAction func newMessageButtonTapped(_ sender: UIButton) {
+    @IBAction func newMessageButtonTapped(_ sender: UIBarButtonItem) {
+        
     }
 }
 
@@ -33,13 +34,7 @@ private extension MessageListViewController {
         
     }
     
-    func setupNavigationView() {
-        let titleItem = UIBarButtonItem(customView: messageTitleLabel)
-        navigationItem.leftBarButtonItem = titleItem
-        
-        let newMessageButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(newMessageButtonTapped))
-        navigationItem.rightBarButtonItem = newMessageButton
-    }
+
 }
 
 // MARK: - UITableViewDataSouce
@@ -65,18 +60,15 @@ extension MessageListViewController: UITableViewDataSource {
 extension MessageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
         let mockConversation = Conversation.all[indexPath.row]
         
-        let currentUser = mockConversation[0].currentUser
-        let chatPartner = mockConversation[0].chatPartner
+        let currentUser = mockConversation[0].sentFrom
+        let chatPartner = mockConversation[0].receiver
         
         let chatViewController = ChatViewController(
             currentUser: currentUser, chatPartner: chatPartner, messages: mockConversation)
         
-        navigationController?.pushViewController(chatViewController, animated: true)
-//        present(chatViewController, animated: true, completion: nil)
-        
+        navigationController?.pushViewController(chatViewController, animated: true)        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

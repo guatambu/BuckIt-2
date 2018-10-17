@@ -19,7 +19,7 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
     }
 
     var chatPartner: User? {
-        return message?.chatPartner
+        return message?.receiver
     }
     
     // MARK: - Subviews

@@ -14,7 +14,7 @@ struct MockDataBucketListItems {
     var bucketListItems: [BucketListItem] = []
     
     init() {
-        bucketListItems = mockDataItems
+        bucketListItems = MockDataBucketListItems.mockItems
     }
     
     

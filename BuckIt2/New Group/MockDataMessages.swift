@@ -12,26 +12,41 @@ struct MockDataMessages {
     
     static let mockMessages = [MockDataMessages.message1, MockDataMessages.message2, MockDataMessages.message3, MockDataMessages.message4, MockDataMessages.message5, MockDataMessages.message6, MockDataMessages.message7, MockDataMessages.message8]
     
-    static let message1 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.sam, chatPartner: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message1 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message2 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.sam, chatPartner: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message2 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message3 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.sam, chatPartner: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message3 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message4 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.sam, chatPartner: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message4 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message5 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.sam, chatPartner: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message5 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message6 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.sam, chatPartner: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message6 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message7 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.sam, chatPartner: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message7 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message8 = Message(uid: UUID().uuidString, currentUser: MockDataUsers.sam, chatPartner: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message8 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
     
     static func messages(with chatPartner: User) -> [Message] {
-        for message in mockMessages {
-            message.chatPartner = chatPartner
-        }
+        let sam = MockDataUsers.sam
+        let message1 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "How did you like the nude beach", timestamp: Date())
+        
+        let message2 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "How did you like the nude beach", timestamp: Date())
+        
+        let message3 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "How did you like the nude beach", timestamp: Date())
+        
+        let message4 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "How did you like the nude beach", timestamp: Date())
+        
+        let message5 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "How did you like the nude beach", timestamp: Date())
+        
+        let message6 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "How did you like the nude beach", timestamp: Date())
+        
+        let message7 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "How did you like the nude beach", timestamp: Date())
+        
+        let message8 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "How did you like the nude beach", timestamp: Date())
+        
+        let mockMessages = [message1, message2, message3, message4, message5, message6, message7, message8]
         
         return mockMessages
     }
