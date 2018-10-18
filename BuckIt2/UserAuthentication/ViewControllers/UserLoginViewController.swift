@@ -87,7 +87,15 @@ class UserLoginViewController: UIViewController {
             if (emailUsername != user.username) || (emailUsername != user.email) {
                 errorMessageStackViewOutlet.isHidden = false
                 errorLine1LabelOutlet.text = "Please enter a valid username or email address."
+            } else if ((emailUsername == user.username) && (password != user.password)) || ((emailUsername == user.email) && (password != user.password)) {
+                
+                errorMessageStackViewOutlet.isHidden = false
+                errorLine1LabelOutlet.text = "We do not recoginze your password."
+                errorLine2LabelOutlet.text = "Please check your password and try again."
+            
             } else if ((emailUsername == user.username) && (password == user.password)) || ((emailUsername == user.email) && (password == user.password)) {
+                
+                // successful login allowing for valid user features to be avaialble in app
                 
                 // pop viewController
                 self.navigationController?.popViewController(animated: true)
