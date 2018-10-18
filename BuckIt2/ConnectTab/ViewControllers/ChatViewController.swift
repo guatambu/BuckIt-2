@@ -84,6 +84,8 @@ private extension ChatViewController {
     
     func configureMessagesInputBar() {
         messageInputBar.delegate = self
+        
+        messageInputBar.inputTextView.placeholder = "Start a message"
     }
     
     func getAvatar(for sender: Sender) -> Avatar {
