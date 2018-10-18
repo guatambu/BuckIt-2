@@ -33,8 +33,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="GRt-ri-Tv9" userLabel="credentials Stack View">
-                                <rect key="frame" x="24" y="165.5" width="272" height="170"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ruF-T4-81n" userLabel="error message Stack View">
+                                <rect key="frame" x="16" y="117.5" width="288" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There was an error connecting to our servers. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdX-xV-auK">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                        <color key="textColor" red="0.94534217980000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfZ-ZC-Dij">
+                                        <rect key="frame" x="0.0" y="14.5" width="288" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                        <color key="textColor" red="0.94534217980000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="GRt-ri-Tv9" userLabel="credentials Stack View">
+                                <rect key="frame" x="24" y="173.5" width="272" height="146"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="FQx-xI-3cO" userLabel="email/username Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="57.5"/>
@@ -58,7 +75,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aag-U7-nAO" userLabel="password Stack View">
-                                        <rect key="frame" x="0.0" y="113.5" width="272" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="89.5" width="272" height="56.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4u1-Nx-fbh">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="20.5"/>
@@ -88,7 +105,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unl-54-GdJ">
-                                <rect key="frame" x="215" y="339.5" width="49" height="30"/>
+                                <rect key="frame" x="215" y="323.5" width="49" height="30"/>
                                 <state key="normal" title="forgot?">
                                     <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 </state>
@@ -97,7 +114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wh-6N-wiu" userLabel="Login button" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
-                                <rect key="frame" x="100" y="391.5" width="120" height="41"/>
+                                <rect key="frame" x="100" y="375.5" width="120" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="PHH-YH-kai"/>
                                 </constraints>
@@ -153,11 +170,14 @@
                             <constraint firstItem="baN-fN-TQk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="SbX-Tn-D2g"/>
                             <constraint firstItem="tqC-1j-ofH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="96" id="SjW-me-jr1"/>
                             <constraint firstItem="Unl-54-GdJ" firstAttribute="top" secondItem="tsT-QC-2u6" secondAttribute="bottom" constant="4" id="ZT9-IN-sE1"/>
-                            <constraint firstItem="GRt-ri-Tv9" firstAttribute="top" secondItem="tqC-1j-ofH" secondAttribute="bottom" constant="48" id="dyQ-xn-vm0"/>
+                            <constraint firstItem="GRt-ri-Tv9" firstAttribute="top" secondItem="tqC-1j-ofH" secondAttribute="bottom" constant="56" id="dyQ-xn-vm0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GRt-ri-Tv9" secondAttribute="trailing" constant="24" id="eCa-ib-AJU"/>
+                            <constraint firstItem="ruF-T4-81n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="f2R-Su-VfW"/>
                             <constraint firstItem="GRt-ri-Tv9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="n2f-Bn-UQP"/>
+                            <constraint firstItem="ruF-T4-81n" firstAttribute="top" secondItem="tqC-1j-ofH" secondAttribute="bottom" id="qBK-KV-xM7"/>
                             <constraint firstItem="Unl-54-GdJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="vXV-hO-aH1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tqC-1j-ofH" secondAttribute="trailing" constant="96" id="xUu-Cf-bXj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ruF-T4-81n" secondAttribute="trailing" constant="16" id="xuP-1j-D0J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ugf-7o-r5Z" secondAttribute="bottom" constant="24" id="zVw-LO-cBd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -166,6 +186,9 @@
                         <outlet property="dontHaveAccountLabelOutlet" destination="8sJ-TD-oVz" id="nAB-it-KZI"/>
                         <outlet property="emailUsernameLabelOutlet" destination="zh2-23-OiS" id="vlb-6N-fhS"/>
                         <outlet property="emailUsernameTextFieldOutlet" destination="xlr-gF-Ujd" id="OFb-GO-QLE"/>
+                        <outlet property="errorLine1LabelOutlet" destination="VdX-xV-auK" id="N8S-Gb-l2B"/>
+                        <outlet property="errorLine2LabelOutlet" destination="jfZ-ZC-Dij" id="1V5-Vp-BIG"/>
+                        <outlet property="errorMessageStackViewOutlet" destination="ruF-T4-81n" id="UdA-Uw-Chg"/>
                         <outlet property="loginLabelOutlet" destination="tqC-1j-ofH" id="w31-RM-LuR"/>
                         <outlet property="passwordLabelOutlet" destination="4u1-Nx-fbh" id="gnP-K4-if6"/>
                         <outlet property="passwordTextFieldOutlet" destination="tsT-QC-2u6" id="63A-qb-IZ4"/>
@@ -199,6 +222,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rus-Td-QU4" userLabel="error message Stack View">
+                                <rect key="frame" x="16" y="117.5" width="288" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There was an error connecting to our servers. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BW-qt-shl">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                        <color key="textColor" red="0.94534217980000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-wD-ykp">
+                                        <rect key="frame" x="0.0" y="14.5" width="288" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                        <color key="textColor" red="0.94534217980000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7um-HZ-6vQ" userLabel="credentials Stack View">
                                 <rect key="frame" x="24" y="149.5" width="272" height="252"/>
                                 <subviews>
@@ -341,23 +381,6 @@
                                             <action selector="loginButtonTapped:" destination="QGc-IP-qaQ" eventType="touchUpInside" id="Hgp-g2-dHx"/>
                                         </connections>
                                     </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rus-Td-QU4" userLabel="error message Stack View">
-                                <rect key="frame" x="16" y="117.5" width="288" height="29"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There was an error connecting to our servers. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BW-qt-shl">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
-                                        <color key="textColor" red="0.94534217980000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-wD-ykp">
-                                        <rect key="frame" x="0.0" y="14.5" width="288" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
-                                        <color key="textColor" red="0.94534217980000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>

@@ -15,6 +15,7 @@ class User {
     let uid: String
     let email: String
     let username: String
+    let password: String
     var isPrivate: Bool
     var firstName: String?
     var lastName: String?
@@ -28,6 +29,7 @@ class User {
             UserKey.uid: uid,
             UserKey.email: email,
             UserKey.username: username,
+            UserKey.password: password,
             UserKey.isPrivate: isPrivate,
             UserKey.firstName: firstName as Any,
             UserKey.lastName: lastName as Any,
@@ -49,6 +51,7 @@ class User {
         static let uid = "uid"
         static let email = "email"
         static let username = "username"
+        static let password = "password"
         static let isPrivate = "isPrivate"
         static let firstName = "firstName"
         static let lastName = "lastName"
@@ -63,6 +66,7 @@ class User {
     init(uid: String,
          email: String,
          username: String,
+         password: String,
          isPrivate: Bool,
          firstName: String?,
          lastName: String?,
@@ -74,6 +78,7 @@ class User {
         self.uid = uid
         self.email = email
         self.username = username
+        self.password = password
         self.isPrivate = isPrivate
         self.firstName = firstName
         self.lastName = lastName
@@ -86,6 +91,7 @@ class User {
     init(uid: String,
          email: String,
          username: String,
+         password: String,
          isPrivate: Bool,
          firstName: String?,
          lastName: String?,
@@ -97,6 +103,7 @@ class User {
         self.uid = uid
         self.email = email
         self.username = username
+        self.password = password
         self.isPrivate = isPrivate
         self.firstName = firstName
         self.lastName = lastName
@@ -114,6 +121,7 @@ extension User {
         guard let uid = userDictionary[UserKey.uid] as? String,
             let email = userDictionary[UserKey.email] as? String,
             let username = userDictionary[UserKey.username] as? String,
+            let password = userDictionary[UserKey.password] as? String,
             let isPrivate = userDictionary[UserKey.isPrivate] as? Bool,
             let firstName = userDictionary[UserKey.firstName] as? String,
             let lastName = userDictionary[UserKey.lastName] as? String,
@@ -124,6 +132,7 @@ extension User {
         self.init(uid: uid,
                   email: email,
                   username: username,
+                  password: password,
                   isPrivate: isPrivate,
                   firstName: firstName,
                   lastName: lastName,

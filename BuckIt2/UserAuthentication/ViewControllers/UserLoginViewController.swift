@@ -17,9 +17,18 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var passwordLabelOutlet: UILabel!
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
     @IBOutlet weak var dontHaveAccountLabelOutlet: UILabel!
+    @IBOutlet weak var errorMessageStackViewOutlet: UIStackView!
+    @IBOutlet weak var errorLine1LabelOutlet: UILabel!
+    @IBOutlet weak var errorLine2LabelOutlet: UILabel!
+    
+    var 
     
     
     // MARK: - ViewController Lifecycle Functions
+    
+    override func viewWillAppear(_ animated: Bool) {
+        errorMessageStackViewOutlet.isHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +42,6 @@ class UserLoginViewController: UIViewController {
     @IBAction func closeXButtonTapped(_ sender: UIButton) {
         
         // pop viewController
-        
         self.navigationController?.popViewController(animated: true)
     }
     
