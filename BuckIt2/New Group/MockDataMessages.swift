@@ -42,19 +42,21 @@ struct MockDataMessages {
         
         let message6 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "How did you like the nude beach", timestamp: Date())
         
-        let message7 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "How did you like the nude beach", timestamp: Date())
+        let message7 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "How did you like the nude beach. How did you like the nude beach.", timestamp: Date())
         
-        let message8 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "How did you like the nude beach", timestamp: Date())
+        let message8 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "Yeah go to a good one", timestamp: Date())
         
         let mockMessages = [message1, message2, message3, message4, message5, message6, message7, message8]
         
         return mockMessages
+        
     }
 }
 
-struct Conversation {
+struct MockConversation {
     
-    static let all = [Conversation.withPark, Conversation.withDylon, Conversation.withLuisa, Conversation.withMaggie, Conversation.withRodrigo, Conversation.withSangita]
+    static let all = [MockConversation.withPark, MockConversation.withDylon, MockConversation.withLuisa, MockConversation.withMaggie, MockConversation.withRodrigo, MockConversation.withSangita]
+    
     
     static var withDylon: [Message] {
         return MockDataMessages.messages(with: MockDataUsers.dylon)
@@ -79,5 +81,5 @@ struct Conversation {
     static var withLuisa: [Message] {
         return MockDataMessages.messages(with: MockDataUsers.luisa)
     }
-
+    
 }

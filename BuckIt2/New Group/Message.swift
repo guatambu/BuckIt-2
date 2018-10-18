@@ -19,6 +19,7 @@ class Message {
     let text: String
     let timestamp: Date
     
+    
     var firebaseDictionary: [String: Any] {
         return [
             MessageKey.uid: uid,
@@ -59,7 +60,6 @@ class Message {
         self.receiver = receiver
         self.text = text
         self.timestamp = timestamp
-        
         
     }
     

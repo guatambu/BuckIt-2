@@ -17,9 +17,15 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
             updateMessageDetails()
         }
     }
+    
+    var conversation: Conversation? {
+        didSet {
+            updateConversationDetails()
+        }
+    }
 
     var chatPartner: User? {
-        return message?.receiver
+        return conversation?.chatPartner
     }
     
     // MARK: - Subviews
@@ -66,6 +72,20 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
             messageGlimpseLabel.text = "\(message.text)"
         }
     
+        updateUserDetails()
+    }
+    
+    func updateConversationDetails() {
+        guard let conversation = conversation else { return }
+        guard let chatPartner = chatPartner else { return }
+        let message = conversation.mostRecentMessage
+        
+        if message.sender.displayName != chatPartner.username {
+            messageGlimpseLabel.text = "You: \(message.text)"
+        } else {
+            messageGlimpseLabel.text = "\(message.text)"
+        }
+        
         updateUserDetails()
     }
         

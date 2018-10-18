@@ -40,17 +40,20 @@ private extension MessageListViewController {
 // MARK: - UITableViewDataSouce
 extension MessageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Conversation.all.count
+        return MockConversation.all.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? MessageListCell
             else { return UITableViewCell() }
         
-        let mockConversation = Conversation.all[indexPath.row]
+        let mockConversation = MockConversation.all[indexPath.row]
         
-        let recentMessage = mockConversation.first!
-        cell.message = recentMessage
+        let recentMessage = mockConversation.last!
+
+        let chatPartner = recentMessage.receiver != MockDataUsers.sam ? recentMessage.receiver : recentMessage.sentFrom
+        let conversation = Conversation.init(chatPartner: chatPartner, mostRecentMessage: recentMessage)
+        cell.conversation = conversation
         
         return cell
     }
@@ -60,13 +63,15 @@ extension MessageListViewController: UITableViewDataSource {
 extension MessageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let mockConversation = Conversation.all[indexPath.row]
+        let mockConversation = MockConversation.all[indexPath.row]
+
+        let sentFrom = mockConversation[0].sentFrom
+        let receiver = mockConversation[0].receiver
         
-        let currentUser = mockConversation[0].sentFrom
-        let chatPartner = mockConversation[0].receiver
+        let chatPartner = receiver != MockDataUsers.sam ? receiver : sentFrom
         
         let chatViewController = ChatViewController(
-            currentUser: currentUser, chatPartner: chatPartner, messages: mockConversation)
+            currentUser: MockDataUsers.sam, chatPartner: chatPartner, messages: mockConversation)
         
         navigationController?.pushViewController(chatViewController, animated: true)        
     }

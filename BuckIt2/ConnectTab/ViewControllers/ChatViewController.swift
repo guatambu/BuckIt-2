@@ -40,8 +40,20 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        messageInputBar.delegate = self
     }
     
+    func insetMessage(message: Message) {
+        messages.append(message)
+        messagesCollectionView.performBatchUpdates({
+            messagesCollectionView.insertSections([messages.count - 1])
+            if messages.count >= 2 {
+                messagesCollectionView.reloadSections([messages.count - 2])
+            }
+        }) { [weak self] _ in
+            
+        }
+    }
 
 }
 
@@ -52,35 +64,44 @@ extension ChatViewController: MessagesDataSource {
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        return messages[indexPath.row]
+        return messages[indexPath.section]
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return 1
-    }
-    
-    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
         return messages.count
     }
+
 }
 
 // MARK: - MessagesDisplayDelegate
 
 extension ChatViewController: MessagesDisplayDelegate {
+
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? .blue : .lightGray
+        let chatPartnerColor = #colorLiteral(red: 1, green: 0.3375276762, blue: 0.6399649898, alpha: 1)
+        
+        return isFromCurrentSender(message: message) ? .white : chatPartnerColor
     }
     
     func shouldDisplayHeader(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> Bool {
         return false
     }
+
+    func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return isFromCurrentSender(message: message) ? .black : .white
+    }
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         
-        let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
+//        let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
+//
+//        return .bubbleTail(corner, .curved)
         
-        return .bubbleTail(corner, .curved)
+        let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
+        let borderColor:UIColor = isFromCurrentSender(message: message) ? .black: .clear
+        return .bubbleOutline(borderColor)
+//        return .bubbleTailOutline(borderColor, corner, .curved)
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
@@ -93,6 +114,22 @@ extension ChatViewController: MessagesDisplayDelegate {
 extension ChatViewController: MessagesLayoutDelegate {
     func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return CGSize(width: 44, height: 44)
+    }
+}
+
+// MARK: - MessageInputBarDelegate
+extension ChatViewController: MessageInputBarDelegate {
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        for component in inputBar.inputTextView.components where component is String {
+            if let text = component as? String {
+            
+                let message = Message(uid: UUID().uuidString, sentFrom: currentUser, receiver: chatPartner, text: text, timestamp: Date())
+                insetMessage(message: message)
+            }
+            
+            inputBar.inputTextView.text =  String()
+            messagesCollectionView.scrollToBottom(animated: true)
+        }
     }
 }
 

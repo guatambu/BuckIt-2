@@ -12,14 +12,10 @@
 		384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */; };
 		384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBF21730216001643D0 /* MyListNewItem.storyboard */; };
 		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
-
-		38ABCCFD21754B7300608F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA270EAC21730111001643D0 /* Assets.xcassets */; };
-		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
-
-		384F2B4A2175162B003DC49B /* InspirationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F2B492175162B003DC49B /* InspirationController.swift */; };
 		38ABCCFD21754B7300608F0F /* (null) in Resources */ = {isa = PBXBuildFile; };
-
+		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
 		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
+		D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74FD8C92177E81600A4965F /* Conversation.swift */; };
 		D758FDD72173EC3600A3B11D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */; };
 		D7A151E4217522D400520CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A151E3217522D400520CEA /* Assets.xcassets */; };
 		D7A151E621757DA900520CEA /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E521757DA900520CEA /* MessageListCell.swift */; };
@@ -85,6 +81,7 @@
 		3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemDetailPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.debug.xcconfig"; sourceTree = "<group>"; };
 		87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuckIt2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D74FD8C92177E81600A4965F /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7A151E3217522D400520CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A151E521757DA900520CEA /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
@@ -227,15 +224,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-
-		384F2B482175160C003DC49B /* ModelControllers */ = {
-			isa = PBXGroup;
-			children = (
-				384F2B492175162B003DC49B /* InspirationController.swift */,
-			);
-			path = ModelControllers;
-			sourceTree = "<group>";
-		};
 		D7A151E721757DB900520CEA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,7 +240,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-
 		E10A3A576B0B2A143FB855E2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +396,7 @@
 				FA270E542173006F001643D0 /* BucketListItemComment.swift */,
 				FA270E522173006D001643D0 /* guatambuToDo.swift */,
 				FA270E562173006F001643D0 /* Message.swift */,
+				D74FD8C92177E81600A4965F /* Conversation.swift */,
 				D7A151EB2175856C00520CEA /* MockDataMessages.swift */,
 				FA270E532173006E001643D0 /* MockDataBucketListItems.swift */,
 				FA270E4F2173006D001643D0 /* MockDataUsers.swift */,
@@ -792,6 +780,7 @@
 				FA270EB7217301B1001643D0 /* StorageManager.swift in Sources */,
 				FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */,
 				FA270E5E21730070001643D0 /* Message.swift in Sources */,
+				D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */,
 				FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */,
 				FA270E5821730070001643D0 /* BucketListItem.swift in Sources */,
 				FA270EB4217301B1001643D0 /* Endpoint.swift in Sources */,
