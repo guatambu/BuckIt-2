@@ -21,7 +21,7 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var errorLine1LabelOutlet: UILabel!
     @IBOutlet weak var errorLine2LabelOutlet: UILabel!
     
-    var 
+    var users = [MockDataUsers.dylon, MockDataUsers.luisa, MockDataUsers.maggie, MockDataUsers.park, MockDataUsers.rodrigo, MockDataUsers.sangita]
     
     
     // MARK: - ViewController Lifecycle Functions
@@ -64,10 +64,35 @@ class UserLoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
-        // pop viewController
+        guard let emailUsername = emailUsernameTextFieldOutlet.text, emailUsernameTextFieldOutlet.text != "" else {
+            
+            if emailUsernameTextFieldOutlet.text = "" {
+                errorMessageStackViewOutlet.isHidden = false
+                errorLine1LabelOutlet.text = "Please enter your username or email address."
+            }
+            return
+        }
         
-        self.navigationController?.popViewController(animated: true)
+        guard let password = passwordTextFieldOutlet.text, passwordTextFieldOutlet.text != "" else {
+            
+            if passwordTextFieldOutlet.text = "" {
+                errorMessageStackViewOutlet.isHidden = false
+                errorLine1LabelOutlet.text = "Please enter your password."
+            }
+            return
+        }
         
+        for user in users {
+            
+            if (emailUsername != user.username) || (emailUsername != user.email) {
+                errorMessageStackViewOutlet.isHidden = false
+                errorLine1LabelOutlet.text = "Please enter a valid username or email address."
+            } else if ((emailUsername == user.username) && (password == user.password)) || ((emailUsername == user.email) && (password == user.password)) {
+                
+                // pop viewController
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
         
     }
     
