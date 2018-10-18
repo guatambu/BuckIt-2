@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--User Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="User Login View Controller" customClass="LoginViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="User Login View Controller" customClass="UserLoginViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="forgotPasswordButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IN3-F7-hTI"/>
+                                    <action selector="forgotButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddN-vG-3XZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wh-6N-wiu" userLabel="Login button" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
@@ -163,10 +163,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="LoginLabelOutlet" destination="tqC-1j-ofH" id="AHM-c9-mOz"/>
                         <outlet property="dontHaveAccountLabelOutlet" destination="8sJ-TD-oVz" id="nAB-it-KZI"/>
                         <outlet property="emailUsernameLabelOutlet" destination="zh2-23-OiS" id="vlb-6N-fhS"/>
                         <outlet property="emailUsernameTextFieldOutlet" destination="xlr-gF-Ujd" id="OFb-GO-QLE"/>
+                        <outlet property="loginLabelOutlet" destination="tqC-1j-ofH" id="w31-RM-LuR"/>
                         <outlet property="passwordLabelOutlet" destination="4u1-Nx-fbh" id="gnP-K4-if6"/>
                         <outlet property="passwordTextFieldOutlet" destination="tsT-QC-2u6" id="63A-qb-IZ4"/>
                     </connections>
@@ -178,7 +178,7 @@
         <!--User Create Account View Controller-->
         <scene sceneID="P4l-SR-VHd">
             <objects>
-                <viewController id="QGc-IP-qaQ" userLabel="User Create Account View Controller" customClass="CreateAccountViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QGc-IP-qaQ" userLabel="User Create Account View Controller" customClass="UserCreateAccountViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IjB-bb-hkm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,7 +190,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="closeXButtonTapped:" destination="QGc-IP-qaQ" eventType="touchUpInside" id="xIm-gQ-GsP"/>
+                                    <action selector="closeXButtonTapped:" destination="QGc-IP-qaQ" eventType="touchUpInside" id="Oh1-8N-TV3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl3-wN-tTZ" userLabel="Create Account label">
@@ -297,8 +297,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createAccountButtonTapped:" destination="QGc-IP-qaQ" eventType="touchUpInside" id="UIB-yK-Y3d"/>
-                                    <action selector="loginButtonTapped:" destination="QGc-IP-qaQ" eventType="touchUpInside" id="uxw-vh-r8F"/>
+                                    <action selector="createAccountButtonTapped:" destination="QGc-IP-qaQ" eventType="touchUpInside" id="IiM-jN-NxP"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vsW-WC-m2k" userLabel="don't have account Stack View">
@@ -316,8 +315,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="createAccountButtonTapped:" destination="QGc-IP-qaQ" eventType="touchUpInside" id="BmB-U0-pDl"/>
-                                            <action selector="loginButtonTapped:" destination="QGc-IP-qaQ" eventType="touchUpInside" id="SgN-Xj-YFS"/>
+                                            <action selector="loginButtonTapped:" destination="QGc-IP-qaQ" eventType="touchUpInside" id="Hgp-g2-dHx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -344,20 +342,22 @@
                     <connections>
                         <outlet property="LoginLabelOutlet" destination="Cl3-wN-tTZ" id="BwL-8o-94q"/>
                         <outlet property="alreadyHAveAccountLabelOutlet" destination="erq-hK-2Vq" id="gbl-dZ-aqh"/>
-                        <outlet property="createAccountLabelOutlet" destination="Cl3-wN-tTZ" id="hde-GV-ykX"/>
+                        <outlet property="alreadyHaveAccountLabelOutlet" destination="erq-hK-2Vq" id="cJ4-JV-qTy"/>
+                        <outlet property="createAccountLabelOutlet" destination="Cl3-wN-tTZ" id="cjH-mF-a6M"/>
                         <outlet property="dontHaveAccountLabelOutlet" destination="erq-hK-2Vq" id="I8a-So-pAN"/>
-                        <outlet property="emailLabelOutlet" destination="6Jq-43-oII" id="0zT-zH-dff"/>
-                        <outlet property="emailTextFieldOutlet" destination="9He-ha-0GE" id="GzW-8M-dFm"/>
+                        <outlet property="emailLabelOutlet" destination="6Jq-43-oII" id="qNX-Ni-rv8"/>
+                        <outlet property="emailTextFieldOutlet" destination="9He-ha-0GE" id="mmm-4S-h9t"/>
                         <outlet property="emailUsernameLabelOutlet" destination="6Jq-43-oII" id="4Iy-wk-2CU"/>
                         <outlet property="emailUsernameTextFieldOutlet" destination="9He-ha-0GE" id="CeF-jp-BqZ"/>
-                        <outlet property="passwordLabelOutlet" destination="k7E-PZ-qKU" id="eub-xV-6Ay"/>
-                        <outlet property="passwordTextFieldOutlet" destination="qMc-3E-mMf" id="0BT-JU-FIa"/>
-                        <outlet property="usernameLabelOutlet" destination="LQD-Si-Kbj" id="dlu-Df-mTG"/>
-                        <outlet property="usernameTextFieldOutlet" destination="OLf-Yy-eeh" id="xEF-PU-ffn"/>
+                        <outlet property="passwordLabelOutlet" destination="k7E-PZ-qKU" id="HPE-Dz-TDD"/>
+                        <outlet property="passwordTextFieldOutlet" destination="qMc-3E-mMf" id="BCY-Dm-xdL"/>
+                        <outlet property="usernameLabelOutlet" destination="LQD-Si-Kbj" id="NhF-pH-NHI"/>
+                        <outlet property="usernameTextFieldOutlet" destination="OLf-Yy-eeh" id="YKg-qD-SQi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZg-2r-WIq" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="838" y="858"/>
         </scene>
     </scenes>
 </document>

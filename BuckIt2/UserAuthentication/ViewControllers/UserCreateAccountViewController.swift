@@ -19,6 +19,7 @@ class UserCreateAccountViewController: UIViewController {
     @IBOutlet weak var usernameTextFieldOutlet: UITextField!
     @IBOutlet weak var passwordLabelOutlet: UILabel!
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
+    @IBOutlet weak var alreadyHaveAccountLabelOutlet: UILabel!
     
     
     

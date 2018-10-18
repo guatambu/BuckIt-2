@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyListViewController: UIViewController {
+class MyBucketViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
