@@ -37,10 +37,8 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        messagesCollectionView.messagesDataSource = self
-        messagesCollectionView.messagesLayoutDelegate = self
-        messagesCollectionView.messagesDisplayDelegate = self
-        messageInputBar.delegate = self
+        configureMessagesCollectionView()
+        configureMessagesInputBar()
     }
     
     func insetMessage(message: Message) {
@@ -51,10 +49,37 @@ class ChatViewController: MessagesViewController {
                 messagesCollectionView.reloadSections([messages.count - 2])
             }
         }) { [weak self] _ in
-            
+            if self?.isLastSectionVisible() == true {
+                self?.messagesCollectionView.scrollToBottom(animated: true)
+            }
         }
     }
+    
+    func isLastSectionVisible() -> Bool {
+        
+        guard !messages.isEmpty else { return false }
+        
+        let lastIndexPath = IndexPath(item: 0, section: messages.count - 1)
+        
+        return messagesCollectionView.indexPathsForVisibleItems.contains(lastIndexPath)
+    }
 
+}
+
+// MARK: - Setup UI
+private extension ChatViewController {
+    func configureMessagesCollectionView() {
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
+        
+        scrollsToBottomOnKeybordBeginsEditing = true // default false
+        maintainPositionOnKeyboardFrameChanged = true // default false
+    }
+    
+    func configureMessagesInputBar() {
+        messageInputBar.delegate = self
+    }
 }
 
 // MARK: - MessageDataSource
@@ -71,6 +96,10 @@ extension ChatViewController: MessagesDataSource {
         return messages.count
     }
 
+    func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let name = message.sender.displayName
+        return NSAttributedString(string: name, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption1)])
+    }
 }
 
 // MARK: - MessagesDisplayDelegate
@@ -94,14 +123,9 @@ extension ChatViewController: MessagesDisplayDelegate {
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         
-//        let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
-//
-//        return .bubbleTail(corner, .curved)
-        
-        let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         let borderColor:UIColor = isFromCurrentSender(message: message) ? .black: .clear
         return .bubbleOutline(borderColor)
-//        return .bubbleTailOutline(borderColor, corner, .curved)
+
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
@@ -126,10 +150,9 @@ extension ChatViewController: MessageInputBarDelegate {
                 let message = Message(uid: UUID().uuidString, sentFrom: currentUser, receiver: chatPartner, text: text, timestamp: Date())
                 insetMessage(message: message)
             }
-            
-            inputBar.inputTextView.text =  String()
-            messagesCollectionView.scrollToBottom(animated: true)
         }
+        inputBar.inputTextView.text =  String()
+        messagesCollectionView.scrollToBottom(animated: true)
     }
 }
 
