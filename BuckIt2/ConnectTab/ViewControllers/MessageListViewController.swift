@@ -22,6 +22,12 @@ class MessageListViewController: UIViewController {
         messageListTableView.delegate = self
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        deselectCell()
+    }
 
     @IBAction func newMessageButtonTapped(_ sender: UIBarButtonItem) {
         
@@ -34,7 +40,11 @@ private extension MessageListViewController {
         
     }
     
-
+    func deselectCell() {
+        if let index = self.messageListTableView.indexPathForSelectedRow{
+            self.messageListTableView.deselectRow(at: index, animated: true)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSouce

@@ -85,6 +85,7 @@ private extension ChatViewController {
     func configureMessagesInputBar() {
         messageInputBar.delegate = self
     }
+
 }
 
 // MARK: - MessageDataSource
