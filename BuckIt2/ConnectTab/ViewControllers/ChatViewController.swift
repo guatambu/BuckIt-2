@@ -85,7 +85,15 @@ private extension ChatViewController {
     func configureMessagesInputBar() {
         messageInputBar.delegate = self
     }
-
+    
+    func getAvatar(for sender: Sender) -> Avatar {
+        if sender.displayName == currentUser.username {
+            
+            return Avatar(image: currentUser.mockProfilePic, initials: "")
+        } else {
+            return Avatar(image: chatPartner.mockProfilePic, initials: "")
+        }
+    }
 }
 
 // MARK: - MessageDataSource
@@ -135,7 +143,7 @@ extension ChatViewController: MessagesDisplayDelegate {
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        let avatar = Avatar(image: currentUser.mockProfilePic, initials: "")
+        let avatar = getAvatar(for: message.sender)
         avatarView.set(avatar: avatar)
     }
 }
