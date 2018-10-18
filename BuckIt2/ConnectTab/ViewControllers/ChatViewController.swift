@@ -37,6 +37,7 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateView()
         configureMessagesCollectionView()
         configureMessagesInputBar()
     }
@@ -68,6 +69,10 @@ class ChatViewController: MessagesViewController {
 
 // MARK: - Setup UI
 private extension ChatViewController {
+    func updateView() {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     func configureMessagesCollectionView() {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
