@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <!--My List Settings View Controller-->
         <scene sceneID="Xon-jQ-Rgd">
             <objects>
-                <viewController storyboardIdentifier="MyListSettings" id="hg3-fs-P0U" customClass="MyListSettingsViewController" customModule="BuckIt2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyListSettings" id="hg3-fs-P0U" customClass="MyListSettingsViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="i6t-AO-1xq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

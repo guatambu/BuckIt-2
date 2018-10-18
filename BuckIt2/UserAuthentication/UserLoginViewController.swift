@@ -16,7 +16,7 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var emailUsernameTextFieldOutlet: UITextField!
     @IBOutlet weak var passwordLabelOutlet: UILabel!
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
-    @IBOutlet weak var dontHaveAccountLabelOutlet: UILabel!
+    @IBOutlet weak var dontHAveAccountLabelOutlet: UILabel!
     
     
     // MARK: - ViewController Lifecycle Functions
@@ -36,7 +36,7 @@ class UserLoginViewController: UIViewController {
     @IBAction func forgotButtonTapped(_ sender: UIButton) {
     }
     
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    @IBAction func loginButtonTapped(_ sender: DesignableButton) {
     }
     
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {

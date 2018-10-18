@@ -19,23 +19,23 @@ class User {
     var firstName: String?
     var lastName: String?
     var mockProfilePic: UIImage?
-    var profileImageURL: String?
+    //var profileImageURL: String?
     var location: String?
     var age: String?
     
-    var firebaseDictionary: [String: Any] {
-        return [
-            UserKey.uid: uid,
-            UserKey.email: email,
-            UserKey.username: username,
-            UserKey.isPrivate: isPrivate,
-            UserKey.firstName: firstName as Any,
-            UserKey.lastName: lastName as Any,
-            UserKey.profileImageURL: profileImageURL as Any,
-            UserKey.location: location as Any,
-            UserKey.age: age as Any
-        ]
-    }
+//    var firebaseDictionary: [String: Any] {
+//        return [
+//            UserKey.uid: uid,
+//            UserKey.email: email,
+//            UserKey.username: username,
+//            UserKey.isPrivate: isPrivate,
+//            UserKey.firstName: firstName as Any,
+//            UserKey.lastName: lastName as Any,
+//            UserKey.profileImageURL: profileImageURL as Any,
+//            UserKey.location: location as Any,
+//            UserKey.age: age as Any
+//        ]
+//    }
     
     
     // MARK: - Firebase Keys
@@ -59,7 +59,6 @@ class User {
     
     // MARK: - Initialization
     
-    // MockData
     init(uid: String,
          email: String,
          username: String,
@@ -67,6 +66,7 @@ class User {
          firstName: String?,
          lastName: String?,
          mockProfilePic: UIImage?,
+         //profileImageURL: String?,
          location: String?,
          age: String?
         ) {
@@ -78,38 +78,11 @@ class User {
         self.firstName = firstName
         self.lastName = lastName
         self.mockProfilePic = mockProfilePic
+        //self.profileImageURL = profileImageURL
         self.location = location
         self.age = age
     }
     
-    // Firebase
-    init(uid: String,
-         email: String,
-         username: String,
-         isPrivate: Bool,
-         firstName: String?,
-         lastName: String?,
-         profileImageURL: String?,
-         location: String?,
-         age: String?
-        ) {
-        
-        self.uid = uid
-        self.email = email
-        self.username = username
-        self.isPrivate = isPrivate
-        self.firstName = firstName
-        self.lastName = lastName
-        self.profileImageURL = profileImageURL
-        self.location = location
-        self.age = age
-    }
-    
-}
-
-// Firebase Initializer
-extension User {
-
     convenience init?(userDictionary: [String : Any]) {
         guard let uid = userDictionary[UserKey.uid] as? String,
             let email = userDictionary[UserKey.email] as? String,
@@ -131,6 +104,10 @@ extension User {
                   location: location,
                   age: age)
     }
+
+
+
+    
 }
 
 extension User: Equatable {

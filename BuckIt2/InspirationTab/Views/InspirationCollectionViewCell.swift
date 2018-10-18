@@ -13,25 +13,6 @@ class InspirationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var inspirationImageView: UIImageView!
     @IBOutlet weak var itemTitleLabel: UILabel!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        updateViews()
-     }
-   
-    
-//    override func draw(_ rect: CGRect) {
-//        super.draw(rect)
-//        updateViews()
-//    }
-    
-    
-    func updateViews() {
-        inspirationImageView.image = UIImage(named: "defaultPhoto")
-        itemTitleLabel.text = "Arrive By Seaplane"
-    }
-    
-    
     @IBAction func quickAddButtonTapped(_ sender: UIButton) {
     }
 }
