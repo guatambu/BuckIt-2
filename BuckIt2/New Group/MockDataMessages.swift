@@ -55,7 +55,7 @@ struct MockDataMessages {
 
 struct MockConversation {
     
-    static let all = [MockConversation.withPark, MockConversation.withDylon, MockConversation.withLuisa, MockConversation.withMaggie, MockConversation.withRodrigo, MockConversation.withSangita]
+    static var all = [MockConversation.withPark, MockConversation.withDylon, MockConversation.withLuisa, MockConversation.withMaggie, MockConversation.withRodrigo, MockConversation.withSangita]
     
     
     static var withDylon: [Message] {

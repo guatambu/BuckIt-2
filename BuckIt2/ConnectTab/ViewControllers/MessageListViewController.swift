@@ -88,7 +88,10 @@ extension MessageListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+//            let conversation = MockConversation.all[indexPath.row]
+            MockConversation.all.remove(at: indexPath.row)
             
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
 }
