@@ -17,6 +17,8 @@ class MyListViewController: UIViewController {
     @IBOutlet weak var hometownTextField: UITextField!
     @IBOutlet weak var myBioTextView: UITextView!
     @IBOutlet weak var todoCompletedSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var dimmerViewOutlet: UIView!
+    @IBOutlet weak var threeDotSettingsView: UIView!
     
     var bucketList: [BucketListItem] = []
     var toDoItems: [BucketListItem] = []
@@ -30,6 +32,10 @@ class MyListViewController: UIViewController {
         toDoItems = MyListController.shared.toDoItems
         completedItems = MyListController.shared.completedItems
         bucketList = MyListController.shared.myBucketListItems
+        
+        profilePicImageView.isUserInteractionEnabled = false
+        
+        
     }
     
     override func viewDidLoad() {
@@ -51,6 +57,10 @@ class MyListViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func settingsButtonTapped(_ sender: UIBarButtonItem) {
+        
+        
+        
+        
     }
     
     @IBAction func changedSegmentController(_ sender: UISegmentedControl) {

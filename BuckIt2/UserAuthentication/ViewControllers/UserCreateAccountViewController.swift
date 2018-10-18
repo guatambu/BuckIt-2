@@ -19,7 +19,13 @@ class UserCreateAccountViewController: UIViewController {
     @IBOutlet weak var usernameTextFieldOutlet: UITextField!
     @IBOutlet weak var passwordLabelOutlet: UILabel!
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
+    @IBOutlet weak var confirmPasswordLabelOutlet: UILabel!
+    @IBOutlet weak var confirmPasswordTextFieldOutlet: UITextField!
     @IBOutlet weak var alreadyHaveAccountLabelOutlet: UILabel!
+    @IBOutlet weak var errorMessageStackView: UIStackView!
+    @IBOutlet weak var errorLine1LabelOutlet: UILabel!
+    @IBOutlet weak var errorLine2LabelOutlet: UILabel!
+    
     
     var newUserAccount: User?
     var uid: String?
@@ -27,55 +33,92 @@ class UserCreateAccountViewController: UIViewController {
     
     
     // MARK: ViewController Lifecycle Functions
+    
+    override func viewWillAppear(_ animated: Bool) {
+        networkErrorMessageOutlet.isHidden = true
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     
     // MARK: - Actions
     
     @IBAction func closeXButtonTapped(_ sender: Any) {
-        
         // pop viewController
-        
         self.navigationController?.popViewController(animated: true)
-        
     }
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         
         guard let uid = uid else {
+            // error handling
             
-            // error handling from Firebase
-            
+            networkErrorMessageOutlet.isHidden = false
             return
         }
+        
         guard let username = usernameTextFieldOutlet.text, usernameTextFieldOutlet.text!= "" else {
             
             // error handling
-            
-            // throw up alert controller or error message per design preference
+            if usernameTextFieldOutlet.text! = "" {
+                errorMessageStackView.isHidden = false
+                errorLine1LabelOutlet.text = "Please enter a username."
+                errorLine2LabelOutlet.text = ""
+            }
             
             return
         }
         
-        guard let email = usernameTextFieldOutlet.text, emailTextFieldOutlet.text!= "" else {
+        guard let email = emailTextFieldOutlet.text, emailTextFieldOutlet.text!= "" else {
             
             // error handling
-            
-            // throw up alert controller or error message per design preference
+            if emailTextFieldOutlet.text! = "" {
+                errorMessageStackView.isHidden = false
+                errorLine1LabelOutlet.text = "Please enter a valid email address."
+                errorLine2LabelOutlet.text = ""
+            }
             
             return
         }
         
-        newUserAccount = User(uid: uid, email: email, username: username, isPrivate: true, firstName: nil, lastName: nil, mockProfilePic: nil, location: nil, age: nil)
+        guard let password = passwordTextFieldOutlet.text, passwordTextFieldOutlet.text!= "" else {
+            
+            // error handling
+            if passwordTextFieldOutlet.text! = "" {
+                errorMessageStackView.isHidden = false
+                errorLine1LabelOutlet.text = "Please enter a password."
+                errorLine2LabelOutlet.text = ""
+            }
+            
+            return
+        }
         
-        // pop viewController
+        guard let confirmPassword = confirmPasswordTextFieldOutlet.text, confirmPasswordTextFieldOutlet.text!= "" else {
+            
+            // error handling
+            if confirmPasswordTextFieldOutlet.text! = "" {
+                errorMessageStackView.isHidden = false
+                errorLine1LabelOutlet.text = "Please confirm your password."
+                errorLine2LabelOutlet.text = ""
+            }
+            
+            return
+        }
         
-        self.navigationController?.popViewController(animated: true)
-
+        if password != confirmPassword {
+            errorMessageStackView.isHidden = false
+            errorLine1LabelOutlet.text = "Your passwords do not match."
+            errorLine2LabelOutlet.text = "Please try again."
+        } else {
+            
+            newUserAccount = User(uid: uid, email: email, username: username, isPrivate: true, firstName: nil, lastName: nil, mockProfilePic: nil, location: nil, age: nil)
+            
+            // pop viewController
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
