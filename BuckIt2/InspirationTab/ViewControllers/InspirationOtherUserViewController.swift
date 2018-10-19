@@ -40,6 +40,7 @@ class InspirationOtherUserViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func messageButtonTapped(_ sender: UIBarButtonItem) {

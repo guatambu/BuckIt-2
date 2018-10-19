@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381ABCEB2179387400873190 /* InspirationAddToListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381ABCEA2179387400873190 /* InspirationAddToListViewController.swift */; };
+		381ABCED217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381ABCEC217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift */; };
 		3821021B2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */; };
+		3821021C2177A74C00F6A361 /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
 		384F2B4421751320003DC49B /* MyList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBC21730215001643D0 /* MyList.storyboard */; };
 		384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */; };
 		384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBF21730216001643D0 /* MyListNewItem.storyboard */; };
 		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
 		38ABCCFD21754B7300608F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA270EAC21730111001643D0 /* Assets.xcassets */; };
-		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
 		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
 		D758FDD72173EC3600A3B11D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */; };
 		FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		337F76051CD56D4F0C968831 /* Pods-BuckIt2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.release.xcconfig"; sourceTree = "<group>"; };
+		381ABCEA2179387400873190 /* InspirationAddToListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationAddToListViewController.swift; sourceTree = "<group>"; };
+		381ABCEC217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationPersonalizeAddedItemViewController.swift; sourceTree = "<group>"; };
 		3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemDetailPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.debug.xcconfig"; sourceTree = "<group>"; };
 		87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuckIt2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +311,8 @@
 				FA270E2D2172FA31001643D0 /* InspirationDetailViewController.swift */,
 				FA270E2C2172FA31001643D0 /* InspirationOtherUserViewController.swift */,
 				FA270E2F2172FA31001643D0 /* InspirationSearchViewController.swift */,
+				381ABCEA2179387400873190 /* InspirationAddToListViewController.swift */,
+				381ABCEC217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -645,7 +651,7 @@
 			files = (
 				FA270E452172FAE9001643D0 /* MessageSearchUser.storyboard in Resources */,
 				FA270E442172FAE9001643D0 /* MessageList.storyboard in Resources */,
-				38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */,
+				3821021C2177A74C00F6A361 /* InspirationItemDetail.storyboard in Resources */,
 				384F2B4421751320003DC49B /* MyList.storyboard in Resources */,
 				384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */,
 				FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */,
@@ -763,6 +769,7 @@
 				FA270E492172FAF0001643D0 /* MessageListViewController.swift in Sources */,
 				FA270E5921730070001643D0 /* User.swift in Sources */,
 				FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */,
+				381ABCED217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift in Sources */,
 				FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */,
 				FA270E5C21730070001643D0 /* BucketListItemComment.swift in Sources */,
 				3821021B2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift in Sources */,
@@ -775,6 +782,7 @@
 				FA270ECA21730224001643D0 /* MyListNewItemViewController.swift in Sources */,
 				FA270EC821730224001643D0 /* MyListPhotoPickerViewController.swift in Sources */,
 				FA270EB6217301B1001643D0 /* AuthManager.swift in Sources */,
+				381ABCEB2179387400873190 /* InspirationAddToListViewController.swift in Sources */,
 				FA270EAF217301A0001643D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -203,7 +203,7 @@
         <!--MyListDetailItem-->
         <scene sceneID="Tst-zq-F4y">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyListDetailItem" referencedIdentifier="MyListDetailItem" id="5Je-Ga-Q9v" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MyListDetailItem" id="5Je-Ga-Q9v" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3u-fy-uQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2559.1999999999998" y="173.61319340329837"/>
@@ -331,7 +331,7 @@
         <!--MyListNewItem-->
         <scene sceneID="6sV-my-kwX">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyListNewItem" referencedIdentifier="MyListNewItem" id="yZb-ZN-JOz" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MyListNewItem" id="yZb-ZN-JOz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ah1-oi-Xru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2422" y="435"/>
@@ -359,7 +359,7 @@
         <!--MyListSettings-->
         <scene sceneID="ddp-c2-H5P">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyListSettings" referencedIdentifier="MyListSettings" id="GjN-EB-544" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MyListSettings" id="GjN-EB-544" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udr-4x-wpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2514" y="-39"/>

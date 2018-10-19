@@ -29,6 +29,11 @@ class InspirationDetailViewController: UIViewController {
         
         detailItemCollectionView.delegate = self
         detailItemCollectionView.dataSource = self
+        commonItemsTableView.delegate = self
+        commonItemsTableView.dataSource = self
+        adviseTableView.delegate = self
+        adviseTableView.dataSource = self
+        setUPUI()
         updateView()
     }
     
@@ -36,6 +41,15 @@ class InspirationDetailViewController: UIViewController {
     // MARK: - Functions
     func updateView() {
         itemNameLabel.text = bucketListItem?.title
+    }
+    
+    func setUPUI() {
+        itemNameLabel.adjustsFontSizeToFitWidth = true
+    }
+    
+    static func dismisse() {
+        let inspirationDetailVC = InspirationDetailViewController()
+        inspirationDetailVC.dismiss(animated: true, completion: nil)
     }
 
     
@@ -51,7 +65,7 @@ class InspirationDetailViewController: UIViewController {
 extension InspirationDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MockDataBucketListItems.shared.bucketListItems.count
+        return bucketListItem?.mockPhoto?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,12 +78,54 @@ extension InspirationDetailViewController: UICollectionViewDelegate, UICollectio
 
 extension InspirationDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
+    override func viewDidLayoutSubviews(){
+        
+        commonItemsTableView.frame = CGRect(x: commonItemsTableView.frame.origin.x, y: commonItemsTableView.frame.origin.y, width: commonItemsTableView.frame.size.width, height: commonItemsTableView.contentSize.height)
+        commonItemsTableView.reloadData()
+        
+        adviseTableView.frame = CGRect(x: adviseTableView.frame.origin.x, y: adviseTableView.frame.origin.y, width: adviseTableView.frame.size.width, height: adviseTableView.contentSize.height)
+        adviseTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        
+        var count = 0
+        
+        if tableView == commonItemsTableView {
+            count = MockDataUsers.shared.getMockUsers().count
+        } else if tableView == adviseTableView {
+            count = bucketListItem?.mockPhoto?.count ?? 0
+        }
+        
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        var cell = UITableViewCell()
+        
+        if tableView == commonItemsTableView {
+            let sharingCell = commonItemsTableView.dequeueReusableCell(withIdentifier: "inspirationSharingUsersCell")
+            let user = MockDataUsers.shared.getMockUsers()[indexPath.row]
+            DispatchQueue.main.async {
+                sharingCell?.imageView?.image = user.mockProfilePic
+            }
+            sharingCell?.textLabel?.text = "\(user.firstName!) \(user.lastName!)"
+            cell = sharingCell ?? UITableViewCell()
+        }
+        
+        if tableView == adviseTableView {
+            let adviseCell = adviseTableView.dequeueReusableCell(withIdentifier: "inspirationAdviceCell")
+            let item = bucketListItem!
+            DispatchQueue.main.async {
+                adviseCell?.imageView?.image = item.user.mockProfilePic
+            }
+            adviseCell?.textLabel?.text = "@\(item.user.username)"
+            adviseCell?.detailTextLabel?.text = item.experienceDescription
+            cell = adviseCell ?? UITableViewCell()
+        }
+        
+        return cell
     }
     
     /*

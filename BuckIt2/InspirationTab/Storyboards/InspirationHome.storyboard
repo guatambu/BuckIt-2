@@ -119,7 +119,7 @@
         <!--Inspiration Item Detail-->
         <scene sceneID="kgL-pd-cCI">
             <objects>
-                <viewControllerPlaceholder storyboardName="InspirationItemDetail" referencedIdentifier="Inspiration Item Detail" id="Hsd-Sw-aIO" userLabel="Inspiration Item Detail" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="InspirationItemDetail" id="Hsd-Sw-aIO" userLabel="Inspiration Item Detail" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yK2-Bn-WEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1814" y="1142"/>
