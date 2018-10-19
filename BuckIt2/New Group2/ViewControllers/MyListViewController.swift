@@ -17,8 +17,7 @@ class MyListViewController: UIViewController {
     @IBOutlet weak var hometownTextField: UITextField!
     @IBOutlet weak var myBioTextView: UITextView!
     @IBOutlet weak var todoCompletedSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var dimmerViewOutlet: UIView!
-    @IBOutlet weak var threeDotSettingsView: UIView!
+
     
     var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item20]
     var toDoItems: [BucketListItem] = []
@@ -66,6 +65,5 @@ class MyListViewController: UIViewController {
     }
     
     @IBAction func changedSegmentController(_ sender: UISegmentedControl) {
-    }
 }
 
