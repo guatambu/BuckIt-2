@@ -31,23 +31,20 @@ class MessageSearchUserViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    // MARK: - Actions
-    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        searchBar.becomeFirstResponder()
     }
-    
 }
 
 // MARK: - Setup UI
 private extension MessageSearchUserViewController {
     func updateView() {
-        setupNavigationBar()
+        
     }
     
-    func setupNavigationBar() {
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backButtonTapped(_:)))
-        navigationItem.rightBarButtonItem = cancelButton
-    }
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -74,11 +71,16 @@ extension MessageSearchUserViewController: UITableViewDelegate {
         let chatPartner = filteredDataSource[indexPath.row]
         let currentUser = MockDataUsers.sam
         let chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner)
-        weak var pvc = self.presentingViewController
-        dismiss(animated: true) {
-            
-            pvc?.navigationController?.pushViewController(chatViewController, animated: true)
-        }
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Messages"
+        navigationItem.backBarButtonItem = backItem
+        
+        guard let navCon = navigationController else { return }
+        var viewControllers = navCon.viewControllers
+        viewControllers.removeLast()
+        viewControllers.append(chatViewController)
+        navCon.setViewControllers(viewControllers, animated: true)
     }
 }
 

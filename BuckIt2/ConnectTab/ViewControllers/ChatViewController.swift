@@ -74,7 +74,6 @@ class ChatViewController: MessagesViewController {
         if chatType == .new {
             setupSearchBar()
             title = "New Message"
-            
             // TODO: - Make search bar a searchcontroller?
         }
     }
@@ -83,6 +82,8 @@ class ChatViewController: MessagesViewController {
         super.viewWillDisappear(animated)
         
         tabBarController?.tabBar.isHidden = false
+        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func insetMessage(message: Message) {
@@ -118,6 +119,7 @@ class ChatViewController: MessagesViewController {
         return messages[indexPath.section].sender == messages[indexPath.section + 1].sender
     }
 
+    
 }
 
 // MARK: - Setup UI
@@ -301,3 +303,4 @@ extension ChatViewController: UISearchBarDelegate {
         print(searchText)
     }
 }
+

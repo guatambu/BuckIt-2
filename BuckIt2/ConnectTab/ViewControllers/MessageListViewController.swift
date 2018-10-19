@@ -29,14 +29,14 @@ class MessageListViewController: UIViewController {
         deselectCell()
     }
 
-//    @IBAction func newMessageButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func newMessageButtonTapped(_ sender: UIBarButtonItem) {
 //        let currentUser = MockDataUsers.sam
 //        let chatViewController = ChatViewController(currentUser: currentUser, chatType: .new)
 //        
 //        let searchUserViewController = MessageSearchUserViewController()
 //        
 //        navigationController?.pushViewController(searchUserViewController, animated: true)
-//    }
+    }
 }
 
 // MARK: - Setup UI
