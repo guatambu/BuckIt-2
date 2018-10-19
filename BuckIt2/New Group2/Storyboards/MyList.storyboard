@@ -17,85 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="868"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3Q-OV-fES" userLabel="Dimmer View">
-                                <rect key="frame" x="0.0" y="64" width="375" height="755"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLY-3A-s7K" userLabel="Three Dot Settings View">
-                                <rect key="frame" x="0.0" y="499" width="375" height="320"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHt-aV-mEi" userLabel="Round Corner View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vIV-LC-W85">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zh-Pf-wWw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
-                                                        <state key="normal" title="edit my profile">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngU-aC-hOv">
-                                                        <rect key="frame" x="0.0" y="80" width="375" height="80"/>
-                                                        <state key="normal" title="make my profile private">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAk-XI-bdk">
-                                                        <rect key="frame" x="0.0" y="160" width="375" height="80"/>
-                                                        <state key="normal" title="log out">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5og-Io-RPY">
-                                                        <rect key="frame" x="0.0" y="240" width="375" height="80"/>
-                                                        <state key="normal" title="cancel">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="vIV-LC-W85" secondAttribute="bottom" constant="40" id="EVi-yP-Caj"/>
-                                            <constraint firstAttribute="trailing" secondItem="vIV-LC-W85" secondAttribute="trailing" id="ZAm-Pv-uRI"/>
-                                            <constraint firstItem="vIV-LC-W85" firstAttribute="leading" secondItem="LHt-aV-mEi" secondAttribute="leading" id="e9S-OK-wyi"/>
-                                            <constraint firstItem="vIV-LC-W85" firstAttribute="top" secondItem="LHt-aV-mEi" secondAttribute="top" id="nse-Xy-xlz"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="LHt-aV-mEi" secondAttribute="bottom" constant="-40" id="eOL-DY-GFW"/>
-                                    <constraint firstItem="LHt-aV-mEi" firstAttribute="top" secondItem="oLY-3A-s7K" secondAttribute="top" id="eaE-pg-LQn"/>
-                                    <constraint firstItem="LHt-aV-mEi" firstAttribute="leading" secondItem="oLY-3A-s7K" secondAttribute="leading" id="ec3-Ie-QXf"/>
-                                    <constraint firstAttribute="trailing" secondItem="LHt-aV-mEi" secondAttribute="trailing" id="x4x-7u-eBK"/>
-                                    <constraint firstAttribute="height" constant="320" id="zPK-PZ-bo1"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhV-rV-O0c" userLabel="My List Home Scroll View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="755"/>
                                 <subviews>
@@ -250,16 +171,9 @@
                         <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.92156862745098034" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mhV-rV-O0c" secondAttribute="trailing" id="ALk-TP-zAz"/>
-                            <constraint firstItem="G3Q-OV-fES" firstAttribute="top" secondItem="dy1-MJ-hdL" secondAttribute="top" id="HgT-nT-Gga"/>
-                            <constraint firstItem="dy1-MJ-hdL" firstAttribute="trailing" secondItem="G3Q-OV-fES" secondAttribute="trailing" id="Law-b1-761"/>
                             <constraint firstItem="mhV-rV-O0c" firstAttribute="bottom" secondItem="dy1-MJ-hdL" secondAttribute="bottom" id="NlS-DW-ZeT"/>
                             <constraint firstItem="mhV-rV-O0c" firstAttribute="leading" secondItem="Haj-nh-7hI" secondAttribute="leading" id="PDL-IC-wid"/>
-                            <constraint firstItem="dy1-MJ-hdL" firstAttribute="bottom" secondItem="G3Q-OV-fES" secondAttribute="bottom" id="TSr-1E-0Gr"/>
                             <constraint firstItem="mhV-rV-O0c" firstAttribute="top" secondItem="dy1-MJ-hdL" secondAttribute="top" id="U0l-rT-a0G"/>
-                            <constraint firstItem="dy1-MJ-hdL" firstAttribute="bottom" secondItem="oLY-3A-s7K" secondAttribute="bottom" id="VN1-PW-YUN"/>
-                            <constraint firstItem="oLY-3A-s7K" firstAttribute="leading" secondItem="dy1-MJ-hdL" secondAttribute="leading" id="Ve2-FE-qdP"/>
-                            <constraint firstItem="G3Q-OV-fES" firstAttribute="leading" secondItem="dy1-MJ-hdL" secondAttribute="leading" id="aw2-gn-9hO"/>
-                            <constraint firstItem="dy1-MJ-hdL" firstAttribute="trailing" secondItem="oLY-3A-s7K" secondAttribute="trailing" id="b1D-Ir-Mci"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dy1-MJ-hdL"/>
                     </view>
@@ -274,12 +188,10 @@
                     <size key="freeformSize" width="375" height="868"/>
                     <connections>
                         <outlet property="ageTextField" destination="6LD-Pt-HU6" id="ZzM-ql-VVa"/>
-                        <outlet property="dimmerViewOutlet" destination="G3Q-OV-fES" id="sNq-gm-mRa"/>
                         <outlet property="hometownTextField" destination="A6e-aG-Xiy" id="1c0-8k-D12"/>
                         <outlet property="myBioTextView" destination="g3y-VN-fG2" id="ibb-53-odV"/>
                         <outlet property="nameLabel" destination="l4e-eG-g8Q" id="bbq-VB-kqd"/>
                         <outlet property="profilePicImageView" destination="4AR-Nx-jjp" id="vAl-df-6fA"/>
-                        <outlet property="threeDotSettingsView" destination="oLY-3A-s7K" id="cJw-p8-3mf"/>
                         <outlet property="todoCompletedSegmentedControl" destination="WWh-ne-g6i" id="UjM-cp-tOX"/>
                         <segue destination="pwf-yK-oQQ" kind="presentation" id="UJG-XH-0d4"/>
                     </connections>

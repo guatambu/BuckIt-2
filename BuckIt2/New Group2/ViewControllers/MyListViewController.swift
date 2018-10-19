@@ -20,9 +20,11 @@ class MyListViewController: UIViewController {
     @IBOutlet weak var dimmerViewOutlet: UIView!
     @IBOutlet weak var threeDotSettingsView: UIView!
     
-    var bucketList: [BucketListItem] = []
+    var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item20]
     var toDoItems: [BucketListItem] = []
     var completedItems: [BucketListItem] = []
+    
+    var users: [MockDataUsers] = [MockDataUsers.dylon, MockDataUsers.luisa, MockDataUsers.maggie, MockDataUsers.park, MockDataUsers.rodrigo, MockDataUsers.sangita]
     
     
     // MARK: - ViewController Lifecycle Functions
