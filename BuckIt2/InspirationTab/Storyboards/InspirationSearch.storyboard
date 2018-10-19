@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--Inspiration Search View Controller-->
         <scene sceneID="dPL-Lk-YZT">
             <objects>
-                <viewController id="rFt-dy-2vw" userLabel="Inspiration Search View Controller" customClass="InspirationSearchViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rFt-dy-2vw" userLabel="Inspiration Search View Controller" customClass="InspirationSearchViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ge-c0-uBj" userLabel="Inspiration Search View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJj-Qt-kde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3303.1999999999998" y="1120.3898050974515"/>
+            <point key="canvasLocation" x="3308" y="1120"/>
         </scene>
         <!--InspirationOtherUser-->
         <scene sceneID="vUL-UO-G5P">
