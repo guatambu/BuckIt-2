@@ -79,6 +79,12 @@ class ChatViewController: MessagesViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     func insetMessage(message: Message) {
         messages.append(message)
         messagesCollectionView.performBatchUpdates({
@@ -138,6 +144,9 @@ private extension ChatViewController {
         
         scrollsToBottomOnKeybordBeginsEditing = true
         maintainPositionOnKeyboardFrameChanged = true
+        
+        guard let layout = messagesCollectionView.collectionViewLayout as?  MessagesCollectionViewFlowLayout else { return }
+        layout.attributedTextMessageSizeCalculator.outgoingAvatarSize = .zero
     }
     
     func configureMessagesInputBar() {
@@ -196,7 +205,7 @@ extension ChatViewController: MessagesDataSource {
 extension ChatViewController: MessagesDisplayDelegate {
 
     func enabledDetectors(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> [DetectorType] {
-        
+        #warning("Make detectors functional")
         return [.url, .address, .phoneNumber, .date, .transitInformation]
     }
     
@@ -223,7 +232,14 @@ extension ChatViewController: MessagesDisplayDelegate {
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         let avatar = getAvatar(for: message.sender)
         avatarView.isHidden = isNextMessageSameSender(at: indexPath)
+        
+//        #warning("MockDataUsers.sam == the current user")
+//        if message.sender.displayName == MockDataUsers.sam.username {
+//            avatarView.isHidden = true
+//        } else {
+//        }
         avatarView.set(avatar: avatar)
+        
     }
 }
 
@@ -274,6 +290,11 @@ extension ChatViewController: MessageLabelDelegate {
     
 }
 
+extension ChatViewController: MessageCellDelegate {
+    func didTapAvatar(in cell: MessageCollectionViewCell) {
+        print("did tap avatar")
+    }
+}
 
 extension ChatViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
