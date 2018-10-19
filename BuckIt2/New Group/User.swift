@@ -22,6 +22,12 @@ class User {
     var profileImageURL: String?
     var location: String?
     var age: String?
+    var bioBlurb: String?
+    
+    var fullName: String {
+        guard let firstName = firstName, let lastName = lastName else { return "" }
+        return "\(firstName) \(lastName)"
+    }
     
     var firebaseDictionary: [String: Any] {
         return [
@@ -68,7 +74,8 @@ class User {
          lastName: String?,
          mockProfilePic: UIImage?,
          location: String?,
-         age: String?
+         age: String?,
+        bioBlurb: String? = ""
         ) {
         
         self.uid = uid
@@ -80,6 +87,7 @@ class User {
         self.mockProfilePic = mockProfilePic
         self.location = location
         self.age = age
+        self.bioBlurb = bioBlurb
     }
     
     // Firebase

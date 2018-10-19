@@ -66,26 +66,28 @@ class StorageManager {
     }
     
     // Upload Image
-    func uploadImage(_ image: UIImage, toStoragePath storagePath: String,
-                             completion: @escaping (URL?) -> Void) {
-        
-
+    func uploadImage(_ image: UIImage, toStorage storage: StorageReference,
+                     completion: @escaping (URL?) -> Void) {
+                
         guard let data = image.jpegData(compressionQuality: 0.4) else {
-                completion(nil)
-                return
+            completion(nil)
+            return
         }
         
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         
-        let imageName = [UUID().uuidString,
-                         String(Date().timeIntervalSince1970)].joined()
+        let profileImageStoragePath = storage.child(UUID().uuidString).fullPath
         
-        
-        uploadData(toStoragePath: storagePath, uploadData: data) { (success) in
+        uploadData(toStoragePath: profileImageStoragePath, uploadData: data) { (success) in
             if !success {
-                print("Unable to upload image to storage at path: \(storagePath)")
+                print("Unable to upload image to storage at path: \(profileImageStoragePath)")
+            } else {
+                storage.child("profileImage").downloadURL(completion: { (url, error) in
+                    completion(url)
+                })
             }
         }
+        
     }
 }

@@ -27,6 +27,24 @@ class AuthManager {
             }
             
             // TODO: - Handle User
+            
+        }
+    }
+    
+    func createAccount(withEmail email: String, password: String, username: String,
+                       completion: @escaping (_ user: AuthDataResult?, _ error: Error?) -> Void) {
+        Endpoint.auth.createUser(withEmail: email, password: password) { (authDataResult, error) in
+            if let error = error {
+                print("🔥 Error creating user: \(#function) \(error) \(error.localizedDescription)")
+                completion(nil, error)
+                return
+            }
+            
+            let user = authDataResult?.user
+            
+            // TODO: - Handle User
+            completion(authDataResult, nil)
+            
         }
     }
     

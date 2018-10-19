@@ -367,7 +367,7 @@
         <!--InspirationHome-->
         <scene sceneID="Nww-2P-OMJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="InspirationHome" referencedIdentifier="InspirationHome" id="mfz-XE-xgJ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="InspirationHome" id="mfz-XE-xgJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="QfK-cY-0FU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIy-dH-Y2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
