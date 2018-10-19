@@ -12,6 +12,35 @@ import FirebaseFirestore
 class DatabaseManager {
     
     // Write
+    func setNewUser(document: String, toCollection collection: CollectionReference, data: Dictionary<String, Any>,
+                    completion: @escaping (_ success: Bool) -> Void) {
+        
+        collection.document(document).setData(data) { (error) in
+            if let error = error {
+                print("Unable to set data to document: \(document) \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
+    
+    func addDocument(toCollection collection: CollectionReference, data: Dictionary<String, Any>,
+                     completion: @escaping (_ success: Bool) -> Void) {
+        
+        // Cloud Firestore creates collections and documents implicitly the first time you add data to the document
+        // Documents in a collection can contain different sets of information.
+        collection.addDocument(data: data) { (error) in
+            if let error = error {
+                print("Unable to add data to collection: \(collection.path) \(error) \(error.localizedDescription)")
+                completion(false)
+                return
+            } else {
+                print("Document added to the database")
+                completion(true)
+            }
+        }
+    }
     func addDocument(toCollectionPath collectionPath: String, data: Dictionary<String, Any>,
                      completion: @escaping (_ success: Bool) -> Void) {
         
