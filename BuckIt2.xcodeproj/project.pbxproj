@@ -66,7 +66,7 @@
 		FA292174217985FD00053E8E /* MyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA292173217985FD00053E8E /* MyListTableViewController.swift */; };
 		FA29217621798B6B00053E8E /* UserProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29217521798B6B00053E8E /* UserProfileDetailViewController.swift */; };
 		FA881C312174118700236163 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C302174118700236163 /* IBDesignables.swift */; };
-		FA881C352177AEFF00236163 /* MockDataMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C342177AEFF00236163 /* MockDataMessages.swift */; };
+		FA881C352177AEFF00236163 /* MockDataMessagesA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C342177AEFF00236163 /* MockDataMessagesA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +88,7 @@
 		D7A151E3217522D400520CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A151E521757DA900520CEA /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
 		D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
-		D7A151EB2175856C00520CEA /* MockDataMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessages.swift; sourceTree = "<group>"; };
+		D7A151EB2175856C00520CEA /* MockDataMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockDataMessages.swift; path = ../MockDataMessages.swift; sourceTree = "<group>"; };
 		FA270D5B2172F66B001643D0 /* BuckIt2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuckIt2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA270D662172F66B001643D0 /* BuckIt2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuckIt2.xcdatamodel; sourceTree = "<group>"; };
 		FA270D722172F66D001643D0 /* BuckIt2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuckIt2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,11 +116,11 @@
 		FA270E462172FAEF001643D0 /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		FA270E472172FAEF001643D0 /* MessageSearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSearchUserViewController.swift; sourceTree = "<group>"; };
 		FA270E482172FAF0001643D0 /* MessageComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposeViewController.swift; sourceTree = "<group>"; };
-		FA270E4F2173006D001643D0 /* MockDataUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockDataUsers.swift; path = "MockData Structs/MockDataUsers.swift"; sourceTree = "<group>"; };
+		FA270E4F2173006D001643D0 /* MockDataUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataUsers.swift; sourceTree = "<group>"; };
 		FA270E502173006D001643D0 /* BucketListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItem.swift; sourceTree = "<group>"; };
 		FA270E512173006D001643D0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA270E522173006D001643D0 /* guatambuToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guatambuToDo.swift; sourceTree = "<group>"; };
-		FA270E532173006E001643D0 /* MockDataBucketListItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockDataBucketListItems.swift; path = "MockData Structs/MockDataBucketListItems.swift"; sourceTree = "<group>"; };
+		FA270E532173006E001643D0 /* MockDataBucketListItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataBucketListItems.swift; sourceTree = "<group>"; };
 		FA270E542173006F001643D0 /* BucketListItemComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItemComment.swift; sourceTree = "<group>"; };
 		FA270E552173006F001643D0 /* BucketList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketList.swift; sourceTree = "<group>"; };
 		FA270E562173006F001643D0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		FA292173217985FD00053E8E /* MyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewController.swift; sourceTree = "<group>"; };
 		FA29217521798B6B00053E8E /* UserProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDetailViewController.swift; sourceTree = "<group>"; };
 		FA881C302174118700236163 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBDesignables.swift; path = BuckIt2/Resources/IBDesignables.swift; sourceTree = SOURCE_ROOT; };
-		FA881C342177AEFF00236163 /* MockDataMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessages.swift; sourceTree = "<group>"; };
+		FA881C342177AEFF00236163 /* MockDataMessagesA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessagesA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,9 +400,6 @@
 				FA270E542173006F001643D0 /* BucketListItemComment.swift */,
 				FA270E522173006D001643D0 /* guatambuToDo.swift */,
 				FA270E562173006F001643D0 /* Message.swift */,
-				D7A151EB2175856C00520CEA /* MockDataMessages.swift */,
-				FA270E532173006E001643D0 /* MockDataBucketListItems.swift */,
-				FA270E4F2173006D001643D0 /* MockDataUsers.swift */,
 				FA270E512173006D001643D0 /* User.swift */,
 			);
 			name = Models;
@@ -619,7 +616,10 @@
 		FA881C362177AF2600236163 /* MockData Structs */ = {
 			isa = PBXGroup;
 			children = (
-				FA881C342177AEFF00236163 /* MockDataMessages.swift */,
+				D7A151EB2175856C00520CEA /* MockDataMessages.swift */,
+				FA270E4F2173006D001643D0 /* MockDataUsers.swift */,
+				FA270E532173006E001643D0 /* MockDataBucketListItems.swift */,
+				FA881C342177AEFF00236163 /* MockDataMessagesA.swift */,
 			);
 			path = "MockData Structs";
 			sourceTree = "<group>";
@@ -828,7 +828,7 @@
 				FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */,
 				FA270E5E21730070001643D0 /* Message.swift in Sources */,
 				FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */,
-				FA881C352177AEFF00236163 /* MockDataMessages.swift in Sources */,
+				FA881C352177AEFF00236163 /* MockDataMessagesA.swift in Sources */,
 				FA270E5821730070001643D0 /* BucketListItem.swift in Sources */,
 				FA270EB4217301B1001643D0 /* Endpoint.swift in Sources */,
 				FA270E4B2172FAF0001643D0 /* MessageComposeViewController.swift in Sources */,
