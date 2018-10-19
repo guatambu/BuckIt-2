@@ -9,24 +9,44 @@
 import UIKit
 
 class MessageListViewController: UIViewController {
+    
+    private let cellId = MessageListCell.reuseIdentifier
 
+    @IBOutlet weak var messageListTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        messageListTableView.dataSource = self
 
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func newMessageButtonTapped(_ sender: UIButton) {
+    }
+}
+
+// MARK: - UITableViewDataSouce
+extension MessageListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MockDataMessages.mockMessages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? MessageListCell
+            else { return UITableViewCell() }
+        
+        let mockMessage = MockDataMessages.mockMessages[indexPath.row]
+        
+        #warning("Temp Cell view setup")
+//        cell.messageGlimpseLabel.text = mockMessage.text
+//        cell.usernameLabel.text = mockMessage.receiver.username
+//        cell.profileImageView.image = mockMessage.receiver.mockProfilePic
+//
+//        cell.roundImageView()
+        
+        cell.message = mockMessage
+        
+        return cell
     }
 }
