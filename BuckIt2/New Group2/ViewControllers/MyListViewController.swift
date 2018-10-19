@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyListViewController: UIViewController {
+class MyListViewController: UIViewController,  {
 
     // MARK: - Outlets
     @IBOutlet weak var profilePicImageView: UIImageView!
@@ -17,17 +17,31 @@ class MyListViewController: UIViewController {
     @IBOutlet weak var hometownTextField: UITextField!
     @IBOutlet weak var myBioTextView: UITextView!
     @IBOutlet weak var todoCompletedSegmentedControl: UISegmentedControl!
+
+    
+    var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item20]
+    var toDoItems: [BucketListItem] = []
+    var completedItems: [BucketListItem] = []
+    
+    var users: [MockDataUsers] = [MockDataUsers.dylon, MockDataUsers.luisa, MockDataUsers.maggie, MockDataUsers.park, MockDataUsers.rodrigo, MockDataUsers.sangita]
     
     
-    // MARK: - Lifecycle Functions
+    // MARK: - ViewController Lifecycle Functions
+    
+    override func viewWillAppear(_ animated: Bool) {
+        MyListController.shared.filterCompleted(bucketListItems: MyListController.shared.myBucketListItems)
+        toDoItems = MyListController.shared.toDoItems
+        completedItems = MyListController.shared.completedItems
+        bucketList = MyListController.shared.myBucketListItems
+        
+        profilePicImageView.isUserInteractionEnabled = false
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let button = UIButton(type: UIButton.ButtonType.custom)
-//        button.setImage(UIImage(named: "settings.png"), for: UIControl.State.normal)
-//        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-//        let barButton = UIBarButtonItem(customView: button)
-//        self.navigationItem.rightBarButtonItems = [barButton]
+
     }
 
 
@@ -44,8 +58,31 @@ class MyListViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func settingsButtonTapped(_ sender: UIBarButtonItem) {
+        
+        
+        
+        
     }
     
     @IBAction func changedSegmentController(_ sender: UISegmentedControl) {
+        let selectedIndex = todoCompletedSegmentedControl.selectedSegmentIndex
+        
+        switch selectedIndex {
+            
+        case 0:
+            // To-Do
+            // display To-Do BucketList Items
+        case 1:
+            // Done
+            // display Done Bucket List Items
+        }
     }
+    
+    @IBAction func addNewItemButtonTapped(_ sender: UIButton) {
+        
+        
+    }
+    
+    
 }
+
