@@ -102,7 +102,15 @@ class ChatViewController: MessagesViewController {
         return messagesCollectionView.indexPathsForVisibleItems.contains(lastIndexPath)
     }
     
+    func isPreviousMessageSameSender(at indexPath: IndexPath) -> Bool {
+        guard indexPath.section - 1 >= 0 else { return false }
+        return messages[indexPath.section].sender == messages[indexPath.section - 1].sender
+    }
     
+    func isNextMessageSameSender(at indexPath: IndexPath) -> Bool {
+        guard indexPath.section + 1 < messages.count else { return false }
+        return messages[indexPath.section].sender == messages[indexPath.section + 1].sender
+    }
 
 }
 
@@ -119,13 +127,17 @@ private extension ChatViewController {
         }
     }
     
+    func configureMessageLabel() {
+        
+    }
+    
     func configureMessagesCollectionView() {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         
-        scrollsToBottomOnKeybordBeginsEditing = true // default false
-        maintainPositionOnKeyboardFrameChanged = true // default false
+        scrollsToBottomOnKeybordBeginsEditing = true
+        maintainPositionOnKeyboardFrameChanged = true
     }
     
     func configureMessagesInputBar() {
@@ -165,6 +177,7 @@ extension ChatViewController: MessagesDataSource {
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        
         return messages[indexPath.section]
     }
     
@@ -182,11 +195,15 @@ extension ChatViewController: MessagesDataSource {
 
 extension ChatViewController: MessagesDisplayDelegate {
 
+    func enabledDetectors(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> [DetectorType] {
+        
+        return [.url, .address, .phoneNumber, .date, .transitInformation]
+    }
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        let chatPartnerColor = #colorLiteral(red: 1, green: 0.3375276762, blue: 0.6399649898, alpha: 1)
-        
-        return isFromCurrentSender(message: message) ? .white : chatPartnerColor
+        let chatPartnerColor = #colorLiteral(red: 0.9960784314, green: 0.4431372549, blue: 0.4666666667, alpha: 1)
+        let lighterGray = #colorLiteral(red: 0.9137254902, green: 0.9137254902, blue: 0.9137254902, alpha: 1)
+        return isFromCurrentSender(message: message) ? lighterGray : chatPartnerColor
     }
     
     func shouldDisplayHeader(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> Bool {
@@ -199,13 +216,13 @@ extension ChatViewController: MessagesDisplayDelegate {
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         
-        let borderColor:UIColor = isFromCurrentSender(message: message) ? .black: .clear
-        return .bubbleOutline(borderColor)
+        return .bubble
 
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         let avatar = getAvatar(for: message.sender)
+        avatarView.isHidden = isNextMessageSameSender(at: indexPath)
         avatarView.set(avatar: avatar)
     }
 }
@@ -229,6 +246,32 @@ extension ChatViewController: MessageInputBarDelegate {
         inputBar.inputTextView.text =  String()
         messagesCollectionView.scrollToBottom(animated: true)
     }
+}
+
+// MARK: - MessageLabelDelegate
+
+extension ChatViewController: MessageLabelDelegate {
+    
+    func didSelectAddress(_ addressComponents: [String: String]) {
+        print("Address Selected: \(addressComponents)")
+    }
+    
+    func didSelectDate(_ date: Date) {
+        print("Date Selected: \(date)")
+    }
+    
+    func didSelectPhoneNumber(_ phoneNumber: String) {
+        print("Phone Number Selected: \(phoneNumber)")
+    }
+    
+    func didSelectURL(_ url: URL) {
+        print("URL Selected: \(url)")
+    }
+    
+    func didSelectTransitInformation(_ transitInformation: [String: String]) {
+        print("TransitInformation Selected: \(transitInformation)")
+    }
+    
 }
 
 
