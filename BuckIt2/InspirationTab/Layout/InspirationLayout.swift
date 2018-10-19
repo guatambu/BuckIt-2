@@ -8,14 +8,17 @@
 
 import UIKit
 
-protocol InspirationLayoutDelegate: class {
+//class InspirationLayout: UICollectionViewLayout {
+//
+//}
+protocol PinterestLayoutDelegate: class {
     // 1. Method to ask the delegate for the height of the image
     func collectionView(_ collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat
 }
 
-class InspirationLayout: UICollectionViewLayout {
+class PinterestLayout: UICollectionViewLayout {
     //1. Pinterest Layout Delegate
-    weak var delegate: InspirationLayoutDelegate!
+    weak var delegate: PinterestLayoutDelegate!
     
     //2. Configurable properties
     fileprivate var numberOfColumns = 2

@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>293754685740-i2qf9nvkiev9ivolcpt9m6s8l155st3r.apps.googleusercontent.com</string>
+	<string>293754685740-cjo452q555vfq2b4mnpspil9e50ebjau.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.293754685740-i2qf9nvkiev9ivolcpt9m6s8l155st3r</string>
+	<string>com.googleusercontent.apps.293754685740-cjo452q555vfq2b4mnpspil9e50ebjau</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAUs7r2sYmwswjjn084U4bXgG-B_wtJ94A</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,23 +17,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.dundak.BuckIt2</string>
+	<string>com.jasongoodney.BuckIt</string>
 	<key>PROJECT_ID</key>
 	<string>buckit-95949</string>
 	<key>STORAGE_BUCKET</key>
 	<string>buckit-95949.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:293754685740:ios:b55b543be00454d9</string>
+	<string>1:293754685740:ios:ad452a05f6b24702</string>
 	<key>DATABASE_URL</key>
 	<string>https://buckit-95949.firebaseio.com</string>
 </dict>

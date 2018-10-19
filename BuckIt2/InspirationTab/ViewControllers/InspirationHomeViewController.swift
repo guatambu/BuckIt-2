@@ -8,19 +8,17 @@
 
 import UIKit
 
-class InspirationHomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class InspirationHomeViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var inspirationSearchBar: UISearchBar!
-    @IBOutlet weak var inspirationCollectionView: UICollectionView!
     
-    // MARK: - Properties
     
     // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setUPUI()
+
+        // Do any additional setup after loading the view.
     }
     
 
@@ -34,28 +32,4 @@ class InspirationHomeViewController: UIViewController, UICollectionViewDelegate,
     }
     */
 
-}
-
-extension InspirationHomeViewController: InspirationLayoutDelegate {
-    
-    func setUPUI() {
-        inspirationCollectionView.delegate = self
-        inspirationCollectionView.dataSource = self
-        guard let layout = inspirationCollectionView.collectionViewLayout as? InspirationLayout else { return }
-        layout.delegate = self
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return 225
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "inspirationCell", for: indexPath) as? InspirationCollectionViewCell
-        return cell ?? UICollectionViewCell()
-    }
-    
 }
