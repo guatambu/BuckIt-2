@@ -83,7 +83,8 @@
                     <navigationItem key="navigationItem" title="Messages" id="WqX-hI-jfS">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="6SX-CB-sDf">
                             <connections>
-                                <segue destination="cov-fT-C3e" kind="show" id="jzs-Yh-lX9"/>
+                                <action selector="newMessageButtonTapped:" destination="5AT-zJ-UD2" id="SVh-ab-qmg"/>
+                                <segue destination="dH1-18-Rrf" kind="show" id="yDC-Ta-UNi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -95,6 +96,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Evh-fy-0Km" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1664.8" y="1354.2728635682161"/>
+        </scene>
+        <!--MessageSearchUser-->
+        <scene sceneID="qFV-p0-sth">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MessageSearchUser" id="dH1-18-Rrf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nVs-oB-9YF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2378" y="1242"/>
         </scene>
         <!--MessageSearchandCompose-->
         <scene sceneID="lPs-L7-Yv7">

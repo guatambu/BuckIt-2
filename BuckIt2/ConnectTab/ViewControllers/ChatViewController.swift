@@ -9,25 +9,51 @@
 import UIKit
 import MessageKit
 
+enum ChatType {
+    case ongoing
+    case new
+}
+
 class ChatViewController: MessagesViewController {
 
-    private var currentUser: User
-    private var chatPartner: User
+    private var _currentUser: User?
+    private var _chatPartner: User?
+    private var chatType: ChatType = .ongoing
     private var messages: [Message] = []
-
     
-    init(currentUser: User, chatPartner: User) {
-        self.currentUser = currentUser
-        self.chatPartner = chatPartner
-        super.init(nibName: nil, bundle: nil)
+    private var currentUser: User {
+        return _currentUser!
+    }
+    
+    private var chatPartner: User {
+        return _chatPartner!
+    }
+    
+    init() {
+       super.init(nibName: nil, bundle: nil)
+    }
+    
+    convenience init(currentUser: User, chatType: ChatType) {
+        self.init()
+        
+        self._currentUser = currentUser
+        self.chatType = chatType
+
+    }
+    
+    convenience init(currentUser: User, chatPartner: User, chatType: ChatType = .ongoing) {
+        self.init()
+        
+        self._currentUser = currentUser
+        self._chatPartner = chatPartner
+        self.chatType = chatType
     }
     
     convenience init(currentUser: User, chatPartner: User, messages: [Message]) {
         self.init(currentUser: currentUser, chatPartner: chatPartner)
         
         self.messages = messages
-        
-        title = chatPartner.username
+           
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,6 +66,17 @@ class ChatViewController: MessagesViewController {
         updateView()
         configureMessagesCollectionView()
         configureMessagesInputBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if chatType == .new {
+            setupSearchBar()
+            title = "New Message"
+            
+            // TODO: - Make search bar a searchcontroller?
+        }
     }
     
     func insetMessage(message: Message) {
@@ -64,6 +101,8 @@ class ChatViewController: MessagesViewController {
         
         return messagesCollectionView.indexPathsForVisibleItems.contains(lastIndexPath)
     }
+    
+    
 
 }
 
@@ -71,6 +110,13 @@ class ChatViewController: MessagesViewController {
 private extension ChatViewController {
     func updateView() {
         tabBarController?.tabBar.isHidden = true
+        
+        switch chatType {
+        case .ongoing:
+            title = chatPartner.username
+        case .new:
+            title = "New Message"
+        }
     }
     
     func configureMessagesCollectionView() {
@@ -95,6 +141,20 @@ private extension ChatViewController {
         } else {
             return Avatar(image: chatPartner.mockProfilePic, initials: "")
         }
+    }
+    
+    func setupSearchBar() {
+        let searchBar = UISearchBar()
+        view.addSubview(searchBar)
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        searchBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        searchBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        messagesCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
+        
+        searchBar.delegate = self
+        searchBar.placeholder = "Search for people"
     }
 }
 
@@ -162,7 +222,6 @@ extension ChatViewController: MessageInputBarDelegate {
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         for component in inputBar.inputTextView.components where component is String {
             if let text = component as? String {
-            
                 let message = Message(uid: UUID().uuidString, sentFrom: currentUser, receiver: chatPartner, text: text, timestamp: Date())
                 insetMessage(message: message)
             }
@@ -172,3 +231,9 @@ extension ChatViewController: MessageInputBarDelegate {
     }
 }
 
+
+extension ChatViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
+}

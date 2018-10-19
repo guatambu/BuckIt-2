@@ -42,7 +42,7 @@ struct MockDataMessages {
         
         let message6 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "How did you like the nude beach", timestamp: Date())
         
-        let message7 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "How did you like the nude beach. How did you like the nude beach.", timestamp: Date())
+        let message7 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "How did you like the nude beach. How did you like the nude beach.", timestamp: Date())
         
         let message8 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "Yeah go to a good one", timestamp: Date())
         
@@ -55,7 +55,7 @@ struct MockDataMessages {
 
 struct MockConversation {
     
-    static var all = [MockConversation.withPark, MockConversation.withDylon, MockConversation.withLuisa, MockConversation.withMaggie, MockConversation.withRodrigo, MockConversation.withSangita]
+    static var all = [MockConversation.withPark, MockConversation.withDylon, MockConversation.withLuisa, MockConversation.withMaggie, MockConversation.withRodrigo]
     
     
     static var withDylon: [Message] {

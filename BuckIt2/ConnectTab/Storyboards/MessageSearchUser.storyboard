@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="153-i0-N7T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aH5-Fq-TYR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,39 +12,16 @@
         <!--Connect Compose->Search-->
         <scene sceneID="8He-5k-DoJ">
             <objects>
-                <viewController id="153-i0-N7T" userLabel="Connect Compose-&gt;Search" customClass="MessageSearchUserViewController" customModule="BuckIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="153-i0-N7T" userLabel="Connect Compose-&gt;Search" customClass="MessageSearchUserViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRU-ps-Tr6" userLabel="Connect New Message Search View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsz-EX-iAC" userLabel="Connect New Message Search Label">
-                                <rect key="frame" x="72" y="34" width="184" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="WPc-an-tEi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shD-lt-T7Y" userLabel="Connect New Message Search Back Button">
-                                <rect key="frame" x="11" y="34" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="vb5-QD-rrn"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="back"/>
-                                <connections>
-                                    <action selector="backButtonTapped:" destination="153-i0-N7T" eventType="touchUpInside" id="9ic-LE-PmL"/>
-                                </connections>
-                            </button>
-                            <searchBar contentMode="redraw" placeholder="Search people..." translatesAutoresizingMaskIntoConstraints="NO" id="y2V-fy-Gms" userLabel="Connect New Message Search Bar">
-                                <rect key="frame" x="0.0" y="93" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ny-K7-D6D" userLabel="Connect Messages Search Table View">
-                                <rect key="frame" x="0.0" y="149" width="375" height="518"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="connectNewMessageSearchResultsCell" textLabel="aMN-sb-pd8" imageView="guz-k1-F53" style="IBUITableViewCellStyleDefault" id="E36-wn-c6I">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="connectNewMessageSearchResultsCell" textLabel="aMN-sb-pd8" detailTextLabel="HZX-o8-Brm" style="IBUITableViewCellStyleSubtitle" id="E36-wn-c6I">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E36-wn-c6I" id="cY6-zL-28m" userLabel="Connect New Messages Search Results Content View">
@@ -52,46 +29,55 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aMN-sb-pd8" userLabel="Connect New Message Search Name Label">
-                                                    <rect key="frame" x="74" y="0.0" width="286" height="43.5"/>
+                                                    <rect key="frame" x="15" y="5" width="45" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profileIcon" id="guz-k1-F53" userLabel="Connect New Message Search Profile Image View">
-                                                    <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HZX-o8-Brm">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="jIw-R3-dZp" kind="show" id="DSE-AC-xaq"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search people..." translatesAutoresizingMaskIntoConstraints="NO" id="y2V-fy-Gms" userLabel="Connect New Message Search Bar">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="153-i0-N7T" id="njg-Ci-8wp"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2ny-K7-D6D" firstAttribute="top" secondItem="y2V-fy-Gms" secondAttribute="bottom" id="0BH-lA-93v"/>
+                            <constraint firstItem="y2V-fy-Gms" firstAttribute="trailing" secondItem="nZ1-p7-GKc" secondAttribute="trailing" id="3t8-wA-HEK"/>
                             <constraint firstAttribute="trailing" secondItem="y2V-fy-Gms" secondAttribute="trailing" id="8lk-d8-yqk"/>
                             <constraint firstItem="y2V-fy-Gms" firstAttribute="trailing" secondItem="2ny-K7-D6D" secondAttribute="trailing" id="8sm-dU-Eof"/>
-                            <constraint firstItem="shD-lt-T7Y" firstAttribute="top" secondItem="nZ1-p7-GKc" secondAttribute="top" constant="14" id="Emq-jl-9ly"/>
-                            <constraint firstItem="y2V-fy-Gms" firstAttribute="top" secondItem="fsz-EX-iAC" secondAttribute="bottom" constant="23" id="JS1-3N-nYX"/>
+                            <constraint firstItem="y2V-fy-Gms" firstAttribute="top" secondItem="nZ1-p7-GKc" secondAttribute="top" id="J1q-1f-GA5"/>
                             <constraint firstItem="2ny-K7-D6D" firstAttribute="bottom" secondItem="nZ1-p7-GKc" secondAttribute="bottom" id="LwM-tQ-h8D"/>
                             <constraint firstItem="y2V-fy-Gms" firstAttribute="leading" secondItem="DRU-ps-Tr6" secondAttribute="leading" id="Qzn-Zd-aYT"/>
-                            <constraint firstItem="shD-lt-T7Y" firstAttribute="top" secondItem="fsz-EX-iAC" secondAttribute="top" id="Riz-nv-OtJ"/>
                             <constraint firstItem="y2V-fy-Gms" firstAttribute="leading" secondItem="2ny-K7-D6D" secondAttribute="leading" id="dQ1-e7-GZF"/>
-                            <constraint firstItem="fsz-EX-iAC" firstAttribute="leading" secondItem="shD-lt-T7Y" secondAttribute="trailing" constant="21" id="e5b-v8-Ij3"/>
-                            <constraint firstItem="shD-lt-T7Y" firstAttribute="leading" secondItem="nZ1-p7-GKc" secondAttribute="leading" constant="11" id="eeK-VW-mhG"/>
-                            <constraint firstItem="y2V-fy-Gms" firstAttribute="top" secondItem="shD-lt-T7Y" secondAttribute="bottom" constant="19" id="oFZ-hx-i0O"/>
-                            <constraint firstItem="2ny-K7-D6D" firstAttribute="top" secondItem="y2V-fy-Gms" secondAttribute="bottom" id="uKf-wV-0wT"/>
+                            <constraint firstItem="y2V-fy-Gms" firstAttribute="leading" secondItem="nZ1-p7-GKc" secondAttribute="leading" id="qZs-hj-NpR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nZ1-p7-GKc"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Connect With" id="1fy-JW-HPh"/>
+                    <connections>
+                        <outlet property="searchBar" destination="y2V-fy-Gms" id="b5T-Ba-q1V"/>
+                        <outlet property="tableView" destination="2ny-K7-D6D" id="tYd-m3-ids"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnY-hG-Qiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1504.8" y="1356.9715142428786"/>
+            <point key="canvasLocation" x="2444" y="1356.9715142428786"/>
         </scene>
         <!--MessageCompose-->
         <scene sceneID="TeC-cd-gv9">
@@ -99,11 +85,25 @@
                 <viewControllerPlaceholder storyboardName="MessageCompose" id="jIw-R3-dZp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDG-2K-7Fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2343.1999999999998" y="1356.9715142428786"/>
+            <point key="canvasLocation" x="3282.4000000000001" y="1356.521739130435"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BR2-Qw-SvG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aH5-Fq-TYR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="szL-fM-FhG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="153-i0-N7T" kind="relationship" relationship="rootViewController" id="sTm-si-BRg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yD6-4N-Jso" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1504.8" y="1356.9715142428786"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="back" width="700" height="700"/>
-        <image name="profileIcon" width="700" height="700"/>
-    </resources>
 </document>
