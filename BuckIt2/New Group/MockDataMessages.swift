@@ -55,8 +55,10 @@ struct MockDataMessages {
 
 struct MockConversation {
     
-    static var all = [MockConversation.withPark, MockConversation.withDylon, MockConversation.withLuisa, MockConversation.withMaggie, MockConversation.withRodrigo]
+    static var all = [MockConversation.withPark, MockConversation.withDylon, MockConversation.withLuisa, MockConversation.withMaggie, MockConversation.withRodrigo, MockConversation.withSangita]
     
+    static var currentConversations = Array(MockConversation.all[..<3])
+    static var potentialConversations = Array(MockConversation.all[3...])
     
     static var withDylon: [Message] {
         return MockDataMessages.messages(with: MockDataUsers.dylon)

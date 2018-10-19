@@ -11,6 +11,7 @@ import UIKit
 class MessageListViewController: UIViewController {
     
     private let cellId = MessageListCell.reuseIdentifier
+    var dataSource = MockConversation.currentConversations
 
     @IBOutlet weak var messageTitleLabel: UILabel!
     @IBOutlet weak var messageListTableView: UITableView!
@@ -55,14 +56,14 @@ private extension MessageListViewController {
 // MARK: - UITableViewDataSouce
 extension MessageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MockConversation.all.count
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? MessageListCell
             else { return UITableViewCell() }
         
-        let mockConversation = MockConversation.all[indexPath.row]
+        let mockConversation = dataSource[indexPath.row]
         
         let recentMessage = mockConversation.last!
 
@@ -78,7 +79,7 @@ extension MessageListViewController: UITableViewDataSource {
 extension MessageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let mockConversation = MockConversation.all[indexPath.row]
+        let mockConversation = dataSource[indexPath.row]
 
         let sentFrom = mockConversation[0].sentFrom
         let receiver = mockConversation[0].receiver
@@ -93,8 +94,8 @@ extension MessageListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            let conversation = MockConversation.all[indexPath.row]
-            MockConversation.all.remove(at: indexPath.row)
+//            let conversation = dataSource[indexPath.row]
+            dataSource.remove(at: indexPath.row)
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }

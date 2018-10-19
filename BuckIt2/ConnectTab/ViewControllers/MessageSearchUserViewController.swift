@@ -11,8 +11,12 @@ import UIKit
 class MessageSearchUserViewController: UIViewController {
 
     // MARK: - Properties
-    let dataSource = MockDataUsers.allOtherUsers
-    var filteredDataSource: [User] = []
+    var currentConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[..<3])
+    var potentialConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[3...])
+//    let dataSource = MockDataUsers.allOtherUsers
+    lazy var filteredCurrentConversationsDataSource: [User] = self.currentConversationsDataSource
+    
+    var filteredPotentialConversationsDataSource: [User] = []
     
     // MARK: - Outlets
     
@@ -29,12 +33,20 @@ class MessageSearchUserViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         searchBar.becomeFirstResponder()
+    }
+    
+    func filter(_ dataSource: [User], with searchText: String) -> [User] {
+        return dataSource.filter({ (user) -> Bool in
+            return user.username.contains(searchText) || user.fullName.contains(searchText)
+        })
     }
 }
 
@@ -49,26 +61,63 @@ private extension MessageSearchUserViewController {
 
 // MARK: - UITableViewDataSource
 extension MessageSearchUserViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredDataSource.count
+        switch section {
+        case 0:
+            return filteredCurrentConversationsDataSource.count
+        case 1:
+            return filteredPotentialConversationsDataSource.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "connectNewMessageSearchResultsCell", for: indexPath)
         
-        let user = filteredDataSource[indexPath.row]
+        var dataSource: [User] = []
+        
+        if indexPath.section == 0 {
+            dataSource = filteredCurrentConversationsDataSource
+        } else if indexPath.section == 1 {
+            dataSource = filteredPotentialConversationsDataSource
+        }
+        
+        let user = dataSource[indexPath.row]
         
         cell.textLabel?.text = user.username
         cell.detailTextLabel?.text = user.fullName
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0 where filteredCurrentConversationsDataSource.count > 0:
+            return "Current Connections"
+        case 1 where filteredPotentialConversationsDataSource.count > 0:
+            return "Connect With"
+        default:
+            return ""
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
 extension MessageSearchUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let chatPartner = filteredDataSource[indexPath.row]
+        var dataSource: [User] = []
+        
+        if indexPath.section == 0 {
+            dataSource = filteredCurrentConversationsDataSource
+        } else if indexPath.section == 1 {
+            dataSource = filteredPotentialConversationsDataSource
+        }
+        
+        let chatPartner = dataSource[indexPath.row]
         let currentUser = MockDataUsers.sam
         let chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner)
         
@@ -87,15 +136,20 @@ extension MessageSearchUserViewController: UITableViewDelegate {
 extension MessageSearchUserViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
-            filteredDataSource = []
+            filteredCurrentConversationsDataSource = currentConversationsDataSource
+            filteredPotentialConversationsDataSource = []
         } else {
-            filteredDataSource = dataSource.filter({ (user) -> Bool in
-                return user.username.contains(searchText) || user.fullName.contains(searchText)
-            })
-            
+            filteredCurrentConversationsDataSource = filter(currentConversationsDataSource, with: searchText)
+            filteredPotentialConversationsDataSource = filter(potentialConversationsDataSource, with: searchText)
         }
         
         print(searchText.lowercased())
         tableView.reloadData()
+    }
+}
+
+extension MessageSearchUserViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
     }
 }
