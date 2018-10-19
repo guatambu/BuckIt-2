@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyListViewController: UIViewController {
+class MyListViewController: UIViewController,  {
 
     // MARK: - Outlets
     @IBOutlet weak var profilePicImageView: UIImageView!
@@ -65,5 +65,24 @@ class MyListViewController: UIViewController {
     }
     
     @IBAction func changedSegmentController(_ sender: UISegmentedControl) {
+        let selectedIndex = todoCompletedSegmentedControl.selectedSegmentIndex
+        
+        switch selectedIndex {
+            
+        case 0:
+            // To-Do
+            // display To-Do BucketList Items
+        case 1:
+            // Done
+            // display Done Bucket List Items
+        }
+    }
+    
+    @IBAction func addNewItemButtonTapped(_ sender: UIButton) {
+        
+        
+    }
+    
+    
 }
 
