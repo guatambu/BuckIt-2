@@ -44,6 +44,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="lJy-Ew-XxY" kind="show" identifier="ToChatVC" id="q23-UC-wb8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -78,6 +81,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnY-hG-Qiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2444" y="1356.9715142428786"/>
+        </scene>
+        <!--MessageChat-->
+        <scene sceneID="Olz-dp-lsc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MessageChat" id="lJy-Ew-XxY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65I-bq-VAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3104" y="1215"/>
         </scene>
         <!--MessageCompose-->
         <scene sceneID="TeC-cd-gv9">

@@ -16,6 +16,7 @@
 		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
 		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
 		D711BE5A217BB36000F70341 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BE59217BB36000F70341 /* UIViewController+Alert.swift */; };
+		D711BE5C217BDE3000F70341 /* MessageChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711BE5B217BDE3000F70341 /* MessageChat.storyboard */; };
 		D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74FD8C92177E81600A4965F /* Conversation.swift */; };
 		D758FDD72173EC3600A3B11D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */; };
 		D7A151E4217522D400520CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A151E3217522D400520CEA /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.debug.xcconfig"; sourceTree = "<group>"; };
 		87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuckIt2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D711BE59217BB36000F70341 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		D711BE5B217BDE3000F70341 /* MessageChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageChat.storyboard; sourceTree = "<group>"; };
 		D74FD8C92177E81600A4965F /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7A151E3217522D400520CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				FA270E3F2172FAE8001643D0 /* MessageSearchandCompose.storyboard */,
 				FA270E3E2172FAE8001643D0 /* MessageCompose.storyboard */,
 				FA270E412172FAE9001643D0 /* MessageSearchUser.storyboard */,
+				D711BE5B217BDE3000F70341 /* MessageChat.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				384F2B4421751320003DC49B /* MyList.storyboard in Resources */,
 				384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */,
 				FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */,
+				D711BE5C217BDE3000F70341 /* MessageChat.storyboard in Resources */,
 				D7A151E4217522D400520CEA /* Assets.xcassets in Resources */,
 				FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */,
 				384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */,

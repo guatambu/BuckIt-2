@@ -107,9 +107,63 @@ extension MessageSearchUserViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Navigation
+//extension MessageSearchUserViewController {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "ToChatVC" {
+//            let storyboard = UIStoryboard(name: "MessageChat", bundle: nil)
+//            guard var chatViewController = storyboard.instantiateViewController(withIdentifier: "MessageChat") as? ChatViewController else { return }
+//            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+//            
+//            var dataSource: [User] = []
+//            
+//            if indexPath.section == 0 {
+//                dataSource = filteredCurrentConversationsDataSource
+//            } else if indexPath.section == 1 {
+//                dataSource = filteredPotentialConversationsDataSource
+//            }
+//            
+//            let currentUser = MockDataUsers.sam
+//            let chatPartner = dataSource[indexPath.row]
+//            
+//            chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner)
+////            var chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner)
+//            //
+//            //        if dataSource == filteredPotentialConversationsDataSource {
+//            //            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+//            //            guard let indexPath = tableView.indexPath(for: cell) else { return }
+//            //
+//            //            filteredPotentialConversationsDataSource.remove(at: indexPath.row)
+//            //            filteredCurrentConversationsDataSource.insert(chatPartner, at: 0)
+//            //        }
+//            //
+//            
+//            
+//            if indexPath.section == 0 {
+//                guard let messages = MockConversation.allDictionary[chatPartner.uid] else { return }
+//                chatViewController.messages = messages
+//            } else if indexPath.section == 1 {
+//                chatViewController.chatType = .new
+//            }
+//            
+//            let backItem = UIBarButtonItem()
+//            backItem.title = "Messages"
+//            navigationItem.backBarButtonItem = backItem
+//            
+//            guard let navCon = navigationController else { return }
+//            var viewControllers = navCon.viewControllers
+//            viewControllers.removeLast()
+//            //viewControllers.append(chatViewController)
+//            navCon.setViewControllers(viewControllers, animated: true)
+////            navigationController?.pushViewController(chatViewController, animated: true)
+//        }
+//    }
+//}
+
 // MARK: - UITableViewDelegate
 extension MessageSearchUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
         
         var dataSource: [User] = []
         var chatViewController = ChatViewController()
@@ -139,8 +193,6 @@ extension MessageSearchUserViewController: UITableViewDelegate {
             chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner, chatType: .new)
         }
         
-        //chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner)
-        
         let backItem = UIBarButtonItem()
         backItem.title = "Messages"
         navigationItem.backBarButtonItem = backItem
@@ -151,6 +203,7 @@ extension MessageSearchUserViewController: UITableViewDelegate {
         viewControllers.append(chatViewController)
         navCon.setViewControllers(viewControllers, animated: true)
     }
+    
 }
 
 extension MessageSearchUserViewController: UISearchBarDelegate {
