@@ -207,7 +207,7 @@
 		FA2921712177E67B00053E8E /* MyListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListController.swift; sourceTree = "<group>"; };
 		FA292173217985FD00053E8E /* MyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewController.swift; sourceTree = "<group>"; };
 		FA29217521798B6B00053E8E /* UserProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDetailViewController.swift; sourceTree = "<group>"; };
-		FA881C302174118700236163 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBDesignables.swift; path = BuckIt2/Resources/IBDesignables.swift; sourceTree = SOURCE_ROOT; };
+		FA881C302174118700236163 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBDesignables.swift; path = BuckIt2/Extensions/IBDesignables.swift; sourceTree = SOURCE_ROOT; };
 		FA881C342177AEFF00236163 /* MockDataMessagesA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessagesA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */,
+				FA881C302174118700236163 /* IBDesignables.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +286,7 @@
 				FA270ECE2173023A001643D0 /* MyListTab */,
 				FA270D9D2172F8B4001643D0 /* UserAuthentication */,
 				FA270EB8217301BC001643D0 /* Networking */,
+				FA270EAD2173015A001643D0 /* Resources */,
 				D7A151E821757DD900520CEA /* Extensions */,
 				FA270D952172F866001643D0 /* Info.plist */,
 				FA270D892172F82C001643D0 /* LaunchScreen.storyboard */,
@@ -525,7 +527,6 @@
 		FA270EAD2173015A001643D0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FA881C302174118700236163 /* IBDesignables.swift */,
 				FA270EAE217301A0001643D0 /* AppDelegate.swift */,
 				D7A151E3217522D400520CEA /* Assets.xcassets */,
 				FA270EA921730110001643D0 /* Base.lproj */,
@@ -534,7 +535,8 @@
 				FA270E852173010F001643D0 /* whatevs.png */,
 				FA270E632173010F001643D0 /* Mock Data Images */,
 			);
-			path = Resources;
+			name = Resources;
+			path = "New Group2/Storyboards/Resources";
 			sourceTree = "<group>";
 		};
 		FA270EB8217301BC001643D0 /* Networking */ = {
@@ -582,7 +584,6 @@
 				FA270EBC21730215001643D0 /* MyList.storyboard */,
 				FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */,
 				FA270EBF21730216001643D0 /* MyListNewItem.storyboard */,
-				FA270EAD2173015A001643D0 /* Resources */,
 				FA270EBE21730216001643D0 /* MyListSettings.storyboard */,
 			);
 			path = Storyboards;
