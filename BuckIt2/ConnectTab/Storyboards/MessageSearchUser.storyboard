@@ -72,7 +72,7 @@
                     <navigationItem key="navigationItem" title="Connect With" id="1fy-JW-HPh"/>
                     <connections>
                         <outlet property="searchBar" destination="y2V-fy-Gms" id="b5T-Ba-q1V"/>
-                        <outlet property="tableView" destination="2ny-K7-D6D" id="tYd-m3-ids"/>
+                        <outlet property="tableView" destination="2ny-K7-D6D" id="fzB-Qf-qge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnY-hG-Qiu" userLabel="First Responder" sceneMemberID="firstResponder"/>

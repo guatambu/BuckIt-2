@@ -112,6 +112,7 @@ extension MessageSearchUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
         var dataSource: [User] = []
+        var chatViewController = ChatViewController()
         
         if indexPath.section == 0 {
             dataSource = filteredCurrentConversationsDataSource
@@ -130,7 +131,15 @@ extension MessageSearchUserViewController: UITableViewDelegate {
 //        }
 //
         let currentUser = MockDataUsers.sam
-        let chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner)
+        
+        if indexPath.section == 0 {
+            guard let messages = MockConversation.allDictionary[chatPartner.uid] else { return }
+            chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner, messages: messages)
+        } else if indexPath.section == 1 {
+            chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner, chatType: .new)
+        }
+        
+        //chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner)
         
         let backItem = UIBarButtonItem()
         backItem.title = "Messages"

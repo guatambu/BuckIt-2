@@ -76,12 +76,7 @@ class ChatViewController: MessagesViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if chatType == .new {
-            setupSearchBar()
-            titleLabel.text = "New Message"
-            // TODO: - Make search bar a searchcontroller?
-        }
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -93,6 +88,7 @@ class ChatViewController: MessagesViewController {
     }
     
     func insetMessage(message: Message) {
+        
         messages.append(message)
         messagesCollectionView.performBatchUpdates({
             messagesCollectionView.insertSections([messages.count - 1])
@@ -158,13 +154,7 @@ private extension ChatViewController {
     func updateView() {
         tabBarController?.tabBar.isHidden = true
         
-        switch chatType {
-        case .ongoing:
-            titleLabel.text = chatPartner.username
-        case .new:
-            titleLabel.text = "New Message"
-        }
-        
+        titleLabel.text = chatPartner.username
         setupNavigationBar()
     }
     
@@ -203,19 +193,19 @@ private extension ChatViewController {
         }
     }
     
-    func setupSearchBar() {
-        let searchBar = UISearchBar()
-        view.addSubview(searchBar)
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        searchBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        searchBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
-        messagesCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
-        
-        searchBar.delegate = self
-        searchBar.placeholder = "Search for people"
-    }
+//    func setupSearchBar() {
+//        let searchBar = UISearchBar()
+//        view.addSubview(searchBar)
+//        searchBar.translatesAutoresizingMaskIntoConstraints = false
+//        searchBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        searchBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//        searchBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+//
+//        messagesCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
+//
+//        searchBar.delegate = self
+//        searchBar.placeholder = "Search for people"
+//    }
 }
 
 // MARK: - MessageDataSource

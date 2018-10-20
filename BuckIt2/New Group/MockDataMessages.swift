@@ -55,8 +55,18 @@ struct MockDataMessages {
 
 struct MockConversation {
     
-    static var all = [MockConversation.withPark, MockConversation.withDylon, MockConversation.withLuisa, MockConversation.withMaggie, MockConversation.withRodrigo, MockConversation.withSangita]
-    
+    static var allDictionary = [MockDataUsers.park.uid: MockConversation.withPark,
+                      MockDataUsers.dylon.uid: MockConversation.withDylon,
+                      MockDataUsers.luisa.uid: MockConversation.withLuisa,
+                      MockDataUsers.maggie.uid: MockConversation.withMaggie,
+                      MockDataUsers.rodrigo.uid: MockConversation.withRodrigo,
+                      MockDataUsers.sangita.uid: MockConversation.withSangita]
+    static var all = [MockConversation.withPark,
+    MockConversation.withDylon,
+    MockConversation.withLuisa,
+    MockConversation.withMaggie,
+    MockConversation.withRodrigo,
+    MockConversation.withSangita]
     static var currentConversations = Array(MockConversation.all[..<3])
     static var potentialConversations = Array(MockConversation.all[3...])
     
