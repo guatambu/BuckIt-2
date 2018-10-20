@@ -36,12 +36,19 @@ class InspirationPersonalizeAddedItemViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
-        let destinationVC = InspirationDetailViewController()
-        self.navigationController?.popToViewController(destinationVC, animated: true)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addToListButtonTapped(_ sender: UIButton) {
-        let destinationVC = InspirationHomeViewController()
-        self.navigationController?.popToViewController(destinationVC, animated: true)
+        //TODO: Create list item and append it to source of truth
+        print(self.presentingViewController)
+        let presentingView1 = self.presentingViewController
+        let presentingView2 = self.presentingViewController?.presentingViewController
+        self.navigationController?.dismiss(animated: true, completion: {
+            presentingView1?.dismiss(animated: true, completion: {
+                presentingView2?.dismiss(animated: true, completion: nil)
+            })
+        })
+        
     }
 }

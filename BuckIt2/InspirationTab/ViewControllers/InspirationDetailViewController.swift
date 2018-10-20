@@ -11,12 +11,14 @@ import UIKit
 class InspirationDetailViewController: UIViewController {
 
     // MARK: - Outlets
+    @IBOutlet var inspirationDetailView: UIView!
     @IBOutlet weak var detailItemCollectionView: UICollectionView!
     @IBOutlet weak var itemNameLabel: UILabel!
-    @IBOutlet weak var sharingTabView: UIView!
-    @IBOutlet weak var completedTabView: UIView!
-    @IBOutlet weak var commonItemsTableView: UITableView!
+    @IBOutlet weak var sharingButton: UIButton!
+    @IBOutlet weak var completedButton: UIButton!
+    @IBOutlet weak var sharingTableView: UITableView!
     @IBOutlet weak var adviseTableView: UITableView!
+    @IBOutlet weak var quickAddButton: UIButton!
     
     
     // MARK: - Properties
@@ -29,38 +31,83 @@ class InspirationDetailViewController: UIViewController {
         
         detailItemCollectionView.delegate = self
         detailItemCollectionView.dataSource = self
-        commonItemsTableView.delegate = self
-        commonItemsTableView.dataSource = self
+        sharingTableView.delegate = self
+        sharingTableView.dataSource = self
         adviseTableView.delegate = self
         adviseTableView.dataSource = self
         setUPUI()
         updateView()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
     }
     
     
     // MARK: - Functions
+    func setUpNavBar() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    func setUPUI() {
+        title = ""
+        itemNameLabel.adjustsFontSizeToFitWidth = true
+    }
+    
     func updateView() {
         itemNameLabel.text = bucketListItem?.title
     }
     
-    func setUPUI() {
-        itemNameLabel.adjustsFontSizeToFitWidth = true
+    func toggleQuickAddButton() {
+        quickAddButton.isSelected = !quickAddButton.isSelected
+        if quickAddButton.isSelected {
+            quickAddButton.setImage(#imageLiteral(resourceName: "myBucketTab"), for: .normal)
+            quickAddButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: (quickAddButton.bounds.width - 20))
+            quickAddButton.setTitle("Added!", for: .normal)
+            quickAddButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: ((quickAddButton.imageView?.frame.width) ?? 0), bottom: 0, right: 0)
+            quickAddButton.titleLabel?.textAlignment = .center
+            quickAddButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            quickAddButton.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+            // MyListController.shared.myItems.append(thisItem)
+        } else {
+            quickAddButton.setImage(nil, for: .normal)
+            quickAddButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            quickAddButton.setTitle("Add to List", for: .normal)
+            quickAddButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            quickAddButton.titleLabel?.textAlignment = .center
+            quickAddButton.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.3607843137, blue: 0.3647058824, alpha: 1)
+            // MyListController.shared.myItems.remove(thisItem)
+        }
     }
     
-    static func dismisse() {
-        let inspirationDetailVC = InspirationDetailViewController()
-        inspirationDetailVC.dismiss(animated: true, completion: nil)
+    func toggleSharing() {
+        sharingTableView.isHidden = !sharingTableView.isHidden
+        if !sharingTableView.isHidden {
+            sharingButton.backgroundColor = .red
+        } else {
+            sharingButton.backgroundColor = .clear
+        }
     }
 
     
     // MARK: - Actions
-    @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func quickAddButtonTapped(_ sender: UIButton) {
+        toggleQuickAddButton()
     }
     
-    @IBAction func addButtonTapped(_ sender: UIButton) {
+    @IBAction func sharingButtonTapped(_ sender: UIButton) {
+        toggleSharing()
+    }
+    
+    @IBAction func completedButtonTapped(_ sender: UIButton) {
     }
 }
+
 
 extension InspirationDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -76,14 +123,16 @@ extension InspirationDetailViewController: UICollectionViewDelegate, UICollectio
     }
 }
 
+
 extension InspirationDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLayoutSubviews(){
         
-        commonItemsTableView.frame = CGRect(x: commonItemsTableView.frame.origin.x, y: commonItemsTableView.frame.origin.y, width: commonItemsTableView.frame.size.width, height: commonItemsTableView.contentSize.height)
-        commonItemsTableView.reloadData()
+        sharingTableView.frame = CGRect(x: sharingTableView.frame.origin.x, y: sharingTableView.frame.origin.y, width: sharingTableView.frame.size.width, height: sharingTableView.contentSize.height)
+        sharingTableView.reloadData()
         
         adviseTableView.frame = CGRect(x: adviseTableView.frame.origin.x, y: adviseTableView.frame.origin.y, width: adviseTableView.frame.size.width, height: adviseTableView.contentSize.height)
+        
         adviseTableView.reloadData()
     }
     
@@ -91,7 +140,7 @@ extension InspirationDetailViewController: UITableViewDelegate, UITableViewDataS
         
         var count = 0
         
-        if tableView == commonItemsTableView {
+        if tableView == sharingTableView {
             count = MockDataUsers.shared.getMockUsers().count
         } else if tableView == adviseTableView {
             count = bucketListItem?.mockPhoto?.count ?? 0
@@ -104,8 +153,8 @@ extension InspirationDetailViewController: UITableViewDelegate, UITableViewDataS
         
         var cell = UITableViewCell()
         
-        if tableView == commonItemsTableView {
-            let sharingCell = commonItemsTableView.dequeueReusableCell(withIdentifier: "inspirationSharingUsersCell")
+        if tableView == sharingTableView {
+            let sharingCell = sharingTableView.dequeueReusableCell(withIdentifier: "inspirationSharingUsersCell")
             let user = MockDataUsers.shared.getMockUsers()[indexPath.row]
             DispatchQueue.main.async {
                 sharingCell?.imageView?.image = user.mockProfilePic

@@ -38,11 +38,10 @@ class InspirationAddToListViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func addToListButtonPressed(_ sender: UIButton) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        
     }
-    
 }

@@ -12,9 +12,9 @@
         <!--My List-->
         <scene sceneID="u7I-rB-nqP">
             <objects>
-                <viewController storyboardIdentifier="MyList" id="T1J-Sj-pGT" userLabel="My List" customClass="MyListViewController" customModule="BuckIt2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyList" id="T1J-Sj-pGT" userLabel="My List" customClass="MyListViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Haj-nh-7hI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="868"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="819"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhV-rV-O0c" userLabel="My List Home Scroll View">
@@ -341,7 +341,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4fk-6R-AJV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ah6-sb-TsS">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ah6-sb-TsS">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
