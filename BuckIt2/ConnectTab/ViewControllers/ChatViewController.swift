@@ -119,6 +119,24 @@ class ChatViewController: MessagesViewController {
         return messages[indexPath.section].sender == messages[indexPath.section + 1].sender
     }
 
+    // Used the set the messageLabelDelegate
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let messagesDataSource = messagesCollectionView.messagesDataSource else {
+            fatalError("Ouch. nil data source for messages")
+        }
+        
+        let message = messagesDataSource.messageForItem(at: indexPath, in: messagesCollectionView)
+        
+        if case .text = message.kind {
+        
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TextMessageCell.self), for: indexPath) as? TextMessageCell else { return UICollectionViewCell() }
+            cell.configure(with: message, at: indexPath, and: messagesCollectionView)
+            cell.messageLabel.delegate = self
+            return cell
+        }
+        return super.collectionView(collectionView, cellForItemAt: indexPath)
+        
+    }
     
 }
 
@@ -181,6 +199,12 @@ private extension ChatViewController {
     }
 }
 
+// MARK: - UICollectionViewDataSource
+extension ChatViewController {
+    
+    
+}
+
 // MARK: - MessageDataSource
 extension ChatViewController: MessagesDataSource {
     func currentSender() -> Sender {
@@ -188,7 +212,7 @@ extension ChatViewController: MessagesDataSource {
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        
+
         return messages[indexPath.section]
     }
     
