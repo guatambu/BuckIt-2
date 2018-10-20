@@ -11,6 +11,7 @@ import UIKit
 class MessageSearchUserViewController: UIViewController {
 
     // MARK: - Properties
+    private let cellId = "connectNewMessageSearchResultsCell"
     var currentConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[..<3])
     var potentialConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[3...])
 //    let dataSource = MockDataUsers.allOtherUsers
@@ -28,11 +29,11 @@ class MessageSearchUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateView()
-
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        updateView()
+
         
         tableView.reloadData()
     }
@@ -76,7 +77,7 @@ extension MessageSearchUserViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "connectNewMessageSearchResultsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         var dataSource: [User] = []
         
@@ -109,6 +110,7 @@ extension MessageSearchUserViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension MessageSearchUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
         var dataSource: [User] = []
         
         if indexPath.section == 0 {
@@ -118,6 +120,15 @@ extension MessageSearchUserViewController: UITableViewDelegate {
         }
         
         let chatPartner = dataSource[indexPath.row]
+//
+//        if dataSource == filteredPotentialConversationsDataSource {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+//            guard let indexPath = tableView.indexPath(for: cell) else { return }
+//
+//            filteredPotentialConversationsDataSource.remove(at: indexPath.row)
+//            filteredCurrentConversationsDataSource.insert(chatPartner, at: 0)
+//        }
+//
         let currentUser = MockDataUsers.sam
         let chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner)
         

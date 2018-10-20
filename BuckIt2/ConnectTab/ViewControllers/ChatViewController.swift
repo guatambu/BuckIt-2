@@ -16,6 +16,7 @@ enum ChatType {
 
 class ChatViewController: MessagesViewController {
 
+    // MARK: - Properties
     private var _currentUser: User?
     private var _chatPartner: User?
     private var chatType: ChatType = .ongoing
@@ -29,6 +30,11 @@ class ChatViewController: MessagesViewController {
         return _chatPartner!
     }
     
+    // MARK: - Subviews
+    let titleLabel = UILabel()
+    lazy var titleTapGesture = UITapGestureRecognizer(target: self, action: #selector(titleTapped))
+    
+    // MARK: - Initialization
     init() {
        super.init(nibName: nil, bundle: nil)
     }
@@ -73,7 +79,7 @@ class ChatViewController: MessagesViewController {
         
         if chatType == .new {
             setupSearchBar()
-            title = "New Message"
+            titleLabel.text = "New Message"
             // TODO: - Make search bar a searchcontroller?
         }
     }
@@ -141,6 +147,10 @@ class ChatViewController: MessagesViewController {
         
     }
     
+    @objc func titleTapped() {
+        presentJustOkAlert(with: "Will present users profile.", message: "")
+    }
+    
 }
 
 // MARK: - Setup UI
@@ -150,14 +160,20 @@ private extension ChatViewController {
         
         switch chatType {
         case .ongoing:
-            title = chatPartner.username
+            titleLabel.text = chatPartner.username
         case .new:
-            title = "New Message"
+            titleLabel.text = "New Message"
         }
+        
+        setupNavigationBar()
     }
     
-    func configureMessageLabel() {
-        
+    func setupNavigationBar() {
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.text = chatPartner.username
+        titleLabel.addGestureRecognizer(titleTapGesture)
+        navigationItem.titleView = titleLabel
+        navigationItem.titleView?.isUserInteractionEnabled = true
     }
     
     func configureMessagesCollectionView() {
@@ -316,6 +332,7 @@ extension ChatViewController: MessageLabelDelegate {
 extension ChatViewController: MessageCellDelegate {
     func didTapAvatar(in cell: MessageCollectionViewCell) {
         print("did tap avatar")
+        presentJustOkAlert(with: "Will present users profile.", message: "")
     }
 }
 
