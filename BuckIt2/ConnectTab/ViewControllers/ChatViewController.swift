@@ -199,12 +199,6 @@ private extension ChatViewController {
     }
 }
 
-// MARK: - UICollectionViewDataSource
-extension ChatViewController {
-    
-    
-}
-
 // MARK: - MessageDataSource
 extension ChatViewController: MessagesDataSource {
     func currentSender() -> Sender {
