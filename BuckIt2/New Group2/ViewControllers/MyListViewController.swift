@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyListViewController: UIViewController,  {
+class MyListViewController: UIViewController  {
 
     // MARK: - Outlets
     @IBOutlet weak var profilePicImageView: UIImageView!
@@ -71,6 +71,7 @@ class MyListViewController: UIViewController,  {
             
         case 0:
             // To-Do
+            
             // display To-Do BucketList Items
         case 1:
             // Done

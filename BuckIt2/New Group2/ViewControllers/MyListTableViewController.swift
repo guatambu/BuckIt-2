@@ -48,7 +48,14 @@ class MyListTableViewController: UITableViewController {
         let barButton = UIBarButtonItem.init(customView: button)
         self.navigationItem.leftBarButtonItem = barButton
         
+        // set TVC title to user.username
         self.title = dylon.username
+        
+        // set bottom of nav bar border color
+        self.navigationController?.navigationBar.shadowImage = UIColor.black
+        //if design team wants to have a more specific border in terms of the width of the border then we need a .jpg of their border to be plugged in here:
+        // self.navigationController?.navigationBar.shadowImage = UIImage(named: <#T##String#>)
+        
     }
 
     override func viewDidLoad() {
@@ -57,6 +64,21 @@ class MyListTableViewController: UITableViewController {
     
     
     // MARK: - Actions
+    
+    @IBAction func changedSegmentController(_ sender: UISegmentedControl) {
+        let selectedIndex = todoCompletedSegmentedControl.selectedSegmentIndex
+        
+        switch selectedIndex {
+            
+        case 0:
+            // To-Do
+            
+        // display To-Do BucketList Items
+        case 1:
+            // Done
+            // display Done Bucket List Items
+        }
+    }
     
     @objc func profileButtonTapped(sender: Button) {
         print("test")
