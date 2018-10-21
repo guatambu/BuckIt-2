@@ -87,7 +87,7 @@
                     <navigationItem key="navigationItem" id="wDF-oa-y4I"/>
                     <connections>
                         <outlet property="inspirationCollectionView" destination="Gh1-P6-Hiw" id="Vjt-hO-ju2"/>
-                        <segue destination="BaC-fA-vaT" kind="show" id="lav-HU-GvI"/>
+                        <segue destination="BaC-fA-vaT" kind="show" identifier="" id="jWr-EZ-6X2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1U-8V-9aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

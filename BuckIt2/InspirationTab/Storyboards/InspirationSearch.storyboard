@@ -12,7 +12,7 @@
         <!--Inspiration Search View Controller-->
         <scene sceneID="dPL-Lk-YZT">
             <objects>
-                <viewController id="rFt-dy-2vw" userLabel="Inspiration Search View Controller" customClass="InspirationSearchViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rFt-dy-2vw" userLabel="Inspiration Search View Controller" customClass="InspirationSearchTableViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ge-c0-uBj" userLabel="Inspiration Search View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,16 +86,16 @@
             </objects>
             <point key="canvasLocation" x="3991" y="1063"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Inspiration Search Table View Controller-->
         <scene sceneID="bst-V9-AKG">
             <objects>
-                <tableViewController id="4An-gy-jMu" sceneMemberID="viewController">
+                <tableViewController id="4An-gy-jMu" customClass="InspirationSearchTableViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bah-fC-Hmj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="i3q-GR-W9p" detailTextLabel="GfK-uv-nt0" imageView="FVO-mu-cMJ" rowHeight="74" style="IBUITableViewCellStyleSubtitle" id="MkY-eG-b1g">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="inspirationSearchCell" textLabel="i3q-GR-W9p" detailTextLabel="GfK-uv-nt0" imageView="FVO-mu-cMJ" rowHeight="74" style="IBUITableViewCellStyleSubtitle" id="MkY-eG-b1g">
                                 <rect key="frame" x="0.0" y="28" width="375" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MkY-eG-b1g" id="pPa-C1-DUn">
