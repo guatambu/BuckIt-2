@@ -11,6 +11,14 @@ import UIKit
 class MockDataBucketListItems {
     
     static let shared = MockDataBucketListItems()
+<<<<<<< HEAD
+    var bucketListItems: [BucketListItem] = []
+    
+    init() {
+        bucketListItems = MockDataBucketListItems.mockItems
+    }
+=======
+>>>>>>> 053e9010cb475cdfb04dc3424fec72612d477883
     
     
     // Bucket List Items
