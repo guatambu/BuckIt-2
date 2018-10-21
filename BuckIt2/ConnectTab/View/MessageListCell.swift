@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageKit
 
 class MessageListCell: UITableViewCell, ReuseIdentifiable {
 
@@ -17,8 +18,14 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
         }
     }
     
-    var user: User? {
-        return message?.receiver
+    var conversation: Conversation? {
+        didSet {
+            updateConversationDetails()
+        }
+    }
+
+    var chatPartner: User? {
+        return conversation?.chatPartner
     }
     
     // MARK: - Subviews
@@ -46,10 +53,10 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
     }
 
     func updateUserDetails() {
-        guard let user = user else { return }
+        guard let chatPartner = chatPartner else { return }
         
-        profileImageView.image = user.mockProfilePic
-        usernameLabel.text = user.username
+        profileImageView.image = chatPartner.mockProfilePic
+        usernameLabel.text = chatPartner.username
         
         roundImageView()
         
@@ -57,16 +64,28 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
     
     func updateMessageDetails() {
         guard let message = message else { return }
-        guard let user = user else { return }
+        guard let chatPartner = chatPartner else { return }
         
-        var senderUsername = message.sender.username
+        if message.sender.displayName != chatPartner.username {
+            messageGlimpseLabel.text = "You: \(message.text)"
+        } else {
+            messageGlimpseLabel.text = "\(message.text)"
+        }
+    
+        updateUserDetails()
+    }
+    
+    func updateConversationDetails() {
+        guard let conversation = conversation else { return }
+        guard let chatPartner = chatPartner else { return }
+        let message = conversation.mostRecentMessage
         
-        if message.sender.username == user.username {
-            senderUsername = "You"
+        if message.sender.displayName != chatPartner.username {
+            messageGlimpseLabel.text = "You: \(message.text)"
+        } else {
+            messageGlimpseLabel.text = "\(message.text)"
         }
         
-        messageGlimpseLabel.text = "\(senderUsername): \(message.text)"
-    
         updateUserDetails()
     }
         
@@ -79,3 +98,5 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
         profileImageView.clipsToBounds = true
     }
 }
+
+

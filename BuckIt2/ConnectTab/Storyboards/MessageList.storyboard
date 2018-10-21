@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5AT-zJ-UD2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CsN-ZX-TrP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,17 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsm-pN-Y5j" userLabel="Connect Messages Label">
-                                <rect key="frame" x="44" y="43" width="133" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="J4N-TO-y20"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NuR-cu-znj" userLabel="Connect Message List Table View">
-                                <rect key="frame" x="0.0" y="105" width="375" height="513"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageListCell" rowHeight="64" id="RvM-mV-G0s" customClass="MessageListCell" customModule="BuckIt2" customModuleProvider="target">
@@ -79,31 +70,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wl8-z4-lyn">
-                                <rect key="frame" x="245" y="43" width="114" height="34"/>
-                                <color key="backgroundColor" red="0.45098039220000002" green="0.98039215690000003" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="New Message">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cov-fT-C3e" kind="show" id="Bd6-FL-QBj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Hsm-pN-Y5j" firstAttribute="top" secondItem="Ll0-BM-UhR" secondAttribute="top" constant="23" id="AU4-9M-Emw"/>
-                            <constraint firstItem="Wl8-z4-lyn" firstAttribute="trailing" secondItem="4nJ-ig-CcF" secondAttribute="trailingMargin" id="Dtg-1C-ep0"/>
-                            <constraint firstItem="Wl8-z4-lyn" firstAttribute="top" secondItem="Hsm-pN-Y5j" secondAttribute="top" id="GLR-Ne-b6b"/>
-                            <constraint firstItem="NuR-cu-znj" firstAttribute="top" secondItem="Hsm-pN-Y5j" secondAttribute="bottom" constant="26" id="Wwl-kC-ZEa"/>
-                            <constraint firstItem="NuR-cu-znj" firstAttribute="leading" secondItem="4nJ-ig-CcF" secondAttribute="leading" id="cEQ-BM-IYK"/>
-                            <constraint firstAttribute="trailing" secondItem="NuR-cu-znj" secondAttribute="trailing" id="dyg-U8-azy"/>
-                            <constraint firstItem="NuR-cu-znj" firstAttribute="bottom" secondItem="Ll0-BM-UhR" secondAttribute="bottom" id="tQv-9S-shP"/>
-                            <constraint firstItem="Hsm-pN-Y5j" firstAttribute="leading" secondItem="Ll0-BM-UhR" secondAttribute="leading" constant="44" id="ycC-XX-Boe"/>
+                            <constraint firstAttribute="trailing" secondItem="NuR-cu-znj" secondAttribute="trailing" id="3Qo-RU-mzX"/>
+                            <constraint firstItem="NuR-cu-znj" firstAttribute="leading" secondItem="4nJ-ig-CcF" secondAttribute="leading" id="TwW-E9-yTz"/>
+                            <constraint firstAttribute="bottom" secondItem="NuR-cu-znj" secondAttribute="bottom" id="Twp-qO-uf8"/>
+                            <constraint firstItem="NuR-cu-znj" firstAttribute="top" secondItem="Ll0-BM-UhR" secondAttribute="top" id="lI3-hC-Qmj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ll0-BM-UhR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Connect" id="ygB-4x-Rdj"/>
+                    <navigationItem key="navigationItem" title="Messages" id="WqX-hI-jfS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="6SX-CB-sDf">
+                            <connections>
+                                <action selector="newMessageButtonTapped:" destination="5AT-zJ-UD2" id="SVh-ab-qmg"/>
+                                <segue destination="dH1-18-Rrf" kind="show" id="iCU-bN-Hwc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="messageListTableView" destination="NuR-cu-znj" id="pdd-CY-d5V"/>
@@ -111,7 +95,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Evh-fy-0Km" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725.60000000000002" y="1354.2728635682161"/>
+            <point key="canvasLocation" x="1664.8" y="1354.2728635682161"/>
+        </scene>
+        <!--MessageSearchUser-->
+        <scene sceneID="qFV-p0-sth">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MessageSearchUser" id="dH1-18-Rrf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nVs-oB-9YF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2378" y="1242"/>
         </scene>
         <!--MessageSearchandCompose-->
         <scene sceneID="lPs-L7-Yv7">
@@ -119,7 +111,26 @@
                 <viewControllerPlaceholder storyboardName="MessageSearchandCompose" referencedIdentifier="MessageSearchandCompose" id="cov-fT-C3e" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2c-wM-HDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1504.8" y="1356.9715142428786"/>
+            <point key="canvasLocation" x="2444" y="1356.521739130435"/>
+        </scene>
+        <!--Connect-->
+        <scene sceneID="cRB-ho-gpi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CsN-ZX-TrP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Connect" id="ygB-4x-Rdj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XZP-j7-m82">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5AT-zJ-UD2" kind="relationship" relationship="rootViewController" id="svY-p4-inR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDj-4K-tRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725.60000000000002" y="1354.2728635682161"/>
         </scene>
     </scenes>
 </document>

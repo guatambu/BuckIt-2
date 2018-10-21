@@ -10,8 +10,16 @@ import UIKit
 
 struct MockDataBucketListItems {
     
-    // Bucket List Items
+    static let shared = MockDataBucketListItems()
+    var bucketListItems: [BucketListItem] = []
     
+    init() {
+        bucketListItems = MockDataBucketListItems.mockItems
+    }
+    
+    
+    // Bucket List Items
+
     static let item1 = BucketListItem(uid: "01", user: MockDataUsers.luisa, timestamp: Date(), title: "Arrive By Seaplane", isComplete: false, mockPhoto: [UIImage(named: "seaplane")!], experienceDescription: "Não sei onde eu vou, mas quero ir mesmo.")
     static let item2 = BucketListItem(uid: "02", user: MockDataUsers.luisa, timestamp: Date(), title: "Eat Fire", isComplete: false, mockPhoto: [UIImage(named: "fire_eat")!], experienceDescription: "O calor não vai me para não!")
     static let item3 = BucketListItem(uid: "03", user: MockDataUsers.luisa, timestamp: Date(), title: "Hang Glide", isComplete: false, mockPhoto: [UIImage(named: "hang_glide")!], experienceDescription: "Voar na Asa Delta sempre me fascinou.")
@@ -39,5 +47,6 @@ struct MockDataBucketListItems {
     static let item25 = BucketListItem(uid: "25", user: MockDataUsers.maggie, timestamp: Date(), title: "Take an Improv Class", isComplete: false, mockPhoto: [UIImage(named: "improv_class")!], experienceDescription: "I have always wanted to see what it was like to be an actor.")
     
     static let mockItems = [MockDataBucketListItems.item1, MockDataBucketListItems.item2, MockDataBucketListItems.item3, MockDataBucketListItems.item4,MockDataBucketListItems.item5, MockDataBucketListItems.item6, MockDataBucketListItems.item7, MockDataBucketListItems.item8, MockDataBucketListItems.item9, MockDataBucketListItems.item10, MockDataBucketListItems.item11, MockDataBucketListItems.item12, MockDataBucketListItems.item13, MockDataBucketListItems.item14, MockDataBucketListItems.item15, MockDataBucketListItems.item16, MockDataBucketListItems.item17, MockDataBucketListItems.item18, MockDataBucketListItems.item19, MockDataBucketListItems.item20, MockDataBucketListItems.item21, MockDataBucketListItems.item22, MockDataBucketListItems.item23,  MockDataBucketListItems.item24, MockDataBucketListItems.item25]
+
 }
 
