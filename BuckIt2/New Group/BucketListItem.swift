@@ -29,7 +29,7 @@ class BucketListItem {
             BucketListItemKey.title: title,
             BucketListItemKey.isComplete: isComplete,
             BucketListItemKey.photoURLs: photoURLs as Any,
-            BucketListItemKey.experienceDescription: experienceDescription as Any,
+            BucketListItemKey.experienceDescription: experienceDescription as Any
         ]
     }
     
@@ -124,5 +124,6 @@ extension BucketListItem: Equatable {
     // Equatable Protocol Function
     static func ==(lhs: BucketListItem, rhs: BucketListItem) -> Bool {
         return lhs.uid == rhs.uid
+        return lhs.title == rhs.title
     }
 }

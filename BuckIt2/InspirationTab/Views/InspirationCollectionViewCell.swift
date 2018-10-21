@@ -31,6 +31,8 @@ class InspirationCollectionViewCell: UICollectionViewCell {
         inspirationImageView.layer.shadowRadius = 3
         inspirationImageView.layer.shadowOpacity = 1
         inspirationImageView.layer.shadowOffset = CGSize(width: 30, height: 40)
+        
+        itemTitleLabel.adjustsFontSizeToFitWidth = true
     }
     
     

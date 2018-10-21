@@ -12,9 +12,9 @@
         <!--My List-->
         <scene sceneID="u7I-rB-nqP">
             <objects>
-                <viewController storyboardIdentifier="MyList" id="T1J-Sj-pGT" userLabel="My List" customClass="MyListViewController" customModule="BuckIt2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyList" id="T1J-Sj-pGT" userLabel="My List" customClass="MyListViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Haj-nh-7hI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="868"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="819"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhV-rV-O0c" userLabel="My List Home Scroll View">
@@ -203,7 +203,7 @@
         <!--MyListDetailItem-->
         <scene sceneID="Tst-zq-F4y">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyListDetailItem" referencedIdentifier="MyListDetailItem" id="5Je-Ga-Q9v" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MyListDetailItem" id="5Je-Ga-Q9v" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3u-fy-uQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2559.1999999999998" y="173.61319340329837"/>
@@ -331,7 +331,7 @@
         <!--MyListNewItem-->
         <scene sceneID="6sV-my-kwX">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyListNewItem" referencedIdentifier="MyListNewItem" id="yZb-ZN-JOz" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MyListNewItem" id="yZb-ZN-JOz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ah1-oi-Xru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2422" y="435"/>
@@ -341,7 +341,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4fk-6R-AJV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ah6-sb-TsS">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ah6-sb-TsS">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -359,7 +359,7 @@
         <!--MyListSettings-->
         <scene sceneID="ddp-c2-H5P">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyListSettings" referencedIdentifier="MyListSettings" id="GjN-EB-544" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MyListSettings" id="GjN-EB-544" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udr-4x-wpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2514" y="-39"/>
