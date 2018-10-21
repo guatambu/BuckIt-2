@@ -12,6 +12,8 @@ class MessageListViewController: UIViewController {
     
     private let cellId = MessageListCell.reuseIdentifier
     var dataSource = MockConversation.currentConversations
+    
+    var searchController: UISearchController?
 
     @IBOutlet weak var messageTitleLabel: UILabel!
     @IBOutlet weak var messageListTableView: UITableView!
@@ -21,6 +23,8 @@ class MessageListViewController: UIViewController {
         
         messageListTableView.dataSource = self
         messageListTableView.delegate = self
+        
+        updateView()
     }
 
     
@@ -43,13 +47,19 @@ class MessageListViewController: UIViewController {
 // MARK: - Setup UI
 private extension MessageListViewController {
     func updateView() {
-        
+        setupNavigationBar()
     }
     
     func deselectCell() {
         if let index = self.messageListTableView.indexPathForSelectedRow{
             self.messageListTableView.deselectRow(at: index, animated: true)
         }
+    }
+    
+    func setupNavigationBar() {
+        // Removes the compose button because the search and create
+        // A new conversation is not working :(
+        navigationItem.rightBarButtonItems = []
     }
 }
 
@@ -99,5 +109,11 @@ extension MessageListViewController: UITableViewDelegate {
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+}
+
+extension MessageListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
     }
 }
