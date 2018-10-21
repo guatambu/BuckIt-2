@@ -12,22 +12,21 @@ struct MockDataMessages {
     
     static let mockMessages = [MockDataMessages.message1, MockDataMessages.message2, MockDataMessages.message3, MockDataMessages.message4, MockDataMessages.message5, MockDataMessages.message6, MockDataMessages.message7, MockDataMessages.message8]
     
-<<<<<<< HEAD
-    static let message1 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message1 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.shared.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message2 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message2 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.shared.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message3 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message3 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.shared.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message4 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message4 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.shared.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message5 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message5 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.shared.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message6 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message6 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.shared.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message7 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message7 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.shared.dylon, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message8 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.dylon, text: "How did you like the nude beach", timestamp: Date())
+    static let message8 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.sam, receiver: MockDataUsers.shared.dylon, text: "How did you like the nude beach", timestamp: Date())
     
     static func messages(with chatPartner: User) -> [Message] {
         let sam = MockDataUsers.sam
@@ -56,12 +55,12 @@ struct MockDataMessages {
 
 struct MockConversation {
     
-    static var allDictionary = [MockDataUsers.park.uid: MockConversation.withPark,
-                      MockDataUsers.dylon.uid: MockConversation.withDylon,
-                      MockDataUsers.luisa.uid: MockConversation.withLuisa,
-                      MockDataUsers.maggie.uid: MockConversation.withMaggie,
-                      MockDataUsers.rodrigo.uid: MockConversation.withRodrigo,
-                      MockDataUsers.sangita.uid: MockConversation.withSangita]
+    static var allDictionary = [MockDataUsers.shared.park.uid: MockConversation.withPark,
+                      MockDataUsers.shared.dylon.uid: MockConversation.withDylon,
+                      MockDataUsers.shared.luisa.uid: MockConversation.withLuisa,
+                      MockDataUsers.shared.maggie.uid: MockConversation.withMaggie,
+                      MockDataUsers.shared.rodrigo.uid: MockConversation.withRodrigo,
+                      MockDataUsers.shared.sangita.uid: MockConversation.withSangita]
     static var all = [MockConversation.withPark,
     MockConversation.withDylon,
     MockConversation.withLuisa,
@@ -72,19 +71,19 @@ struct MockConversation {
     static var potentialConversations = Array(MockConversation.all[3...])
     
     static var withDylon: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.dylon)
+        return MockDataMessages.messages(with: MockDataUsers.shared.dylon)
     }
     
     static var withMaggie: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.maggie)
+        return MockDataMessages.messages(with: MockDataUsers.shared.maggie)
     }
     
     static var withPark: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.park)
+        return MockDataMessages.messages(with: MockDataUsers.shared.park)
     }
     
     static var withRodrigo: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.rodrigo)
+        return MockDataMessages.messages(with: MockDataUsers.shared.rodrigo)
     }
     
     static var withSangita: [Message] {
@@ -92,24 +91,23 @@ struct MockConversation {
     }
 
     static var withLuisa: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.luisa)
+        return MockDataMessages.messages(with: MockDataUsers.shared.luisa)
     }
     
-=======
-    static let message1 = Message(uid: UUID().uuidString, sender: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.sangita, text: "How did you like the nude beach", timestamp: Date())
+    static let message1 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.sangita, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message2 = Message(uid: UUID().uuidString, sender: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
+    static let message2 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message3 = Message(uid: UUID().uuidString, sender: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
+    static let message3 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message4 = Message(uid: UUID().uuidString, sender: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
+    static let message4 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message5 = Message(uid: UUID().uuidString, sender: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
+    static let message5 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message6 = Message(uid: UUID().uuidString, sender: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
+    static let message6 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message7 = Message(uid: UUID().uuidString, sender: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
+    static let message7 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
     
-    static let message8 = Message(uid: UUID().uuidString, sender: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
->>>>>>> 053e9010cb475cdfb04dc3424fec72612d477883
+    static let message8 = Message(uid: UUID().uuidString, sentFrom: MockDataUsers.shared.dylon, receiver: MockDataUsers.shared.luisa, text: "How did you like the nude beach", timestamp: Date())
+
 }
