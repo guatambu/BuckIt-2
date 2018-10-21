@@ -73,11 +73,12 @@ extension InspirationHomeViewController: UISearchBarDelegate, UITableViewDelegat
     
     // Search Results Tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        return cell
     }
 }
 

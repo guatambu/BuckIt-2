@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import MessageKit
 
 class Message {
     
     // MARK: - Properties
     
     let uid: String
-    let sender: User
-    let receiver: User
+    let sentFrom: User
+    var receiver: User
     let text: String
     let timestamp: Date
+    
     
     var firebaseDictionary: [String: Any] {
         return [
@@ -47,36 +49,60 @@ class Message {
     // MARK: - Initialization
     
     init(uid: String,
-        sender: User,
+        sentFrom: User,
         receiver: User,
         text: String,
         timestamp: Date
         ) {
         
         self.uid = uid
-        self.sender = sender
+        self.sentFrom = sentFrom
         self.receiver = receiver
         self.text = text
         self.timestamp = timestamp
+        
     }
     
     convenience init?(messageDictionary: [String : Any]) {
         guard let uid = messageDictionary[MessageKey.uid] as? String,
-            let sender = messageDictionary[MessageKey.sender] as? User,
+            let sentFrom = messageDictionary[MessageKey.sender] as? User,
             let receiver = messageDictionary[MessageKey.receiver] as? User,
             let text = messageDictionary[MessageKey.text] as? String,
             let timestamp = messageDictionary[MessageKey.timestamp] as? Date else { return nil }
         
         self.init(uid: uid,
-                  sender: sender,
+                  sentFrom: sentFrom,
                   receiver: receiver,
                   text: text,
                   timestamp: timestamp)
     }
+
     
+}
+
+extension Message: MessageType {
+    var sender: Sender {
+        get {
+            return Sender(id: sentFrom.uid, displayName: sentFrom.username)
+        }
+        set (newSender) {
+            self.sender = newSender
+        }
+    }
     
+    var messageId: String {
+        
+        return uid
+    }
     
+    var sentDate: Date {
+        
+        return timestamp
+    }
     
+    var kind: MessageKind {
+        return .text(text)
+    }
 }
 
 extension Message: Equatable {

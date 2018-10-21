@@ -137,17 +137,23 @@ extension InspirationDetailViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        var count = 0
-        
-        if tableView == sharingTableView {
-            count = MockDataUsers.shared.getMockUsers().count
-        } else if tableView == adviseTableView {
-            count = bucketListItem?.mockPhoto?.count ?? 0
-        }
-        
-        return count
+
+        return 0
     }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+//
+//        var count = 0
+//        
+//        if tableView == sharingTableView {
+//            count = MockDataUsers.shared.getMockUsers().count
+//        } else if tableView == adviseTableView {
+//            count = bucketListItem?.mockPhoto?.count ?? 0
+//        }
+//        
+//        return count
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
