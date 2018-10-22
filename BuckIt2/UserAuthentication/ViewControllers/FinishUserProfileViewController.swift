@@ -36,6 +36,8 @@ class FinishUserProfileViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func xToCloseButtonTapped(_ sender: Any) {
+        // pop viewController
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addProfilePicButtonTapped(_ sender: Any) {

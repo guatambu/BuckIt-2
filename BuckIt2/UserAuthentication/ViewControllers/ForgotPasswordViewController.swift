@@ -35,7 +35,8 @@ class ForgotPasswordViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func xToCloseButtonTapped(_ sender: UIBarButtonItem) {
-        
+        // pop viewController
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func sendEmailButtonTapped(_ sender: Any) {
