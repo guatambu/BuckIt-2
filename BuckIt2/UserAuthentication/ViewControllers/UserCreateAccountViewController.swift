@@ -116,8 +116,34 @@ class UserCreateAccountViewController: UIViewController {
             
             newUserAccount = User(uid: uid, email: email, username: username, password: password, isPrivate: true, firstName: nil, lastName: nil, mockProfilePic: nil, location: nil, age: nil)
             
-            // pop viewController
+            
+            // ******* design question regarding these user authnetication segues ******
+            // which kind of segue do they want because of the 'X' to close the view controller in the mockups
+            // pop viewController - this is if we want to just leave
             self.navigationController?.popViewController(animated: true)
+            
+            // programmatically performing the segue
+            
+            // instantiate the relevant storyboard
+            let mainView: UIStoryboard = UIStoryboard(name: "UserAuthentication", bundle: nil)
+            // instantiate the desired TableViewController as ViewController on relevant storyboard
+            guard let destViewController = mainView.instantiateViewController(withIdentifier: "toFinishUserProfile") as? FinishUserProfileViewController else {
+                
+                print("*** Error: error instantiating FinishUserProfileViewController in UserCreateAccountViewController.swift line 131")
+                return
+            }
+            // create the show segue programmatically
+            self.navigationController?.pushViewController(destViewController, animated: true)
+            // create the modal segue programmatically
+            self.present(destViewController, animated: true, completion: nil)
+            
+            // set the desired properties of the destinationVC's navgation Item
+            let backButtonItem = UIBarButtonItem()
+            backButtonItem.title = "Create Account"
+            navigationItem.backBarButtonItem = backButtonItem
+            
+            // pass necessary info to destViewController
+            destViewController.userAccount = newUserAccount
         }
     }
     

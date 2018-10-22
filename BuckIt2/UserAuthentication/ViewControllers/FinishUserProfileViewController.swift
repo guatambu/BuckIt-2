@@ -21,6 +21,8 @@ class FinishUserProfileViewController: UIViewController {
     @IBOutlet weak var profilePicLabelOutlet: UILabel!
     @IBOutlet weak var addProfilePicViewOutlet: UIView!
     
+    var userAccount: User?
+    
     
     // MARK: - ViewController Lifecycle Functions
 

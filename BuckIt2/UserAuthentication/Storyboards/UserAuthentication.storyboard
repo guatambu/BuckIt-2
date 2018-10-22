@@ -864,20 +864,6 @@
             </objects>
             <point key="canvasLocation" x="2976" y="858"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tvs-7r-TzK">
-            <objects>
-                <viewController id="D1i-zP-q85" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lkR-Kp-Zel">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Nog-JY-Jfg"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6oL-P7-udm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="profile-dark-gray-50.png" width="50" height="50"/>
