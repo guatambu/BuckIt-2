@@ -49,7 +49,7 @@ extension InspirationHomeViewController: UISearchBarDelegate {
         searchController.searchBar.delegate = self
         self.navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.searchBar.scopeButtonTitles = ["ideas", "people"]
+//        searchController.searchBar.scopeButtonTitles = ["ideas", "people"]
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         searchController.searchResultsUpdater = searchResultsTableVC

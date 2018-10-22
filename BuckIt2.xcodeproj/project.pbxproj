@@ -15,6 +15,7 @@
 		384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */; };
 		384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBF21730216001643D0 /* MyListNewItem.storyboard */; };
 		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
+		385C59C4217D3EA400DC37DB /* InspirationSearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C59C3217D3EA400DC37DB /* InspirationSearchResultsTableViewCell.swift */; };
 		38ABCCFD21754B7300608F0F /* (null) in Resources */ = {isa = PBXBuildFile; };
 		38ACDD81217A90B30081D6D3 /* QuickAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */; };
 		38ACDD83217BF8000081D6D3 /* InspirationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDD82217BF8000081D6D3 /* InspirationSearchTableViewController.swift */; };
@@ -82,6 +83,7 @@
 		381ABCEA2179387400873190 /* InspirationAddToListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationAddToListViewController.swift; sourceTree = "<group>"; };
 		381ABCEC217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationPersonalizeAddedItemViewController.swift; sourceTree = "<group>"; };
 		3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemDetailPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		385C59C3217D3EA400DC37DB /* InspirationSearchResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationSearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.debug.xcconfig"; sourceTree = "<group>"; };
 		38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddButton.swift; sourceTree = "<group>"; };
 		38ACDD82217BF8000081D6D3 /* InspirationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationSearchTableViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */,
+				385C59C3217D3EA400DC37DB /* InspirationSearchResultsTableViewCell.swift */,
 				3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */,
 				38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */,
 			);
@@ -804,6 +807,7 @@
 				FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */,
 				381ABCED217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift in Sources */,
 				FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */,
+				385C59C4217D3EA400DC37DB /* InspirationSearchResultsTableViewCell.swift in Sources */,
 				FA270E5C21730070001643D0 /* BucketListItemComment.swift in Sources */,
 				3821021B2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift in Sources */,
 				FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */,

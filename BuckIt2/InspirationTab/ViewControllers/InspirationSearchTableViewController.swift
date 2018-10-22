@@ -8,17 +8,17 @@
 
 import UIKit
 
-class InspirationSearchTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
+class InspirationSearchTableViewController: UITableViewController, UISearchResultsUpdating {
     
     // MockData
-    let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
+    static let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
                 "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
                 "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
                 "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
                 "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
     
     var searching = false
-    var filteredData: [String] = []
+    static var filteredData: [String] = []
 
     
     override func viewDidLoad() {
@@ -29,49 +29,33 @@ class InspirationSearchTableViewController: UITableViewController, UISearchResul
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+//        let bundle = Bundle(for: AnyClass.self as! AnyClass)
+        let nib = UINib(nibName: "InspirationSearchResultsTableViewCell", bundle: Bundle.main)
+        tableView.register(nib, forCellReuseIdentifier: "inspirationSearchCell")
     }
     
     
     func updateSearchResults(for searchController: UISearchController) {
         
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-            for item in data {
+            InspirationSearchTableViewController.filteredData.removeAll()
+            for item in InspirationSearchTableViewController.data {
                 if item.lowercased().contains(searchText.lowercased()) {
-                    filteredData.append(item)
+                    InspirationSearchTableViewController.filteredData.append(item)
                 }
             }
             searching = true
             print(searchText)
+            print(InspirationSearchTableViewController.filteredData)
         } else {
             searching = false
         }
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
-    
-//    func updateSearchResultsForSearchController(searchController: UISearchController) {
-//
-//        //filterSearchController(searchController.searchBar)
-//
-//        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-//            filteredData.removeAll()
-//            for index in 0..<data.count {
-//                if data[index].lowercased().contains(searchText.lowercased()) {
-//                    filteredData.append(data[index])
-//                }
-//            }
-//            searching = true
-//
-//        } else {
-//            searching = false
-//        }
-//
-//        tableView.reloadData()
-//    }
-    
-    
-        
 }
 
 extension InspirationSearchTableViewController {
@@ -85,17 +69,23 @@ extension InspirationSearchTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return searching ? filteredData.count : data.count
+        print(InspirationSearchTableViewController.filteredData)
+        return searching ? InspirationSearchTableViewController.filteredData.count : InspirationSearchTableViewController.data.count
+//        return filteredData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "inspirationSearchCell", for: indexPath)
-        let row = indexPath.row
+        let cell = tableView.dequeueReusableCell(withIdentifier: "inspirationSearchCell", for: indexPath) as? InspirationSearchResultsTableViewCell
+        let filteredDataItem = InspirationSearchTableViewController.filteredData[indexPath.row]
         
         // Configure the cell...
-        cell.textLabel?.text = filteredData[row]
+//        cell.textLabel?.text = filteredDataItem
+//        print(cell.textLabel?.text)
         
-        return cell
+        cell?.titleLabel.text = filteredDataItem
+        cell?.subtitleLabel.text = filteredDataItem
+        cell?.profileIcon.image = #imageLiteral(resourceName: "defaultPhoto")
+        return cell ?? UITableViewCell()
     }
     
     // Override to support conditional editing of the table view.

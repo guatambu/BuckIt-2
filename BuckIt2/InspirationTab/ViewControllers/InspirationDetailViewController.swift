@@ -16,6 +16,8 @@ class InspirationDetailViewController: UIViewController {
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var sharingButton: UIButton!
     @IBOutlet weak var completedButton: UIButton!
+    @IBOutlet weak var sharingItemView: UIView!
+    @IBOutlet weak var sharingItemLabel: UILabel!
     @IBOutlet weak var sharingTableView: UITableView!
     @IBOutlet weak var adviseTableView: UITableView!
     @IBOutlet weak var quickAddButton: UIButton!
@@ -57,6 +59,7 @@ class InspirationDetailViewController: UIViewController {
     func setUPUI() {
         title = ""
         itemNameLabel.adjustsFontSizeToFitWidth = true
+        sharingItemView.isHidden = true
     }
     
     func updateView() {
@@ -86,12 +89,45 @@ class InspirationDetailViewController: UIViewController {
     }
     
     func toggleSharing() {
-        sharingTableView.isHidden = !sharingTableView.isHidden
-        if !sharingTableView.isHidden {
+        sharingButton.isSelected = !sharingButton.isSelected
+        if sharingButton.isSelected {
+            completedButton.isSelected = false
+            sharingItemView.isHidden = false
             sharingButton.backgroundColor = .red
+            sharingButton.titleLabel?.textColor = .white
+            completedButton.backgroundColor = .clear
+            completedButton.titleLabel?.textColor = .darkText
         } else {
+            sharingItemView.isHidden = true
             sharingButton.backgroundColor = .clear
+            sharingButton.titleLabel?.textColor = .darkText
         }
+    }
+    
+    func toggleCompleted() {
+        completedButton.isSelected = !completedButton.isSelected
+        if completedButton.isSelected {
+            sharingButton.isSelected = false
+            sharingItemView.isHidden = false
+            completedButton.backgroundColor = .red
+            completedButton.titleLabel?.textColor = .white
+            sharingButton.backgroundColor = .clear
+            sharingButton.titleLabel?.textColor = .darkText
+        } else {
+            sharingItemView.isHidden = true
+            completedButton.backgroundColor = .clear
+            completedButton.titleLabel?.textColor = .darkText
+        }
+    }
+    
+    func selectedButtonIndex() -> Int {
+        var index = 0
+        if sharingButton.isSelected == true {
+            index = 0
+        } else if completedButton.isSelected == true {
+            index = 1
+        }
+        return index
     }
 
     
@@ -105,6 +141,10 @@ class InspirationDetailViewController: UIViewController {
     }
     
     @IBAction func completedButtonTapped(_ sender: UIButton) {
+        toggleCompleted()
+    }
+    
+    @IBAction func seeAllButtonTapped(_ sender: UIButton) {
     }
 }
 
@@ -152,15 +192,31 @@ extension InspirationDetailViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell = UITableViewCell()
+        let cellIdentifier = (selectedButtonIndex() == 0) ? "inspirationSharingUsersCell" : "inspirationCompletedUsersCell"
+        sharingTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         if tableView == sharingTableView {
-            let sharingCell = sharingTableView.dequeueReusableCell(withIdentifier: "inspirationSharingUsersCell")
-            let user = MockDataUsers.shared.getMockUsers()[indexPath.row]
-            DispatchQueue.main.async {
-                sharingCell?.imageView?.image = user.mockProfilePic
+            let sharingCell = sharingTableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+            let sharingUser = MockDataUsers.shared.getMockUsers()[indexPath.row]
+            let completedUser = MockDataBucketListItems.shared.mockDataItems()[indexPath.row]
+            
+            if cellIdentifier == "inspirationSharingUsersCell" {
+                sharingCell?.imageView?.image = sharingUser.mockProfilePic
+                sharingCell?.textLabel?.text = "\(sharingUser.firstName!) \(sharingUser.lastName!)"
+                cell = sharingCell ?? UITableViewCell()
+                DispatchQueue.main.async {
+                    self.sharingTableView.reloadData()
+                }
             }
-            sharingCell?.textLabel?.text = "\(user.firstName!) \(user.lastName!)"
-            cell = sharingCell ?? UITableViewCell()
+            
+            if cellIdentifier == "inspirationCompletedUsersCell" {
+                sharingCell?.imageView?.image = completedUser.mockPhoto?.first
+                sharingCell?.textLabel?.text = completedUser.title
+                cell = sharingCell ?? UITableViewCell()
+                DispatchQueue.main.async {
+                    self.sharingTableView.reloadData()
+                }
+            }
         }
         
         if tableView == adviseTableView {
