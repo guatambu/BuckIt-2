@@ -9,6 +9,21 @@
 import UIKit
 
 class ForgotPasswordViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var resetPasswordLabelOutlet: UILabel!
+    @IBOutlet weak var resetUserMessageLabelOutlet: UILabel!
+    @IBOutlet weak var errorMessageStackView: UIStackView!
+    @IBOutlet weak var errorMessageLine1LabelOutlet: UILabel!
+    @IBOutlet weak var errorMessageLine2LabelOutlet: UILabel!
+    @IBOutlet weak var emailLabelOutlet: UILabel!
+    @IBOutlet weak var emailTextFieldOutlet: UITextField!
+    @IBOutlet weak var sendEmailButtonOutlet: DesignableButton!
+    
+    
+    
+    // MARK: - ViewController Lifecycle Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +31,16 @@ class ForgotPasswordViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    // MARK: - Actions
+    
+    @IBAction func xToCloseButtonTapped(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @IBAction func sendEmailButtonTapped(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

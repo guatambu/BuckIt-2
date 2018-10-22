@@ -492,13 +492,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Hln-GR-8WR" userLabel="email/username Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="57.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email / username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbk-zo-eyl">
-                                                <rect key="frame" x="0.0" y="0.0" width="130.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbk-zo-eyl" userLabel="Email Label Outlet">
+                                                <rect key="frame" x="0.0" y="0.0" width="41" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gub-EA-P31">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your email here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gub-EA-P31" userLabel="Email Text Field Outlet">
                                                 <rect key="frame" x="0.0" y="27.5" width="272" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -517,7 +517,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Hln-GR-8WR" secondAttribute="trailing" id="mB4-x3-DW2"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0J8-xY-zV9" userLabel="Login button" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0J8-xY-zV9" userLabel="Send Email button" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
                                 <rect key="frame" x="80" y="312" width="160" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -541,6 +541,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="8oi-jI-z4n" eventType="touchUpInside" id="Jlc-PH-vR2"/>
+                                    <action selector="sendEmailButtonTapped:" destination="8oi-jI-z4n" eventType="touchUpInside" id="gYk-va-jAZ"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HQL-gh-56w" userLabel="error message Stack View">
@@ -580,20 +581,28 @@
                         <viewLayoutGuide key="safeArea" id="NMD-Uf-YDP"/>
                     </view>
                     <navigationItem key="navigationItem" id="MXF-T1-Pq3">
-                        <barButtonItem key="leftBarButtonItem" title="X" style="plain" id="mzy-qw-py9">
+                        <barButtonItem key="leftBarButtonItem" title="X" style="plain" id="mzy-qw-py9" userLabel="X to close button">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="xCloseButtonTapped:" destination="8oi-jI-z4n" id="eMU-DX-HWW"/>
+                                <action selector="xToCloseButtonTapped:" destination="8oi-jI-z4n" id="oKq-tF-LJn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailLabelOutlet" destination="Qbk-zo-eyl" id="rRh-5W-CCn"/>
+                        <outlet property="emailTextFieldOutlet" destination="Gub-EA-P31" id="xPg-8P-Z5e"/>
                         <outlet property="emailUsernameLabelOutlet" destination="Qbk-zo-eyl" id="W7h-Dd-5Q1"/>
                         <outlet property="emailUsernameTextFieldOutlet" destination="Gub-EA-P31" id="qlx-u9-rib"/>
                         <outlet property="errorLine1LabelOutlet" destination="xkB-q4-v9u" id="76D-j3-yWE"/>
                         <outlet property="errorLine2LabelOutlet" destination="rNw-Co-6Yr" id="mop-Zq-uK5"/>
+                        <outlet property="errorMessageLine1LabelOutlet" destination="xkB-q4-v9u" id="0rR-An-bVt"/>
+                        <outlet property="errorMessageLine2LabelOutlet" destination="rNw-Co-6Yr" id="A6U-kL-Bbd"/>
+                        <outlet property="errorMessageStackView" destination="HQL-gh-56w" id="cXA-Eq-5Vb"/>
                         <outlet property="errorMessageStackViewOutlet" destination="HQL-gh-56w" id="rci-sw-yUT"/>
                         <outlet property="loginLabelOutlet" destination="QKm-JW-4a4" id="qry-0H-JuS"/>
+                        <outlet property="resetPasswordLabelOutlet" destination="QKm-JW-4a4" id="Jgh-5w-mtk"/>
+                        <outlet property="resetUserMessageLabelOutlet" destination="eKG-MR-KBJ" id="12r-Z5-GWz"/>
+                        <outlet property="sendEmailButtonOutlet" destination="0J8-xY-zV9" id="h85-0B-cAm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd4-Fc-xZI" sceneMemberID="firstResponder"/>
@@ -736,6 +745,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUp-h4-ubm" userLabel="Add Profile Pic Button">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                        <connections>
+                                                            <action selector="addProfilePicButtonTapped:" destination="eG1-ES-jY2" eventType="touchUpInside" id="UUF-o8-I9r"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -785,6 +797,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="eG1-ES-jY2" eventType="touchUpInside" id="Xxd-2e-BLT"/>
+                                    <action selector="saveButtonTapped:" destination="eG1-ES-jY2" eventType="touchUpInside" id="Afs-jJ-laV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -808,17 +821,25 @@
                         <barButtonItem key="leftBarButtonItem" title="X" style="plain" id="I3l-5s-4tX">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="xCloseButtonTapped:" destination="eG1-ES-jY2" id="ZVM-KD-cxO"/>
+                                <action selector="xToCloseButtonTapped:" destination="eG1-ES-jY2" id="od5-g5-CkJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addProfilePicViewOutlet" destination="r6H-Zh-ju6" id="gWz-2C-568"/>
+                        <outlet property="emailLabelOutlet" destination="tzf-en-JQ6" id="zZ7-Iv-rjK"/>
+                        <outlet property="emailTextFieldOutlet" destination="1O1-NO-Kc5" id="Xj9-vC-DOg"/>
                         <outlet property="emailUsernameLabelOutlet" destination="tzf-en-JQ6" id="aSO-Q9-jBT"/>
                         <outlet property="emailUsernameTextFieldOutlet" destination="1O1-NO-Kc5" id="fwP-iJ-pif"/>
                         <outlet property="errorLine1LabelOutlet" destination="NFu-rA-QzN" id="2TC-wH-N6c"/>
                         <outlet property="errorLine2LabelOutlet" destination="3Mw-Sc-9V7" id="jUs-Py-7wp"/>
+                        <outlet property="errorMessageLine1LabelOutlet" destination="NFu-rA-QzN" id="ojS-fy-iS2"/>
+                        <outlet property="errorMessageLine2LabelOutlet" destination="3Mw-Sc-9V7" id="cyB-On-BM7"/>
+                        <outlet property="errorMessageStackView" destination="cYV-eI-3KI" id="gH4-PF-Fa3"/>
                         <outlet property="errorMessageStackViewOutlet" destination="cYV-eI-3KI" id="VR7-zy-ujT"/>
+                        <outlet property="finishProfileLabelOutlet" destination="mRT-nM-Pn8" id="X4W-cm-ZoK"/>
                         <outlet property="loginLabelOutlet" destination="mRT-nM-Pn8" id="XDL-3X-6tb"/>
+                        <outlet property="profilePicLabelOutlet" destination="A51-k9-E9l" id="v6Q-GU-bqL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vC2-8o-uOx" sceneMemberID="firstResponder"/>

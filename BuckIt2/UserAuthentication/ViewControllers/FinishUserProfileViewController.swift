@@ -9,6 +9,20 @@
 import UIKit
 
 class FinishUserProfileViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var finishProfileLabelOutlet: UILabel!
+    @IBOutlet weak var errorMessageStackView: UIStackView!
+    @IBOutlet weak var errorMessageLine1LabelOutlet: UILabel!
+    @IBOutlet weak var errorMessageLine2LabelOutlet: UILabel!
+    @IBOutlet weak var emailLabelOutlet: UILabel!
+    @IBOutlet weak var emailTextFieldOutlet: UITextField!
+    @IBOutlet weak var profilePicLabelOutlet: UILabel!
+    @IBOutlet weak var addProfilePicViewOutlet: UIView!
+    
+    
+    // MARK: - ViewController Lifecycle Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +30,19 @@ class FinishUserProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    // MARK: - Actions
+    
+    @IBAction func xToCloseButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func addProfilePicButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+    }
+    
+    
     /*
     // MARK: - Navigation
 
