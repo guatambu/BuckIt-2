@@ -44,7 +44,6 @@ class ChatViewController: MessagesViewController {
         
         self._currentUser = currentUser
         self.chatType = chatType
-
     }
     
     convenience init(currentUser: User, chatPartner: User, chatType: ChatType = .ongoing) {
@@ -59,7 +58,6 @@ class ChatViewController: MessagesViewController {
         self.init(currentUser: currentUser, chatPartner: chatPartner)
         
         self.messages = messages
-           
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,18 +72,15 @@ class ChatViewController: MessagesViewController {
         configureMessagesCollectionView()
         configureMessagesInputBar()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
 
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         tabBarController?.tabBar.isHidden = false
         
         navigationController?.popToRootViewController(animated: true)
+        
+        addNewConversationIfNeeded()
     }
     
     func insetMessage(message: Message) {
@@ -99,6 +94,18 @@ class ChatViewController: MessagesViewController {
         }) { [weak self] _ in
             if self?.isLastSectionVisible() == true {
                 self?.messagesCollectionView.scrollToBottom(animated: true)
+            }
+        }
+    }
+    
+    func addNewConversationIfNeeded() {
+        if chatType == .new {
+            if messages.count > 0 {
+                MockConversation.currentConversations.insert(messages, at: 0)
+                MockConversation.potentialConversations.removeAll { (messages) -> Bool in
+                    return messages[0].receiver == chatPartner
+                }
+                
             }
         }
     }
@@ -153,8 +160,6 @@ class ChatViewController: MessagesViewController {
 // MARK: - Setup UI
 private extension ChatViewController {
     func updateView() {
-        tabBarController?.tabBar.isHidden = true
-        
         titleLabel.text = chatPartner.username
         setupNavigationBar()
     }
@@ -194,19 +199,6 @@ private extension ChatViewController {
         }
     }
     
-//    func setupSearchBar() {
-//        let searchBar = UISearchBar()
-//        view.addSubview(searchBar)
-//        searchBar.translatesAutoresizingMaskIntoConstraints = false
-//        searchBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        searchBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-//        searchBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-//
-//        messagesCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
-//
-//        searchBar.delegate = self
-//        searchBar.placeholder = "Search for people"
-//    }
 }
 
 // MARK: - MessageDataSource
@@ -235,7 +227,6 @@ extension ChatViewController: MessagesDataSource {
 extension ChatViewController: MessagesDisplayDelegate {
 
     func enabledDetectors(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> [DetectorType] {
-        #warning("Make detectors functional")
         return [.url, .address, .phoneNumber, .date, .transitInformation]
     }
     

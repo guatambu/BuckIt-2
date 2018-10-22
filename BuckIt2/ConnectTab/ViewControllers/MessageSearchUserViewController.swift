@@ -23,11 +23,11 @@ class MessageSearchUserViewController: UIViewController {
 
     // MARK: - Properties
     private let cellId = "connectNewMessageSearchResultsCell"
+    
     var currentConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[..<3])
     var potentialConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[3...])
-//    let dataSource = MockDataUsers.allOtherUsers
-    lazy var filteredCurrentConversationsDataSource: [User] = self.currentConversationsDataSource
     
+    lazy var filteredCurrentConversationsDataSource: [User] = self.currentConversationsDataSource
     var filteredPotentialConversationsDataSource: [User] = []
     
     // MARK: - Outlets
@@ -45,12 +45,8 @@ class MessageSearchUserViewController: UIViewController {
     // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        searchBar.delegate = self
 
         updateView()
-
-        
         tableView.reloadData()
     }
     
@@ -68,14 +64,14 @@ class MessageSearchUserViewController: UIViewController {
             filteredPotentialConversationsDataSource = filter(potentialConversationsDataSource, with: searchText)
         }
         
-        print(searchText.lowercased())
         tableView.reloadData()
     }
     
     private func filter(_ dataSource: [User], with searchText: String) -> [User] {
         return dataSource.filter({ (user) -> Bool in
-            return user.username.lowercased().contains(searchText) ||
-                user.fullName.lowercased().contains(searchText)
+            
+            return user.username.lowercased().hasPrefix(searchText) ||
+                user.fullName.lowercased().hasPrefix(searchText)
         })
     }
 }
@@ -146,7 +142,7 @@ extension MessageSearchUserViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension MessageSearchUserViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         var dataSource: [User] = []
         var chatViewController: ChatViewController?
@@ -158,15 +154,16 @@ extension MessageSearchUserViewController: UITableViewDelegate {
         }
 
         let chatPartner = dataSource[indexPath.row]
-//
-//        if dataSource == filteredPotentialConversationsDataSource {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-//            guard let indexPath = tableView.indexPath(for: cell) else { return }
-//
-//            filteredPotentialConversationsDataSource.remove(at: indexPath.row)
-//            filteredCurrentConversationsDataSource.insert(chatPartner, at: 0)
-//        }
-//
+
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+            if let indexPath = tableView.indexPath(for: cell) {
+                let itemToRemove = dataSource[indexPath.row]
+                filteredPotentialConversationsDataSource.removeAll(where: { $0 == itemToRemove })
+                filteredCurrentConversationsDataSource.insert(chatPartner, at: 0)
+            }
+        }
+
         let currentUser = MockDataUsers.sam
 
         if indexPath.section == 0 {
@@ -184,20 +181,11 @@ extension MessageSearchUserViewController: UITableViewDelegate {
         guard let chatVC = chatViewController else { return }
         
         messageListViewController.navigationController?.pushViewController(chatVC, animated: true)
-//        guard let navCon = navigationController else { return }
-//        var viewControllers = navCon.viewControllers
-//        viewControllers.removeLast()
-//        viewControllers.append(chatchatViewControllerVC)
-//        navCon.setViewControllers(viewControllers, animated: true)
     }
     
 }
 
-extension MessageSearchUserViewController: UISearchBarDelegate, UISearchResultsUpdating {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-    }
-    
+extension MessageSearchUserViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
         
@@ -209,7 +197,6 @@ extension MessageSearchUserViewController: UISearchBarDelegate, UISearchResultsU
             filteredPotentialConversationsDataSource = filter(potentialConversationsDataSource, with: searchText)
         }
         
-        print(searchText.lowercased())
         tableView.reloadData()
     }
 }

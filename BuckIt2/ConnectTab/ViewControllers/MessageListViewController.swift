@@ -31,24 +31,19 @@ class MessageListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-
-        
+        dataSource = MockConversation.currentConversations
+        messageListTableView.reloadData()
         deselectCell()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         navigationItem.searchController?.isActive = false
+        tabBarController?.tabBar.isHidden = true
     }
 
     @IBAction func newMessageButtonTapped(_ sender: UIBarButtonItem) {
-//        let currentUser = MockDataUsers.sam
-//        let chatViewController = ChatViewController(currentUser: currentUser, chatType: .new)
-//        
-//        let searchUserViewController = MessageSearchUserViewController()
-//        
-//        navigationController?.pushViewController(searchUserViewController, animated: true)
+        searchController?.searchBar.becomeFirstResponder()
     }
 }
 
@@ -67,8 +62,7 @@ private extension MessageListViewController {
     
     func setupNavigationBar() {
         // Removes the compose button because the search and create
-        // A new conversation is not working :(
-        navigationItem.rightBarButtonItems = []
+        // A new conversation is not wor
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -77,7 +71,7 @@ private extension MessageListViewController {
         searchController = UISearchController(searchResultsController: searchUserController)
         searchController?.searchResultsUpdater = self
         searchController?.searchBar.becomeFirstResponder()
-        searchController?.hidesNavigationBarDuringPresentation = false
+//        searchController?.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
     }
 }

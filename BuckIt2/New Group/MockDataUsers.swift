@@ -27,7 +27,7 @@ class MockDataUsers {
     static let sam = User(uid: "07", email: "sam@email.com", username: "sam01", isPrivate: false, firstName: "Sam", lastName: "Russo", mockProfilePic: UIImage(named: "samantha"), location: "Seattle, Washington", age: "26", bioBlurb: "Working toward her dream job in Seattle.  She lives with roomates and just got done with college at UW.")
     
     
-    static let allOtherUsers = [MockDataUsers.shared.dylon, MockDataUsers.shared.luisa, MockDataUsers.shared.maggie, MockDataUsers.shared.park, MockDataUsers.shared.rodrigo, MockDataUsers.shared.sangita]
+    static let allOtherUsers = [MockDataUsers.shared.park, MockDataUsers.shared.dylon, MockDataUsers.shared.luisa, MockDataUsers.shared.maggie, MockDataUsers.shared.rodrigo, MockDataUsers.shared.sangita]
 
     let park = User(uid: "05", email: "park@email.com", username: "parkhan", isPrivate: true, firstName: "Park", lastName: "Han", mockProfilePic: UIImage(named: "park"), location: "Tokyo, Japan", age: "40")
     
