@@ -12,13 +12,13 @@
         <!--Connect Compose->Search-->
         <scene sceneID="8He-5k-DoJ">
             <objects>
-                <viewController id="153-i0-N7T" userLabel="Connect Compose-&gt;Search" customClass="MessageSearchUserViewController" customModule="BuckIt2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="153-i0-N7T" userLabel="Connect Compose-&gt;Search" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRU-ps-Tr6" userLabel="Connect New Message Search View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ny-K7-D6D" userLabel="Connect Messages Search Table View">
-                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="connectNewMessageSearchResultsCell" textLabel="aMN-sb-pd8" detailTextLabel="HZX-o8-Brm" style="IBUITableViewCellStyleSubtitle" id="E36-wn-c6I">
@@ -46,33 +46,24 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                            </tableView>
-                            <searchBar contentMode="redraw" placeholder="Search people..." translatesAutoresizingMaskIntoConstraints="NO" id="y2V-fy-Gms" userLabel="Connect New Message Search Bar">
-                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="153-i0-N7T" id="njg-Ci-8wp"/>
+                                    <outlet property="dataSource" destination="153-i0-N7T" id="qqa-2P-Rme"/>
+                                    <outlet property="delegate" destination="153-i0-N7T" id="xtZ-6W-YAy"/>
                                 </connections>
-                            </searchBar>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2ny-K7-D6D" firstAttribute="top" secondItem="y2V-fy-Gms" secondAttribute="bottom" id="0BH-lA-93v"/>
-                            <constraint firstItem="y2V-fy-Gms" firstAttribute="trailing" secondItem="nZ1-p7-GKc" secondAttribute="trailing" id="3t8-wA-HEK"/>
-                            <constraint firstAttribute="trailing" secondItem="y2V-fy-Gms" secondAttribute="trailing" id="8lk-d8-yqk"/>
-                            <constraint firstItem="y2V-fy-Gms" firstAttribute="trailing" secondItem="2ny-K7-D6D" secondAttribute="trailing" id="8sm-dU-Eof"/>
-                            <constraint firstItem="y2V-fy-Gms" firstAttribute="top" secondItem="nZ1-p7-GKc" secondAttribute="top" id="J1q-1f-GA5"/>
+                            <constraint firstItem="2ny-K7-D6D" firstAttribute="leading" secondItem="DRU-ps-Tr6" secondAttribute="leading" id="6L2-u9-qzV"/>
+                            <constraint firstAttribute="trailing" secondItem="2ny-K7-D6D" secondAttribute="trailing" id="JbV-Gz-TCY"/>
                             <constraint firstItem="2ny-K7-D6D" firstAttribute="bottom" secondItem="nZ1-p7-GKc" secondAttribute="bottom" id="LwM-tQ-h8D"/>
-                            <constraint firstItem="y2V-fy-Gms" firstAttribute="leading" secondItem="DRU-ps-Tr6" secondAttribute="leading" id="Qzn-Zd-aYT"/>
-                            <constraint firstItem="y2V-fy-Gms" firstAttribute="leading" secondItem="2ny-K7-D6D" secondAttribute="leading" id="dQ1-e7-GZF"/>
-                            <constraint firstItem="y2V-fy-Gms" firstAttribute="leading" secondItem="nZ1-p7-GKc" secondAttribute="leading" id="qZs-hj-NpR"/>
+                            <constraint firstItem="2ny-K7-D6D" firstAttribute="top" secondItem="nZ1-p7-GKc" secondAttribute="top" id="UPX-4G-SXS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nZ1-p7-GKc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Connect With" id="1fy-JW-HPh"/>
                     <connections>
-                        <outlet property="searchBar" destination="y2V-fy-Gms" id="b5T-Ba-q1V"/>
-                        <outlet property="tableView" destination="2ny-K7-D6D" id="fzB-Qf-qge"/>
+                        <outlet property="tableView" destination="2ny-K7-D6D" id="aPE-Sd-kbL"/>
                         <segue destination="lJy-Ew-XxY" kind="show" identifier="ToChatVC" id="S8q-YH-xDN"/>
                     </connections>
                 </viewController>

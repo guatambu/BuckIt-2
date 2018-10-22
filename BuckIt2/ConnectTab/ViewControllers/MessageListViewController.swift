@@ -13,6 +13,7 @@ class MessageListViewController: UIViewController {
     private let cellId = MessageListCell.reuseIdentifier
     var dataSource = MockConversation.currentConversations
     
+    let searchUserController = MessageSearchUserViewController()
     var searchController: UISearchController?
 
     @IBOutlet weak var messageTitleLabel: UILabel!
@@ -31,7 +32,14 @@ class MessageListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+
+        
         deselectCell()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationItem.searchController?.isActive = false
     }
 
     @IBAction func newMessageButtonTapped(_ sender: UIBarButtonItem) {
@@ -47,6 +55,7 @@ class MessageListViewController: UIViewController {
 // MARK: - Setup UI
 private extension MessageListViewController {
     func updateView() {
+        setupSearchController()
         setupNavigationBar()
     }
     
@@ -60,6 +69,16 @@ private extension MessageListViewController {
         // Removes the compose button because the search and create
         // A new conversation is not working :(
         navigationItem.rightBarButtonItems = []
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    func setupSearchController() {
+        searchController = UISearchController(searchResultsController: searchUserController)
+        searchController?.searchResultsUpdater = self
+        searchController?.searchBar.becomeFirstResponder()
+        searchController?.hidesNavigationBarDuringPresentation = false
+        definesPresentationContext = true
     }
 }
 
@@ -112,8 +131,26 @@ extension MessageListViewController: UITableViewDelegate {
     }
 }
 
-extension MessageListViewController: UISearchBarDelegate {
+extension MessageListViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
     }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if !searchController.isActive {
+            return
+        }
+        
+        guard let searchText = searchController.searchBar.text?.lowercased() else { return }
+        
+        searchUserController.filter(with: searchText)
+    }
 }
+
+extension MessageListViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let searchController = searchController else { return }
+        searchController.searchBar.resignFirstResponder()
+    }
+}
+
