@@ -41,6 +41,7 @@ class FinishUserProfileViewController: UIViewController {
     }
     
     @IBAction func addProfilePicButtonTapped(_ sender: Any) {
+        
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {

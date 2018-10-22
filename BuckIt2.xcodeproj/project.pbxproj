@@ -70,6 +70,11 @@
 		FADD995C217D4C560028E4A7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD995B217D4C560028E4A7 /* ForgotPasswordViewController.swift */; };
 		FADD995E217D4C6C0028E4A7 /* FinishUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD995D217D4C6C0028E4A7 /* FinishUserProfileViewController.swift */; };
 		FADD9960217D504C0028E4A7 /* profile-dark-gray-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FADD995F217D504B0028E4A7 /* profile-dark-gray-50.png */; };
+		FADD9963217D7AB70028E4A7 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD9962217D7AB70028E4A7 /* UserModelController.swift */; };
+		FADD9965217D7AD30028E4A7 /* BucketListModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD9964217D7AD30028E4A7 /* BucketListModelController.swift */; };
+		FADD9967217D7AF90028E4A7 /* BucketListItemModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD9966217D7AF90028E4A7 /* BucketListItemModelController.swift */; };
+		FADD9969217D7B300028E4A7 /* MessageModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD9968217D7B300028E4A7 /* MessageModelController.swift */; };
+		FADD996B217D7B560028E4A7 /* BucketListItemCommentModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD996A217D7B560028E4A7 /* BucketListItemCommentModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +220,11 @@
 		FADD995B217D4C560028E4A7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		FADD995D217D4C6C0028E4A7 /* FinishUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishUserProfileViewController.swift; sourceTree = "<group>"; };
 		FADD995F217D504B0028E4A7 /* profile-dark-gray-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-dark-gray-50.png"; sourceTree = "<group>"; };
+		FADD9962217D7AB70028E4A7 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
+		FADD9964217D7AD30028E4A7 /* BucketListModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListModelController.swift; sourceTree = "<group>"; };
+		FADD9966217D7AF90028E4A7 /* BucketListItemModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListItemModelController.swift; sourceTree = "<group>"; };
+		FADD9968217D7B300028E4A7 /* MessageModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModelController.swift; sourceTree = "<group>"; };
+		FADD996A217D7B560028E4A7 /* BucketListItemCommentModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListItemCommentModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +297,7 @@
 			children = (
 				FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */,
 				FA270E5F2173007C001643D0 /* Models */,
+				FADD9961217D7A740028E4A7 /* Model Controllers */,
 				FA270E4E2172FB1A001643D0 /* ConnectTab */,
 				FA270E382172FA48001643D0 /* InspirationTab */,
 				FA270ECE2173023A001643D0 /* MyListTab */,
@@ -634,6 +645,19 @@
 			path = "MockData Structs";
 			sourceTree = "<group>";
 		};
+		FADD9961217D7A740028E4A7 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FADD9962217D7AB70028E4A7 /* UserModelController.swift */,
+				FADD9964217D7AD30028E4A7 /* BucketListModelController.swift */,
+				FADD9966217D7AF90028E4A7 /* BucketListItemModelController.swift */,
+				FADD9968217D7B300028E4A7 /* MessageModelController.swift */,
+				FADD996A217D7B560028E4A7 /* BucketListItemCommentModelController.swift */,
+			);
+			name = "Model Controllers";
+			path = "New Group/Model Controllers";
+			sourceTree = "<group>";
+		};
 		FEA2C744C91B8B24223C4355 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,10 +851,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADD9963217D7AB70028E4A7 /* UserModelController.swift in Sources */,
 				FA270E5D21730070001643D0 /* BucketList.swift in Sources */,
 				FA270ECB21730224001643D0 /* MyListViewController.swift in Sources */,
 				FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */,
 				FA270E322172FA32001643D0 /* InspirationHomeViewController.swift in Sources */,
+				FADD9969217D7B300028E4A7 /* MessageModelController.swift in Sources */,
+				FADD996B217D7B560028E4A7 /* BucketListItemCommentModelController.swift in Sources */,
 				FA292174217985FD00053E8E /* MyListTableViewController.swift in Sources */,
 				FA270E5721730070001643D0 /* MockDataUsers.swift in Sources */,
 				FA270E5B21730070001643D0 /* MockDataBucketListItems.swift in Sources */,
@@ -865,10 +892,12 @@
 				FA270E302172FA32001643D0 /* InspirationOtherUserViewController.swift in Sources */,
 				FA270E362172FA3A001643D0 /* InspirationCollectionViewCell.swift in Sources */,
 				FA270ECA21730224001643D0 /* MyListNewItemViewController.swift in Sources */,
+				FADD9965217D7AD30028E4A7 /* BucketListModelController.swift in Sources */,
 				FA270EC821730224001643D0 /* MyListPhotoPickerViewController.swift in Sources */,
 				FA2921722177E67B00053E8E /* MyListController.swift in Sources */,
 				FA270EB6217301B1001643D0 /* AuthManager.swift in Sources */,
 				FADD995E217D4C6C0028E4A7 /* FinishUserProfileViewController.swift in Sources */,
+				FADD9967217D7AF90028E4A7 /* BucketListItemModelController.swift in Sources */,
 				FA270EAF217301A0001643D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
