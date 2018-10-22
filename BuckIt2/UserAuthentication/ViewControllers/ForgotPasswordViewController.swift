@@ -40,6 +40,10 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func sendEmailButtonTapped(_ sender: Any) {
+        
+        // **** check with dev team:
+        // to be built out with firebase perhaps?
+        
     }
     
     /*
