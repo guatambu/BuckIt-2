@@ -39,7 +39,7 @@ class MessageListViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         navigationItem.searchController?.isActive = false
-        tabBarController?.tabBar.isHidden = true
+        
     }
 
     @IBAction func newMessageButtonTapped(_ sender: UIBarButtonItem) {
@@ -61,8 +61,6 @@ private extension MessageListViewController {
     }
     
     func setupNavigationBar() {
-        // Removes the compose button because the search and create
-        // A new conversation is not wor
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -71,7 +69,6 @@ private extension MessageListViewController {
         searchController = UISearchController(searchResultsController: searchUserController)
         searchController?.searchResultsUpdater = self
         searchController?.searchBar.becomeFirstResponder()
-//        searchController?.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
     }
 }
@@ -112,14 +109,14 @@ extension MessageListViewController: UITableViewDelegate {
         let chatViewController = ChatViewController(
             currentUser: MockDataUsers.sam, chatPartner: chatPartner, messages: mockConversation)
         
+        
         navigationController?.pushViewController(chatViewController, animated: true)        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            let conversation = dataSource[indexPath.row]
-            dataSource.remove(at: indexPath.row)
             
+            dataSource.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

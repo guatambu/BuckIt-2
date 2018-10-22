@@ -24,8 +24,8 @@ class MessageSearchUserViewController: UIViewController {
     // MARK: - Properties
     private let cellId = "connectNewMessageSearchResultsCell"
     
-    var currentConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[..<3])
-    var potentialConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[3...])
+    var currentConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[..<MockConversation.currentConversations.count])
+    var potentialConversationsDataSource: [User] = Array(MockDataUsers.allOtherUsers[MockConversation.currentConversations.count...])
     
     lazy var filteredCurrentConversationsDataSource: [User] = self.currentConversationsDataSource
     var filteredPotentialConversationsDataSource: [User] = []
@@ -53,7 +53,9 @@ class MessageSearchUserViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        currentConversationsDataSource = Array(MockDataUsers.allOtherUsers[..<MockConversation.currentConversations.count])
+        potentialConversationsDataSource = Array(MockDataUsers.allOtherUsers[MockConversation.currentConversations.count...])
+        tableView.reloadData()
     }
     func filter(with searchText: String) {
         if searchText == "" {
@@ -155,19 +157,19 @@ extension MessageSearchUserViewController: UITableViewDelegate {
 
         let chatPartner = dataSource[indexPath.row]
 
-        if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-            if let indexPath = tableView.indexPath(for: cell) {
-                let itemToRemove = dataSource[indexPath.row]
-                filteredPotentialConversationsDataSource.removeAll(where: { $0 == itemToRemove })
-                filteredCurrentConversationsDataSource.insert(chatPartner, at: 0)
-            }
-        }
+//        if indexPath.section == 1 {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+//            if let indexPath = tableView.indexPath(for: cell) {
+//                let itemToRemove = dataSource[indexPath.row]
+//                filteredPotentialConversationsDataSource.removeAll(where: { $0 == itemToRemove })
+//                filteredCurrentConversationsDataSource.insert(chatPartner, at: 0)
+//            }
+//        }
 
         let currentUser = MockDataUsers.sam
 
         if indexPath.section == 0 {
-            guard let messages = MockConversation.allDictionary[chatPartner.uid] else { return }
+            guard let messages = MockConversation.allDictionary[chatPartner] else { return }
             chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner, messages: messages)
         } else if indexPath.section == 1 {
             chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner, chatType: .new)

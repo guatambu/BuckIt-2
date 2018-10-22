@@ -37,21 +37,31 @@ struct MockDataMessages {
     }
 }
 
+extension User: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.uid.hashValue)
+        hasher.combine(self.username.hashValue)
+    }
+}
+
 struct MockConversation {
     
-    static var allDictionary = [MockDataUsers.shared.park.uid: MockConversation.withPark,
-                      MockDataUsers.shared.dylon.uid: MockConversation.withDylon,
-                      MockDataUsers.shared.luisa.uid: MockConversation.withLuisa,
-                      MockDataUsers.shared.maggie.uid: MockConversation.withMaggie,
-                      MockDataUsers.shared.rodrigo.uid: MockConversation.withRodrigo,
-                      MockDataUsers.shared.sangita.uid: MockConversation.withSangita]
+    static var allDictionary: [User: [Message]] = [
+                      MockDataUsers.shared.park: MockConversation.withPark,
+                      MockDataUsers.shared.dylon: MockConversation.withDylon,
+                      MockDataUsers.shared.luisa: MockConversation.withLuisa,
+                      MockDataUsers.shared.maggie: MockConversation.withMaggie,
+                      MockDataUsers.shared.rodrigo: MockConversation.withRodrigo,
+                      MockDataUsers.shared.sangita: MockConversation.withSangita
+    ]
     
     static var all = [MockConversation.withPark,
-    MockConversation.withDylon,
-    MockConversation.withLuisa,
-    MockConversation.withMaggie,
-    MockConversation.withRodrigo,
-    MockConversation.withSangita]
+                      MockConversation.withDylon,
+                      MockConversation.withLuisa,
+                      MockConversation.withMaggie,
+                      MockConversation.withRodrigo,
+                      MockConversation.withSangita
+    ]
     
     static var currentConversations = Array(MockConversation.all[..<3])
     static var potentialConversations = Array(MockConversation.all[3...])

@@ -72,6 +72,11 @@ class ChatViewController: MessagesViewController {
         configureMessagesCollectionView()
         configureMessagesInputBar()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presentingViewController?.tabBarController?.tabBar.isHidden = true
+    }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -99,13 +104,10 @@ class ChatViewController: MessagesViewController {
     }
     
     func addNewConversationIfNeeded() {
-        if chatType == .new {
-            if messages.count > 0 {
-                MockConversation.currentConversations.insert(messages, at: 0)
-                MockConversation.potentialConversations.removeAll { (messages) -> Bool in
-                    return messages[0].receiver == chatPartner
-                }
-                
+        if chatType == .new && messages.count > 0 {
+            MockConversation.currentConversations.insert(messages, at: 0)
+            MockConversation.potentialConversations.removeAll { (messages) -> Bool in
+                return messages.first?.receiver.uid == chatPartner.uid
             }
         }
     }
