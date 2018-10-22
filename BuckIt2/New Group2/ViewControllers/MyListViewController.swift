@@ -23,7 +23,7 @@ class MyListViewController: UIViewController  {
     var toDoItems: [BucketListItem] = []
     var completedItems: [BucketListItem] = []
     
-    var users: [MockDataUsers] = [MockDataUsers.dylon, MockDataUsers.luisa, MockDataUsers.maggie, MockDataUsers.park, MockDataUsers.rodrigo, MockDataUsers.sangita]
+    var users: [User] = [MockDataUsers.dylon, MockDataUsers.luisa, MockDataUsers.maggie, MockDataUsers.park, MockDataUsers.rodrigo, MockDataUsers.sangita]
     
     
     // MARK: - ViewController Lifecycle Functions
@@ -65,18 +65,18 @@ class MyListViewController: UIViewController  {
     }
     
     @IBAction func changedSegmentController(_ sender: UISegmentedControl) {
-        let selectedIndex = todoCompletedSegmentedControl.selectedSegmentIndex
-        
-        switch selectedIndex {
-            
-        case 0:
-            // To-Do
-            
-            // display To-Do BucketList Items
-        case 1:
-            // Done
-            // display Done Bucket List Items
-        }
+//        let selectedIndex = todoCompletedSegmentedControl.selectedSegmentIndex
+//        
+//        switch selectedIndex {
+//            
+//        case 0:
+//            // To-Do
+//            
+//            // display To-Do BucketList Items
+//        case 1:
+//            // Done
+//            // display Done Bucket List Items
+//        }
     }
     
     @IBAction func addNewItemButtonTapped(_ sender: UIButton) {

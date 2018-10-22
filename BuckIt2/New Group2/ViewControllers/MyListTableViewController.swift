@@ -12,6 +12,11 @@ class MyListTableViewController: UITableViewController {
     
     // MARK: - Properties
     
+    @IBOutlet weak var bucketListMainLabelOutlet: UILabel!
+    @IBOutlet weak var segmentedControlOutlet: DesignableSegmentedControl!
+    @IBOutlet weak var addItemButtonOutlet: DesignableButton!
+    @IBOutlet weak var addNewItemLabelOutlet: UILabel!
+    
     var user: User?
     
     var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item20]
@@ -36,8 +41,7 @@ class MyListTableViewController: UITableViewController {
         
         // add round profile pic as button
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: dylon.mockProfilePic), for: UIControlState.normal)
-        button.addTarget(self, action:#selector(ViewController.callMethod), for:.touchUpInside)
+        button.setImage(dylon.mockProfilePic, for: UIControl.State.normal)
         button.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40) //CGRectMake(0, 0, 30, 30)
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         
@@ -52,12 +56,12 @@ class MyListTableViewController: UITableViewController {
         self.title = dylon.username
         
         // set bottom of nav bar border color
-        self.navigationController?.navigationBar.shadowImage = UIColor.black
+        
         //if design team wants to have a more specific border in terms of the width of the border then we need a .jpg of their border to be plugged in here:
         // self.navigationController?.navigationBar.shadowImage = UIImage(named: <#T##String#>)
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -65,22 +69,7 @@ class MyListTableViewController: UITableViewController {
     
     // MARK: - Actions
     
-    @IBAction func changedSegmentController(_ sender: UISegmentedControl) {
-        let selectedIndex = todoCompletedSegmentedControl.selectedSegmentIndex
-        
-        switch selectedIndex {
-            
-        case 0:
-            // To-Do
-            
-        // display To-Do BucketList Items
-        case 1:
-            // Done
-            // display Done Bucket List Items
-        }
-    }
-    
-    @objc func profileButtonTapped(sender: Button) {
+    @objc func profileButtonTapped(sender: UIButton) {
         print("test")
         
         // programmatically performing the segue
@@ -103,12 +92,36 @@ class MyListTableViewController: UITableViewController {
         destViewController.user = user
     }
     
+    @IBAction func changedSegmentedController(_ sender: UISegmentedControl) {
+        let selectedIndex = segmentedControlOutlet.selectedSegmentIndex
+        
+        switch selectedIndex {
+            
+        case 0:
+            // To-Do
+            print("0 - ToDo")
+        // display To-Do BucketList Items
+        case 1:
+            // Done
+            print("1 - Completed")
+            // display Done Bucket List Items
+        default:
+            print("not an acceptable choice from the two segmented controller options in MyListTableViewController.swift")
+        }
+    }
+    
+    
+    @IBAction func addNewItemButtonTapped(_ sender: DesignableButton) {
+    }
+    
+    
+    
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return
+        return 1
     }
 
     /*

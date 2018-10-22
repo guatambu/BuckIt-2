@@ -25,7 +25,7 @@ class DesignableView: UIView {
     
     @IBInspectable var borderColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
         didSet {
-            self.layer.borderColor = borderColor?.cgColor
+            self.layer.borderColor = borderColor.cgColor
         }
     }
     
@@ -53,7 +53,7 @@ class DesignableView: UIView {
     @IBInspectable
     var shadowColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
         didSet {
-            self.layer.borderColor = borderColor?.cgColor
+            self.layer.borderColor = borderColor.cgColor
         }
     }
 }
@@ -77,7 +77,7 @@ class DesignableSegmentedControl: UISegmentedControl {
     
     @IBInspectable var borderColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
         didSet {
-            self.layer.borderColor = borderColor?.cgColor
+            self.layer.borderColor = borderColor.cgColor
         }
     }
 }
@@ -101,7 +101,7 @@ class DesignableButton: UIButton {
     
     @IBInspectable var borderColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
         didSet {
-            self.layer.borderColor = borderColor?.cgColor
+            self.layer.borderColor = borderColor.cgColor
         }
     }
     
@@ -129,7 +129,7 @@ class DesignableButton: UIButton {
     @IBInspectable
     var shadowColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
         didSet {
-            self.layer.borderColor = borderColor?.cgColor
+            self.layer.borderColor = borderColor.cgColor
         }
     }
     
@@ -153,38 +153,9 @@ class DesignableLabel: UILabel {
     
     @IBInspectable var borderColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
         didSet {
-            self.layer.borderColor = borderColor?.cgColor
+            self.layer.borderColor = borderColor.cgColor
         }
     }
-    
-    @IBInspectable
-    var shadowRadius: CGFloat = 0 {
-        didSet {
-            self.layer.shadowRadius = shadowRadius
-        }
-    }
-    
-    @IBInspectable
-    var shadowOpacity: Float = 0 {
-        didSet {
-            self.layer.shadowOpacity = shadowOpacity
-        }
-    }
-    
-    @IBInspectable
-    var shadowOffset: CGSize = CGSize(width: 0.0, height: 0.0) {
-        didSet {
-            self.layer.shadowOffset = shadowOffset
-        }
-    }
-    
-    @IBInspectable
-    var shadowColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
-        didSet {
-            self.layer.borderColor = borderColor?.cgColor
-        }
-    }
-    
 }
 
 //extension UIView {

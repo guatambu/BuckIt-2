@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct MockDataMessages {
+struct MockDataMessagesA {
     let funnyMessage = Message(uid: "1", sender: MockDataUsers.dylon, receiver: MockDataUsers.rodrigo, text: "man, you are just the funniest dude i know!", timestamp: Date())
     
     let sillyMessage = Message(uid: "2", sender: MockDataUsers.luisa, receiver: MockDataUsers.maggie, text: "girl, you are just the silliest perosn i know!", timestamp: Date())

@@ -35,7 +35,7 @@ class UserCreateAccountViewController: UIViewController {
     // MARK: ViewController Lifecycle Functions
     
     override func viewWillAppear(_ animated: Bool) {
-        networkErrorMessageOutlet.isHidden = true
+        errorMessageStackView.isHidden = true
 
     }
 
@@ -46,7 +46,7 @@ class UserCreateAccountViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func closeXButtonTapped(_ sender: Any) {
+    @IBAction func xCloseButtonTapped(_ sender: Any) {
         // pop viewController
         self.navigationController?.popViewController(animated: true)
     }
@@ -56,53 +56,53 @@ class UserCreateAccountViewController: UIViewController {
         guard let uid = uid else {
             // error handling
             
-            networkErrorMessageOutlet.isHidden = false
+            errorMessageStackView.isHidden = false
             return
         }
         
-        guard let username = usernameTextFieldOutlet.text, usernameTextFieldOutlet.text!= "" else {
+        guard let username = usernameTextFieldOutlet.text, usernameTextFieldOutlet.text != "" else {
             
             // error handling
-            if usernameTextFieldOutlet.text! = "" {
-                errorMessageStackView.isHidden = false
-                errorLine1LabelOutlet.text = "Please enter a username."
-                errorLine2LabelOutlet.text = ""
+            if self.usernameTextFieldOutlet.text != "" {
+                self.errorMessageStackView.isHidden = false
+                self.errorLine1LabelOutlet.text = "Please enter a username."
+                self.errorLine2LabelOutlet.text = ""
             }
             
             return
         }
         
-        guard let email = emailTextFieldOutlet.text, emailTextFieldOutlet.text!= "" else {
+        guard let email = emailTextFieldOutlet.text, emailTextFieldOutlet.text != "" else {
             
             // error handling
-            if emailTextFieldOutlet.text! = "" {
-                errorMessageStackView.isHidden = false
-                errorLine1LabelOutlet.text = "Please enter a valid email address."
-                errorLine2LabelOutlet.text = ""
+            if self.emailTextFieldOutlet.text != "" {
+                self.errorMessageStackView.isHidden = false
+                self.errorLine1LabelOutlet.text = "Please enter a valid email address."
+                self.errorLine2LabelOutlet.text = ""
             }
             
             return
         }
         
-        guard let password = passwordTextFieldOutlet.text, passwordTextFieldOutlet.text!= "" else {
+        guard let password = passwordTextFieldOutlet.text, passwordTextFieldOutlet.text != "" else {
             
             // error handling
-            if passwordTextFieldOutlet.text! = "" {
-                errorMessageStackView.isHidden = false
-                errorLine1LabelOutlet.text = "Please enter a password."
-                errorLine2LabelOutlet.text = ""
+            if self.passwordTextFieldOutlet.text != "" {
+                self.errorMessageStackView.isHidden = false
+                self.errorLine1LabelOutlet.text = "Please enter a password."
+                self.errorLine2LabelOutlet.text = ""
             }
             
             return
         }
         
-        guard let confirmPassword = confirmPasswordTextFieldOutlet.text, confirmPasswordTextFieldOutlet.text!= "" else {
+        guard let confirmPassword = confirmPasswordTextFieldOutlet.text, confirmPasswordTextFieldOutlet.text != "" else {
             
             // error handling
-            if confirmPasswordTextFieldOutlet.text! = "" {
-                errorMessageStackView.isHidden = false
-                errorLine1LabelOutlet.text = "Please confirm your password."
-                errorLine2LabelOutlet.text = ""
+            if self.confirmPasswordTextFieldOutlet.text != "" {
+                self.errorMessageStackView.isHidden = false
+                self.errorLine1LabelOutlet.text = "Please confirm your password."
+                self.errorLine2LabelOutlet.text = ""
             }
             
             return
@@ -114,7 +114,7 @@ class UserCreateAccountViewController: UIViewController {
             errorLine2LabelOutlet.text = "Please try again."
         } else {
             
-            newUserAccount = User(uid: uid, email: email, username: username, isPrivate: true, firstName: nil, lastName: nil, mockProfilePic: nil, location: nil, age: nil)
+            newUserAccount = User(uid: uid, email: email, username: username, password: password, isPrivate: true, firstName: nil, lastName: nil, mockProfilePic: nil, location: nil, age: nil)
             
             // pop viewController
             self.navigationController?.popViewController(animated: true)

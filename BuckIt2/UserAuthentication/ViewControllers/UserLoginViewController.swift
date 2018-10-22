@@ -39,11 +39,11 @@ class UserLoginViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func closeXButtonTapped(_ sender: UIButton) {
-        
+    @IBAction func xCloseButtonTapped(_ sender: Any) {
         // pop viewController
         self.navigationController?.popViewController(animated: true)
     }
+    
     
     @IBAction func forgotButtonTapped(_ sender: UIButton) {
         
@@ -52,7 +52,7 @@ class UserLoginViewController: UIViewController {
         // instantiate the relevant storyboard
         let mainView: UIStoryboard = UIStoryboard(name: "UserAuthentication", bundle: nil)
         // instantiate the desired TableViewController as ViewController on relevant storyboard
-        let destViewController = mainView.instantiateViewController(withIdentifier: /* STRING OF STORYBOARD ID */)
+        let destViewController = mainView.instantiateViewController(withIdentifier: "toForgotPassword")
         // create the segue programmatically
         self.navigationController?.pushViewController(destViewController, animated: true)
         // set the desired properties of the destinationVC's navgation Item
@@ -65,20 +65,18 @@ class UserLoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
         guard let emailUsername = emailUsernameTextFieldOutlet.text, emailUsernameTextFieldOutlet.text != "" else {
+        
+            errorMessageStackViewOutlet.isHidden = false
+            errorLine1LabelOutlet.text = "Please enter your username or email address."
             
-            if emailUsernameTextFieldOutlet.text = "" {
-                errorMessageStackViewOutlet.isHidden = false
-                errorLine1LabelOutlet.text = "Please enter your username or email address."
-            }
             return
         }
         
         guard let password = passwordTextFieldOutlet.text, passwordTextFieldOutlet.text != "" else {
             
-            if passwordTextFieldOutlet.text = "" {
-                errorMessageStackViewOutlet.isHidden = false
-                errorLine1LabelOutlet.text = "Please enter your password."
-            }
+            errorMessageStackViewOutlet.isHidden = false
+            errorLine1LabelOutlet.text = "Please enter your password."
+            
             return
         }
         

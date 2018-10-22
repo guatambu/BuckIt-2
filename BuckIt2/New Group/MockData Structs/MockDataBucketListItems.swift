@@ -13,9 +13,9 @@ struct MockDataBucketListItems {
     static let shared = MockDataBucketListItems()
     var bucketListItems: [BucketListItem] = []
     
-    init() {
-        bucketListItems = mockDataItems
-    }
+//    init() {
+//        bucketListItems = mockItems
+//    }
     
     
     // Bucket List Items

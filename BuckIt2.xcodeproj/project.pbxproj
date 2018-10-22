@@ -67,6 +67,9 @@
 		FA29217621798B6B00053E8E /* UserProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29217521798B6B00053E8E /* UserProfileDetailViewController.swift */; };
 		FA881C312174118700236163 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C302174118700236163 /* IBDesignables.swift */; };
 		FA881C352177AEFF00236163 /* MockDataMessagesA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA881C342177AEFF00236163 /* MockDataMessagesA.swift */; };
+		FADD995C217D4C560028E4A7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD995B217D4C560028E4A7 /* ForgotPasswordViewController.swift */; };
+		FADD995E217D4C6C0028E4A7 /* FinishUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD995D217D4C6C0028E4A7 /* FinishUserProfileViewController.swift */; };
+		FADD9960217D504C0028E4A7 /* profile-dark-gray-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FADD995F217D504B0028E4A7 /* profile-dark-gray-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +212,9 @@
 		FA29217521798B6B00053E8E /* UserProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDetailViewController.swift; sourceTree = "<group>"; };
 		FA881C302174118700236163 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBDesignables.swift; path = BuckIt2/Extensions/IBDesignables.swift; sourceTree = SOURCE_ROOT; };
 		FA881C342177AEFF00236163 /* MockDataMessagesA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessagesA.swift; sourceTree = "<group>"; };
+		FADD995B217D4C560028E4A7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		FADD995D217D4C6C0028E4A7 /* FinishUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishUserProfileViewController.swift; sourceTree = "<group>"; };
+		FADD995F217D504B0028E4A7 /* profile-dark-gray-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-dark-gray-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +293,7 @@
 				FA270D9D2172F8B4001643D0 /* UserAuthentication */,
 				FA270EB8217301BC001643D0 /* Networking */,
 				FA270EAD2173015A001643D0 /* Resources */,
+				FADD995F217D504B0028E4A7 /* profile-dark-gray-50.png */,
 				D7A151E821757DD900520CEA /* Extensions */,
 				FA270D952172F866001643D0 /* Info.plist */,
 				FA270D892172F82C001643D0 /* LaunchScreen.storyboard */,
@@ -610,6 +617,8 @@
 			children = (
 				FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */,
 				FA270D982172F8AD001643D0 /* UserLoginViewController.swift */,
+				FADD995B217D4C560028E4A7 /* ForgotPasswordViewController.swift */,
+				FADD995D217D4C6C0028E4A7 /* FinishUserProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -733,6 +742,7 @@
 				FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */,
 				38ABCCFD21754B7300608F0F /* (null) in Resources */,
 				FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */,
+				FADD9960217D504C0028E4A7 /* profile-dark-gray-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,6 +835,7 @@
 				FA270E5721730070001643D0 /* MockDataUsers.swift in Sources */,
 				FA270E5B21730070001643D0 /* MockDataBucketListItems.swift in Sources */,
 				FA270EB5217301B1001643D0 /* DatabaseManager.swift in Sources */,
+				FADD995C217D4C560028E4A7 /* ForgotPasswordViewController.swift in Sources */,
 				FA270EB7217301B1001643D0 /* StorageManager.swift in Sources */,
 				FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */,
 				FA270E5E21730070001643D0 /* Message.swift in Sources */,
@@ -857,6 +868,7 @@
 				FA270EC821730224001643D0 /* MyListPhotoPickerViewController.swift in Sources */,
 				FA2921722177E67B00053E8E /* MyListController.swift in Sources */,
 				FA270EB6217301B1001643D0 /* AuthManager.swift in Sources */,
+				FADD995E217D4C6C0028E4A7 /* FinishUserProfileViewController.swift in Sources */,
 				FA270EAF217301A0001643D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
