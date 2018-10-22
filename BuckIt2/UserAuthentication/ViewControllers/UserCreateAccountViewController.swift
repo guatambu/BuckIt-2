@@ -142,6 +142,8 @@ class UserCreateAccountViewController: UIViewController {
             backButtonItem.title = "Create Account"
             navigationItem.backBarButtonItem = backButtonItem
             
+    // *****  firbase functionality  *****
+            
             // pass necessary info to destViewController
             destViewController.userAccount = newUserAccount
         }

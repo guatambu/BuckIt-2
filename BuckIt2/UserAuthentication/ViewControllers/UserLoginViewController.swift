@@ -95,6 +95,8 @@ class UserLoginViewController: UIViewController {
                 
                 // successful login allowing for valid user features to be avaialble in app
                 
+        // *****  firebase functionality  *****
+                
                 // pop viewController
                 self.navigationController?.popViewController(animated: true)
             }

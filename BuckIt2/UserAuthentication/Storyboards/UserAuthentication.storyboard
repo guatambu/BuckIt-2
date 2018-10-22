@@ -694,6 +694,30 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6H-Zh-ju6" userLabel="Add Profile Pic View">
                                                 <rect key="frame" x="0.0" y="28.5" width="80" height="80"/>
                                                 <subviews>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUk-z9-fa3" userLabel="Profile Pic Preview View" customClass="DesignableView" customModule="BuckIt2" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ri-QO-coC" userLabel="Profile Pic Preview Image View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="80" id="Yoo-JW-rNX"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="xNq-Rm-b8A"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="9Ri-QO-coC" firstAttribute="top" secondItem="yUk-z9-fa3" secondAttribute="top" id="7Li-mD-wYd"/>
+                                                            <constraint firstItem="9Ri-QO-coC" firstAttribute="leading" secondItem="yUk-z9-fa3" secondAttribute="leading" id="Gsp-Ya-tQ6"/>
+                                                            <constraint firstAttribute="trailing" secondItem="9Ri-QO-coC" secondAttribute="trailing" id="X6Z-DH-Ovo"/>
+                                                            <constraint firstAttribute="bottom" secondItem="9Ri-QO-coC" secondAttribute="bottom" id="z46-M2-wnq"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="40"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-dark-gray-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="ObR-vd-ktz">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <constraints>
@@ -701,7 +725,7 @@
                                                             <constraint firstAttribute="width" constant="50" id="goK-2F-bye"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3p-AO-UaE" customClass="DesignableView" customModule="BuckIt2" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3p-AO-UaE" userLabel="Choose Profile Pic Designable View" customClass="DesignableView" customModule="BuckIt2" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="24" width="32" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5Y-Nz-6QN" userLabel="Add Symbol" customClass="DesignableLabel" customModule="BuckIt2" customModuleProvider="target">
@@ -754,10 +778,14 @@
                                                 <constraints>
                                                     <constraint firstItem="ObR-vd-ktz" firstAttribute="top" secondItem="r6H-Zh-ju6" secondAttribute="top" id="4x3-1Q-R7y"/>
                                                     <constraint firstItem="IUp-h4-ubm" firstAttribute="leading" secondItem="r6H-Zh-ju6" secondAttribute="leading" id="La5-D3-Mhb"/>
+                                                    <constraint firstItem="yUk-z9-fa3" firstAttribute="leading" secondItem="r6H-Zh-ju6" secondAttribute="leading" id="Mjz-Z3-MtL"/>
                                                     <constraint firstItem="I3p-AO-UaE" firstAttribute="top" secondItem="r6H-Zh-ju6" secondAttribute="top" constant="24" id="RiG-hx-Xom"/>
+                                                    <constraint firstItem="yUk-z9-fa3" firstAttribute="top" secondItem="r6H-Zh-ju6" secondAttribute="top" id="SBJ-6w-zrJ"/>
                                                     <constraint firstItem="IUp-h4-ubm" firstAttribute="top" secondItem="r6H-Zh-ju6" secondAttribute="top" id="YLm-Ko-Rjy"/>
                                                     <constraint firstAttribute="trailing" secondItem="IUp-h4-ubm" secondAttribute="trailing" id="epb-hg-hr6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="yUk-z9-fa3" secondAttribute="bottom" id="gbs-tz-9VR"/>
                                                     <constraint firstItem="I3p-AO-UaE" firstAttribute="leading" secondItem="r6H-Zh-ju6" secondAttribute="leading" constant="24" id="iVs-1b-DJJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yUk-z9-fa3" secondAttribute="trailing" id="mO3-xP-rYB"/>
                                                     <constraint firstItem="ObR-vd-ktz" firstAttribute="leading" secondItem="r6H-Zh-ju6" secondAttribute="leading" id="ni7-k3-8j4"/>
                                                     <constraint firstAttribute="trailing" secondItem="I3p-AO-UaE" secondAttribute="trailing" constant="24" id="p14-S4-pVu"/>
                                                     <constraint firstAttribute="bottom" secondItem="IUp-h4-ubm" secondAttribute="bottom" id="vKa-xT-3n3"/>
@@ -827,6 +855,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addProfilePicViewOutlet" destination="r6H-Zh-ju6" id="gWz-2C-568"/>
+                        <outlet property="chooseProfilePicButtonImageOutlet" destination="I3p-AO-UaE" id="SJk-Ns-1tK"/>
+                        <outlet property="chooseProfilePicButtonOutlet" destination="IUp-h4-ubm" id="Fdh-HP-i98"/>
                         <outlet property="emailLabelOutlet" destination="tzf-en-JQ6" id="zZ7-Iv-rjK"/>
                         <outlet property="emailTextFieldOutlet" destination="1O1-NO-Kc5" id="Xj9-vC-DOg"/>
                         <outlet property="emailUsernameLabelOutlet" destination="tzf-en-JQ6" id="aSO-Q9-jBT"/>
@@ -839,7 +869,10 @@
                         <outlet property="errorMessageStackViewOutlet" destination="cYV-eI-3KI" id="VR7-zy-ujT"/>
                         <outlet property="finishProfileLabelOutlet" destination="mRT-nM-Pn8" id="X4W-cm-ZoK"/>
                         <outlet property="loginLabelOutlet" destination="mRT-nM-Pn8" id="XDL-3X-6tb"/>
+                        <outlet property="placeholderProfilePicImageViewOutlet" destination="ObR-vd-ktz" id="lY1-zi-MGE"/>
                         <outlet property="profilePicLabelOutlet" destination="A51-k9-E9l" id="v6Q-GU-bqL"/>
+                        <outlet property="profilePicPreviewImageViewOutlet" destination="9Ri-QO-coC" id="Lut-VA-8Mz"/>
+                        <outlet property="profilePicPreviewOutlet" destination="yUk-z9-fa3" id="g7b-iN-xXS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vC2-8o-uOx" sceneMemberID="firstResponder"/>
