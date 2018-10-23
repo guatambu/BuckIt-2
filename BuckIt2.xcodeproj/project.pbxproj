@@ -12,7 +12,7 @@
 		384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */; };
 		384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBF21730216001643D0 /* MyListNewItem.storyboard */; };
 		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
-		38ABCCFD21754B7300608F0F /* (null) in Resources */ = {isa = PBXBuildFile; };
+		38ABCCFD21754B7300608F0F /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
 		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
 		D758FDD72173EC3600A3B11D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */; };
@@ -764,7 +764,7 @@
 				FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */,
 				FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */,
 				FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */,
-				38ABCCFD21754B7300608F0F /* (null) in Resources */,
+				38ABCCFD21754B7300608F0F /* BuildFile in Resources */,
 				FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */,
 				FADD9960217D504C0028E4A7 /* profile-dark-gray-50.png in Resources */,
 			);
@@ -814,6 +814,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -830,6 +831,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
