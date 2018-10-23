@@ -6,10 +6,40 @@
 //  Copyright © 2018 DunDak, LLC. All rights reserved.
 //
 
-import Foundation
+import FirebaseFirestore
 
-struct Conversation {
+class Conversation {
     
+    var uid: String?
     var chatPartner: User
-    var mostRecentMessage: Message
+    var messages: [Message]
+    var mostRecentMessage: Message? {
+        return messages.last
+    }
+    
+    init(chatPartner: User, messages: [Message] = []) {
+        self.uid = nil
+        self.chatPartner = chatPartner
+        self.messages = messages
+    }
+    
+//    init?(document: QueryDocumentSnapshot) {
+//        let data = document.data()
+//        
+//        self.uid = document.documentID
+//        
+//    }
+    
+    // MARK: - Firebase Keys
+    
+    enum ConversationKey {
+        // Top Level Item
+        static let conversation = "conversation"
+        
+        // Properties
+        static let uid = "uid"
+        static let chatPartnerUid = "chatPartnerUid"
+        static let mostRecentMessageText = "mostRecentMessageText"
+    }
 }
+

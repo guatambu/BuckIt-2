@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageKit
+import FirebaseFirestore
 
 enum ChatType {
     case ongoing
@@ -21,6 +22,8 @@ class ChatViewController: MessagesViewController {
     private var _chatPartner: User?
     private var chatType: ChatType = .ongoing
     private var messages: [Message] = []
+    
+    private var messageListener: ListenerRegistration?
     
     private var currentUser: User {
         return _currentUser!
@@ -65,12 +68,30 @@ class ChatViewController: MessagesViewController {
         
     }
     
+    deinit {
+        messageListener?.remove()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         updateView()
         configureMessagesCollectionView()
         configureMessagesInputBar()
+        
+        
+        let reference = Endpoint.Collection.conversations
+        
+        messageListener = reference.addSnapshotListener({ (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print("Error listening for channel updates: \(error?.localizedDescription ?? "No Error")")
+                return
+            }
+            
+            snapshot.documentChanges.forEach({ (change) in
+                self.handleDocumentChange(change)
+            })
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,7 +109,28 @@ class ChatViewController: MessagesViewController {
         addNewConversationIfNeeded()
     }
     
-    func insetMessage(message: Message) {
+    private func save(_ message: Message) {
+        let reference = Endpoint.Collection.conversations
+        let databaseManager = DatabaseManager()
+        databaseManager.addDocument(toCollection: reference, data: message.firebaseDictionary) { (success) in
+            if success {
+                print("add message to firebase")
+            }
+        }
+    }
+    
+    private func handleDocumentChange(_ change: DocumentChange) {
+        guard let message = Message(messageDictionary: change.document.data()) else { return }
+        
+        switch change.type {
+        case .added:
+            insertMessage(message)
+        default:
+            break
+        }
+    }
+    
+    func insertMessage(_ message: Message) {
         
         messages.append(message)
         messagesCollectionView.performBatchUpdates({
@@ -279,7 +321,8 @@ extension ChatViewController: MessageInputBarDelegate {
         for component in inputBar.inputTextView.components where component is String {
             if let text = component as? String {
                 let message = Message(uid: UUID().uuidString, sentFrom: currentUser, receiver: chatPartner, text: text, timestamp: Date())
-                insetMessage(message: message)
+//                insertMessage(message)
+                save(message)
             }
         }
         inputBar.inputTextView.text =  String()

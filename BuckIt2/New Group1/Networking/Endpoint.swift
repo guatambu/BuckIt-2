@@ -37,7 +37,7 @@ struct Endpoint {
     struct Collection {
         private static let _users = "users"
         private static let _items = "items"
-        private static let _messages = "messages"
+        private static let _conversations = "conversations"
         private static let _comments = "comments"
         private static let _categories = "categories"
         
@@ -49,8 +49,8 @@ struct Endpoint {
             return Endpoint.database.collection(_items)
         }
         
-        static var messages: CollectionReference {
-            return Endpoint.database.collection(_messages)
+        static var conversations: CollectionReference {
+            return Endpoint.database.collection(_conversations)
         }
         
         static var comments: CollectionReference {

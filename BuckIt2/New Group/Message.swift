@@ -23,8 +23,8 @@ class Message {
     var firebaseDictionary: [String: Any] {
         return [
             MessageKey.uid: uid,
-            MessageKey.sender: sender,
-            MessageKey.receiver: receiver,
+            MessageKey.sender: sender.displayName,
+            MessageKey.receiver: receiver.username,
             MessageKey.text: text,
             MessageKey.timestamp: timestamp,
         ]

@@ -88,7 +88,8 @@ extension MessageListViewController: UITableViewDataSource {
         let recentMessage = mockConversation.last!
 
         let chatPartner = recentMessage.receiver != MockDataUsers.sam ? recentMessage.receiver : recentMessage.sentFrom
-        let conversation = Conversation.init(chatPartner: chatPartner, mostRecentMessage: recentMessage)
+        let conversation = Conversation(chatPartner: chatPartner, messages: mockConversation)
+        
         cell.conversation = conversation
         
         return cell

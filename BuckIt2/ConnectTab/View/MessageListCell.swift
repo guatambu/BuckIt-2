@@ -78,7 +78,7 @@ class MessageListCell: UITableViewCell, ReuseIdentifiable {
     func updateConversationDetails() {
         guard let conversation = conversation else { return }
         guard let chatPartner = chatPartner else { return }
-        let message = conversation.mostRecentMessage
+        guard let message = conversation.mostRecentMessage else { return }
         
         if message.sender.displayName != chatPartner.username {
             messageGlimpseLabel.text = "You: \(message.text)"

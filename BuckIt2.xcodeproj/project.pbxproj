@@ -17,7 +17,6 @@
 		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
 		38ABCCFD21754B7300608F0F /* (null) in Resources */ = {isa = PBXBuildFile; };
 		38ACDD81217A90B30081D6D3 /* QuickAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */; };
-		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
 		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
 		D711BE5A217BB36000F70341 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BE59217BB36000F70341 /* UIViewController+Alert.swift */; };
 		D711BE5C217BDE3000F70341 /* MessageChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711BE5B217BDE3000F70341 /* MessageChat.storyboard */; };
