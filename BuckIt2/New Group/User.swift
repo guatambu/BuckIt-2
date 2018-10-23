@@ -64,6 +64,7 @@ class User {
     }
     
     // MARK: - Initialization
+//    init() {}
     
     // MockData
     init(uid: String,

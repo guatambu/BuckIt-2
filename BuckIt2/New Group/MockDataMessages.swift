@@ -46,14 +46,14 @@ extension User: Hashable {
 
 struct MockConversation {
     
-    static var allDictionary: [User: [Message]] = [
-                      MockDataUsers.shared.park: MockConversation.withPark,
-                      MockDataUsers.shared.dylon: MockConversation.withDylon,
-                      MockDataUsers.shared.luisa: MockConversation.withLuisa,
-                      MockDataUsers.shared.maggie: MockConversation.withMaggie,
-                      MockDataUsers.shared.rodrigo: MockConversation.withRodrigo,
-                      MockDataUsers.shared.sangita: MockConversation.withSangita
-    ]
+//    static var allDictionary: [User: Conversation] = [
+//                      MockDataUsers.shared.park: MockConversation.withPark,
+//                      MockDataUsers.shared.dylon: MockConversation.withDylon,
+//                      MockDataUsers.shared.luisa: MockConversation.withLuisa,
+//                      MockDataUsers.shared.maggie: MockConversation.withMaggie,
+//                      MockDataUsers.shared.rodrigo: MockConversation.withRodrigo,
+//                      MockDataUsers.shared.sangita: MockConversation.withSangita
+//    ]
     
     static var all = [MockConversation.withPark,
                       MockConversation.withDylon,
@@ -66,28 +66,28 @@ struct MockConversation {
     static var currentConversations = Array(MockConversation.all[..<3])
     static var potentialConversations = Array(MockConversation.all[3...])
     
-    static var withDylon: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.dylon)
+    static var withDylon: Conversation {
+        return Conversation(chatPartner: MockDataUsers.shared.dylon, messages: MockDataMessages.messages(with: MockDataUsers.shared.dylon))
     }
     
-    static var withMaggie: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.maggie)
+    static var withMaggie: Conversation {
+        return Conversation(chatPartner: MockDataUsers.shared.maggie, messages: MockDataMessages.messages(with: MockDataUsers.shared.maggie))
     }
     
-    static var withPark: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.park)
+    static var withPark: Conversation {
+        return Conversation(chatPartner: MockDataUsers.shared.park, messages: MockDataMessages.messages(with: MockDataUsers.shared.park))
     }
     
-    static var withRodrigo: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.rodrigo)
+    static var withRodrigo: Conversation {
+        return Conversation(chatPartner: MockDataUsers.shared.rodrigo, messages: MockDataMessages.messages(with: MockDataUsers.shared.rodrigo))
     }
     
-    static var withSangita: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.sangita)
+    static var withSangita: Conversation {
+        return Conversation(chatPartner: MockDataUsers.shared.sangita, messages: MockDataMessages.messages(with: MockDataUsers.sangita))
     }
 
-    static var withLuisa: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.luisa)
+    static var withLuisa: Conversation {
+        return Conversation(chatPartner: MockDataUsers.shared.luisa, messages: MockDataMessages.messages(with: MockDataUsers.shared.luisa))
     }
 
 }

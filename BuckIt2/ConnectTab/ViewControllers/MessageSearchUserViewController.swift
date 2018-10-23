@@ -31,8 +31,7 @@ class MessageSearchUserViewController: UIViewController {
     var filteredPotentialConversationsDataSource: [User] = []
     
     // MARK: - Outlets
-    
-    @IBOutlet weak var searchBar: UISearchBar!
+
     lazy var tableView: UITableView = {
         let view = UITableView()
         view.dataSource = self
@@ -169,10 +168,13 @@ extension MessageSearchUserViewController: UITableViewDelegate {
         let currentUser = MockDataUsers.sam
 
         if indexPath.section == 0 {
-            guard let messages = MockConversation.allDictionary[chatPartner] else { return }
-            chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner, messages: messages)
+            let conversation = MockConversation.all[indexPath.row]
+            
+//            chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner, messages: messages)
+            chatViewController = ChatViewController(currentUser: currentUser, conversation: conversation)
         } else if indexPath.section == 1 {
-            chatViewController = ChatViewController(currentUser: currentUser, chatPartner: chatPartner, chatType: .new)
+            let conversation = Conversation(chatPartner: chatPartner)
+            chatViewController = ChatViewController(currentUser: currentUser, conversation: conversation)
         }
 
         let backItem = UIBarButtonItem()

@@ -17,6 +17,15 @@ class Conversation {
         return messages.last
     }
     
+    var firebaseDictionary: [String: Any] {
+        return [
+            ConversationKey.uid: uid,
+            ConversationKey.chatPartnerUid: chatPartner.uid,
+            ConversationKey.messages: messages,
+            ConversationKey.mostRecentMessageText: mostRecentMessage?.text,
+        ]
+    }
+    
     init(chatPartner: User, messages: [Message] = []) {
         self.uid = nil
         self.chatPartner = chatPartner
@@ -40,6 +49,7 @@ class Conversation {
         static let uid = "uid"
         static let chatPartnerUid = "chatPartnerUid"
         static let mostRecentMessageText = "mostRecentMessageText"
+        static let messages = "messages"
     }
 }
 

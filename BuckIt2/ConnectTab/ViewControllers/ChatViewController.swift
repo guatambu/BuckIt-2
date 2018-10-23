@@ -21,16 +21,26 @@ class ChatViewController: MessagesViewController {
     private var _currentUser: User?
     private var _chatPartner: User?
     private var chatType: ChatType = .ongoing
-    private var messages: [Message] = []
-    
+    private var messages: [Message] {
+        get {
+            return conversation?.messages ?? []
+        }
+        set (newMessages) {
+            guard let message = newMessages.first else { return }
+            conversation?.messages.append(message)
+        }
+        
+    }
+    private var conversation: Conversation?
     private var messageListener: ListenerRegistration?
     
     private var currentUser: User {
         return _currentUser!
     }
     
-    private var chatPartner: User {
-        return _chatPartner!
+    private var chatPartner: User? {
+//        guard let conversation = conversation else { return User() }
+        return conversation?.chatPartner
     }
     
     // MARK: - Subviews
@@ -40,6 +50,13 @@ class ChatViewController: MessagesViewController {
     // MARK: - Initialization
     init() {
        super.init(nibName: nil, bundle: nil)
+    }
+    
+    convenience init(currentUser: User, conversation: Conversation?) {
+        self.init()
+        
+        self._currentUser = currentUser
+        self.conversation = conversation
     }
     
     convenience init(currentUser: User, chatType: ChatType) {
@@ -60,7 +77,7 @@ class ChatViewController: MessagesViewController {
     convenience init(currentUser: User, chatPartner: User, messages: [Message]) {
         self.init(currentUser: currentUser, chatPartner: chatPartner)
         
-        self.messages = messages
+        //self.messages = messages
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -94,9 +111,9 @@ class ChatViewController: MessagesViewController {
         })
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        presentingViewController?.tabBarController?.tabBar.isHidden = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,7 +129,8 @@ class ChatViewController: MessagesViewController {
     private func save(_ message: Message) {
         let reference = Endpoint.Collection.conversations
         let databaseManager = DatabaseManager()
-        databaseManager.addDocument(toCollection: reference, data: message.firebaseDictionary) { (success) in
+        guard let data = conversation?.firebaseDictionary else { return }
+        databaseManager.addDocument(toCollection: reference, data: data) { (success) in
             if success {
                 print("add message to firebase")
             }
@@ -146,10 +164,12 @@ class ChatViewController: MessagesViewController {
     }
     
     func addNewConversationIfNeeded() {
-        if chatType == .new && messages.count > 0 {
-            MockConversation.currentConversations.insert(messages, at: 0)
-            MockConversation.potentialConversations.removeAll { (messages) -> Bool in
-                return messages.first?.receiver.uid == chatPartner.uid
+        if chatType == .new && messages.count > 0, let chatPartner = chatPartner {
+            
+            let conversation = Conversation(chatPartner: chatPartner, messages: messages)
+            MockConversation.currentConversations.insert(conversation, at: 0)
+            MockConversation.potentialConversations.removeAll { (conversation) -> Bool in
+                return conversation.chatPartner.uid == chatPartner.uid
             }
         }
     }
@@ -204,13 +224,13 @@ class ChatViewController: MessagesViewController {
 // MARK: - Setup UI
 private extension ChatViewController {
     func updateView() {
-        titleLabel.text = chatPartner.username
+        titleLabel.text = chatPartner?.username
         setupNavigationBar()
     }
     
     func setupNavigationBar() {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        titleLabel.text = chatPartner.username
+        titleLabel.text = chatPartner?.username
         titleLabel.addGestureRecognizer(titleTapGesture)
         navigationItem.titleView = titleLabel
         navigationItem.titleView?.isUserInteractionEnabled = true
@@ -239,7 +259,7 @@ private extension ChatViewController {
             
             return Avatar(image: currentUser.mockProfilePic, initials: "")
         } else {
-            return Avatar(image: chatPartner.mockProfilePic, initials: "")
+            return Avatar(image: chatPartner?.mockProfilePic, initials: "")
         }
     }
     
@@ -319,9 +339,10 @@ extension ChatViewController: MessagesLayoutDelegate {
 extension ChatViewController: MessageInputBarDelegate {
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         for component in inputBar.inputTextView.components where component is String {
-            if let text = component as? String {
+            if let text = component as? String, let chatPartner = conversation?.chatPartner {
                 let message = Message(uid: UUID().uuidString, sentFrom: currentUser, receiver: chatPartner, text: text, timestamp: Date())
-//                insertMessage(message)
+               // conversation?.messages.append(message)
+                insertMessage(message)
                 save(message)
             }
         }

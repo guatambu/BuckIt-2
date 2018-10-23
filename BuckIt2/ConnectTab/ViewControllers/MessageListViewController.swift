@@ -85,10 +85,10 @@ extension MessageListViewController: UITableViewDataSource {
         
         let mockConversation = dataSource[indexPath.row]
         
-        let recentMessage = mockConversation.last!
+        let recentMessage = mockConversation.messages.last!
 
         let chatPartner = recentMessage.receiver != MockDataUsers.sam ? recentMessage.receiver : recentMessage.sentFrom
-        let conversation = Conversation(chatPartner: chatPartner, messages: mockConversation)
+        let conversation = Conversation(chatPartner: chatPartner, messages: mockConversation.messages)
         
         cell.conversation = conversation
         
@@ -102,14 +102,7 @@ extension MessageListViewController: UITableViewDelegate {
         
         let mockConversation = dataSource[indexPath.row]
 
-        let sentFrom = mockConversation[0].sentFrom
-        let receiver = mockConversation[0].receiver
-        
-        let chatPartner = receiver != MockDataUsers.sam ? receiver : sentFrom
-        
-        let chatViewController = ChatViewController(
-            currentUser: MockDataUsers.sam, chatPartner: chatPartner, messages: mockConversation)
-        
+        let chatViewController = ChatViewController(currentUser: MockDataUsers.sam, conversation: mockConversation)
         
         navigationController?.pushViewController(chatViewController, animated: true)        
     }
