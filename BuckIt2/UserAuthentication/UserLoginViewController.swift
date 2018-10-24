@@ -11,6 +11,7 @@ import UIKit
 class UserLoginViewController: UIViewController {
     
     // MARK: - Properties
+    
     @IBOutlet weak var loginLabelOutlet: UILabel!
     @IBOutlet weak var emailUsernameLabelOutlet: UILabel!
     @IBOutlet weak var emailUsernameTextFieldOutlet: UITextField!
@@ -21,6 +22,10 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var errorLine1LabelOutlet: UILabel!
     @IBOutlet weak var errorLine2LabelOutlet: UILabel!
     
+    // relevant instances
+    let authManager = AuthManager()
+    
+    // mockData local data source
     var users = [MockDataUsers.dylon, MockDataUsers.luisa, MockDataUsers.maggie, MockDataUsers.park, MockDataUsers.rodrigo, MockDataUsers.sangita]
     
     
