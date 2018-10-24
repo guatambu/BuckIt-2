@@ -26,7 +26,7 @@ class ChatViewController: MessagesViewController {
             return conversation?.messages ?? []
         }
         set (newMessages) {
-            guard let message = newMessages.first else { return }
+            guard let message = newMessages.last else { return }
             conversation?.messages.append(message)
         }
         
@@ -127,14 +127,28 @@ class ChatViewController: MessagesViewController {
     }
     
     private func save(_ message: Message) {
-        let reference = Endpoint.Collection.conversations
         let databaseManager = DatabaseManager()
-        guard let data = conversation?.firebaseDictionary else { return }
-        databaseManager.addDocument(toCollection: reference, data: data) { (success) in
-            if success {
-                print("add message to firebase")
+        if conversation == nil {
+            let reference = Endpoint.Collection.conversations
+            guard let data = conversation?.firebaseDictionary else { return }
+            databaseManager.addDocument(toCollection: reference, data: data) { (success) in
+                if success {
+                    print("add message to firebase")
+                }
+            }
+        } else {
+            guard let conversationUid = conversation?.uid else { return }
+            let reference = Endpoint.Collection.conversations.document(conversationUid)
+            reference.updateData(["messages": message.uid]) { (error) in
+                if let error = error {
+                    print("error updating messages area for conversation with \(self.conversation?.chatPartner.username)")
+                }
+                
+                print("message is in the base")
             }
         }
+        
+        
     }
     
     private func handleDocumentChange(_ change: DocumentChange) {
@@ -390,3 +404,46 @@ extension ChatViewController: UISearchBarDelegate {
     }
 }
 
+
+class AppLauncher {
+    
+    enum AppType: String {
+        case phone = "tel://"
+        case website
+        case appleMaps
+        case googleMaps
+        case calendar
+    }
+    
+    var hook: String
+    var type: AppType
+    
+    private var url: URL? {
+        return URL(string: hook)
+    }
+    
+    init(hook: String, type: AppType) {
+        self.hook = hook
+        self.type = type
+    }
+    
+    func open() {
+        guard let url = url else { return }
+        
+        if UIApplication.shared.canOpenURL(url)
+        {
+            UIApplication.shared.open(url, options: [:]) { (success) in
+                if success {
+                    print("opening app \(self.type)")
+                }
+            }
+            
+        } else if type == .website {
+            //redirect to safari because the user doesn't have Instagram
+            UIApplication.shared.open(url, options: [:]) { success in
+                
+            }
+            print("no app found")
+        }
+    }
+}

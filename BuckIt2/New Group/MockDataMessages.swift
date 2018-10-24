@@ -28,9 +28,19 @@ struct MockDataMessages {
         
         let message8 = Message(uid: UUID().uuidString, sentFrom: sam, receiver: chatPartner, text: "I will. Thank you and good luck on your next adventure!", timestamp: Date())
         
-        let message9 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "You too!", timestamp: Date())
+        let message9 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "google.com", timestamp: Date())
         
-        let mockMessages = [message1, message2, message3, message4, message5, message6, message7, message8, message9]
+        let message10 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "315-444-2234", timestamp: Date())
+        
+        let message11 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "october 23", timestamp: Date())
+        
+        let message12 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "644 north temple salt lake city", timestamp: Date())
+        
+        let message13 = Message(uid: UUID().uuidString, sentFrom: chatPartner, receiver: sam, text: "", timestamp: Date())
+        
+        
+        
+        let mockMessages = [message1, message2, message3, message4, message5, message6, message7, message8, message9, message10, message11, message12, message13]
         
         return mockMessages
         

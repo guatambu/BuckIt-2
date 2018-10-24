@@ -18,10 +18,11 @@ class Conversation {
     }
     
     var firebaseDictionary: [String: Any] {
+        let messageUids = messages.compactMap({ $0.uid })
         return [
             ConversationKey.uid: uid,
             ConversationKey.chatPartnerUid: chatPartner.uid,
-            ConversationKey.messages: messages,
+            ConversationKey.messages: messageUids,
             ConversationKey.mostRecentMessageText: mostRecentMessage?.text,
         ]
     }
@@ -48,7 +49,7 @@ class Conversation {
         // Properties
         static let uid = "uid"
         static let chatPartnerUid = "chatPartnerUid"
-        static let mostRecentMessageText = "mostRecentMessageText"
+        static let mostRecentMessageText = "mostRecentMessage"
         static let messages = "messages"
     }
 }

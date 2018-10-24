@@ -103,7 +103,7 @@ extension MessageListViewController: UITableViewDelegate {
         let mockConversation = dataSource[indexPath.row]
 
         let chatViewController = ChatViewController(currentUser: MockDataUsers.sam, conversation: mockConversation)
-        
+        tabBarController?.tabBar.isHidden = true
         navigationController?.pushViewController(chatViewController, animated: true)        
     }
     
