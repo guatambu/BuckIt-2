@@ -2,7 +2,7 @@
 //  MyListTableViewController.swift
 //  BuckIt2
 //
-//  Created by Kelly Johnson on 10/18/18.
+//  Created by Michael Guatambu Davis on 10/18/18.
 //  Copyright © 2018 DunDak, LLC. All rights reserved.
 //
 
