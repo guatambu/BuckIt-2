@@ -9,8 +9,6 @@
 import UIKit
 
 class MockDataUsers {
-    
-    static let shared = MockDataUsers()
 
     // Users
     static let maggie = User(uid: "01", email: "maggie@email.com", username: "TotsMcGoats", password: "password", isPrivate: true, firstName: "Margaret", lastName: "Thompson", mockProfilePic: UIImage(named: "maggie"), location: "earth", age: "30")
@@ -28,5 +26,5 @@ class MockDataUsers {
     static let sam = User(uid: "07", email: "sam@email.com", username: "sam01", password: "password", isPrivate: false, firstName: "Sam", lastName: "Russo", mockProfilePic: UIImage(named: "samantha"), location: "Seattle, Washington", age: "26", bioBlurb: "Working toward her dream job in Seattle.  She lives with roomates and just got done with college at UW.")
     
     
-    static let allOtherUsers = [MockDataUsers.shared.park, MockDataUsers.shared.dylon, MockDataUsers.shared.luisa, MockDataUsers.shared.maggie, MockDataUsers.shared.rodrigo, MockDataUsers.shared.sangita]
+    static let allOtherUsers = [MockDataUsers.park, MockDataUsers.dylon, MockDataUsers.luisa, MockDataUsers.maggie, MockDataUsers.rodrigo, MockDataUsers.sangita]
 }

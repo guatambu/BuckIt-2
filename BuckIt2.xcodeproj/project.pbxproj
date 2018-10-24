@@ -15,9 +15,9 @@
 		384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */; };
 		384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBF21730216001643D0 /* MyListNewItem.storyboard */; };
 		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
-		38ABCCFD21754B7300608F0F /* (null) in Resources */ = {isa = PBXBuildFile; };
+		38ABCCFD21754B7300608F0F /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		38ACDD81217A90B30081D6D3 /* QuickAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */; };
-		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
+		719C8C76E65C64586521B49E /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B5E710A76BE99BE9DA7BD8 /* Pods_BuckIt2.framework */; };
 		D711BE5A217BB36000F70341 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BE59217BB36000F70341 /* UIViewController+Alert.swift */; };
 		D711BE5C217BDE3000F70341 /* MessageChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711BE5B217BDE3000F70341 /* MessageChat.storyboard */; };
 		D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74FD8C92177E81600A4965F /* Conversation.swift */; };
@@ -85,13 +85,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		337F76051CD56D4F0C968831 /* Pods-BuckIt2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.release.xcconfig"; sourceTree = "<group>"; };
+		29C64F28DD1708E3A79E670D /* Pods-BuckIt2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.release.xcconfig"; sourceTree = "<group>"; };
 		381ABCEA2179387400873190 /* InspirationAddToListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationAddToListViewController.swift; sourceTree = "<group>"; };
 		381ABCEC217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationPersonalizeAddedItemViewController.swift; sourceTree = "<group>"; };
 		3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemDetailPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
-		38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.debug.xcconfig"; sourceTree = "<group>"; };
 		38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddButton.swift; sourceTree = "<group>"; };
-		87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuckIt2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40B5E710A76BE99BE9DA7BD8 /* Pods_BuckIt2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuckIt2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4CA910F28FD3266829E24C /* Pods-BuckIt2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.debug.xcconfig"; sourceTree = "<group>"; };
 		D711BE59217BB36000F70341 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		D711BE5B217BDE3000F70341 /* MessageChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageChat.storyboard; sourceTree = "<group>"; };
 		D74FD8C92177E81600A4965F /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */,
+				719C8C76E65C64586521B49E /* Pods_BuckIt2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +240,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81BBA924A85D70377C8DE894 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B4CA910F28FD3266829E24C /* Pods-BuckIt2.debug.xcconfig */,
+				29C64F28DD1708E3A79E670D /* Pods-BuckIt2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9E8C8225BADF597B571A9260 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40B5E710A76BE99BE9DA7BD8 /* Pods_BuckIt2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D7A151E721757DB900520CEA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,23 +275,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		E10A3A576B0B2A143FB855E2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */,
-				337F76051CD56D4F0C968831 /* Pods-BuckIt2.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		FA270D522172F66B001643D0 = {
 			isa = PBXGroup;
 			children = (
 				FA270D5D2172F66B001643D0 /* BuckIt2 */,
 				FA270D752172F66D001643D0 /* BuckIt2Tests */,
 				FA270D5C2172F66B001643D0 /* Products */,
-				E10A3A576B0B2A143FB855E2 /* Pods */,
-				FEA2C744C91B8B24223C4355 /* Frameworks */,
+				81BBA924A85D70377C8DE894 /* Pods */,
+				9E8C8225BADF597B571A9260 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -608,14 +616,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		FEA2C744C91B8B24223C4355 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -623,11 +623,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA270D7B2172F66D001643D0 /* Build configuration list for PBXNativeTarget "BuckIt2" */;
 			buildPhases = (
-				97E4A6C2EFE37AE2B9793CAE /* [CP] Check Pods Manifest.lock */,
+				63FBB1BE79E6842F04E1574D /* [CP] Check Pods Manifest.lock */,
 				FA270D572172F66B001643D0 /* Sources */,
 				FA270D582172F66B001643D0 /* Frameworks */,
 				FA270D592172F66B001643D0 /* Resources */,
-				A4B4BCB532A66AA469C3E3C4 /* [CP] Embed Pods Frameworks */,
+				F416EBC69E46A238B5C7BBA7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -716,7 +716,7 @@
 				FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */,
 				FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */,
 				FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */,
-				38ABCCFD21754B7300608F0F /* (null) in Resources */,
+				38ABCCFD21754B7300608F0F /* BuildFile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +730,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		97E4A6C2EFE37AE2B9793CAE /* [CP] Check Pods Manifest.lock */ = {
+		63FBB1BE79E6842F04E1574D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -748,7 +748,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A4B4BCB532A66AA469C3E3C4 /* [CP] Embed Pods Frameworks */ = {
+		F416EBC69E46A238B5C7BBA7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -991,7 +991,7 @@
 		};
 		FA270D7C2172F66D001643D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */;
+			baseConfigurationReference = 9B4CA910F28FD3266829E24C /* Pods-BuckIt2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1011,7 +1011,7 @@
 		};
 		FA270D7D2172F66D001643D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 337F76051CD56D4F0C968831 /* Pods-BuckIt2.release.xcconfig */;
+			baseConfigurationReference = 29C64F28DD1708E3A79E670D /* Pods-BuckIt2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

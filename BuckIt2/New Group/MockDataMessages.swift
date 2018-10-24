@@ -47,12 +47,12 @@ extension User: Hashable {
 struct MockConversation {
     
     static var allDictionary: [User: [Message]] = [
-                      MockDataUsers.shared.park: MockConversation.withPark,
-                      MockDataUsers.shared.dylon: MockConversation.withDylon,
-                      MockDataUsers.shared.luisa: MockConversation.withLuisa,
-                      MockDataUsers.shared.maggie: MockConversation.withMaggie,
-                      MockDataUsers.shared.rodrigo: MockConversation.withRodrigo,
-                      MockDataUsers.shared.sangita: MockConversation.withSangita
+                      MockDataUsers.park: MockConversation.withPark,
+                      MockDataUsers.dylon: MockConversation.withDylon,
+                      MockDataUsers.luisa: MockConversation.withLuisa,
+                      MockDataUsers.maggie: MockConversation.withMaggie,
+                      MockDataUsers.rodrigo: MockConversation.withRodrigo,
+                      MockDataUsers.sangita: MockConversation.withSangita
     ]
     
     static var all = [MockConversation.withPark,
@@ -67,19 +67,19 @@ struct MockConversation {
     static var potentialConversations = Array(MockConversation.all[3...])
     
     static var withDylon: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.dylon)
+        return MockDataMessages.messages(with: MockDataUsers.dylon)
     }
     
     static var withMaggie: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.maggie)
+        return MockDataMessages.messages(with: MockDataUsers.maggie)
     }
     
     static var withPark: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.park)
+        return MockDataMessages.messages(with: MockDataUsers.park)
     }
     
     static var withRodrigo: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.rodrigo)
+        return MockDataMessages.messages(with: MockDataUsers.rodrigo)
     }
     
     static var withSangita: [Message] {
@@ -87,7 +87,7 @@ struct MockConversation {
     }
 
     static var withLuisa: [Message] {
-        return MockDataMessages.messages(with: MockDataUsers.shared.luisa)
+        return MockDataMessages.messages(with: MockDataUsers.luisa)
     }
 
 }

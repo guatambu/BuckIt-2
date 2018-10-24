@@ -114,8 +114,7 @@ class UserCreateAccountViewController: UIViewController {
             errorLine2LabelOutlet.text = "Please try again."
         } else {
             
-            newUserAccount = User(uid: uid, email: email, username: username, isPrivate: true, firstName: nil, lastName: nil, mockProfilePic: nil, location: nil, age: nil, bioBlurb: password)
-            
+            newUserAccount = User(uid: uid, email: email, username: username, password: password, isPrivate: true, firstName: nil, lastName: nil, mockProfilePic: nil, location: nil, age: nil)
             
             // ******* design question regarding these user authnetication segues ******
             // which kind of segue do they want because of the 'X' to close the view controller in the mockups

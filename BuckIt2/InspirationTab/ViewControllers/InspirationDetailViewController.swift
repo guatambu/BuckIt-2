@@ -73,7 +73,7 @@ class InspirationDetailViewController: UIViewController {
             quickAddButton.titleLabel?.textAlignment = .center
             quickAddButton.titleLabel?.adjustsFontSizeToFitWidth = true
             quickAddButton.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-            // MyListController.shared.myItems.append(thisItem)
+            // MyListController.myItems.append(thisItem)
         } else {
             quickAddButton.setImage(nil, for: .normal)
             quickAddButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -81,7 +81,7 @@ class InspirationDetailViewController: UIViewController {
             quickAddButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             quickAddButton.titleLabel?.textAlignment = .center
             quickAddButton.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.3607843137, blue: 0.3647058824, alpha: 1)
-            // MyListController.shared.myItems.remove(thisItem)
+            // MyListController.myItems.remove(thisItem)
         }
     }
     
@@ -147,7 +147,7 @@ extension InspirationDetailViewController: UITableViewDelegate, UITableViewDataS
 //        var count = 0
 //        
 //        if tableView == sharingTableView {
-//            count = MockDataUsers.shared.getMockUsers().count
+//            count = MockDataUsers.getMockUsers().count
 //        } else if tableView == adviseTableView {
 //            count = bucketListItem?.mockPhoto?.count ?? 0
 //        }
@@ -161,7 +161,7 @@ extension InspirationDetailViewController: UITableViewDelegate, UITableViewDataS
         
         if tableView == sharingTableView {
             let sharingCell = sharingTableView.dequeueReusableCell(withIdentifier: "inspirationSharingUsersCell")
-            let user = MockDataUsers.shared.getMockUsers()[indexPath.row]
+            let user = MockDataUsers.allOtherUsers[indexPath.row]
             DispatchQueue.main.async {
                 sharingCell?.imageView?.image = user.mockProfilePic
             }
