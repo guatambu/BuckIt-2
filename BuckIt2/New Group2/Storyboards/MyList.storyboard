@@ -573,8 +573,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-J1-hV8" customClass="HeaderView" customModule="BuckIt2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="y8N-oD-McL"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CrD-Ah-jJp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="rcs-db-ocD" userLabel="Table Header View">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -661,10 +668,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CrD-Ah-jJp" firstAttribute="trailing" secondItem="2X5-98-pKo" secondAttribute="trailing" id="63y-Sb-mKL"/>
-                            <constraint firstItem="CrD-Ah-jJp" firstAttribute="top" secondItem="CFS-p1-jb6" secondAttribute="top" id="BqY-cV-sE4"/>
-                            <constraint firstItem="CrD-Ah-jJp" firstAttribute="bottom" secondItem="2X5-98-pKo" secondAttribute="bottom" id="Qsi-wR-pdg"/>
-                            <constraint firstItem="CrD-Ah-jJp" firstAttribute="leading" secondItem="2X5-98-pKo" secondAttribute="leading" id="de8-zP-xjo"/>
+                            <constraint firstItem="CrD-Ah-jJp" firstAttribute="leading" secondItem="2X5-98-pKo" secondAttribute="leading" id="O97-W7-Y9B"/>
+                            <constraint firstItem="eOa-J1-hV8" firstAttribute="top" secondItem="2X5-98-pKo" secondAttribute="top" id="SgT-n6-e5D"/>
+                            <constraint firstItem="eOa-J1-hV8" firstAttribute="trailing" secondItem="2X5-98-pKo" secondAttribute="trailing" id="Z9s-gm-qLh"/>
+                            <constraint firstItem="CrD-Ah-jJp" firstAttribute="trailing" secondItem="2X5-98-pKo" secondAttribute="trailing" id="eQh-D6-MZ4"/>
+                            <constraint firstItem="CrD-Ah-jJp" firstAttribute="bottom" secondItem="2X5-98-pKo" secondAttribute="bottom" id="hQ9-Ly-7cZ"/>
+                            <constraint firstItem="eOa-J1-hV8" firstAttribute="leading" secondItem="2X5-98-pKo" secondAttribute="leading" id="hsE-tN-o2Q"/>
+                            <constraint firstItem="CrD-Ah-jJp" firstAttribute="top" secondItem="eOa-J1-hV8" secondAttribute="bottom" constant="8" id="xlT-il-D5L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2X5-98-pKo"/>
                     </view>
