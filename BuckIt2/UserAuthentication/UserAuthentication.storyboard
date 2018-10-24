@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gXj-Df-0aX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yxg-E1-FH8">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -404,17 +404,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="LoginLabelOutlet" destination="Cl3-wN-tTZ" id="BwL-8o-94q"/>
-                        <outlet property="alreadyHAveAccountLabelOutlet" destination="erq-hK-2Vq" id="gbl-dZ-aqh"/>
                         <outlet property="alreadyHaveAccountLabelOutlet" destination="erq-hK-2Vq" id="cJ4-JV-qTy"/>
                         <outlet property="confirmPasswordLabelOutlet" destination="lTX-VF-CJv" id="RZr-UG-OI3"/>
                         <outlet property="confirmPasswordTextFieldOutlet" destination="uqp-tI-uTS" id="lx5-s3-887"/>
                         <outlet property="createAccountLabelOutlet" destination="Cl3-wN-tTZ" id="cjH-mF-a6M"/>
-                        <outlet property="dontHaveAccountLabelOutlet" destination="erq-hK-2Vq" id="I8a-So-pAN"/>
                         <outlet property="emailLabelOutlet" destination="6Jq-43-oII" id="qNX-Ni-rv8"/>
                         <outlet property="emailTextFieldOutlet" destination="9He-ha-0GE" id="mmm-4S-h9t"/>
-                        <outlet property="emailUsernameLabelOutlet" destination="6Jq-43-oII" id="4Iy-wk-2CU"/>
-                        <outlet property="emailUsernameTextFieldOutlet" destination="9He-ha-0GE" id="CeF-jp-BqZ"/>
                         <outlet property="errorLine1LabelOutlet" destination="1BW-qt-shl" id="rGd-hc-cOe"/>
                         <outlet property="errorLine2LabelOutlet" destination="bYw-wD-ykp" id="wys-J9-IAm"/>
                         <outlet property="errorMessageStackView" destination="rus-Td-QU4" id="f0H-tw-wV9"/>
@@ -591,15 +586,9 @@
                     <connections>
                         <outlet property="emailLabelOutlet" destination="Qbk-zo-eyl" id="rRh-5W-CCn"/>
                         <outlet property="emailTextFieldOutlet" destination="Gub-EA-P31" id="xPg-8P-Z5e"/>
-                        <outlet property="emailUsernameLabelOutlet" destination="Qbk-zo-eyl" id="W7h-Dd-5Q1"/>
-                        <outlet property="emailUsernameTextFieldOutlet" destination="Gub-EA-P31" id="qlx-u9-rib"/>
-                        <outlet property="errorLine1LabelOutlet" destination="xkB-q4-v9u" id="76D-j3-yWE"/>
-                        <outlet property="errorLine2LabelOutlet" destination="rNw-Co-6Yr" id="mop-Zq-uK5"/>
-                        <outlet property="errorMessageLine1LabelOutlet" destination="xkB-q4-v9u" id="0rR-An-bVt"/>
+                        <outlet property="errorMessageLine1LabelOutlet" destination="xkB-q4-v9u" id="Wej-Bw-f3X"/>
                         <outlet property="errorMessageLine2LabelOutlet" destination="rNw-Co-6Yr" id="A6U-kL-Bbd"/>
                         <outlet property="errorMessageStackView" destination="HQL-gh-56w" id="cXA-Eq-5Vb"/>
-                        <outlet property="errorMessageStackViewOutlet" destination="HQL-gh-56w" id="rci-sw-yUT"/>
-                        <outlet property="loginLabelOutlet" destination="QKm-JW-4a4" id="qry-0H-JuS"/>
                         <outlet property="resetPasswordLabelOutlet" destination="QKm-JW-4a4" id="Jgh-5w-mtk"/>
                         <outlet property="resetUserMessageLabelOutlet" destination="eKG-MR-KBJ" id="12r-Z5-GWz"/>
                         <outlet property="sendEmailButtonOutlet" destination="0J8-xY-zV9" id="h85-0B-cAm"/>
@@ -859,16 +848,10 @@
                         <outlet property="chooseProfilePicButtonOutlet" destination="IUp-h4-ubm" id="Fdh-HP-i98"/>
                         <outlet property="emailLabelOutlet" destination="tzf-en-JQ6" id="zZ7-Iv-rjK"/>
                         <outlet property="emailTextFieldOutlet" destination="1O1-NO-Kc5" id="Xj9-vC-DOg"/>
-                        <outlet property="emailUsernameLabelOutlet" destination="tzf-en-JQ6" id="aSO-Q9-jBT"/>
-                        <outlet property="emailUsernameTextFieldOutlet" destination="1O1-NO-Kc5" id="fwP-iJ-pif"/>
-                        <outlet property="errorLine1LabelOutlet" destination="NFu-rA-QzN" id="2TC-wH-N6c"/>
-                        <outlet property="errorLine2LabelOutlet" destination="3Mw-Sc-9V7" id="jUs-Py-7wp"/>
                         <outlet property="errorMessageLine1LabelOutlet" destination="NFu-rA-QzN" id="ojS-fy-iS2"/>
                         <outlet property="errorMessageLine2LabelOutlet" destination="3Mw-Sc-9V7" id="cyB-On-BM7"/>
                         <outlet property="errorMessageStackView" destination="cYV-eI-3KI" id="gH4-PF-Fa3"/>
-                        <outlet property="errorMessageStackViewOutlet" destination="cYV-eI-3KI" id="VR7-zy-ujT"/>
                         <outlet property="finishProfileLabelOutlet" destination="mRT-nM-Pn8" id="X4W-cm-ZoK"/>
-                        <outlet property="loginLabelOutlet" destination="mRT-nM-Pn8" id="XDL-3X-6tb"/>
                         <outlet property="placeholderProfilePicImageViewOutlet" destination="ObR-vd-ktz" id="lY1-zi-MGE"/>
                         <outlet property="profilePicLabelOutlet" destination="A51-k9-E9l" id="v6Q-GU-bqL"/>
                         <outlet property="profilePicPreviewImageViewOutlet" destination="9Ri-QO-coC" id="Lut-VA-8Mz"/>
