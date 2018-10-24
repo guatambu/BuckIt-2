@@ -12,6 +12,8 @@ class MyListTableViewController: UIViewController {
     
     // MARK: - Properties
     
+    @IBOutlet weak var myListHeaderView: MyListHeaderView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bucketListMainLabelOutlet: UILabel!
     @IBOutlet weak var segmentedControlOutlet: DesignableSegmentedControl!
     @IBOutlet weak var addItemButtonOutlet: DesignableButton!
@@ -25,15 +27,13 @@ class MyListTableViewController: UIViewController {
     var completedItems: [BucketListItem] = []
     
     let dylon = MockDataUsers.dylon
-    
-    
-    
-    
+
     // MARK: - ViewController Lifecycle Functions
     
     override func viewWillAppear(_ animated: Bool) {
         
         // ready arrays of userdata for display
+        myListHeaderView.user = user
         MyListController.shared.filterCompleted(bucketListItems: bucketList)
         toDoItems = MyListController.shared.toDoItems
         completedItems = MyListController.shared.completedItems
@@ -114,6 +114,7 @@ class MyListTableViewController: UIViewController {
     
     
     @IBAction func addNewItemButtonTapped(_ sender: DesignableButton) {
+        print("🤶\(#function)")
     }
 
 }

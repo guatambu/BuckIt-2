@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderView: UIView {
+class MyListHeaderView: UIView {
 
     // MARK: - Properties
     var user: User? {
@@ -18,7 +18,11 @@ class HeaderView: UIView {
     }
     
     // MARK: - Subviews
-    
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var fullnameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var messageButton: UIButton!
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -31,7 +35,12 @@ class HeaderView: UIView {
     
     // MARK: - UI
     func updateView() {
+        guard let user = user else { return }
         
+        profileImageView.image = user.mockProfilePic
+        fullnameLabel.text = user.fullName
+        locationLabel.text = user.location
+        bioLabel.text = user.bioBlurb
     }
-
+    
 }

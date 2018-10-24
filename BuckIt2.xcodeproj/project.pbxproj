@@ -27,7 +27,7 @@
 		D765AD5C2180C4A30072864E /* MyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD592180C4A20072864E /* MyListTableViewController.swift */; };
 		D765AD5D2180C4A30072864E /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD5A2180C4A30072864E /* MyListViewController.swift */; };
 		D765AD5F2180CFF40072864E /* MyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD5E2180CFF40072864E /* MyListTableViewCell.swift */; };
-		D765AD622180E5ED0072864E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD612180E5ED0072864E /* HeaderView.swift */; };
+		D765AD622180E5ED0072864E /* MyListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD612180E5ED0072864E /* MyListHeaderView.swift */; };
 		D78FA665218018C0009B94A8 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78FA664218018C0009B94A8 /* UserAuthentication.storyboard */; };
 		D78FA66A218018E6009B94A8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA666218018E4009B94A8 /* ForgotPasswordViewController.swift */; };
 		D78FA66B218018E6009B94A8 /* FinishUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA667218018E5009B94A8 /* FinishUserProfileViewController.swift */; };
@@ -107,7 +107,7 @@
 		D765AD592180C4A20072864E /* MyListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListTableViewController.swift; sourceTree = "<group>"; };
 		D765AD5A2180C4A30072864E /* MyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		D765AD5E2180CFF40072864E /* MyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewCell.swift; sourceTree = "<group>"; };
-		D765AD612180E5ED0072864E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		D765AD612180E5ED0072864E /* MyListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListHeaderView.swift; sourceTree = "<group>"; };
 		D78FA664218018C0009B94A8 /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuthentication.storyboard; sourceTree = "<group>"; };
 		D78FA666218018E4009B94A8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		D78FA667218018E5009B94A8 /* FinishUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishUserProfileViewController.swift; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				D765AD5E2180CFF40072864E /* MyListTableViewCell.swift */,
-				D765AD612180E5ED0072864E /* HeaderView.swift */,
+				D765AD612180E5ED0072864E /* MyListHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -841,7 +841,7 @@
 				FA270E5E21730070001643D0 /* Message.swift in Sources */,
 				D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */,
 				FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */,
-				D765AD622180E5ED0072864E /* HeaderView.swift in Sources */,
+				D765AD622180E5ED0072864E /* MyListHeaderView.swift in Sources */,
 				FA270E5821730070001643D0 /* BucketListItem.swift in Sources */,
 				FA270EB4217301B1001643D0 /* Endpoint.swift in Sources */,
 				D78FA66B218018E6009B94A8 /* FinishUserProfileViewController.swift in Sources */,
