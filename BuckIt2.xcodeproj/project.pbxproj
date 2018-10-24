@@ -17,12 +17,18 @@
 		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
 		38ABCCFD21754B7300608F0F /* (null) in Resources */ = {isa = PBXBuildFile; };
 		38ACDD81217A90B30081D6D3 /* QuickAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */; };
-		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
 		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
 		D711BE5A217BB36000F70341 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BE59217BB36000F70341 /* UIViewController+Alert.swift */; };
 		D711BE5C217BDE3000F70341 /* MessageChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711BE5B217BDE3000F70341 /* MessageChat.storyboard */; };
 		D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74FD8C92177E81600A4965F /* Conversation.swift */; };
 		D758FDD72173EC3600A3B11D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */; };
+		D78FA665218018C0009B94A8 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78FA664218018C0009B94A8 /* UserAuthentication.storyboard */; };
+		D78FA66A218018E6009B94A8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA666218018E4009B94A8 /* ForgotPasswordViewController.swift */; };
+		D78FA66B218018E6009B94A8 /* FinishUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA667218018E5009B94A8 /* FinishUserProfileViewController.swift */; };
+		D78FA66C218018E6009B94A8 /* UserCreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA668218018E5009B94A8 /* UserCreateAccountViewController.swift */; };
+		D78FA66D218018E6009B94A8 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA669218018E6009B94A8 /* UserLoginViewController.swift */; };
+		D78FA66F2180193D009B94A8 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA66E2180193D009B94A8 /* IBDesignables.swift */; };
+		D78FA67321801A64009B94A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA67221801A64009B94A8 /* User.swift */; };
 		D7A151E4217522D400520CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A151E3217522D400520CEA /* Assets.xcassets */; };
 		D7A151E621757DA900520CEA /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E521757DA900520CEA /* MessageListCell.swift */; };
 		D7A151EA21757DF300520CEA /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */; };
@@ -31,9 +37,6 @@
 		FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */; };
 		FA270D772172F66D001643D0 /* BuckIt2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D762172F66D001643D0 /* BuckIt2Tests.swift */; };
 		FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D892172F82C001643D0 /* LaunchScreen.storyboard */; };
-		FA270D9A2172F8AD001643D0 /* UserCreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */; };
-		FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D982172F8AD001643D0 /* UserLoginViewController.swift */; };
-		FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */; };
 		FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E202172FA1A001643D0 /* InspirationLayout.swift */; };
 		FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */; };
 		FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E262172FA28001643D0 /* InspirationHome.storyboard */; };
@@ -52,7 +55,6 @@
 		FA270E4B2172FAF0001643D0 /* MessageComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E482172FAF0001643D0 /* MessageComposeViewController.swift */; };
 		FA270E5721730070001643D0 /* MockDataUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E4F2173006D001643D0 /* MockDataUsers.swift */; };
 		FA270E5821730070001643D0 /* BucketListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E502173006D001643D0 /* BucketListItem.swift */; };
-		FA270E5921730070001643D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E512173006D001643D0 /* User.swift */; };
 		FA270E5A21730070001643D0 /* guatambuToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E522173006D001643D0 /* guatambuToDo.swift */; };
 		FA270E5B21730070001643D0 /* MockDataBucketListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E532173006E001643D0 /* MockDataBucketListItems.swift */; };
 		FA270E5C21730070001643D0 /* BucketListItemComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E542173006F001643D0 /* BucketListItemComment.swift */; };
@@ -94,6 +96,13 @@
 		D711BE5B217BDE3000F70341 /* MessageChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageChat.storyboard; sourceTree = "<group>"; };
 		D74FD8C92177E81600A4965F /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D78FA664218018C0009B94A8 /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuthentication.storyboard; sourceTree = "<group>"; };
+		D78FA666218018E4009B94A8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		D78FA667218018E5009B94A8 /* FinishUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishUserProfileViewController.swift; sourceTree = "<group>"; };
+		D78FA668218018E5009B94A8 /* UserCreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreateAccountViewController.swift; sourceTree = "<group>"; };
+		D78FA669218018E6009B94A8 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
+		D78FA66E2180193D009B94A8 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignables.swift; sourceTree = "<group>"; };
+		D78FA67221801A64009B94A8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D7A151E3217522D400520CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A151E521757DA900520CEA /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
 		D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
@@ -106,9 +115,6 @@
 		FA270D782172F66D001643D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA270D892172F82C001643D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA270D952172F866001643D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreateAccountViewController.swift; sourceTree = "<group>"; };
-		FA270D982172F8AD001643D0 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
-		FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuthentication.storyboard; sourceTree = "<group>"; };
 		FA270E202172FA1A001643D0 /* InspirationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationLayout.swift; sourceTree = "<group>"; };
 		FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationItemDetail.storyboard; sourceTree = "<group>"; };
 		FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationOtherUser.storyboard; sourceTree = "<group>"; };
@@ -128,7 +134,6 @@
 		FA270E482172FAF0001643D0 /* MessageComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposeViewController.swift; sourceTree = "<group>"; };
 		FA270E4F2173006D001643D0 /* MockDataUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataUsers.swift; sourceTree = "<group>"; };
 		FA270E502173006D001643D0 /* BucketListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItem.swift; sourceTree = "<group>"; };
-		FA270E512173006D001643D0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA270E522173006D001643D0 /* guatambuToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guatambuToDo.swift; sourceTree = "<group>"; };
 		FA270E532173006E001643D0 /* MockDataBucketListItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataBucketListItems.swift; sourceTree = "<group>"; };
 		FA270E542173006F001643D0 /* BucketListItemComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItemComment.swift; sourceTree = "<group>"; };
@@ -246,6 +251,7 @@
 		D7A151E821757DD900520CEA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D78FA66E2180193D009B94A8 /* IBDesignables.swift */,
 				D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */,
 				D711BE59217BB36000F70341 /* UIViewController+Alert.swift */,
 			);
@@ -311,9 +317,11 @@
 		FA270D9D2172F8B4001643D0 /* UserAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */,
-				FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */,
-				FA270D982172F8AD001643D0 /* UserLoginViewController.swift */,
+				D78FA664218018C0009B94A8 /* UserAuthentication.storyboard */,
+				D78FA667218018E5009B94A8 /* FinishUserProfileViewController.swift */,
+				D78FA666218018E4009B94A8 /* ForgotPasswordViewController.swift */,
+				D78FA668218018E5009B94A8 /* UserCreateAccountViewController.swift */,
+				D78FA669218018E6009B94A8 /* UserLoginViewController.swift */,
 			);
 			path = UserAuthentication;
 			sourceTree = "<group>";
@@ -416,7 +424,7 @@
 				D7A151EB2175856C00520CEA /* MockDataMessages.swift */,
 				FA270E532173006E001643D0 /* MockDataBucketListItems.swift */,
 				FA270E4F2173006D001643D0 /* MockDataUsers.swift */,
-				FA270E512173006D001643D0 /* User.swift */,
+				D78FA67221801A64009B94A8 /* User.swift */,
 			);
 			name = Models;
 			path = "New Group";
@@ -697,6 +705,7 @@
 				384F2B4421751320003DC49B /* MyList.storyboard in Resources */,
 				384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */,
 				FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */,
+				D78FA665218018C0009B94A8 /* UserAuthentication.storyboard in Resources */,
 				D711BE5C217BDE3000F70341 /* MessageChat.storyboard in Resources */,
 				D7A151E4217522D400520CEA /* Assets.xcassets in Resources */,
 				FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */,
@@ -708,7 +717,6 @@
 				FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */,
 				FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */,
 				38ABCCFD21754B7300608F0F /* (null) in Resources */,
-				FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,21 +797,23 @@
 			files = (
 				FA270E5D21730070001643D0 /* BucketList.swift in Sources */,
 				FA270ECB21730224001643D0 /* MyListViewController.swift in Sources */,
-				FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */,
 				D711BE5A217BB36000F70341 /* UIViewController+Alert.swift in Sources */,
 				FA270E322172FA32001643D0 /* InspirationHomeViewController.swift in Sources */,
 				FA270E5721730070001643D0 /* MockDataUsers.swift in Sources */,
 				FA270E5B21730070001643D0 /* MockDataBucketListItems.swift in Sources */,
+				D78FA66C218018E6009B94A8 /* UserCreateAccountViewController.swift in Sources */,
 				FA270EB5217301B1001643D0 /* DatabaseManager.swift in Sources */,
 				FA270EB7217301B1001643D0 /* StorageManager.swift in Sources */,
+				D78FA66A218018E6009B94A8 /* ForgotPasswordViewController.swift in Sources */,
 				FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */,
 				FA270E5E21730070001643D0 /* Message.swift in Sources */,
 				D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */,
 				FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */,
 				FA270E5821730070001643D0 /* BucketListItem.swift in Sources */,
 				FA270EB4217301B1001643D0 /* Endpoint.swift in Sources */,
+				D78FA66B218018E6009B94A8 /* FinishUserProfileViewController.swift in Sources */,
+				D78FA67321801A64009B94A8 /* User.swift in Sources */,
 				FA270E4B2172FAF0001643D0 /* MessageComposeViewController.swift in Sources */,
-				FA270D9A2172F8AD001643D0 /* UserCreateAccountViewController.swift in Sources */,
 				FA270ECD21730224001643D0 /* MyBucketNewItemViewController.swift in Sources */,
 				D7A151EC2175856C00520CEA /* MockDataMessages.swift in Sources */,
 				FA270E332172FA32001643D0 /* InspirationSearchViewController.swift in Sources */,
@@ -811,7 +821,6 @@
 				D7E0805321766504006A8076 /* ChatViewController.swift in Sources */,
 				D7A151EA21757DF300520CEA /* ReuseIdentifiable.swift in Sources */,
 				D7A151E621757DA900520CEA /* MessageListCell.swift in Sources */,
-				FA270E5921730070001643D0 /* User.swift in Sources */,
 				FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */,
 				381ABCED217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift in Sources */,
 				FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */,
@@ -826,9 +835,11 @@
 				38ACDD81217A90B30081D6D3 /* QuickAddButton.swift in Sources */,
 				FA270ECA21730224001643D0 /* MyListNewItemViewController.swift in Sources */,
 				FA270EC821730224001643D0 /* MyListPhotoPickerViewController.swift in Sources */,
+				D78FA66D218018E6009B94A8 /* UserLoginViewController.swift in Sources */,
 				FA270EB6217301B1001643D0 /* AuthManager.swift in Sources */,
 				381ABCEB2179387400873190 /* InspirationAddToListViewController.swift in Sources */,
 				FA270EAF217301A0001643D0 /* AppDelegate.swift in Sources */,
+				D78FA66F2180193D009B94A8 /* IBDesignables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
