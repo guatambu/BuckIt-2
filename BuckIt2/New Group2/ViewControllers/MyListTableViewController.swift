@@ -19,7 +19,7 @@ class MyListTableViewController: UIViewController {
     @IBOutlet weak var addItemButtonOutlet: DesignableButton!
     @IBOutlet weak var addNewItemLabelOutlet: UILabel!
     
-    var user: User?
+    var user: User? = MockDataUsers.sam
     
     var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item20]
     var displayedBucketItems: [BucketListItem] = []
@@ -53,13 +53,15 @@ class MyListTableViewController: UIViewController {
 //        self.navigationItem.leftBarButtonItem = barButton
         
         // set TVC title to user.username
-        self.title = dylon.username
+        self.title = user?.username
         
         // set bottom of nav bar border color
         
         //if design team wants to have a more specific border in terms of the width of the border then we need a .jpg of their border to be plugged in here:
         // self.navigationController?.navigationBar.shadowImage = UIImage(named: <#T##String#>)
         
+        displayedBucketItems = toDoItems
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -87,7 +89,6 @@ class MyListTableViewController: UIViewController {
         backButtonItem.tintColor = UIColor.black
         
         // mockdata for user
-        user = dylon
         // pass any desired info to new ViewController
         destViewController.user = user
     }
@@ -110,6 +111,8 @@ class MyListTableViewController: UIViewController {
         default:
             print("not an acceptable choice from the two segmented controller options in MyListTableViewController.swift")
         }
+        
+        tableView.reloadData()
     }
     
     
@@ -127,8 +130,12 @@ extension MyListTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MyListTableViewCell.reuseIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MyListTableViewCell.reuseIdentifier, for: indexPath) as? MyListTableViewCell else {
+            return UITableViewCell() }
         
+        let item = displayedBucketItems[indexPath.row]
+        
+        cell.bucketListItem = item
         
         return cell
     }

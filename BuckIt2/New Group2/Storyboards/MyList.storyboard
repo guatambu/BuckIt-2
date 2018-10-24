@@ -669,6 +669,9 @@
                                                             <real key="value" value="8"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="changedSegmentedController:" destination="yNe-Wg-NnW" eventType="valueChanged" id="i5M-TE-HlA"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                         </stackView>
@@ -706,6 +709,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yNe-Wg-NnW" id="X8j-hN-VTw"/>
+                                    <outlet property="delegate" destination="yNe-Wg-NnW" id="kMX-jC-NZQ"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yO-sN-pNU" userLabel="Add Item Button Outlet" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
                                 <rect key="frame" x="307" y="599" width="44" height="44"/>
