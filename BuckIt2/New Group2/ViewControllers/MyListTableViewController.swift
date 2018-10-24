@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyListTableViewController: UITableViewController {
+class MyListTableViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -50,7 +50,7 @@ class MyListTableViewController: UITableViewController {
         
         // add to left nav bar button item
         let barButton = UIBarButtonItem.init(customView: button)
-        self.navigationItem.leftBarButtonItem = barButton
+//        self.navigationItem.leftBarButtonItem = barButton
         
         // set TVC title to user.username
         self.title = dylon.username
@@ -100,10 +100,12 @@ class MyListTableViewController: UITableViewController {
         case 0:
             // To-Do
             print("0 - ToDo")
+            displayedBucketItems = toDoItems
         // display To-Do BucketList Items
         case 1:
             // Done
             print("1 - Completed")
+            displayedBucketItems = completedItems
             // display Done Bucket List Items
         default:
             print("not an acceptable choice from the two segmented controller options in MyListTableViewController.swift")
@@ -113,21 +115,26 @@ class MyListTableViewController: UITableViewController {
     
     @IBAction func addNewItemButtonTapped(_ sender: DesignableButton) {
     }
-    
-    
-    // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
+}
+
+// MARK: - UITableViewTableSource
+extension MyListTableViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return displayedBucketItems.count
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyListTableViewCell.reuseIdentifier, for: indexPath)
-
-
+        
+        
         return cell
     }
 
+}
 
+// MARK: - UITableViewDelegate
+extension MyListTableViewController: UITableViewDelegate {
+    
 }
