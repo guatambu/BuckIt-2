@@ -84,11 +84,9 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="6SX-CB-sDf">
                             <connections>
                                 <action selector="newMessageButtonTapped:" destination="5AT-zJ-UD2" id="SVh-ab-qmg"/>
-                                <segue destination="dH1-18-Rrf" kind="show" id="iCU-bN-Hwc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="messageListTableView" destination="NuR-cu-znj" id="pdd-CY-d5V"/>
                     </connections>

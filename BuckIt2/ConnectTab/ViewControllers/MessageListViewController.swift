@@ -13,6 +13,7 @@ class MessageListViewController: UIViewController {
     private let cellId = MessageListCell.reuseIdentifier
     var dataSource = MockConversation.currentConversations
     
+    let searchUserController = MessageSearchUserViewController()
     var searchController: UISearchController?
 
     @IBOutlet weak var messageTitleLabel: UILabel!
@@ -30,23 +31,26 @@ class MessageListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        dataSource = MockConversation.currentConversations
+        messageListTableView.reloadData()
         deselectCell()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationItem.searchController?.isActive = false
+        
     }
 
     @IBAction func newMessageButtonTapped(_ sender: UIBarButtonItem) {
-//        let currentUser = MockDataUsers.sam
-//        let chatViewController = ChatViewController(currentUser: currentUser, chatType: .new)
-//        
-//        let searchUserViewController = MessageSearchUserViewController()
-//        
-//        navigationController?.pushViewController(searchUserViewController, animated: true)
+        searchController?.searchBar.becomeFirstResponder()
     }
 }
 
 // MARK: - Setup UI
 private extension MessageListViewController {
     func updateView() {
+        setupSearchController()
         setupNavigationBar()
     }
     
@@ -57,9 +61,15 @@ private extension MessageListViewController {
     }
     
     func setupNavigationBar() {
-        // Removes the compose button because the search and create
-        // A new conversation is not working :(
-        navigationItem.rightBarButtonItems = []
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    func setupSearchController() {
+        searchController = UISearchController(searchResultsController: searchUserController)
+        searchController?.searchResultsUpdater = self
+        searchController?.searchBar.becomeFirstResponder()
+        definesPresentationContext = true
     }
 }
 
@@ -99,21 +109,39 @@ extension MessageListViewController: UITableViewDelegate {
         let chatViewController = ChatViewController(
             currentUser: MockDataUsers.sam, chatPartner: chatPartner, messages: mockConversation)
         
+        
         navigationController?.pushViewController(chatViewController, animated: true)        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            let conversation = dataSource[indexPath.row]
-            dataSource.remove(at: indexPath.row)
             
+            dataSource.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
 }
 
-extension MessageListViewController: UISearchBarDelegate {
+extension MessageListViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
     }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if !searchController.isActive {
+            return
+        }
+        
+        guard let searchText = searchController.searchBar.text?.lowercased() else { return }
+        
+        searchUserController.filter(with: searchText)
+    }
 }
+
+extension MessageListViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let searchController = searchController else { return }
+        searchController.searchBar.resignFirstResponder()
+    }
+}
+

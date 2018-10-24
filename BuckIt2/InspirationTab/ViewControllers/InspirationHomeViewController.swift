@@ -96,16 +96,16 @@ extension InspirationHomeViewController: UICollectionViewDelegate, UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return (MockDataBucketListItems.shared.mockDataItems()[indexPath.row].mockPhoto?.first?.size.height)! / 2
+        return (MockDataBucketListItems.mockDataItems[indexPath.row].mockPhoto?.first?.size.height)! / 2
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MockDataBucketListItems.shared.mockDataItems().count
+        return MockDataBucketListItems.mockDataItems.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "inspirationCell", for: indexPath) as? InspirationCollectionViewCell
-        let bucketListitem = MockDataBucketListItems.shared.mockDataItems()[indexPath.row]
+        let bucketListitem = MockDataBucketListItems.mockDataItems[indexPath.row]
         cell?.bucketListItem = bucketListitem
         
         return cell ?? UICollectionViewCell()
@@ -118,7 +118,7 @@ extension InspirationHomeViewController: UICollectionViewDelegate, UICollectionV
             let destinationVC = segue.destination as? InspirationDetailViewController
             guard let cell = sender as? InspirationCollectionViewCell,
                 let indexPath = inspirationCollectionView.indexPath(for: cell) else { return }
-            let bucketListItem = MockDataBucketListItems.shared.mockDataItems()[indexPath.row] as BucketListItem
+            let bucketListItem = MockDataBucketListItems.mockDataItems[indexPath.row] as BucketListItem
             destinationVC?.bucketListItem = bucketListItem
             navigationItem.backBarButtonItem = UIBarButtonItem(customView: UIImageView(image: #imageLiteral(resourceName: "back")))
         }
