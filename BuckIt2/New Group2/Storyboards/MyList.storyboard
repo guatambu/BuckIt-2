@@ -427,13 +427,29 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyListTableViewCell" id="FTy-uV-5JU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyListTableViewCell" id="FTy-uV-5JU" customClass="MyListTableViewCell" customModule="BuckIt2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="228" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FTy-uV-5JU" id="kMb-w4-P6E">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuK-We-fEi">
+                                            <rect key="frame" x="16" y="11" width="42" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZuK-We-fEi" firstAttribute="bottom" secondItem="kMb-w4-P6E" secondAttribute="bottomMargin" id="G5C-vo-jHD"/>
+                                        <constraint firstItem="ZuK-We-fEi" firstAttribute="top" secondItem="kMb-w4-P6E" secondAttribute="topMargin" id="fag-jR-LtE"/>
+                                        <constraint firstItem="ZuK-We-fEi" firstAttribute="leading" secondItem="kMb-w4-P6E" secondAttribute="leadingMargin" id="onQ-vG-a5H"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="ZuK-We-fEi" id="cj3-Qj-m2Y"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

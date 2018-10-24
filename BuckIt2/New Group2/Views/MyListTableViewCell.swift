@@ -10,6 +10,16 @@ import UIKit
 
 class MyListTableViewCell: UITableViewCell, ReuseIdentifiable {
 
+    // MARK: - Properties
+    var bucketListItem: BucketListItem? {
+        didSet {
+            updateView()
+        }
+    }
+    
+    // MARK: - Subviews
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +29,12 @@ class MyListTableViewCell: UITableViewCell, ReuseIdentifiable {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func updateView() {
+        guard let item = bucketListItem else { return }
+        
+        titleLabel.text = item.title
     }
 
 }
