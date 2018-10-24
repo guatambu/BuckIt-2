@@ -19,6 +19,9 @@ class MyListTableViewCell: UITableViewCell, ReuseIdentifiable {
     
     // MARK: - Subviews
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var itemDoneButton: DesignableButton!
+    @IBOutlet weak var eyeImageView: UIImageView!
+    @IBOutlet weak var organizerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +38,15 @@ class MyListTableViewCell: UITableViewCell, ReuseIdentifiable {
         guard let item = bucketListItem else { return }
         
         titleLabel.text = item.title
+        
+        item.isComplete ?
+            itemDoneButton.setTitle("✔️", for: .normal) :
+            itemDoneButton.setTitle("", for: .normal)
+        
+        
     }
-
+    @IBAction func itemDoneButtonTapped(_ sender: Any) {
+        print("🤶\(#function)")
+    }
+    
 }

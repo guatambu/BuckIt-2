@@ -655,27 +655,90 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyListTableViewCell" id="QZO-wX-bFV" customClass="MyListTableViewCell" customModule="BuckIt2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="208" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyListTableViewCell" rowHeight="58" id="QZO-wX-bFV" customClass="MyListTableViewCell" customModule="BuckIt2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="208" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZO-wX-bFV" id="ymv-fg-fkL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DM-WU-tVq">
-                                                    <rect key="frame" x="15" y="11" width="42" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="8PM-i5-Z69">
+                                                    <rect key="frame" x="15" y="12" width="93.5" height="32"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTL-Yo-DYi" userLabel="Add Item Button Outlet" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="32" id="gqH-0h-jpl"/>
+                                                                <constraint firstAttribute="height" constant="32" id="hMA-xM-F38"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                            <state key="normal">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                    <size key="value" width="0.0" height="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                    <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="addNewItemButtonTapped:" destination="yNe-Wg-NnW" eventType="touchUpInside" id="D3b-wU-943"/>
+                                                                <action selector="itemDoneButtonTapped:" destination="QZO-wX-bFV" eventType="touchUpInside" id="OG5-dW-6Wp"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DM-WU-tVq">
+                                                            <rect key="frame" x="54" y="0.0" width="39.5" height="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="PTL-Yo-DYi" firstAttribute="leading" secondItem="8PM-i5-Z69" secondAttribute="leading" constant="22" id="S0a-ch-2fQ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="PTL-Yo-DYi" secondAttribute="bottom" constant="12" id="TMf-yE-PSI"/>
+                                                        <constraint firstItem="PTL-Yo-DYi" firstAttribute="top" secondItem="8PM-i5-Z69" secondAttribute="top" constant="12" id="jsy-Lj-1gu"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgc-MX-eZn">
+                                                    <rect key="frame" x="363" y="0.0" width="12" height="57.5"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="12" id="YxC-RZ-wvV"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="privateEye" translatesAutoresizingMaskIntoConstraints="NO" id="A9q-52-3PA">
+                                                    <rect key="frame" x="333" y="18" width="22" height="22"/>
+                                                    <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="bOJ-2m-ZRo"/>
+                                                        <constraint firstAttribute="width" constant="22" id="uwL-ih-iyJ"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1DM-WU-tVq" firstAttribute="top" secondItem="ymv-fg-fkL" secondAttribute="topMargin" id="O2U-xq-haR"/>
-                                                <constraint firstItem="1DM-WU-tVq" firstAttribute="bottom" secondItem="ymv-fg-fkL" secondAttribute="bottomMargin" id="Wnd-Dj-gNi"/>
-                                                <constraint firstItem="1DM-WU-tVq" firstAttribute="leading" secondItem="ymv-fg-fkL" secondAttribute="leadingMargin" id="bws-VH-ogU"/>
+                                                <constraint firstItem="qgc-MX-eZn" firstAttribute="top" secondItem="ymv-fg-fkL" secondAttribute="top" id="Ihm-eT-vYW"/>
+                                                <constraint firstAttribute="trailing" secondItem="qgc-MX-eZn" secondAttribute="trailing" id="XJw-31-46n"/>
+                                                <constraint firstItem="A9q-52-3PA" firstAttribute="centerY" secondItem="ymv-fg-fkL" secondAttribute="centerY" id="ita-f9-XnQ"/>
+                                                <constraint firstItem="qgc-MX-eZn" firstAttribute="leading" secondItem="A9q-52-3PA" secondAttribute="trailing" constant="8" id="r9P-T7-k8p"/>
+                                                <constraint firstAttribute="bottom" secondItem="qgc-MX-eZn" secondAttribute="bottom" id="tfp-Oo-Y0h"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="eyeImageView" destination="A9q-52-3PA" id="jU2-a8-ufV"/>
+                                            <outlet property="itemDoneButton" destination="PTL-Yo-DYi" id="elO-rJ-aGe"/>
+                                            <outlet property="organizerView" destination="qgc-MX-eZn" id="d5R-6P-fRK"/>
                                             <outlet property="titleLabel" destination="1DM-WU-tVq" id="93m-ys-SIr"/>
                                         </connections>
                                     </tableViewCell>
@@ -729,6 +792,7 @@
         <image name="addBucketListItem" width="700" height="700"/>
         <image name="addPhoto" width="700" height="700"/>
         <image name="cancelButton" width="700" height="700"/>
+        <image name="privateEye" width="22" height="19"/>
         <image name="profileIcon" width="700" height="700"/>
     </resources>
 </document>

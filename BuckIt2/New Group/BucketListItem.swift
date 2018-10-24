@@ -11,12 +11,13 @@ import UIKit
 class BucketListItem {
     
     // MARK: - Properties
-    
     let uid: String
     let user: User
     let timestamp: Date
     var title: String
     var isComplete: Bool
+    var isPrivate: Bool
+    var itemColor: ItemColor
     var mockPhoto: [UIImage]?
     var photoURLs: [String]?
     var experienceDescription: String?
@@ -46,6 +47,8 @@ class BucketListItem {
         static let timestamp = "timestamp"
         static let title = "title"
         static let isComplete = "isComplete"
+        static let isPrivate = "isPrivate"
+        static let itemColor = "itemColor"
         static let photoURLs = "photoURLs"
         static let experienceDescription = "experienceDescription"
     }
@@ -58,9 +61,11 @@ class BucketListItem {
         user: User,
         timestamp: Date,
         title: String,
-        isComplete: Bool,
+        isComplete: Bool = false,
+        isPrivate: Bool = false,
+        itemColor: ItemColor = .none,
         mockPhoto: [UIImage]?,
-        experienceDescription: String
+        experienceDescription: String? = nil
         ) {
         
         self.uid = uid
@@ -68,6 +73,8 @@ class BucketListItem {
         self.timestamp = timestamp
         self.title = title
         self.isComplete = isComplete
+        self.isPrivate = isPrivate
+        self.itemColor = itemColor
         self.mockPhoto = mockPhoto
         self.experienceDescription = experienceDescription
     }
@@ -78,6 +85,8 @@ class BucketListItem {
          timestamp: Date,
          title: String,
          isComplete: Bool,
+         isPrivate: Bool,
+         itemColor: ItemColor,
          photoURLs: [String],
          experienceDescription: String
         ) {
@@ -87,6 +96,8 @@ class BucketListItem {
         self.timestamp = timestamp
         self.title = title
         self.isComplete = isComplete
+        self.isPrivate = isPrivate
+        self.itemColor = itemColor
         self.photoURLs = photoURLs
         self.experienceDescription = experienceDescription
     }
@@ -105,15 +116,22 @@ extension BucketListItem {
             let timestamp = bucketListItemDictionary[BucketListItemKey.timestamp] as? Date,
             let title = bucketListItemDictionary[BucketListItemKey.title] as? String,
             let isComplete = bucketListItemDictionary[BucketListItemKey.isComplete] as? Bool,
+            let isPrivate = bucketListItemDictionary[BucketListItemKey.isPrivate] as? Bool,
+            let itemColorString = bucketListItemDictionary[BucketListItemKey.itemColor] as? String,
             let photoURLs = bucketListItemDictionary[BucketListItemKey.photoURLs] as? [String],
             let experienceDescription = bucketListItemDictionary[BucketListItemKey.experienceDescription] as? String else { return nil }
         
+        
+        // Changeeeee
+        let color: ItemColor = .blue
         
         self.init(uid: uid,
                   user: user,
                   timestamp: timestamp,
                   title: title,
                   isComplete: isComplete,
+                  isPrivate: isPrivate,
+                  itemColor: color,
                   photoURLs: photoURLs,
                   experienceDescription: experienceDescription)
     }
@@ -124,6 +142,5 @@ extension BucketListItem: Equatable {
     // Equatable Protocol Function
     static func ==(lhs: BucketListItem, rhs: BucketListItem) -> Bool {
         return lhs.uid == rhs.uid
-        return lhs.title == rhs.title
     }
 }

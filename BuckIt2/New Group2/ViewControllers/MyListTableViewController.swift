@@ -146,5 +146,7 @@ extension MyListTableViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension MyListTableViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 58
+    }
 }
