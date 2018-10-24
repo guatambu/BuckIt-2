@@ -21,3 +21,10 @@ import Foundation
     // 5 users
         // profile pic switch to hard coded mockdata profile pic
     // 25 bucket list items
+
+// Thoughts and Musings...
+
+    // roses are red
+    // violets are blue
+    // i am a git noob
+    // it drives bonkers, so bonkers that i want to eat my shoe
