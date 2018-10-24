@@ -19,6 +19,7 @@ class MyListTableViewController: UIViewController {
     @IBOutlet weak var addItemButtonOutlet: DesignableButton!
     @IBOutlet weak var addNewItemLabelOutlet: UILabel!
     
+    var currentUser = MockDataUsers.sam
     var user: User? = MockDataUsers.sam
     
     var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item20]
@@ -33,7 +34,7 @@ class MyListTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         // ready arrays of userdata for display
-        myListHeaderView.user = user
+        
         MyListController.shared.filterCompleted(bucketListItems: bucketList)
         toDoItems = MyListController.shared.toDoItems
         completedItems = MyListController.shared.completedItems
@@ -59,6 +60,7 @@ class MyListTableViewController: UIViewController {
         
         //if design team wants to have a more specific border in terms of the width of the border then we need a .jpg of their border to be plugged in here:
         // self.navigationController?.navigationBar.shadowImage = UIImage(named: <#T##String#>)
+    
         
         displayedBucketItems = toDoItems
         tableView.reloadData()
