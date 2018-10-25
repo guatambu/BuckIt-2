@@ -24,7 +24,7 @@ class BucketListItem {
     var title: String
     var isComplete: Bool
     var isPrivate: Bool
-    var itemColor: ItemColor
+    var itemColor: ItemColor?
     var mockPhoto: [UIImage]?
     var photoURLs: [String]?
     var experienceDescription: String?
@@ -130,7 +130,7 @@ extension BucketListItem {
         
         
         // Changeeeee
-        let color: ItemColor = .blue
+        let color: ItemColor = .orange
         
         self.init(uid: uid,
                   user: user,

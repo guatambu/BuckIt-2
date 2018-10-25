@@ -22,7 +22,7 @@ class MyListTableViewController: UIViewController {
     var currentUser = MockDataUsers.sam
     var user: User? = MockDataUsers.sam
     
-    var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item20, MockDataBucketListItems.item12, MockDataBucketListItems.item4]
+    var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item1, MockDataBucketListItems.item3, MockDataBucketListItems.item4]
     var displayedBucketItems: Set<BucketListItem> = []
     var toDoItems: Set<BucketListItem> = []
     var completedItems: Set<BucketListItem> = []
@@ -59,7 +59,7 @@ class MyListTableViewController: UIViewController {
         
         //if design team wants to have a more specific border in terms of the width of the border then we need a .jpg of their border to be plugged in here:
         // self.navigationController?.navigationBar.shadowImage = UIImage(named: <#T##String#>)
-    
+        segmentedControlOutlet.backgroundColor = GojiTheme.primaryPink.value
         
         displayedBucketItems = toDoItems
         tableView.reloadData()
@@ -121,6 +121,9 @@ class MyListTableViewController: UIViewController {
     
     @IBAction func addNewItemButtonTapped(_ sender: DesignableButton) {
         print("🤶\(#function)")
+        let storyboard = UIStoryboard(name: "MyListNewItem", bundle: nil)
+        let myListNewItemViewController = storyboard.instantiateViewController(withIdentifier: "MyListNewItem")
+        present(myListNewItemViewController, animated: true, completion: nil)
     }
 
 }

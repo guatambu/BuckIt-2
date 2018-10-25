@@ -44,6 +44,10 @@ class MyListTableViewCell: UITableViewCell, ReuseIdentifiable {
         
         titleLabel.text = item.title
         
+        if let color = item.itemColor {
+            organizerView.backgroundColor = UIColor(hexString: color.hexValue)
+        }
+        
         if item.isComplete {
             itemDoneButton.setImage(UIImage(named: "checkmarkSelected"), for: .normal)
             
