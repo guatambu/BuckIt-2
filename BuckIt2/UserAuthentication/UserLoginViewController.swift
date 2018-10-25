@@ -38,7 +38,6 @@ class UserLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     
@@ -85,6 +84,7 @@ class UserLoginViewController: UIViewController {
             return
         }
         
+        // **** START    mock data solution
         for user in users {
             
             if (emailUsername != user.username) || (emailUsername != user.email) {
@@ -98,14 +98,34 @@ class UserLoginViewController: UIViewController {
             
             } else if ((emailUsername == user.username) && (password == user.password)) || ((emailUsername == user.email) && (password == user.password)) {
                 
-                // successful login allowing for valid user features to be avaialble in app
-                
-        // *****  firebase functionality  *****
+                print("login successful")
                 
                 // pop viewController
                 self.navigationController?.popViewController(animated: true)
             }
         }
+        // ***** END mock data solution
+        
+        // ***** START firebase solution
+        
+        authManager.signIn(withEmail: emailUsername, password: password) { (success) in
+            
+            if success {
+                // give user access to whatever it is in app
+                    // TO DO: open permissions for successfully logged in user
+                // return user to where they were in the nav stack
+                // pop viewController
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                
+                // TO DO: question on these errors, distinguishing between something network related and incorrect username/password match
+                self.errorMessageStackViewOutlet.isHidden = false
+                self.errorLine1LabelOutlet.text = "Apologies. We may be having a problem on our end."
+                self.errorLine2LabelOutlet.text = "Please try again later."
+            }
+        }
+        
+        // ***** END firebase solution
         
     }
     
