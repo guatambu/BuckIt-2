@@ -339,7 +339,7 @@
                                                 </segmentedControl>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mz5-Jq-pfQ">
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mz5-Jq-pfQ" userLabel="New Goal Stack">
                                             <rect key="frame" x="16" y="124" width="130" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yO-sN-pNU" userLabel="Add Item Button Outlet" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
@@ -365,7 +365,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovk-Rp-Thp">
                                                     <rect key="frame" x="60" y="0.0" width="70" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.38665506114130432" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -496,6 +496,7 @@
                     <navigationItem key="navigationItem" id="7bh-5g-U9d"/>
                     <connections>
                         <outlet property="addItemButtonOutlet" destination="5yO-sN-pNU" id="mvb-QW-fHH"/>
+                        <outlet property="newGoalStackView" destination="mz5-Jq-pfQ" id="Qjq-Px-cUP"/>
                         <outlet property="segmentedControlOutlet" destination="usr-sH-uZj" id="Lgb-7R-UZD"/>
                         <outlet property="tableView" destination="CrD-Ah-jJp" id="FwJ-gS-8Cy"/>
                     </connections>

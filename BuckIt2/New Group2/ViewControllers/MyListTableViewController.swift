@@ -12,6 +12,7 @@ class MyListTableViewController: UIViewController {
     
     // MARK: - Properties
     
+    @IBOutlet weak var newGoalStackView: UIStackView!
     @IBOutlet weak var myListHeaderView: MyListHeaderView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bucketListMainLabelOutlet: UILabel!
@@ -58,7 +59,7 @@ class MyListTableViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = profileButton
         
         // set TVC title to user.username
-        self.title = user?.username
+        self.navigationItem.title = user?.username
         
         // set bottom of nav bar border color
         
@@ -75,9 +76,14 @@ class MyListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBarItem.title = "My List"
+        setupSegmentControl()
     }
     
+    // MARK: - UI
+    private func setupSegmentControl() {
+        let fontAttribute: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .semibold)]
+        segmentedControlOutlet.setTitleTextAttributes(fontAttribute, for: .normal)
+    }
     
     // MARK: - Actions
     
@@ -112,11 +118,13 @@ class MyListTableViewController: UIViewController {
             // To-Do
             print("0 - ToDo")
             displayedBucketItems = toDoItems
+            newGoalStackView.arrangedSubviews.areVisible()
         // display To-Do BucketList Items
         case 1:
             // Done
             print("1 - Completed")
             displayedBucketItems = completedItems
+            newGoalStackView.arrangedSubviews.areHidden()
             // display Done Bucket List Items
         default:
             print("not an acceptable choice from the two segmented controller options in MyListTableViewController.swift")
@@ -179,5 +187,16 @@ extension MyListTableViewController: MyListTableViewCellDelegate {
             
             tableView.reloadData()
         }
+    }
+}
+
+
+extension Sequence where Iterator.Element == UIView {
+    func areHidden() {
+        forEach { $0.isHidden = true }
+    }
+    
+    func areVisible() {
+        forEach { $0.isHidden = false }
     }
 }
