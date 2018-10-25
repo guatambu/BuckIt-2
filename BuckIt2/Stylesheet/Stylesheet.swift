@@ -16,13 +16,12 @@ extension GojiTheme {
     var value: UIColor {
         get {
             switch self {
-            case .primaryPink: return UIColor(red: 253, green: 92, blue: 99, alpha: 1)
+            case .primaryPink: return UIColor(hexString: "#fd5c63")
             }
         }
     }
 }
 
-#warning("Switch to hex values")
 enum ItemColor {
     case red
     case orange

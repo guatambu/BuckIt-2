@@ -19,8 +19,25 @@ class MyListTableViewController: UIViewController {
     @IBOutlet weak var addItemButtonOutlet: DesignableButton!
     @IBOutlet weak var addNewItemLabelOutlet: UILabel!
     
+    lazy var profileButton: UIBarButtonItem = {
+        let button = UIButton(type: .custom)
+        button.setImage(self.profileImage, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        // Math doesn't work here, needs a constant value
+        button.layer.cornerRadius = 16
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(profileButtonTapped(sender:)), for: .touchUpInside)
+        return UIBarButtonItem.init(customView: button)
+    }()
+    
     var currentUser = MockDataUsers.sam
     var user: User? = MockDataUsers.sam
+    
+    var profileImage: UIImage {
+        return currentUser.mockProfilePic!.withRenderingMode(.alwaysOriginal)
+    }
     
     var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item1, MockDataBucketListItems.item3, MockDataBucketListItems.item4]
     var displayedBucketItems: Set<BucketListItem> = []
@@ -38,19 +55,7 @@ class MyListTableViewController: UIViewController {
         completedItems = Set(MyListController.shared.completedItems)
         bucketList = MyListController.shared.myBucketListItems
         
-        // add round profile pic as button
-        let button = UIButton.init(type: .custom)
-        button.imageView?.contentMode = .scaleAspectFit
-        button.setImage(user?.mockProfilePic, for: UIControl.State.normal)
-        button.frame = CGRect.init(x: 0, y: 0, width: 32, height: 32) //CGRectMake(0, 0, 30, 30)
-        button.layer.cornerRadius = 0.5 * button.bounds.size.width
-        button.clipsToBounds = true
-        // add action to the button
-        button.addTarget(self, action: #selector(profileButtonTapped(sender:)), for: .touchUpInside)
-        
-        // add to left nav bar button item
-        let barButton = UIBarButtonItem.init(customView: button)
-        self.navigationItem.leftBarButtonItem = barButton
+        self.navigationItem.leftBarButtonItem = profileButton
         
         // set TVC title to user.username
         self.title = user?.username
@@ -59,7 +64,9 @@ class MyListTableViewController: UIViewController {
         
         //if design team wants to have a more specific border in terms of the width of the border then we need a .jpg of their border to be plugged in here:
         // self.navigationController?.navigationBar.shadowImage = UIImage(named: <#T##String#>)
-        segmentedControlOutlet.backgroundColor = GojiTheme.primaryPink.value
+        segmentedControlOutlet.tintColor = GojiTheme.primaryPink.value
+        segmentedControlOutlet.borderColor = GojiTheme.primaryPink.value
+        addItemButtonOutlet.backgroundColor = GojiTheme.primaryPink.value
         
         displayedBucketItems = toDoItems
         tableView.reloadData()
