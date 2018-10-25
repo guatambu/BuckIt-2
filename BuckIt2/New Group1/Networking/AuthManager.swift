@@ -122,7 +122,7 @@ class AuthManager {
         
         Endpoint.auth.sendPasswordReset(withEmail: email) { (error) in
             if let error = error {
-                print("Error send the user a password reset email: \(#function) \(error) \(error.localizedDescription)")
+                print("Error sending the user a password reset email: \(#function) \(error) \(error.localizedDescription)")
                 compeltion(false)
                 return
             }

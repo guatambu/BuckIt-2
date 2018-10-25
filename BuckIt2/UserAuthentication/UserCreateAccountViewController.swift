@@ -26,7 +26,7 @@ class UserCreateAccountViewController: UIViewController {
     @IBOutlet weak var errorLine1LabelOutlet: UILabel!
     @IBOutlet weak var errorLine2LabelOutlet: UILabel!
     
-    
+    // ***** for mock data purposes
     var newUserAccount: User?
     var uid: String?
     
@@ -53,6 +53,7 @@ class UserCreateAccountViewController: UIViewController {
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         
+        // ***** for mock data purposes
         guard let uid = uid else {
             // error handling
             
@@ -114,37 +115,43 @@ class UserCreateAccountViewController: UIViewController {
             errorLine2LabelOutlet.text = "Please try again."
         } else {
             
+            // ***** for mockdata purposes
             newUserAccount = User(uid: uid, email: email, username: username, password: password, isPrivate: true, firstName: nil, lastName: nil, mockProfilePic: nil, location: nil, age: nil)
             
-            // ******* design question regarding these user authnetication segues ******
-            // which kind of segue do they want because of the 'X' to close the view controller in the mockups
-            // pop viewController - this is if we want to just leave
-            self.navigationController?.popViewController(animated: true)
+            // ***** important UX feature here *****
+                // depending on the segue identifier or sending VC, this will determine how we exit the function via segue
+                // design wants user taken to inspiration page if they are creating account from the splash/landing page when app first loads
+                // otherwise, design wants user to create and account from wherever they are in app and be returned to that same place in app with minimal interruption to user
             
+            // IF USER IS AT SPLASH PAGE AND WANTS TO CREATE ACCOUNT...
+                // do the following here for the segue
             // programmatically performing the segue
             
             // instantiate the relevant storyboard
-            let mainView: UIStoryboard = UIStoryboard(name: "UserAuthentication", bundle: nil)
+            let mainView: UIStoryboard = UIStoryboard(name: "InspirationHome", bundle: nil)
             // instantiate the desired TableViewController as ViewController on relevant storyboard
-            guard let destViewController = mainView.instantiateViewController(withIdentifier: "toFinishUserProfile") as? FinishUserProfileViewController else {
+            guard let destViewController = mainView.instantiateViewController(withIdentifier: "InspirationHome") as? InspirationHomeViewController else {
                 
                 print("*** Error: error instantiating FinishUserProfileViewController in UserCreateAccountViewController.swift line 131")
                 return
             }
-            // create the show segue programmatically
-            self.navigationController?.pushViewController(destViewController, animated: true)
+            
             // create the modal segue programmatically
             self.present(destViewController, animated: true, completion: nil)
             
-            // set the desired properties of the destinationVC's navgation Item
-            let backButtonItem = UIBarButtonItem()
-            backButtonItem.title = "Create Account"
-            navigationItem.backBarButtonItem = backButtonItem
+            // pass necessary info to destViewController
+            //destViewController.userAccount = newUserAccount
+            
+            // All OTHER APP LOCATIONS AND USER WANTS TO CREATE ACCOUNT...
+                // do the following here for the segue
+            
+            // pop viewController - this is if we want to just leave
+            self.navigationController?.popViewController(animated: true)
+            // pass necessary info to destViewController
+            //destViewController.userAccount = newUserAccount
             
     // *****  firbase functionality  *****
             
-            // pass necessary info to destViewController
-            destViewController.userAccount = newUserAccount
         }
     }
     
