@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         FirebaseApp.configure()
         
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : GojiTheme.primaryPink.value], for: .selected)
+        
         return true
     }
 
