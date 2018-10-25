@@ -123,6 +123,10 @@ class UserCreateAccountViewController: UIViewController {
                 // design wants user taken to inspiration page if they are creating account from the splash/landing page when app first loads
                 // otherwise, design wants user to create and account from wherever they are in app and be returned to that same place in app with minimal interruption to user
             
+            
+            // toggle isUserLoggedIn property upon success
+            UserController.shared.isUserLoggedIn = true
+            
             // IF USER IS AT SPLASH PAGE AND WANTS TO CREATE ACCOUNT...
                 // do the following here for the segue
             // programmatically performing the segue

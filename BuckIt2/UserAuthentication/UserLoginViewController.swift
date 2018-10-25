@@ -113,6 +113,10 @@ class UserLoginViewController: UIViewController {
             if success {
                 // give user access to whatever it is in app
                     // TO DO: open permissions for successfully logged in user
+                
+                // toggle isUserLoggedIn property upon success
+                UserController.shared.isUserLoggedIn = true
+                
                 // return user to where they were in the nav stack
                 // pop viewController
                 self.navigationController?.popViewController(animated: true)
