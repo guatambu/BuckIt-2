@@ -8,6 +8,7 @@
 
 import UIKit
 
+#warning("Switch to hex values")
 enum ItemColor {
     case red
     case orange

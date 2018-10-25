@@ -22,12 +22,10 @@ class MyListTableViewController: UIViewController {
     var currentUser = MockDataUsers.sam
     var user: User? = MockDataUsers.sam
     
-    var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item20]
-    var displayedBucketItems: [BucketListItem] = []
-    var toDoItems: [BucketListItem] = []
-    var completedItems: [BucketListItem] = []
-    
-    let dylon = MockDataUsers.dylon
+    var bucketList: [BucketListItem] = [MockDataBucketListItems.item2, MockDataBucketListItems.item6, MockDataBucketListItems.item16, MockDataBucketListItems.item23, MockDataBucketListItems.item17, MockDataBucketListItems.item20, MockDataBucketListItems.item12, MockDataBucketListItems.item4]
+    var displayedBucketItems: Set<BucketListItem> = []
+    var toDoItems: Set<BucketListItem> = []
+    var completedItems: Set<BucketListItem> = []
 
     // MARK: - ViewController Lifecycle Functions
     
@@ -36,22 +34,23 @@ class MyListTableViewController: UIViewController {
         // ready arrays of userdata for display
         
         MyListController.shared.filterCompleted(bucketListItems: bucketList)
-        toDoItems = MyListController.shared.toDoItems
-        completedItems = MyListController.shared.completedItems
+        toDoItems = Set(MyListController.shared.toDoItems)
+        completedItems = Set(MyListController.shared.completedItems)
         bucketList = MyListController.shared.myBucketListItems
         
         // add round profile pic as button
         let button = UIButton.init(type: .custom)
-        button.setImage(dylon.mockProfilePic, for: UIControl.State.normal)
-        button.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40) //CGRectMake(0, 0, 30, 30)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.setImage(user?.mockProfilePic, for: UIControl.State.normal)
+        button.frame = CGRect.init(x: 0, y: 0, width: 32, height: 32) //CGRectMake(0, 0, 30, 30)
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
-        
+        button.clipsToBounds = true
         // add action to the button
         button.addTarget(self, action: #selector(profileButtonTapped(sender:)), for: .touchUpInside)
         
         // add to left nav bar button item
         let barButton = UIBarButtonItem.init(customView: button)
-//        self.navigationItem.leftBarButtonItem = barButton
+        self.navigationItem.leftBarButtonItem = barButton
         
         // set TVC title to user.username
         self.title = user?.username
@@ -68,6 +67,8 @@ class MyListTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBarItem.title = "My List"
     }
     
     
@@ -135,9 +136,11 @@ extension MyListTableViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MyListTableViewCell.reuseIdentifier, for: indexPath) as? MyListTableViewCell else {
             return UITableViewCell() }
         
-        let item = displayedBucketItems[indexPath.row]
+        let item = Array(displayedBucketItems)[indexPath.row]
         
         cell.bucketListItem = item
+        
+        cell.delegate = self
         
         return cell
     }
@@ -148,5 +151,23 @@ extension MyListTableViewController: UITableViewDataSource {
 extension MyListTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 58
+    }
+}
+
+// MARK: - MyListTableViewCellDelegate
+extension MyListTableViewController: MyListTableViewCellDelegate {
+    func myListTableViewCell(_ cell: MyListTableViewCell, markIsCompleteFor item: BucketListItem) {
+        if !item.isComplete {
+            item.isComplete = true
+            
+            toDoItems.remove(item)
+            completedItems.insert(item)
+            
+            segmentedControlOutlet.selectedSegmentIndex = 1
+            
+            displayedBucketItems = completedItems
+            
+            tableView.reloadData()
+        }
     }
 }

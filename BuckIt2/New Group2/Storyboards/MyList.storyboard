@@ -574,8 +574,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CrD-Ah-jJp">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="rcs-db-ocD" userLabel="Table Header View">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -644,6 +645,13 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePL-Ix-kX1">
+                                            <rect key="frame" x="15" y="179" width="360" height="1"/>
+                                            <color key="backgroundColor" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="rOR-ZA-tOv"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -651,11 +659,14 @@
                                         <constraint firstItem="tPT-ih-Coz" firstAttribute="centerX" secondItem="rcs-db-ocD" secondAttribute="centerX" id="F0d-rx-lvc"/>
                                         <constraint firstItem="mz5-Jq-pfQ" firstAttribute="leading" secondItem="rcs-db-ocD" secondAttribute="leading" constant="16" id="GRp-3q-pQa"/>
                                         <constraint firstItem="tPT-ih-Coz" firstAttribute="top" secondItem="rcs-db-ocD" secondAttribute="top" constant="12" id="GXe-MS-vMo"/>
+                                        <constraint firstAttribute="trailing" secondItem="ePL-Ix-kX1" secondAttribute="trailing" id="NX1-IL-git"/>
                                         <constraint firstAttribute="bottom" secondItem="mz5-Jq-pfQ" secondAttribute="bottom" constant="16" id="dGQ-Wy-ojD"/>
+                                        <constraint firstItem="ePL-Ix-kX1" firstAttribute="leading" secondItem="rcs-db-ocD" secondAttribute="leading" constant="15" id="kPo-fK-Xb1"/>
+                                        <constraint firstAttribute="bottom" secondItem="ePL-Ix-kX1" secondAttribute="bottom" id="mor-Uk-fvM"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyListTableViewCell" rowHeight="58" id="QZO-wX-bFV" customClass="MyListTableViewCell" customModule="BuckIt2" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyListTableViewCell" rowHeight="58" id="QZO-wX-bFV" customClass="MyListTableViewCell" customModule="BuckIt2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="208" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZO-wX-bFV" id="ymv-fg-fkL">
@@ -694,8 +705,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="addNewItemButtonTapped:" destination="yNe-Wg-NnW" eventType="touchUpInside" id="D3b-wU-943"/>
-                                                                <action selector="itemDoneButtonTapped:" destination="QZO-wX-bFV" eventType="touchUpInside" id="OG5-dW-6Wp"/>
+                                                                <action selector="itemDoneButtonTapped:" destination="QZO-wX-bFV" eventType="touchUpInside" id="TCX-26-vDd"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DM-WU-tVq">
@@ -769,11 +779,13 @@
             </objects>
             <point key="canvasLocation" x="4620" y="-1554.872563718141"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My List-->
         <scene sceneID="blh-1p-i5I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FI7-oH-DRb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My List" image="myListUnselected" selectedImage="myListSelected" id="3Mu-dx-p4K"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6zw-nh-CrE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -792,6 +804,8 @@
         <image name="addBucketListItem" width="700" height="700"/>
         <image name="addPhoto" width="700" height="700"/>
         <image name="cancelButton" width="700" height="700"/>
+        <image name="myListSelected" width="20" height="25"/>
+        <image name="myListUnselected" width="20" height="25"/>
         <image name="privateEye" width="22" height="19"/>
         <image name="profileIcon" width="700" height="700"/>
     </resources>

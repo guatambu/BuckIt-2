@@ -8,6 +8,13 @@
 
 import UIKit
 
+extension BucketListItem: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uid)
+        hasher.combine(timestamp)
+    }
+}
+
 class BucketListItem {
     
     // MARK: - Properties

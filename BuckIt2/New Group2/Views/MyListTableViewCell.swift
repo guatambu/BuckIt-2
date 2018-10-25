@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol MyListTableViewCellDelegate: class {
+    func myListTableViewCell(_ cell: MyListTableViewCell, markIsCompleteFor item: BucketListItem)
+}
+
 class MyListTableViewCell: UITableViewCell, ReuseIdentifiable {
 
     // MARK: - Properties
+    weak var delegate: MyListTableViewCellDelegate?
     var bucketListItem: BucketListItem? {
         didSet {
             updateView()
@@ -39,14 +44,24 @@ class MyListTableViewCell: UITableViewCell, ReuseIdentifiable {
         
         titleLabel.text = item.title
         
-        item.isComplete ?
-            itemDoneButton.setTitle("✔️", for: .normal) :
-            itemDoneButton.setTitle("", for: .normal)
+        if item.isComplete {
+            itemDoneButton.setImage(UIImage(named: "checkmarkSelected"), for: .normal)
+            
+        } else {
+            itemDoneButton.setImage(nil, for: .normal)
+        }
         
-        
+        if item.isPrivate {
+            eyeImageView.image = UIImage(named: "privateEye")
+        } else {
+            eyeImageView.image = nil
+        }
     }
-    @IBAction func itemDoneButtonTapped(_ sender: Any) {
+    
+    @IBAction func itemDoneButtonTapped(_ sender: UIButton) {
         print("🤶\(#function)")
+        guard let item = bucketListItem else { return }
+        delegate?.myListTableViewCell(self, markIsCompleteFor: item)
     }
     
 }
