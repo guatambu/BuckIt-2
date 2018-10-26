@@ -15,7 +15,7 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     // title
     @IBOutlet weak var finishProfileLabelOutlet: UILabel!
     // error messaging
-    @IBOutlet weak var errorMessageStackView: UIStackView!
+    @IBOutlet weak var errorMessageViewOutlet: UIView!
     @IBOutlet weak var errorMessageLine1LabelOutlet: UILabel!
     @IBOutlet weak var errorMessageLine2LabelOutlet: UILabel!
     // email credentials outlets
@@ -36,7 +36,7 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     @IBOutlet weak var profilePicPreviewImageViewOutlet: UIImageView!
     
     // relevant constraints
-    @IBOutlet weak var userMessageStackViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var userMessagesActionViewTopConstraint: NSLayoutConstraint!
     let originalTopMarginForUserMessageStackView: CGFloat = 16
     
     var userAccount: User?
@@ -145,10 +145,10 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     // move view up to accommodate keyboard presentaiton
     func moveViewUp() {
         
-        if userMessageStackViewTopConstraint.constant != originalTopMarginForUserMessageStackView {
+        if userMessagesActionViewTopConstraint.constant != originalTopMarginForUserMessageStackView {
             return
         }
-        userMessageStackViewTopConstraint.constant -= 135
+        userMessagesActionViewTopConstraint.constant -= 135
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
@@ -156,10 +156,10 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     
     // move view down to accommodate keyboard presentaiton
     func moveViewDown() {
-        if userMessageStackViewTopConstraint.constant == originalTopMarginForUserMessageStackView {
+        if userMessagesActionViewTopConstraint.constant == originalTopMarginForUserMessageStackView {
             return
         }
-        userMessageStackViewTopConstraint.constant = originalTopMarginForUserMessageStackView
+        userMessagesActionViewTopConstraint.constant = originalTopMarginForUserMessageStackView
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
