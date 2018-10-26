@@ -42,6 +42,8 @@ class UserLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // dismiss keyboard when tap anywhere on screen
+        self.hideKeyboardOnRandomScreenTap()
     }
     
     
@@ -203,3 +205,19 @@ extension UserLoginViewController: UITextFieldDelegate {
         moveViewDown()
     }
 }
+
+
+// MARK: - Dismiss keyboard via tap anywhere gesture recognizer
+
+extension UIViewController {
+    func hideKeyboardOnRandomScreenTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+

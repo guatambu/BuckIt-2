@@ -45,6 +45,9 @@ class UserCreateAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // dismiss keyboard when tap anywhere on screen
+        self.hideKeyboardOnRandomScreenTap()
     }
     
     
