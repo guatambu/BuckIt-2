@@ -77,12 +77,18 @@ class MyListTableViewController: UIViewController {
         super.viewDidLoad()
         
         setupSegmentControl()
+        setupAddItemButton()
     }
     
     // MARK: - UI
     private func setupSegmentControl() {
         let fontAttribute: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .semibold)]
         segmentedControlOutlet.setTitleTextAttributes(fontAttribute, for: .normal)
+    }
+    
+    private func setupAddItemButton() {
+        addItemButtonOutlet.setTitle("+", for: .normal)
+        addItemButtonOutlet.titleLabel?.textAlignment = .center
     }
     
     // MARK: - Actions
@@ -113,19 +119,12 @@ class MyListTableViewController: UIViewController {
         let selectedIndex = segmentedControlOutlet.selectedSegmentIndex
         
         switch selectedIndex {
-            
         case 0:
-            // To-Do
-            print("0 - ToDo")
             displayedBucketItems = toDoItems
             newGoalStackView.arrangedSubviews.areVisible()
-        // display To-Do BucketList Items
         case 1:
-            // Done
-            print("1 - Completed")
             displayedBucketItems = completedItems
             newGoalStackView.arrangedSubviews.areHidden()
-            // display Done Bucket List Items
         default:
             print("not an acceptable choice from the two segmented controller options in MyListTableViewController.swift")
         }
@@ -135,9 +134,8 @@ class MyListTableViewController: UIViewController {
     
     
     @IBAction func addNewItemButtonTapped(_ sender: DesignableButton) {
-        print("🤶\(#function)")
         let storyboard = UIStoryboard(name: "MyListNewItem", bundle: nil)
-        let myListNewItemViewController = storyboard.instantiateViewController(withIdentifier: "MyListNewItem")
+        let myListNewItemViewController = storyboard.instantiateViewController(withIdentifier: "MyListNewItemViewController")
         present(myListNewItemViewController, animated: true, completion: nil)
     }
 
