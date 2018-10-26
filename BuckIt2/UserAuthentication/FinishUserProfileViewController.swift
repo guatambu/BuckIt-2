@@ -35,6 +35,10 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     @IBOutlet weak var profilePicPreviewOutlet: DesignableView!
     @IBOutlet weak var profilePicPreviewImageViewOutlet: UIImageView!
     
+    // relevant constraints
+    @IBOutlet weak var userMessageStackViewTopConstraint: NSLayoutConstraint!
+    let originalTopMarginForUserMessageStackView: CGFloat = 16
+    
     var userAccount: User?
     
     var isProfilePicSelected: Bool = false
@@ -137,6 +141,32 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     }
     
     
+    // MARK: - Helper Methods
+    
+    // move view up to accommodate keyboard presentaiton
+    func moveViewUp() {
+        
+        if userMessageStackViewTopConstraint.constant != originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant -= 135
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // move view down to accommodate keyboard presentaiton
+    func moveViewDown() {
+        if userMessageStackViewTopConstraint.constant == originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant = originalTopMarginForUserMessageStackView
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    
     /*
      // MARK: - Navigation
      
@@ -147,4 +177,17 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
      }
      */
     
+}
+
+
+// MARK: - UITextFieldDelegate
+extension FinishUserProfileViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveViewUp()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveViewDown()
+    }
 }

@@ -26,6 +26,10 @@ class UserCreateAccountViewController: UIViewController {
     @IBOutlet weak var errorLine1LabelOutlet: UILabel!
     @IBOutlet weak var errorLine2LabelOutlet: UILabel!
     
+    // relevant constraints
+    @IBOutlet weak var userMessageStackViewTopConstraint: NSLayoutConstraint!
+    let originalTopMarginForUserMessageStackView: CGFloat = 16
+    
     // ***** for mock data purposes
     var newUserAccount: User?
     var uid: String?
@@ -173,5 +177,44 @@ class UserCreateAccountViewController: UIViewController {
         let backButtonItem = UIBarButtonItem()
         backButtonItem.title = "Create Account"
         navigationItem.backBarButtonItem = backButtonItem
+    }
+    
+    
+    // MARK: - Helper Methods
+    
+    // move view up to accommodate keyboard presentaiton
+    func moveViewUp() {
+        
+        if userMessageStackViewTopConstraint.constant != originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant -= 135
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // move view down to accommodate keyboard presentaiton
+    func moveViewDown() {
+        if userMessageStackViewTopConstraint.constant == originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant = originalTopMarginForUserMessageStackView
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+}
+
+
+// MARK: - UITextFieldDelegate
+extension UserCreateAccountViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveViewUp()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveViewDown()
     }
 }

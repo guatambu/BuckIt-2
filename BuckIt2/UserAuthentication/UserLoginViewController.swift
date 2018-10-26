@@ -22,6 +22,10 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var errorLine1LabelOutlet: UILabel!
     @IBOutlet weak var errorLine2LabelOutlet: UILabel!
     
+    // relevant constraints
+    @IBOutlet weak var userMessageStackViewTopConstraint: NSLayoutConstraint!
+    let originalTopMarginForUserMessageStackView: CGFloat = 16
+    
     // relevant instances
     let authManager = AuthManager()
     
@@ -57,8 +61,8 @@ class UserLoginViewController: UIViewController {
         let mainView: UIStoryboard = UIStoryboard(name: "UserAuthentication", bundle: nil)
         // instantiate the desired TableViewController as ViewController on relevant storyboard
         let destViewController = mainView.instantiateViewController(withIdentifier: "toForgotPassword")
-        // create the segue programmatically
-        self.navigationController?.pushViewController(destViewController, animated: true)
+        // create the modal segue programmatically
+        self.present(destViewController, animated: true, completion: nil)
         // set the desired properties of the destinationVC's navgation Item
         let backButtonItem = UIBarButtonItem()
         backButtonItem.title = "Login"
@@ -71,7 +75,7 @@ class UserLoginViewController: UIViewController {
         guard let emailUsername = emailUsernameTextFieldOutlet.text, emailUsernameTextFieldOutlet.text != "" else {
         
             errorMessageStackViewOutlet.isHidden = false
-            errorLine1LabelOutlet.text = "Please enter your username or email address."
+            errorLine1LabelOutlet.text = "Please enter your email address."
             
             return
         }
@@ -149,6 +153,32 @@ class UserLoginViewController: UIViewController {
     }
     
     
+    // MARK: - Helper Methods
+    
+    // move view up to accommodate keyboard presentaiton
+    func moveViewUp() {
+        
+        if userMessageStackViewTopConstraint.constant != originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant -= 135
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // move view down to accommodate keyboard presentaiton
+    func moveViewDown() {
+        if userMessageStackViewTopConstraint.constant == originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant = originalTopMarginForUserMessageStackView
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -159,4 +189,17 @@ class UserLoginViewController: UIViewController {
     }
     */
 
+}
+
+
+// MARK: - UITextFieldDelegate
+extension UserLoginViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveViewUp()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveViewDown()
+    }
 }

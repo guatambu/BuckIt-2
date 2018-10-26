@@ -21,7 +21,12 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var emailTextFieldOutlet: UITextField!
     @IBOutlet weak var sendEmailButtonOutlet: DesignableButton!
     
+    // relevant constraints
+    @IBOutlet weak var userMessageStackViewTopConstraint: NSLayoutConstraint!
+    let originalTopMarginForUserMessageStackView: CGFloat = 16
+    
     let authManager = AuthManager()
+
     
     // MARK: - ViewController Lifecycle Functions
     
@@ -69,6 +74,32 @@ class ForgotPasswordViewController: UIViewController {
         
     }
     
+    // MARK: - Helper Methods
+    
+    // move view up to accommodate keyboard presentaiton
+    func moveViewUp() {
+        
+        if userMessageStackViewTopConstraint.constant != originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant -= 135
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // move view down to accommodate keyboard presentaiton
+    func moveViewDown() {
+        if userMessageStackViewTopConstraint.constant == originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant = originalTopMarginForUserMessageStackView
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    
     /*
     // MARK: - Navigation
 
@@ -79,4 +110,17 @@ class ForgotPasswordViewController: UIViewController {
     }
     */
 
+}
+
+
+// MARK: - UITextFieldDelegate
+extension ForgotPasswordViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveViewUp()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveViewDown()
+    }
 }
