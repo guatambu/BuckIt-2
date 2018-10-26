@@ -87,18 +87,23 @@ class UserLoginViewController: UIViewController {
         // **** START    mock data solution
         for user in users {
             
-            if (emailUsername != user.username) || (emailUsername != user.email) {
+            if (emailUsername != user.email) {
+                
                 errorMessageStackViewOutlet.isHidden = false
-                errorLine1LabelOutlet.text = "Please enter a valid username or email address."
-            } else if ((emailUsername == user.username) && (password != user.password)) || ((emailUsername == user.email) && (password != user.password)) {
+                errorLine1LabelOutlet.text = "We do not recognize your email address."
+                errorLine2LabelOutlet.text = "Please try again."
+                
+            } else if (emailUsername == user.email) && (password != user.password) {
                 
                 errorMessageStackViewOutlet.isHidden = false
                 errorLine1LabelOutlet.text = "We do not recoginze your password."
                 errorLine2LabelOutlet.text = "Please check your password and try again."
             
-            } else if ((emailUsername == user.username) && (password == user.password)) || ((emailUsername == user.email) && (password == user.password)) {
+            } else if (emailUsername == user.email) && (password == user.password) {
                 
                 print("login successful")
+                
+                UserController.shared.isUserLoggedIn = true
                 
                 // pop viewController
                 self.navigationController?.popViewController(animated: true)
@@ -111,8 +116,6 @@ class UserLoginViewController: UIViewController {
         authManager.signIn(withEmail: emailUsername, password: password) { (success) in
             
             if success {
-                // give user access to whatever it is in app
-                    // TO DO: open permissions for successfully logged in user
                 
                 // toggle isUserLoggedIn property upon success
                 UserController.shared.isUserLoggedIn = true
@@ -122,7 +125,6 @@ class UserLoginViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             } else {
                 
-                // TO DO: question on these errors, distinguishing between something network related and incorrect username/password match
                 self.errorMessageStackViewOutlet.isHidden = false
                 self.errorLine1LabelOutlet.text = "Apologies. We may be having a problem on our end."
                 self.errorLine2LabelOutlet.text = "Please try again later."
@@ -141,13 +143,9 @@ class UserLoginViewController: UIViewController {
         let mainView: UIStoryboard = UIStoryboard(name: "UserAuthentication", bundle: nil)
         // instantiate the desired TableViewController as ViewController on relevant storyboard
         let destViewController = mainView.instantiateViewController(withIdentifier: "toUserCreateAccount")
-        // create the segue programmatically
-        self.navigationController?.pushViewController(destViewController, animated: true)
+        // create the modal segue programmatically
+        self.present(destViewController, animated: true, completion: nil)
         // set the desired properties of the destinationVC's navgation Item
-        let backButtonItem = UIBarButtonItem()
-        backButtonItem.title = "Login"
-        navigationItem.backBarButtonItem = backButtonItem
-        
     }
     
     

@@ -167,8 +167,8 @@ class UserCreateAccountViewController: UIViewController {
         let mainView: UIStoryboard = UIStoryboard(name: "UserAuthentication", bundle: nil)
         // instantiate the desired TableViewController as ViewController on relevant storyboard
         let destViewController = mainView.instantiateViewController(withIdentifier: "toUserLogin")
-        // create the segue programmatically
-        self.navigationController?.pushViewController(destViewController, animated: true)
+        // create the modal segue programmatically
+        self.present(destViewController, animated: true, completion: nil)
         // set the desired properties of the destinationVC's navgation Item
         let backButtonItem = UIBarButtonItem()
         backButtonItem.title = "Create Account"
