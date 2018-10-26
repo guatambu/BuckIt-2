@@ -40,10 +40,15 @@ class MyListTableViewController: UITableViewController {
         bucketList = MyListController.shared.myBucketListItems
         
         // add round profile pic as button
+        let squareDimensions: CGFloat = 40.0
         let button = UIButton.init(type: .custom)
         button.setImage(dylon.mockProfilePic, for: UIControl.State.normal)
-        button.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40) //CGRectMake(0, 0, 30, 30)
-        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        
+        button.widthAnchor.constraint(equalToConstant: squareDimensions).isActive = true
+        button.heightAnchor.constraint(equalToConstant: squareDimensions).isActive = true
+        guard let buttonImageView = button.imageView else { return }
+        buttonImageView.layer.cornerRadius = 0.5 * squareDimensions
+        buttonImageView.clipsToBounds = true
         
         // add action to the button
         button.addTarget(self, action: #selector(profileButtonTapped(sender:)), for: .touchUpInside)
@@ -54,12 +59,6 @@ class MyListTableViewController: UITableViewController {
         
         // set TVC title to user.username
         self.title = dylon.username
-        
-        // set bottom of nav bar border color
-        
-        //if design team wants to have a more specific border in terms of the width of the border then we need a .jpg of their border to be plugged in here:
-        // self.navigationController?.navigationBar.shadowImage = UIImage(named: <#T##String#>)
-        
     }
     
     override func viewDidLoad() {
