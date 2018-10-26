@@ -39,5 +39,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need to access your photo library to upload a profile image</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need to access your camera to capture a profile image</string>
 </dict>
 </plist>

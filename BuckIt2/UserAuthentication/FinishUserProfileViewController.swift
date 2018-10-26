@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinishUserProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class FinishUserProfileViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - Properties
     
@@ -18,9 +18,6 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     @IBOutlet weak var errorMessageViewOutlet: UIView!
     @IBOutlet weak var errorMessageLine1LabelOutlet: UILabel!
     @IBOutlet weak var errorMessageLine2LabelOutlet: UILabel!
-    // email credentials outlets
-    @IBOutlet weak var emailLabelOutlet: UILabel!
-    @IBOutlet weak var emailTextFieldOutlet: UITextField!
     // profile pic credentials
     @IBOutlet weak var profilePicLabelOutlet: UILabel!
     // macro aggreagte profile pic view
@@ -34,6 +31,23 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     // actual selected image profile pic preview complex
     @IBOutlet weak var profilePicPreviewOutlet: DesignableView!
     @IBOutlet weak var profilePicPreviewImageViewOutlet: UIImageView!
+    // email credentials outlets
+    @IBOutlet weak var emailLabelOutlet: UILabel!
+    @IBOutlet weak var emailTextFieldOutlet: UITextField!
+    // first name outlets
+    @IBOutlet weak var firstNameLabelOutlet: UILabel!
+    @IBOutlet weak var firstNameTextFieldOutlet: UITextField!
+    // last name outlets
+    @IBOutlet weak var lastNameLabelOutlet: UILabel!
+    @IBOutlet weak var lastNameTextFieldOutlet: UITextField!
+    // your location outlets
+    @IBOutlet weak var yourLocationLabelOutlet: UILabel!
+    @IBOutlet weak var yourLocationTextFieldOutlet: UITextField!
+    // user bio outlets
+    @IBOutlet weak var userBioLabelOutlet: UILabel!
+    @IBOutlet weak var userBioTextViewOutlet: UITextView!
+    // characters remaining count label outlet
+    @IBOutlet weak var charactersRemainingLabelOutlet: UILabel!
     
     // relevant constraints
     @IBOutlet weak var userMessagesActionViewTopConstraint: NSLayoutConstraint!
@@ -63,6 +77,8 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // UITextView delegate
+        userBioTextViewOutlet.delegate = self
         // dismiss keyboard when tap anywhere on screen
         self.hideKeyboardOnRandomScreenTap()
     }
@@ -76,69 +92,15 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     }
     
     @IBAction func addProfilePicButtonTapped(_ sender: Any) {
-        
-        selectStillImage()
-        
+        // allow user to snap or uplaod a profile pic
+        presentImagePicker()
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         
-        // *****  firebase functionality  *****
-    }
-    
-    
-    
-    
-    // MARK: - Helper Methods
-    
-    // Image Picker for camera roll
-    
-    func selectStillImage() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            
-            let photoPicker = UIImagePickerController()
-            photoPicker.delegate = self
-            photoPicker.allowsEditing = true
-            photoPicker.allowsEditing = true
-            present(photoPicker, animated: true, completion: nil)
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPhotoWithInfo info: [String: Any]) {
-        
-        var newImage: UIImage
-        
-        if let possibleImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
-            newImage = possibleImage
-            isProfilePicSelected = true
-        } else if let possibleImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-            newImage = possibleImage
-            isProfilePicSelected = true
-        } else {
-            isProfilePicSelected = false
-            return
-        }
-        
-        // set image to profile pic imageViewer
-        if isProfilePicSelected {
-            placeholderProfilePicImageViewOutlet.isHidden = true
-            profilePicPreviewOutlet.isHidden = false
-            profilePicPreviewImageViewOutlet.image = newImage
-            // set constraints to move chooseProfilePicButtonImageOutlet constraints to accommodate preview pic
-        } else {
-            placeholderProfilePicImageViewOutlet.isHidden = false
-            profilePicPreviewOutlet.isHidden = true
-            // set constraints to move chooseProfilePicButtonImageOutlet constraints to accommodate placeholderProfilePicImageViewOutlet
-        }
-        
-        dismiss(animated: true, completion: nil)
         
     }
-    
-    func photoPickerControllerDismiss(_ photoPicker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+
     
     // MARK: - Helper Methods
     
@@ -190,3 +152,46 @@ extension FinishUserProfileViewController: UITextFieldDelegate {
         moveViewDown()
     }
 }
+
+
+// MARK: - UINavigationControllerDelegate
+extension FinishUserProfileViewController: UINavigationControllerDelegate {
+}
+
+
+// MARK: - UIImagePickerControllerDelegate
+extension FinishUserProfileViewController: UIImagePickerControllerDelegate {
+    func presentImagePicker() {
+       
+        let imagePickerActionSheet = UIAlertController(title: "Snap/Upload Image",
+                                                       message: nil, preferredStyle: .actionSheet)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraButton = UIAlertAction(title: "Take Photo",
+                                             style: .default) { (alert) -> Void in
+                                                let imagePicker = UIImagePickerController()
+                                                imagePicker.delegate = self
+                                                imagePicker.sourceType = .camera
+                                                self.present(imagePicker, animated: true)
+            }
+            imagePickerActionSheet.addAction(cameraButton)
+        }
+        
+        let libraryButton = UIAlertAction(title: "Choose Existing",
+                                          style: .default) { (alert) -> Void in
+                                            let imagePicker = UIImagePickerController()
+                                            imagePicker.delegate = self
+                                            imagePicker.sourceType = .photoLibrary
+                                            self.present(imagePicker, animated: true)
+        }
+        imagePickerActionSheet.addAction(libraryButton)
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
+        imagePickerActionSheet.addAction(cancelButton)
+        
+        present(imagePickerActionSheet, animated: true)
+    }
+}
+
+
+
