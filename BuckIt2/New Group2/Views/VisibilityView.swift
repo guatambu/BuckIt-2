@@ -61,8 +61,8 @@ class VisibilityView: UIView {
     // MARK: - Subviews
     private lazy var visibilityImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .green
         view.tintColor = tint
+        view.contentMode = .scaleAspectFit
         return view
     }()
     

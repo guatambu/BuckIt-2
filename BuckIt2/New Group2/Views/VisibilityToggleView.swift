@@ -12,13 +12,11 @@ class VisibilityToggleView: UIView {
 
     lazy var privateVisibilityView: VisibilityView = {
         let view = VisibilityView(type: .privateVisibility)
-        view.backgroundColor = .orange
         return view
     }()
     
     lazy var publicVisibilityView: VisibilityView = {
         let view = VisibilityView(type: .publicVisibility)
-        view.backgroundColor = .blue
         return view
     }()
     
@@ -58,9 +56,6 @@ class VisibilityToggleView: UIView {
         stackView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         stackView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        
-        
-        backgroundColor = .red
     }
 }
 
