@@ -324,7 +324,7 @@
                                                     <color key="tintColor" red="0.99215686270000003" green="0.36078431370000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.99215686270000003" green="0.36078431370000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="1" green="0.2274509804" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="4"/>
@@ -342,15 +342,14 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mz5-Jq-pfQ" userLabel="New Goal Stack">
                                             <rect key="frame" x="16" y="124" width="130" height="40"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yO-sN-pNU" userLabel="Add Item Button Outlet" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yO-sN-pNU" userLabel="Add Item Button Outlet" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="0.99215686270000003" green="0.36078431370000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="8gh-VS-mw0"/>
                                                         <constraint firstAttribute="height" constant="40" id="DBB-zo-DxX"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                    <state key="normal">
+                                                    <state key="normal" image="addItem">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -380,7 +379,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="mz5-Jq-pfQ" firstAttribute="top" secondItem="tPT-ih-Coz" secondAttribute="bottom" constant="24" id="3w8-B9-0Ar"/>
                                         <constraint firstItem="tPT-ih-Coz" firstAttribute="centerX" secondItem="rcs-db-ocD" secondAttribute="centerX" id="F0d-rx-lvc"/>
                                         <constraint firstItem="mz5-Jq-pfQ" firstAttribute="leading" secondItem="rcs-db-ocD" secondAttribute="leading" constant="16" id="GRp-3q-pQa"/>
                                         <constraint firstItem="tPT-ih-Coz" firstAttribute="top" secondItem="rcs-db-ocD" secondAttribute="top" constant="12" id="GXe-MS-vMo"/>
@@ -388,6 +386,7 @@
                                         <constraint firstAttribute="bottom" secondItem="mz5-Jq-pfQ" secondAttribute="bottom" constant="16" id="dGQ-Wy-ojD"/>
                                         <constraint firstItem="ePL-Ix-kX1" firstAttribute="leading" secondItem="rcs-db-ocD" secondAttribute="leading" constant="15" id="kPo-fK-Xb1"/>
                                         <constraint firstAttribute="bottom" secondItem="ePL-Ix-kX1" secondAttribute="bottom" id="mor-Uk-fvM"/>
+                                        <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="tPT-ih-Coz" secondAttribute="bottom" constant="80" id="tTT-wS-uqM"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -398,17 +397,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="8PM-i5-Z69">
-                                                    <rect key="frame" x="15" y="12" width="93.5" height="32"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="8PM-i5-Z69">
+                                                    <rect key="frame" x="15" y="13" width="93.5" height="32"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTL-Yo-DYi" userLabel="Add Item Button Outlet" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTL-Yo-DYi" userLabel="Add Item Button Outlet" customClass="DesignableButton" customModule="BuckIt2" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="32" id="gqH-0h-jpl"/>
                                                                 <constraint firstAttribute="height" constant="32" id="hMA-xM-F38"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                             <state key="normal">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -417,16 +415,22 @@
                                                                     <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                                    <size key="value" width="1" height="1"/>
+                                                                    <size key="value" width="2" height="2"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="3"/>
+                                                                    <real key="value" value="2"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                                     <real key="value" value="4"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.38665506109999997" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                                    <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
@@ -440,11 +444,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="PTL-Yo-DYi" firstAttribute="leading" secondItem="8PM-i5-Z69" secondAttribute="leading" constant="22" id="S0a-ch-2fQ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="PTL-Yo-DYi" secondAttribute="bottom" constant="12" id="TMf-yE-PSI"/>
-                                                        <constraint firstItem="PTL-Yo-DYi" firstAttribute="top" secondItem="8PM-i5-Z69" secondAttribute="top" constant="12" id="jsy-Lj-1gu"/>
-                                                    </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgc-MX-eZn">
                                                     <rect key="frame" x="363" y="0.0" width="12" height="57.5"/>
@@ -453,9 +452,9 @@
                                                         <constraint firstAttribute="width" constant="12" id="YxC-RZ-wvV"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="privateEye" translatesAutoresizingMaskIntoConstraints="NO" id="A9q-52-3PA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="private" translatesAutoresizingMaskIntoConstraints="NO" id="A9q-52-3PA">
                                                     <rect key="frame" x="333" y="18" width="22" height="22"/>
-                                                    <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="1" green="0.2274509804" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="bOJ-2m-ZRo"/>
                                                         <constraint firstAttribute="width" constant="22" id="uwL-ih-iyJ"/>
@@ -463,10 +462,12 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="8PM-i5-Z69" firstAttribute="centerY" secondItem="ymv-fg-fkL" secondAttribute="centerY" id="AZF-U0-xrP"/>
                                                 <constraint firstItem="qgc-MX-eZn" firstAttribute="top" secondItem="ymv-fg-fkL" secondAttribute="top" id="Ihm-eT-vYW"/>
                                                 <constraint firstAttribute="trailing" secondItem="qgc-MX-eZn" secondAttribute="trailing" id="XJw-31-46n"/>
                                                 <constraint firstItem="A9q-52-3PA" firstAttribute="centerY" secondItem="ymv-fg-fkL" secondAttribute="centerY" id="ita-f9-XnQ"/>
                                                 <constraint firstItem="qgc-MX-eZn" firstAttribute="leading" secondItem="A9q-52-3PA" secondAttribute="trailing" constant="8" id="r9P-T7-k8p"/>
+                                                <constraint firstItem="8PM-i5-Z69" firstAttribute="leading" secondItem="ymv-fg-fkL" secondAttribute="leadingMargin" id="sjJ-nS-YJY"/>
                                                 <constraint firstAttribute="bottom" secondItem="qgc-MX-eZn" secondAttribute="bottom" id="tfp-Oo-Y0h"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -527,10 +528,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addItem" width="40" height="40"/>
         <image name="addPhoto" width="700" height="700"/>
         <image name="cancelButton" width="700" height="700"/>
         <image name="myListSelected" width="20" height="25"/>
         <image name="myListUnselected" width="20" height="25"/>
-        <image name="privateEye" width="22" height="19"/>
+        <image name="private" width="22" height="19"/>
     </resources>
 </document>

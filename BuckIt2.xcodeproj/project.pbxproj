@@ -30,6 +30,7 @@
 		D765AD622180E5ED0072864E /* MyListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD612180E5ED0072864E /* MyListHeaderView.swift */; };
 		D765AD66218110120072864E /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD65218110120072864E /* Stylesheet.swift */; };
 		D765AD692181658B0072864E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D765AD682181658B0072864E /* Main.storyboard */; };
+		D77F78932183A76E00B8DFFE /* VisibilityToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77F78922183A76E00B8DFFE /* VisibilityToggleView.swift */; };
 		D78FA665218018C0009B94A8 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78FA664218018C0009B94A8 /* UserAuthentication.storyboard */; };
 		D78FA66A218018E6009B94A8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA666218018E4009B94A8 /* ForgotPasswordViewController.swift */; };
 		D78FA66B218018E6009B94A8 /* FinishUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA667218018E5009B94A8 /* FinishUserProfileViewController.swift */; };
@@ -37,6 +38,7 @@
 		D78FA66D218018E6009B94A8 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA669218018E6009B94A8 /* UserLoginViewController.swift */; };
 		D78FA66F2180193D009B94A8 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA66E2180193D009B94A8 /* IBDesignables.swift */; };
 		D78FA67321801A64009B94A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA67221801A64009B94A8 /* User.swift */; };
+		D795EF9F21829FEB007D2747 /* VisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795EF9E21829FEB007D2747 /* VisibilityView.swift */; };
 		D7A151E4217522D400520CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A151E3217522D400520CEA /* Assets.xcassets */; };
 		D7A151E621757DA900520CEA /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E521757DA900520CEA /* MessageListCell.swift */; };
 		D7A151EA21757DF300520CEA /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */; };
@@ -112,6 +114,7 @@
 		D765AD612180E5ED0072864E /* MyListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListHeaderView.swift; sourceTree = "<group>"; };
 		D765AD65218110120072864E /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		D765AD682181658B0072864E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D77F78922183A76E00B8DFFE /* VisibilityToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityToggleView.swift; sourceTree = "<group>"; };
 		D78FA664218018C0009B94A8 /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuthentication.storyboard; sourceTree = "<group>"; };
 		D78FA666218018E4009B94A8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		D78FA667218018E5009B94A8 /* FinishUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishUserProfileViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		D78FA669218018E6009B94A8 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		D78FA66E2180193D009B94A8 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignables.swift; sourceTree = "<group>"; };
 		D78FA67221801A64009B94A8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D795EF9E21829FEB007D2747 /* VisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityView.swift; sourceTree = "<group>"; };
 		D7A151E3217522D400520CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A151E521757DA900520CEA /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
 		D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				D765AD5E2180CFF40072864E /* MyListTableViewCell.swift */,
+				D77F78922183A76E00B8DFFE /* VisibilityToggleView.swift */,
+				D795EF9E21829FEB007D2747 /* VisibilityView.swift */,
 				D765AD612180E5ED0072864E /* MyListHeaderView.swift */,
 			);
 			path = Views;
@@ -647,11 +653,11 @@
 			children = (
 				D765AD592180C4A20072864E /* MyListTableViewController.swift */,
 				D765AD5A2180C4A30072864E /* MyListViewController.swift */,
+				FA270EC321730222001643D0 /* MyListNewItemViewController.swift */,
 				D765AD582180C4A20072864E /* UserProfileDetailViewController.swift */,
 				FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */,
 				FA270EC021730221001643D0 /* MyBucketViewController.swift */,
 				FA270EC221730222001643D0 /* MyListDetailItemViewController.swift */,
-				FA270EC321730222001643D0 /* MyListNewItemViewController.swift */,
 				FA270EC121730222001643D0 /* MyListPhotoPickerViewController.swift */,
 				FA270EC521730223001643D0 /* MyListSettingsViewController.swift */,
 			);
@@ -894,11 +900,13 @@
 				38ACDD81217A90B30081D6D3 /* QuickAddButton.swift in Sources */,
 				FA270ECA21730224001643D0 /* MyListNewItemViewController.swift in Sources */,
 				FA270EC821730224001643D0 /* MyListPhotoPickerViewController.swift in Sources */,
+				D77F78932183A76E00B8DFFE /* VisibilityToggleView.swift in Sources */,
 				D78FA66D218018E6009B94A8 /* UserLoginViewController.swift in Sources */,
 				D765AD5B2180C4A30072864E /* UserProfileDetailViewController.swift in Sources */,
 				FA270EB6217301B1001643D0 /* AuthManager.swift in Sources */,
 				381ABCEB2179387400873190 /* InspirationAddToListViewController.swift in Sources */,
 				FA270EAF217301A0001643D0 /* AppDelegate.swift in Sources */,
+				D795EF9F21829FEB007D2747 /* VisibilityView.swift in Sources */,
 				D78FA66F2180193D009B94A8 /* IBDesignables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

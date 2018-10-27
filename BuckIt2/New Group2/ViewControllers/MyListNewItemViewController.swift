@@ -11,7 +11,9 @@ import UIKit
 class MyListNewItemViewController: UIViewController {
     
     // MARK: - Outlets
+    var visibilityType: VisibilityType = .publicVisibility
     
+    @IBOutlet weak var visibilityToggleView: VisibilityToggleView!
     @IBOutlet weak var goalNametextField: UITextField! {
         didSet {
             additionalInfoTextView.layer.borderWidth = goalNametextField.layer.borderWidth
@@ -25,9 +27,8 @@ class MyListNewItemViewController: UIViewController {
     @IBOutlet weak var publicLabel: UILabel!
     @IBOutlet weak var additionalInfoTextView: UITextView!
     @IBOutlet weak var goalImageView: UIImageView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
-    
+    @IBOutlet weak var publicVisibilityView: VisibilityView!
+    @IBOutlet weak var privateVisibilityView: VisibilityView!
     var textFieldBorderWidth: CGFloat = 0
     var textFieldBorderColor: CGColor!
     
@@ -37,9 +38,9 @@ class MyListNewItemViewController: UIViewController {
 
         
         setupGoalImageView()
+        
+        
 
-        scrollView.isUserInteractionEnabled = true
-        contentView.isUserInteractionEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,19 +50,17 @@ class MyListNewItemViewController: UIViewController {
     }
 
     // MARK: - UI
-    private func setupEyes() {
+    private func setupVisibilityViews() {
+        privateVisibilityView.delegate = self
+        publicVisibilityView.delegate = self
+        
         
     }
     
     private func setupTextView() {
         additionalInfoTextView.layer.borderColor = UIColor(hexString: "#cdcdcd").cgColor
-        
-//        let textFieldCornerRadius = goalNametextField.layer.cornerRadius
-//        let textFieldBorderWidth = goalNametextField.layer.borderWidth
         additionalInfoTextView.layer.cornerRadius = 5
         additionalInfoTextView.layer.borderWidth = 0.5
-        
-//        additionalInfoTextView.clipsToBounds = true
         additionalInfoTextView.text = ""
     }
     
@@ -112,4 +111,14 @@ extension MyListNewItemViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
     }
+}
+
+// MARK: - VisibilityViewDelegate
+extension MyListNewItemViewController: VisibilityViewDelegate {
+    func visibilityView(_ view: VisibilityView, willToggleVisibilityTypeOnTap: Any) {
+        print("🤶\(#function)")
+        
+        
+    }
+    
 }

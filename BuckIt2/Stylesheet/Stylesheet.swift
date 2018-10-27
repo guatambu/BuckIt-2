@@ -10,6 +10,8 @@ import UIKit
 
 enum GojiTheme {
     case primaryPink
+    case grayishBrown_38
+    case grayishBrown
 }
 
 extension GojiTheme {
@@ -17,6 +19,8 @@ extension GojiTheme {
         get {
             switch self {
             case .primaryPink: return UIColor(hexString: "#fd5c63")
+            case .grayishBrown_38: return UIColor(hexString: "#4a4a4a", alpha: 0.38)
+            case .grayishBrown: return UIColor(hexString: "#4a4a4a")
             }
         }
     }

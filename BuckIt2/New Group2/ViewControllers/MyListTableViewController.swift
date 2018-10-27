@@ -124,7 +124,7 @@ class MyListTableViewController: UIViewController {
             newGoalStackView.arrangedSubviews.areVisible()
         case 1:
             displayedBucketItems = completedItems
-            newGoalStackView.arrangedSubviews.areHidden()
+            newGoalStackView.isHidden = true
         default:
             print("not an acceptable choice from the two segmented controller options in MyListTableViewController.swift")
         }
@@ -139,6 +139,15 @@ class MyListTableViewController: UIViewController {
         present(myListNewItemViewController, animated: true, completion: nil)
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "" {
+            let destinationVC = segue.destination as? MyListDetailItemViewController
+            guard let index = tableView.indexPathForSelectedRow?.row else { return }
+            
+            
+        }
+    }
 }
 
 // MARK: - UITableViewTableSource
@@ -167,6 +176,10 @@ extension MyListTableViewController: UITableViewDataSource {
 extension MyListTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 58
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "", sender: self)
     }
 }
 
