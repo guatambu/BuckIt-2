@@ -38,9 +38,7 @@ class MyListNewItemViewController: UIViewController {
 
         
         setupGoalImageView()
-        
-        
-
+        setupVisibilityViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,10 +49,8 @@ class MyListNewItemViewController: UIViewController {
 
     // MARK: - UI
     private func setupVisibilityViews() {
-        privateVisibilityView.delegate = self
-        publicVisibilityView.delegate = self
-        
-        
+        visibilityToggleView.privateVisibilityView.delegate = self
+        visibilityToggleView.publicVisibilityView.delegate = self
     }
     
     private func setupTextView() {
@@ -120,5 +116,4 @@ extension MyListNewItemViewController: VisibilityViewDelegate {
         
         
     }
-    
 }

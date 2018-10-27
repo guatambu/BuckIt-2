@@ -310,6 +310,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		D77F78942184F4B500B8DFFE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		D7A151E721757DB900520CEA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				D78FA66E2180193D009B94A8 /* IBDesignables.swift */,
-				D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */,
 				D711BE59217BB36000F70341 /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
@@ -360,6 +367,7 @@
 				FA270ECE2173023A001643D0 /* MyListTab */,
 				FA270D9D2172F8B4001643D0 /* UserAuthentication */,
 				FA270EB8217301BC001643D0 /* Networking */,
+				D77F78942184F4B500B8DFFE /* Protocols */,
 				D7A151E821757DD900520CEA /* Extensions */,
 				FA270EAD2173015A001643D0 /* Resources */,
 				FA270D952172F866001643D0 /* Info.plist */,

@@ -211,9 +211,18 @@
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYS-Fg-Gyy" userLabel="None" customClass="DesignableView" customModule="BuckIt2" customModuleProvider="target">
                                                                 <rect key="frame" x="280" y="0.0" width="50" height="32"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorNone" translatesAutoresizingMaskIntoConstraints="NO" id="8jy-aO-Tte">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                                                                    </imageView>
+                                                                </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="8jy-aO-Tte" firstAttribute="leading" secondItem="wYS-Fg-Gyy" secondAttribute="leading" id="1Ja-Bv-pLV"/>
                                                                     <constraint firstAttribute="width" constant="32" id="3Dq-8Z-o1r"/>
+                                                                    <constraint firstItem="8jy-aO-Tte" firstAttribute="top" secondItem="wYS-Fg-Gyy" secondAttribute="top" id="5Ug-hJ-pEf"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="8jy-aO-Tte" secondAttribute="bottom" id="L4C-wi-Yft"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="8jy-aO-Tte" secondAttribute="trailing" id="Mt0-f5-zN2"/>
                                                                     <constraint firstAttribute="height" constant="32" id="fB9-WI-JJx"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
@@ -390,6 +399,7 @@
     </scenes>
     <resources>
         <image name="close" width="22" height="22"/>
+        <image name="colorNone" width="32" height="32"/>
         <image name="defaultPhoto" width="700" height="700"/>
         <image name="uploadPhoto" width="68" height="57"/>
     </resources>

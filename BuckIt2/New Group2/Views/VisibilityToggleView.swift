@@ -10,23 +10,23 @@ import UIKit
 
 class VisibilityToggleView: UIView {
 
-    lazy var privateVisiblityView: VisibilityView = {
+    lazy var privateVisibilityView: VisibilityView = {
         let view = VisibilityView(type: .privateVisibility)
         view.backgroundColor = .orange
         return view
     }()
     
-    lazy var publicVisiblityView: VisibilityView = {
-        let view = VisibilityView()
+    lazy var publicVisibilityView: VisibilityView = {
+        let view = VisibilityView(type: .publicVisibility)
         view.backgroundColor = .blue
         return view
     }()
     
     private lazy var stackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [privateVisiblityView, publicVisiblityView])
-        view.axis = .vertical
+        let view = UIStackView(arrangedSubviews: [privateVisibilityView, publicVisibilityView])
+        view.axis = .horizontal
         view.alignment = .center
-        view.distribution = .fillEqually
+        view.distribution = .fill
         view.spacing = 4
         return view
     }()
@@ -63,3 +63,4 @@ class VisibilityToggleView: UIView {
         backgroundColor = .red
     }
 }
+
