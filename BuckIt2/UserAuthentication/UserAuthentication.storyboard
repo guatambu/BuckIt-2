@@ -902,6 +902,10 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WEP-5u-yT5">
+                                                <rect key="frame" x="150" y="362" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -983,6 +987,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="320" height="904"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="WEP-5u-yT5" id="liM-9Y-gUa"/>
                         <outlet property="addProfilePicViewOutlet" destination="r6H-Zh-ju6" id="gWz-2C-568"/>
                         <outlet property="charactersRemainingLabelOutlet" destination="y9i-Zp-BcV" id="eXi-Lf-YGm"/>
                         <outlet property="chooseProfilePicButtonImageOutlet" destination="I3p-AO-UaE" id="SJk-Ns-1tK"/>

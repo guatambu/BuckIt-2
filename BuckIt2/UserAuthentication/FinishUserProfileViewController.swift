@@ -12,6 +12,9 @@ class FinishUserProfileViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - Properties
     
+    // activity indicator outlet
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // title
     @IBOutlet weak var finishProfileLabelOutlet: UILabel!
     // error messaging
@@ -191,7 +194,44 @@ extension FinishUserProfileViewController: UIImagePickerControllerDelegate {
         
         present(imagePickerActionSheet, animated: true)
     }
+    
+    private func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+ 
+        if let selectedPhoto = info["UIImagePickerControllerOriginalImage"] as? UIImage,
+            let scaledImage = selectedPhoto.scaleImage(640) {
+       
+            activityIndicator.startAnimating()
+       
+            dismiss(animated: true, completion: {
+                self.placeholderProfilePicImageViewOutlet.image = scaledImage
+                self.activityIndicator.stopAnimating()
+            })
+        }
+    }
 }
 
 
+// MARK: - UIImage extension
+extension UIImage {
+    func scaleImage(_ maxDimension: CGFloat) -> UIImage? {
+        
+        var scaledSize = CGSize(width: maxDimension, height: maxDimension)
+        
+        if size.width > size.height {
+            let scaleFactor = size.height / size.width
+            scaledSize.height = scaledSize.width * scaleFactor
+        } else {
+            let scaleFactor = size.width / size.height
+            scaledSize.width = scaledSize.height * scaleFactor
+        }
+        
+        UIGraphicsBeginImageContext(scaledSize)
+        draw(in: CGRect(origin: .zero, size: scaledSize))
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return scaledImage
+    }
+}
 
