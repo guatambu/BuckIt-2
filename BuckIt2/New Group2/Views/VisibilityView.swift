@@ -85,10 +85,11 @@ class VisibilityView: UIView {
     }()
     
     // MARK: - Init
-    convenience init(type: VisibilityType = .publicVisibility) {
+    convenience init(type: VisibilityType = .publicVisibility, isToggled: Bool) {
         self.init(frame: .zero)
         
         self.type = type
+        self.isToggled = isToggled
 
         updateView()
         
@@ -133,10 +134,10 @@ class VisibilityView: UIView {
         switch type {
         case .publicVisibility:
             textLabel.text = type.value.capitalized
-            visibilityImageView.image = UIImage(named: type.value)?.withRenderingMode(.alwaysOriginal)
+            visibilityImageView.image = UIImage(named: type.value)?.withRenderingMode(.alwaysTemplate)
         case .privateVisibility:
             textLabel.text = type.value.capitalized
-            visibilityImageView.image = UIImage(named: type.value)?.withRenderingMode(.alwaysOriginal)
+            visibilityImageView.image = UIImage(named: type.value)?.withRenderingMode(.alwaysTemplate)
         }
         
         switch isToggled {
@@ -144,12 +145,10 @@ class VisibilityView: UIView {
             tint = GojiTheme.primaryPink.value
             visibilityImageView.tintColor = tint
             textLabel.textColor = tint
-            textLabel.isHidden = false
         case false:
             tint = GojiTheme.grayishBrown_38.value
             visibilityImageView.tintColor = tint
-            textLabel.textColor = tint
-            textLabel.isHidden = false
+            textLabel.textColor = .clear
         }
         
     }

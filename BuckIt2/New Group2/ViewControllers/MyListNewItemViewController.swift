@@ -112,8 +112,13 @@ extension MyListNewItemViewController: UIScrollViewDelegate {
 // MARK: - VisibilityViewDelegate
 extension MyListNewItemViewController: VisibilityViewDelegate {
     func visibilityView(_ view: VisibilityView, willToggleVisibilityTypeOnTap: Any) {
-        print("🤶\(#function)")
+        if view.isToggled {
+            return
+        }
         
+        visibilityToggleView.privateVisibilityView.isToggled = !visibilityToggleView.privateVisibilityView.isToggled
+        visibilityToggleView.publicVisibilityView.isToggled = !visibilityToggleView.publicVisibilityView.isToggled
         
+        visibilityToggleView.updateVisibilityViews()
     }
 }

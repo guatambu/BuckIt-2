@@ -11,12 +11,12 @@ import UIKit
 class VisibilityToggleView: UIView {
 
     lazy var privateVisibilityView: VisibilityView = {
-        let view = VisibilityView(type: .privateVisibility)
+        let view = VisibilityView(type: .privateVisibility, isToggled: false)
         return view
     }()
     
     lazy var publicVisibilityView: VisibilityView = {
-        let view = VisibilityView(type: .publicVisibility)
+        let view = VisibilityView(type: .publicVisibility, isToggled: true)
         return view
     }()
     
@@ -56,6 +56,11 @@ class VisibilityToggleView: UIView {
         stackView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         stackView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+    }
+    
+    func updateVisibilityViews() {
+        privateVisibilityView.toggleVisibilty()
+        publicVisibilityView.toggleVisibilty()
     }
 }
 
