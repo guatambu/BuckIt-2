@@ -61,7 +61,7 @@ class VisibilityView: UIView {
     // MARK: - Subviews
     private lazy var visibilityImageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleAspectFit
+        view.backgroundColor = .green
         view.tintColor = tint
         return view
     }()
@@ -109,6 +109,9 @@ class VisibilityView: UIView {
     
     // MARK: - UI
     func updateView() {
+        visibilityImageView.translatesAutoresizingMaskIntoConstraints = false
+        visibilityImageView.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        visibilityImageView.widthAnchor.constraint(equalToConstant: 32).isActive = true
         
         [stackView].forEach {
             addSubview($0)

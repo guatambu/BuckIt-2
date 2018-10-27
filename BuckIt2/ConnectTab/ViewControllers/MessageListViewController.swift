@@ -31,6 +31,8 @@ class MessageListViewController: UIViewController {
         messageListTableView.dataSource = self
         messageListTableView.delegate = self
         
+        navigationItem.title = "Messages"
+        
         updateView()
     }
 

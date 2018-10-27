@@ -32,6 +32,8 @@ class InspirationHomeViewController: UIViewController {
         
         setupScopeBar()
         setUPUI()
+        
+        navigationItem.title = "Goji"
     }
 
 }
@@ -91,8 +93,6 @@ extension InspirationHomeViewController: UICollectionViewDelegate, UICollectionV
         inspirationCollectionView.contentInset = UIEdgeInsets(top: 23, left: 10, bottom: 10, right: 10)
         guard let layout = inspirationCollectionView.collectionViewLayout as? InspirationLayout else { return }
         layout.delegate = self
-        
-        title = "whatever the buck"
     }
 
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {

@@ -26,7 +26,7 @@ class VisibilityToggleView: UIView {
         let view = UIStackView(arrangedSubviews: [privateVisibilityView, publicVisibilityView])
         view.axis = .horizontal
         view.alignment = .center
-        view.distribution = .fill
+        view.distribution = .fillEqually
         view.spacing = 4
         return view
     }()
