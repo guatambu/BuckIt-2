@@ -2,7 +2,7 @@
 //  UserLoginViewController.swift
 //  BuckIt
 //
-//  Created by Kelly Johnson on 10/12/18.
+//  Created by Michael Guatambu Davis on 10/12/18.
 //  Copyright © 2018 Jason Goodney. All rights reserved.
 //
 
@@ -11,6 +11,7 @@ import UIKit
 class UserLoginViewController: UIViewController {
     
     // MARK: - Properties
+    
     @IBOutlet weak var loginLabelOutlet: UILabel!
     @IBOutlet weak var emailUsernameLabelOutlet: UILabel!
     @IBOutlet weak var emailUsernameTextFieldOutlet: UITextField!
@@ -21,6 +22,14 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var errorLine1LabelOutlet: UILabel!
     @IBOutlet weak var errorLine2LabelOutlet: UILabel!
     
+    // relevant constraints
+    @IBOutlet weak var userMessageStackViewTopConstraint: NSLayoutConstraint!
+    let originalTopMarginForUserMessageStackView: CGFloat = 16
+    
+    // relevant instances
+    let authManager = AuthManager()
+    
+    // mockData local data source
     var users = [MockDataUsers.dylon, MockDataUsers.luisa, MockDataUsers.maggie, MockDataUsers.park, MockDataUsers.rodrigo, MockDataUsers.sangita]
     
     
@@ -33,7 +42,8 @@ class UserLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // dismiss keyboard when tap anywhere on screen
+        self.hideKeyboardOnRandomScreenTap()
     }
     
     
@@ -53,8 +63,8 @@ class UserLoginViewController: UIViewController {
         let mainView: UIStoryboard = UIStoryboard(name: "UserAuthentication", bundle: nil)
         // instantiate the desired TableViewController as ViewController on relevant storyboard
         let destViewController = mainView.instantiateViewController(withIdentifier: "toForgotPassword")
-        // create the segue programmatically
-        self.navigationController?.pushViewController(destViewController, animated: true)
+        // create the modal segue programmatically
+        self.present(destViewController, animated: true, completion: nil)
         // set the desired properties of the destinationVC's navgation Item
         let backButtonItem = UIBarButtonItem()
         backButtonItem.title = "Login"
@@ -67,7 +77,7 @@ class UserLoginViewController: UIViewController {
         guard let emailUsername = emailUsernameTextFieldOutlet.text, emailUsernameTextFieldOutlet.text != "" else {
         
             errorMessageStackViewOutlet.isHidden = false
-            errorLine1LabelOutlet.text = "Please enter your username or email address."
+            errorLine1LabelOutlet.text = "Please enter your email address."
             
             return
         }
@@ -80,27 +90,54 @@ class UserLoginViewController: UIViewController {
             return
         }
         
+        // **** START    mock data solution
         for user in users {
             
-            if (emailUsername != user.username) || (emailUsername != user.email) {
+            if (emailUsername != user.email) {
+                
                 errorMessageStackViewOutlet.isHidden = false
-                errorLine1LabelOutlet.text = "Please enter a valid username or email address."
-            } else if ((emailUsername == user.username) && (password != user.password)) || ((emailUsername == user.email) && (password != user.password)) {
+                errorLine1LabelOutlet.text = "We do not recognize your email address."
+                errorLine2LabelOutlet.text = "Please try again."
+                
+            } else if (emailUsername == user.email) && (password != user.password) {
                 
                 errorMessageStackViewOutlet.isHidden = false
                 errorLine1LabelOutlet.text = "We do not recoginze your password."
                 errorLine2LabelOutlet.text = "Please check your password and try again."
             
-            } else if ((emailUsername == user.username) && (password == user.password)) || ((emailUsername == user.email) && (password == user.password)) {
+            } else if (emailUsername == user.email) && (password == user.password) {
                 
-                // successful login allowing for valid user features to be avaialble in app
+                print("login successful")
                 
-        // *****  firebase functionality  *****
+                UserController.shared.isUserLoggedIn = true
                 
                 // pop viewController
                 self.navigationController?.popViewController(animated: true)
             }
         }
+        // ***** END mock data solution
+        
+        // ***** START firebase solution
+        
+        authManager.signIn(withEmail: emailUsername, password: password) { (success) in
+            
+            if success {
+                
+                // toggle isUserLoggedIn property upon success
+                UserController.shared.isUserLoggedIn = true
+                
+                // return user to where they were in the nav stack
+                // pop viewController
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                
+                self.errorMessageStackViewOutlet.isHidden = false
+                self.errorLine1LabelOutlet.text = "Apologies. We may be having a problem on our end."
+                self.errorLine2LabelOutlet.text = "Please try again later."
+            }
+        }
+        
+        // ***** END firebase solution
         
     }
     
@@ -112,13 +149,35 @@ class UserLoginViewController: UIViewController {
         let mainView: UIStoryboard = UIStoryboard(name: "UserAuthentication", bundle: nil)
         // instantiate the desired TableViewController as ViewController on relevant storyboard
         let destViewController = mainView.instantiateViewController(withIdentifier: "toUserCreateAccount")
-        // create the segue programmatically
-        self.navigationController?.pushViewController(destViewController, animated: true)
+        // create the modal segue programmatically
+        self.present(destViewController, animated: true, completion: nil)
         // set the desired properties of the destinationVC's navgation Item
-        let backButtonItem = UIBarButtonItem()
-        backButtonItem.title = "Login"
-        navigationItem.backBarButtonItem = backButtonItem
+    }
+    
+    
+    // MARK: - Helper Methods
+    
+    // move view up to accommodate keyboard presentaiton
+    func moveViewUp() {
         
+        if userMessageStackViewTopConstraint.constant != originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant -= 135
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // move view down to accommodate keyboard presentaiton
+    func moveViewDown() {
+        if userMessageStackViewTopConstraint.constant == originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant = originalTopMarginForUserMessageStackView
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     
@@ -133,3 +192,32 @@ class UserLoginViewController: UIViewController {
     */
 
 }
+
+
+// MARK: - UITextFieldDelegate
+extension UserLoginViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveViewUp()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveViewDown()
+    }
+}
+
+
+// MARK: - Dismiss keyboard via tap anywhere gesture recognizer
+
+extension UIViewController {
+    func hideKeyboardOnRandomScreenTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+

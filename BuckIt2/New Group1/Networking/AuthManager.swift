@@ -13,25 +13,6 @@ class AuthManager {
     
     // Create User
     func createAccount(withEmail email: String, password: String, username: String,
-                       compeltion: @escaping (_ success: Bool) -> Void) {
-        Endpoint.auth.createUser(withEmail: email, password: password) { (authDataResult, error) in
-            if let error = error {
-                print("🔥 Error creating user: \(#function) \(error) \(error.localizedDescription)")
-                compeltion(false)
-                return
-            }
-            
-            guard let user = authDataResult?.user else {
-                compeltion(false)
-                return
-            }
-            
-            // TODO: - Handle User
-            
-        }
-    }
-    
-    func createAccount(withEmail email: String, password: String, username: String,
                        completion: @escaping (_ user: AuthDataResult?, _ error: Error?) -> Void) {
         Endpoint.auth.createUser(withEmail: email, password: password) { (authDataResult, error) in
             if let error = error {
@@ -141,7 +122,7 @@ class AuthManager {
         
         Endpoint.auth.sendPasswordReset(withEmail: email) { (error) in
             if let error = error {
-                print("Error send the user a password reset email: \(#function) \(error) \(error.localizedDescription)")
+                print("Error sending the user a password reset email: \(#function) \(error) \(error.localizedDescription)")
                 compeltion(false)
                 return
             }

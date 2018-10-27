@@ -2,7 +2,7 @@
 //  ForgotPasswordViewController.swift
 //  BuckIt2
 //
-//  Created by Kelly Johnson on 10/21/18.
+//  Created by Michael Guatambu Davis on 10/21/18.
 //  Copyright © 2018 DunDak, LLC. All rights reserved.
 //
 
@@ -21,14 +21,24 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var emailTextFieldOutlet: UITextField!
     @IBOutlet weak var sendEmailButtonOutlet: DesignableButton!
     
+    // relevant constraints
+    @IBOutlet weak var userMessageStackViewTopConstraint: NSLayoutConstraint!
+    let originalTopMarginForUserMessageStackView: CGFloat = 16
     
+    let authManager = AuthManager()
+
     
     // MARK: - ViewController Lifecycle Functions
+    
+    override func viewWillAppear(_ animated: Bool) {
+        errorMessageStackView.isHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // dismiss keyboard when tap anywhere on screen
+        self.hideKeyboardOnRandomScreenTap()
     }
     
     
@@ -41,10 +51,55 @@ class ForgotPasswordViewController: UIViewController {
     
     @IBAction func sendEmailButtonTapped(_ sender: Any) {
         
-        // **** check with dev team:
-    // *****  firebase fuctionality  *****
+        guard let userEmailInput = emailTextFieldOutlet.text, emailTextFieldOutlet.text != "" else {
+            errorMessageStackView.isHidden = false
+            errorMessageLine1LabelOutlet.text = "Oops! No email, no password reset."
+            errorMessageLine2LabelOutlet.text = "Please enter your email in the field below."
+            return
+        }
+        
+        // send user the email to reset their password
+        authManager.sendPassworReset(toEmail: userEmailInput) { (success) in
+            if success {
+                // return user to where they were in the nav stack
+                // pop viewController
+                self.navigationController?.popViewController(animated: true)
+                
+            } else {
+                self.errorMessageStackView.isHidden = false
+                self.errorMessageLine1LabelOutlet.text = "Apologies. We may be having a problem on our end."
+                self.errorMessageLine2LabelOutlet.text = "Please try again later."
+            }
+        }
+        
         
     }
+    
+    // MARK: - Helper Methods
+    
+    // move view up to accommodate keyboard presentaiton
+    func moveViewUp() {
+        
+        if userMessageStackViewTopConstraint.constant != originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant -= 135
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // move view down to accommodate keyboard presentaiton
+    func moveViewDown() {
+        if userMessageStackViewTopConstraint.constant == originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessageStackViewTopConstraint.constant = originalTopMarginForUserMessageStackView
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
     
     /*
     // MARK: - Navigation
@@ -56,4 +111,17 @@ class ForgotPasswordViewController: UIViewController {
     }
     */
 
+}
+
+
+// MARK: - UITextFieldDelegate
+extension ForgotPasswordViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveViewUp()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveViewDown()
+    }
 }

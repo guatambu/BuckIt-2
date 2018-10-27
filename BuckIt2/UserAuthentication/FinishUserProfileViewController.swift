@@ -2,7 +2,7 @@
 //  FinishUserProfileViewController.swift
 //  BuckIt2
 //
-//  Created by Kelly Johnson on 10/21/18.
+//  Created by Michael Guatambu Davis on 10/21/18.
 //  Copyright © 2018 DunDak, LLC. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     // title
     @IBOutlet weak var finishProfileLabelOutlet: UILabel!
     // error messaging
-    @IBOutlet weak var errorMessageStackView: UIStackView!
+    @IBOutlet weak var errorMessageViewOutlet: UIView!
     @IBOutlet weak var errorMessageLine1LabelOutlet: UILabel!
     @IBOutlet weak var errorMessageLine2LabelOutlet: UILabel!
     // email credentials outlets
@@ -34,6 +34,10 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     // actual selected image profile pic preview complex
     @IBOutlet weak var profilePicPreviewOutlet: DesignableView!
     @IBOutlet weak var profilePicPreviewImageViewOutlet: UIImageView!
+    
+    // relevant constraints
+    @IBOutlet weak var userMessagesActionViewTopConstraint: NSLayoutConstraint!
+    let originalTopMarginForUserMessageStackView: CGFloat = 16
     
     var userAccount: User?
     
@@ -59,9 +63,8 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
-        // Do any additional setup after loading the view.
+        // dismiss keyboard when tap anywhere on screen
+        self.hideKeyboardOnRandomScreenTap()
     }
     
     
@@ -84,15 +87,6 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
     // MARK: - Helper Methods
@@ -143,5 +137,56 @@ class FinishUserProfileViewController: UIViewController, UINavigationControllerD
     
     func photoPickerControllerDismiss(_ photoPicker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Helper Methods
+    
+    // move view up to accommodate keyboard presentaiton
+    func moveViewUp() {
+        
+        if userMessagesActionViewTopConstraint.constant != originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessagesActionViewTopConstraint.constant -= 135
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // move view down to accommodate keyboard presentaiton
+    func moveViewDown() {
+        if userMessagesActionViewTopConstraint.constant == originalTopMarginForUserMessageStackView {
+            return
+        }
+        userMessagesActionViewTopConstraint.constant = originalTopMarginForUserMessageStackView
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
+
+
+// MARK: - UITextFieldDelegate
+extension FinishUserProfileViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveViewUp()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveViewDown()
     }
 }

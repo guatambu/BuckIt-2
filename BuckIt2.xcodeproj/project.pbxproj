@@ -44,6 +44,7 @@
 		D7A151EA21757DF300520CEA /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */; };
 		D7A151EC2175856C00520CEA /* MockDataMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151EB2175856C00520CEA /* MockDataMessages.swift */; };
 		D7E0805321766504006A8076 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0805221766504006A8076 /* ChatViewController.swift */; };
+		FA20F53E21815FD1002E3DC8 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20F53D21815FD1002E3DC8 /* UserController.swift */; };
 		FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */; };
 		FA270D772172F66D001643D0 /* BuckIt2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D762172F66D001643D0 /* BuckIt2Tests.swift */; };
 		FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D892172F82C001643D0 /* LaunchScreen.storyboard */; };
@@ -128,6 +129,7 @@
 		D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		D7A151EB2175856C00520CEA /* MockDataMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessages.swift; sourceTree = "<group>"; };
 		D7E0805221766504006A8076 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		FA20F53D21815FD1002E3DC8 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FA270D5B2172F66B001643D0 /* BuckIt2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuckIt2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA270D662172F66B001643D0 /* BuckIt2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuckIt2.xcdatamodel; sourceTree = "<group>"; };
 		FA270D722172F66D001643D0 /* BuckIt2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuckIt2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -335,6 +337,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FA20F53C21815FAA002E3DC8 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA20F53D21815FD1002E3DC8 /* UserController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
 		FA270D522172F66B001643D0 = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +496,7 @@
 		FA270E5F2173007C001643D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA20F53C21815FAA002E3DC8 /* ModelControllers */,
 				FA270E552173006F001643D0 /* BucketList.swift */,
 				FA270E502173006D001643D0 /* BucketListItem.swift */,
 				FA270E542173006F001643D0 /* BucketListItemComment.swift */,
@@ -897,6 +908,7 @@
 				381ABCED217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift in Sources */,
 				FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */,
 				FA270E5C21730070001643D0 /* BucketListItemComment.swift in Sources */,
+				FA20F53E21815FD1002E3DC8 /* UserController.swift in Sources */,
 				3821021B2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift in Sources */,
 				FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */,
 				FA270EC921730224001643D0 /* MyListDetailItemViewController.swift in Sources */,
