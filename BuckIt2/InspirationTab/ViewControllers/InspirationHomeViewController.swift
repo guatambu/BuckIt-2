@@ -17,13 +17,16 @@ class InspirationHomeViewController: UIViewController {
     // MARK: - Properties
     var bucketListItem: BucketListItem?
     
+    
+    // MockData
     let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
                 "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
                 "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
                 "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
                 "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
     
-    var filteredData: [String]!
+    var searching = false
+    var filteredData: [String] = []
     
     
     // MARK: - Lifecycle Functions
@@ -35,52 +38,39 @@ class InspirationHomeViewController: UIViewController {
         
         navigationItem.title = "Goji"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationItem.hidesSearchBarWhenScrolling = true
+    }
 
 }
 
 
-extension InspirationHomeViewController: UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+extension InspirationHomeViewController: UISearchBarDelegate {
     
     // Setup the Scope Bar
     func setupScopeBar() {
-        let searchController = UISearchController(searchResultsController: InspirationSearchViewController())
+        let searchResultsTableVC = InspirationSearchTableViewController()
+        let searchController = UISearchController(searchResultsController: searchResultsTableVC)
         searchController.searchBar.delegate = self
         self.navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.scopeButtonTitles = ["ideas", "people"]
-        searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
-        
-        let resultsController = UISearchContainerViewController(searchController: searchController)
-        
+        searchController.searchResultsUpdater = searchResultsTableVC
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         //filterSearchController(searchBar)
-    }
-    
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        //filterSearchController(searchController.searchBar)
-//        guard let searchText = searchController.searchBar.text else { return }
-//        filteredData = searchText.isEmpty ? data : data.filter({( dataString: String) -> Bool in
-//            return dataString.rangeOfCharacter(from: searchText, options: .caseInsensitive) != nil
-//        })
-        
-//        tableView.reloadData()
-    }
-    
-    
-    
-    
-    // Search Results Tableview
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
-        return cell
     }
 }
 
@@ -107,7 +97,7 @@ extension InspirationHomeViewController: UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "inspirationCell", for: indexPath) as? InspirationCollectionViewCell
         let bucketListitem = MockDataBucketListItems.mockDataItems[indexPath.row]
         cell?.bucketListItem = bucketListitem
-        
+
         return cell ?? UICollectionViewCell()
     }
 
@@ -120,7 +110,10 @@ extension InspirationHomeViewController: UICollectionViewDelegate, UICollectionV
                 let indexPath = inspirationCollectionView.indexPath(for: cell) else { return }
             let bucketListItem = MockDataBucketListItems.mockDataItems[indexPath.row] as BucketListItem
             destinationVC?.bucketListItem = bucketListItem
+            
+            destinationVC?.view.translatesAutoresizingMaskIntoConstraints = true
             navigationItem.backBarButtonItem = UIBarButtonItem(customView: UIImageView(image: #imageLiteral(resourceName: "back")))
+            navigationItem.backBarButtonItem?.tintColor = .white
         }
     }
 }
