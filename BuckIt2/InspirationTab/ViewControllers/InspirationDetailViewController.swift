@@ -88,7 +88,7 @@ class InspirationDetailViewController: UIViewController {
             quickAddButton.titleLabel?.textAlignment = .center
             quickAddButton.titleLabel?.adjustsFontSizeToFitWidth = true
             quickAddButton.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-            // MyListController.shared.myItems.append(thisItem)
+            // MyListController.myItems.append(thisItem)
         } else {
             quickAddButton.setImage(nil, for: .normal)
             quickAddButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -96,7 +96,7 @@ class InspirationDetailViewController: UIViewController {
             quickAddButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             quickAddButton.titleLabel?.textAlignment = .center
             quickAddButton.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.3607843137, blue: 0.3647058824, alpha: 1)
-            // MyListController.shared.myItems.remove(thisItem)
+            // MyListController.myItems.remove(thisItem)
         }
     }
     
@@ -190,17 +190,23 @@ extension InspirationDetailViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        var count = 0
-        
-        if tableView == sharingTableView {
-            count = MockDataUsers.shared.getMockUsers().count
-        } else if tableView == adviseTableView {
-            count = bucketListItem?.mockPhoto?.count ?? 0
-        }
-        
-        return count
+
+        return 0
     }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+//
+//        var count = 0
+//        
+//        if tableView == sharingTableView {
+//            count = MockDataUsers.getMockUsers().count
+//        } else if tableView == adviseTableView {
+//            count = bucketListItem?.mockPhoto?.count ?? 0
+//        }
+//        
+//        return count
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

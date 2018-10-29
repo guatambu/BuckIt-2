@@ -2,7 +2,7 @@
 //  guatambuToDo.swift
 //  BuckIt
 //
-//  Created by Kelly Johnson on 10/10/18.
+//  Created by Michael Guatambu Davis on 10/10/18.
 //  Copyright © 2018 Jason Goodney. All rights reserved.
 //
 
@@ -21,3 +21,12 @@ import Foundation
     // 5 users
         // profile pic switch to hard coded mockdata profile pic
     // 25 bucket list items
+
+// Thoughts and Musings...
+
+    // roses are red
+    // violets are blue
+    // i am a git noob
+    // it drives bonkers, so bonkers that i want to eat my shoe
+
+    // hopefully this UserAuth branch works ok

@@ -1,0 +1,1110 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		381ABCEB2179387400873190 /* InspirationAddToListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381ABCEA2179387400873190 /* InspirationAddToListViewController.swift */; };
+		381ABCED217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381ABCEC217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift */; };
+		3821021B2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */; };
+		3821021C2177A74C00F6A361 /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
+		384F2B4421751320003DC49B /* MyList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBC21730215001643D0 /* MyList.storyboard */; };
+		384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */; };
+		384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBF21730216001643D0 /* MyListNewItem.storyboard */; };
+		384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270EBE21730216001643D0 /* MyListSettings.storyboard */; };
+		38ABCCFD21754B7300608F0F /* (null) in Resources */ = {isa = PBXBuildFile; };
+<<<<<<< HEAD
+		38ABCD002175543400608F0F /* InspirationItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */; };
+=======
+		38ACDD81217A90B30081D6D3 /* QuickAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */; };
+>>>>>>> 053e9010cb475cdfb04dc3424fec72612d477883
+		65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */; };
+		D711BE5A217BB36000F70341 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711BE59217BB36000F70341 /* UIViewController+Alert.swift */; };
+		D711BE5C217BDE3000F70341 /* MessageChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711BE5B217BDE3000F70341 /* MessageChat.storyboard */; };
+		D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74FD8C92177E81600A4965F /* Conversation.swift */; };
+		D758FDD72173EC3600A3B11D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */; };
+		D7A151E4217522D400520CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A151E3217522D400520CEA /* Assets.xcassets */; };
+		D7A151E621757DA900520CEA /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E521757DA900520CEA /* MessageListCell.swift */; };
+		D7A151EA21757DF300520CEA /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */; };
+		D7A151EC2175856C00520CEA /* MockDataMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151EB2175856C00520CEA /* MockDataMessages.swift */; };
+		D7E0805321766504006A8076 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0805221766504006A8076 /* ChatViewController.swift */; };
+		FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */; };
+		FA270D772172F66D001643D0 /* BuckIt2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D762172F66D001643D0 /* BuckIt2Tests.swift */; };
+		FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D892172F82C001643D0 /* LaunchScreen.storyboard */; };
+		FA270D9A2172F8AD001643D0 /* UserCreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */; };
+		FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270D982172F8AD001643D0 /* UserLoginViewController.swift */; };
+		FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */; };
+		FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E202172FA1A001643D0 /* InspirationLayout.swift */; };
+		FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */; };
+		FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E262172FA28001643D0 /* InspirationHome.storyboard */; };
+		FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E272172FA28001643D0 /* InspirationSearch.storyboard */; };
+		FA270E302172FA32001643D0 /* InspirationOtherUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2C2172FA31001643D0 /* InspirationOtherUserViewController.swift */; };
+		FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2D2172FA31001643D0 /* InspirationDetailViewController.swift */; };
+		FA270E322172FA32001643D0 /* InspirationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2E2172FA31001643D0 /* InspirationHomeViewController.swift */; };
+		FA270E332172FA32001643D0 /* InspirationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E2F2172FA31001643D0 /* InspirationSearchViewController.swift */; };
+		FA270E362172FA3A001643D0 /* InspirationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */; };
+		FA270E422172FAE9001643D0 /* MessageCompose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E3E2172FAE8001643D0 /* MessageCompose.storyboard */; };
+		FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E3F2172FAE8001643D0 /* MessageSearchandCompose.storyboard */; };
+		FA270E442172FAE9001643D0 /* MessageList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E402172FAE8001643D0 /* MessageList.storyboard */; };
+		FA270E452172FAE9001643D0 /* MessageSearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA270E412172FAE9001643D0 /* MessageSearchUser.storyboard */; };
+		FA270E492172FAF0001643D0 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E462172FAEF001643D0 /* MessageListViewController.swift */; };
+		FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E472172FAEF001643D0 /* MessageSearchUserViewController.swift */; };
+		FA270E4B2172FAF0001643D0 /* MessageComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E482172FAF0001643D0 /* MessageComposeViewController.swift */; };
+		FA270E5721730070001643D0 /* MockDataUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E4F2173006D001643D0 /* MockDataUsers.swift */; };
+		FA270E5821730070001643D0 /* BucketListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E502173006D001643D0 /* BucketListItem.swift */; };
+		FA270E5921730070001643D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E512173006D001643D0 /* User.swift */; };
+		FA270E5A21730070001643D0 /* guatambuToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E522173006D001643D0 /* guatambuToDo.swift */; };
+		FA270E5B21730070001643D0 /* MockDataBucketListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E532173006E001643D0 /* MockDataBucketListItems.swift */; };
+		FA270E5C21730070001643D0 /* BucketListItemComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E542173006F001643D0 /* BucketListItemComment.swift */; };
+		FA270E5D21730070001643D0 /* BucketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E552173006F001643D0 /* BucketList.swift */; };
+		FA270E5E21730070001643D0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270E562173006F001643D0 /* Message.swift */; };
+		FA270EAF217301A0001643D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EAE217301A0001643D0 /* AppDelegate.swift */; };
+		FA270EB4217301B1001643D0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EB0217301B0001643D0 /* Endpoint.swift */; };
+		FA270EB5217301B1001643D0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EB1217301B0001643D0 /* DatabaseManager.swift */; };
+		FA270EB6217301B1001643D0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EB2217301B1001643D0 /* AuthManager.swift */; };
+		FA270EB7217301B1001643D0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EB3217301B1001643D0 /* StorageManager.swift */; };
+		FA270EC721730224001643D0 /* MyBucketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC021730221001643D0 /* MyBucketViewController.swift */; };
+		FA270EC821730224001643D0 /* MyListPhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC121730222001643D0 /* MyListPhotoPickerViewController.swift */; };
+		FA270EC921730224001643D0 /* MyListDetailItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC221730222001643D0 /* MyListDetailItemViewController.swift */; };
+		FA270ECA21730224001643D0 /* MyListNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC321730222001643D0 /* MyListNewItemViewController.swift */; };
+		FA270ECB21730224001643D0 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC421730223001643D0 /* MyListViewController.swift */; };
+		FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC521730223001643D0 /* MyListSettingsViewController.swift */; };
+		FA270ECD21730224001643D0 /* MyBucketNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA270D732172F66D001643D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA270D532172F66B001643D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA270D5A2172F66B001643D0;
+			remoteInfo = BuckIt2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		337F76051CD56D4F0C968831 /* Pods-BuckIt2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.release.xcconfig"; sourceTree = "<group>"; };
+		381ABCEA2179387400873190 /* InspirationAddToListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationAddToListViewController.swift; sourceTree = "<group>"; };
+		381ABCEC217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationPersonalizeAddedItemViewController.swift; sourceTree = "<group>"; };
+		3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemDetailPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuckIt2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2.debug.xcconfig"; sourceTree = "<group>"; };
+		38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddButton.swift; sourceTree = "<group>"; };
+		87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuckIt2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D711BE59217BB36000F70341 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		D711BE5B217BDE3000F70341 /* MessageChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageChat.storyboard; sourceTree = "<group>"; };
+		D74FD8C92177E81600A4965F /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D7A151E3217522D400520CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7A151E521757DA900520CEA /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
+		D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		D7A151EB2175856C00520CEA /* MockDataMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataMessages.swift; sourceTree = "<group>"; };
+		D7E0805221766504006A8076 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		FA270D5B2172F66B001643D0 /* BuckIt2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuckIt2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA270D662172F66B001643D0 /* BuckIt2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuckIt2.xcdatamodel; sourceTree = "<group>"; };
+		FA270D722172F66D001643D0 /* BuckIt2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuckIt2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA270D762172F66D001643D0 /* BuckIt2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuckIt2Tests.swift; sourceTree = "<group>"; };
+		FA270D782172F66D001643D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA270D892172F82C001643D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA270D952172F866001643D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreateAccountViewController.swift; sourceTree = "<group>"; };
+		FA270D982172F8AD001643D0 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
+		FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuthentication.storyboard; sourceTree = "<group>"; };
+		FA270E202172FA1A001643D0 /* InspirationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationLayout.swift; sourceTree = "<group>"; };
+		FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationItemDetail.storyboard; sourceTree = "<group>"; };
+		FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationOtherUser.storyboard; sourceTree = "<group>"; };
+		FA270E262172FA28001643D0 /* InspirationHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationHome.storyboard; sourceTree = "<group>"; };
+		FA270E272172FA28001643D0 /* InspirationSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InspirationSearch.storyboard; sourceTree = "<group>"; };
+		FA270E2C2172FA31001643D0 /* InspirationOtherUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationOtherUserViewController.swift; sourceTree = "<group>"; };
+		FA270E2D2172FA31001643D0 /* InspirationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationDetailViewController.swift; sourceTree = "<group>"; };
+		FA270E2E2172FA31001643D0 /* InspirationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationHomeViewController.swift; sourceTree = "<group>"; };
+		FA270E2F2172FA31001643D0 /* InspirationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationSearchViewController.swift; sourceTree = "<group>"; };
+		FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA270E3E2172FAE8001643D0 /* MessageCompose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageCompose.storyboard; sourceTree = "<group>"; };
+		FA270E3F2172FAE8001643D0 /* MessageSearchandCompose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageSearchandCompose.storyboard; sourceTree = "<group>"; };
+		FA270E402172FAE8001643D0 /* MessageList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageList.storyboard; sourceTree = "<group>"; };
+		FA270E412172FAE9001643D0 /* MessageSearchUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageSearchUser.storyboard; sourceTree = "<group>"; };
+		FA270E462172FAEF001643D0 /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
+		FA270E472172FAEF001643D0 /* MessageSearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSearchUserViewController.swift; sourceTree = "<group>"; };
+		FA270E482172FAF0001643D0 /* MessageComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposeViewController.swift; sourceTree = "<group>"; };
+		FA270E4F2173006D001643D0 /* MockDataUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataUsers.swift; sourceTree = "<group>"; };
+		FA270E502173006D001643D0 /* BucketListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItem.swift; sourceTree = "<group>"; };
+		FA270E512173006D001643D0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA270E522173006D001643D0 /* guatambuToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guatambuToDo.swift; sourceTree = "<group>"; };
+		FA270E532173006E001643D0 /* MockDataBucketListItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataBucketListItems.swift; sourceTree = "<group>"; };
+		FA270E542173006F001643D0 /* BucketListItemComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListItemComment.swift; sourceTree = "<group>"; };
+		FA270E552173006F001643D0 /* BucketList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketList.swift; sourceTree = "<group>"; };
+		FA270E562173006F001643D0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FA270E652173010F001643D0 /* food_cart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food_cart.jpg; sourceTree = "<group>"; };
+		FA270E662173010F001643D0 /* palm_read.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = palm_read.jpg; sourceTree = "<group>"; };
+		FA270E672173010F001643D0 /* milk_cow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = milk_cow.jpg; sourceTree = "<group>"; };
+		FA270E682173010F001643D0 /* seaplane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seaplane.jpg; sourceTree = "<group>"; };
+		FA270E692173010F001643D0 /* message_bottle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = message_bottle.jpg; sourceTree = "<group>"; };
+		FA270E6A2173010F001643D0 /* dalai_lama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dalai_lama.jpg; sourceTree = "<group>"; };
+		FA270E6B2173010F001643D0 /* sleep_yurt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sleep_yurt.jpg; sourceTree = "<group>"; };
+		FA270E6C2173010F001643D0 /* make_perfume.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = make_perfume.jpg; sourceTree = "<group>"; };
+		FA270E6D2173010F001643D0 /* snowboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snowboard.jpg; sourceTree = "<group>"; };
+		FA270E6E2173010F001643D0 /* charter_yacht.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charter_yacht.jpg; sourceTree = "<group>"; };
+		FA270E6F2173010F001643D0 /* see_eclipse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = see_eclipse.jpg; sourceTree = "<group>"; };
+		FA270E702173010F001643D0 /* polar_plunge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = polar_plunge.jpg; sourceTree = "<group>"; };
+		FA270E712173010F001643D0 /* nude_beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nude_beach.jpg; sourceTree = "<group>"; };
+		FA270E722173010F001643D0 /* improv_class.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = improv_class.jpg; sourceTree = "<group>"; };
+		FA270E732173010F001643D0 /* feed_homeless.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feed_homeless.jpg; sourceTree = "<group>"; };
+		FA270E742173010F001643D0 /* color_run.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = color_run.jpg; sourceTree = "<group>"; };
+		FA270E752173010F001643D0 /* fire_eat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fire_eat.jpg; sourceTree = "<group>"; };
+		FA270E762173010F001643D0 /* trapeze.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trapeze.jpg; sourceTree = "<group>"; };
+		FA270E772173010F001643D0 /* see_indycar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = see_indycar.jpg; sourceTree = "<group>"; };
+		FA270E782173010F001643D0 /* opera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = opera.jpg; sourceTree = "<group>"; };
+		FA270E792173010F001643D0 /* hang_glide.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hang_glide.jpg; sourceTree = "<group>"; };
+		FA270E7A2173010F001643D0 /* molecular_gastronomy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = molecular_gastronomy.jpg; sourceTree = "<group>"; };
+		FA270E7B2173010F001643D0 /* meet_leader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meet_leader.jpg; sourceTree = "<group>"; };
+		FA270E7C2173010F001643D0 /* kids_book.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kids_book.jpg; sourceTree = "<group>"; };
+		FA270E7D2173010F001643D0 /* ted_talk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ted_talk.jpg; sourceTree = "<group>"; };
+		FA270E7F2173010F001643D0 /* park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = park.jpg; sourceTree = "<group>"; };
+		FA270E802173010F001643D0 /* rodrigo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rodrigo.jpg; sourceTree = "<group>"; };
+		FA270E812173010F001643D0 /* sangita.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sangita.jpg; sourceTree = "<group>"; };
+		FA270E822173010F001643D0 /* maggie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maggie.jpg; sourceTree = "<group>"; };
+		FA270E832173010F001643D0 /* luisa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = luisa.jpg; sourceTree = "<group>"; };
+		FA270E842173010F001643D0 /* dylon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dylon.jpg; sourceTree = "<group>"; };
+		FA270E852173010F001643D0 /* whatevs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whatevs.png; sourceTree = "<group>"; };
+		FA270E8921730110001643D0 /* park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = park.jpg; sourceTree = "<group>"; };
+		FA270E8A21730110001643D0 /* rodrigo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rodrigo.jpg; sourceTree = "<group>"; };
+		FA270E8B21730110001643D0 /* sangita.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sangita.jpg; sourceTree = "<group>"; };
+		FA270E8C21730110001643D0 /* maggie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maggie.jpg; sourceTree = "<group>"; };
+		FA270E8D21730110001643D0 /* luisa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = luisa.jpg; sourceTree = "<group>"; };
+		FA270E8E21730110001643D0 /* dylon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dylon.jpg; sourceTree = "<group>"; };
+		FA270E9021730110001643D0 /* food_cart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food_cart.jpg; sourceTree = "<group>"; };
+		FA270E9121730110001643D0 /* palm_read.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = palm_read.jpg; sourceTree = "<group>"; };
+		FA270E9221730110001643D0 /* milk_cow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = milk_cow.jpg; sourceTree = "<group>"; };
+		FA270E9321730110001643D0 /* seaplane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seaplane.jpg; sourceTree = "<group>"; };
+		FA270E9421730110001643D0 /* message_bottle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = message_bottle.jpg; sourceTree = "<group>"; };
+		FA270E9521730110001643D0 /* dalai_lama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dalai_lama.jpg; sourceTree = "<group>"; };
+		FA270E9621730110001643D0 /* sleep_yurt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sleep_yurt.jpg; sourceTree = "<group>"; };
+		FA270E9721730110001643D0 /* make_perfume.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = make_perfume.jpg; sourceTree = "<group>"; };
+		FA270E9821730110001643D0 /* snowboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snowboard.jpg; sourceTree = "<group>"; };
+		FA270E9921730110001643D0 /* charter_yacht.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charter_yacht.jpg; sourceTree = "<group>"; };
+		FA270E9A21730110001643D0 /* see_eclipse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = see_eclipse.jpg; sourceTree = "<group>"; };
+		FA270E9B21730110001643D0 /* polar_plunge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = polar_plunge.jpg; sourceTree = "<group>"; };
+		FA270E9C21730110001643D0 /* nude_beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nude_beach.jpg; sourceTree = "<group>"; };
+		FA270E9D21730110001643D0 /* improv_class.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = improv_class.jpg; sourceTree = "<group>"; };
+		FA270E9E21730110001643D0 /* feed_homeless.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feed_homeless.jpg; sourceTree = "<group>"; };
+		FA270E9F21730110001643D0 /* color_run.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = color_run.jpg; sourceTree = "<group>"; };
+		FA270EA021730110001643D0 /* fire_eat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fire_eat.jpg; sourceTree = "<group>"; };
+		FA270EA121730110001643D0 /* trapeze.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trapeze.jpg; sourceTree = "<group>"; };
+		FA270EA221730110001643D0 /* see_indycar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = see_indycar.jpg; sourceTree = "<group>"; };
+		FA270EA321730110001643D0 /* opera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = opera.jpg; sourceTree = "<group>"; };
+		FA270EA421730110001643D0 /* hang_glide.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hang_glide.jpg; sourceTree = "<group>"; };
+		FA270EA521730110001643D0 /* molecular_gastronomy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = molecular_gastronomy.jpg; sourceTree = "<group>"; };
+		FA270EA621730110001643D0 /* meet_leader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meet_leader.jpg; sourceTree = "<group>"; };
+		FA270EA721730110001643D0 /* kids_book.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kids_book.jpg; sourceTree = "<group>"; };
+		FA270EA821730110001643D0 /* ted_talk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ted_talk.jpg; sourceTree = "<group>"; };
+		FA270EAB21730110001643D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA270EAE217301A0001643D0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA270EB0217301B0001643D0 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FA270EB1217301B0001643D0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		FA270EB2217301B1001643D0 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		FA270EB3217301B1001643D0 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyListDetailItem.storyboard; sourceTree = "<group>"; };
+		FA270EBC21730215001643D0 /* MyList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyList.storyboard; sourceTree = "<group>"; };
+		FA270EBE21730216001643D0 /* MyListSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyListSettings.storyboard; sourceTree = "<group>"; };
+		FA270EBF21730216001643D0 /* MyListNewItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyListNewItem.storyboard; sourceTree = "<group>"; };
+		FA270EC021730221001643D0 /* MyBucketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBucketViewController.swift; sourceTree = "<group>"; };
+		FA270EC121730222001643D0 /* MyListPhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListPhotoPickerViewController.swift; sourceTree = "<group>"; };
+		FA270EC221730222001643D0 /* MyListDetailItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListDetailItemViewController.swift; sourceTree = "<group>"; };
+		FA270EC321730222001643D0 /* MyListNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListNewItemViewController.swift; sourceTree = "<group>"; };
+		FA270EC421730223001643D0 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
+		FA270EC521730223001643D0 /* MyListSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListSettingsViewController.swift; sourceTree = "<group>"; };
+		FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBucketNewItemViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA270D582172F66B001643D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65F8600159F4C99712905A00 /* Pods_BuckIt2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA270D6F2172F66D001643D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7A151E721757DB900520CEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7A151E521757DA900520CEA /* MessageListCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7A151E821757DD900520CEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */,
+				D711BE59217BB36000F70341 /* UIViewController+Alert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E10A3A576B0B2A143FB855E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */,
+				337F76051CD56D4F0C968831 /* Pods-BuckIt2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA270D522172F66B001643D0 = {
+			isa = PBXGroup;
+			children = (
+				FA270D5D2172F66B001643D0 /* BuckIt2 */,
+				FA270D752172F66D001643D0 /* BuckIt2Tests */,
+				FA270D5C2172F66B001643D0 /* Products */,
+				E10A3A576B0B2A143FB855E2 /* Pods */,
+				FEA2C744C91B8B24223C4355 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA270D5C2172F66B001643D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D5B2172F66B001643D0 /* BuckIt2.app */,
+				FA270D722172F66D001643D0 /* BuckIt2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA270D5D2172F66B001643D0 /* BuckIt2 */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */,
+				FA270E5F2173007C001643D0 /* Models */,
+				FA270E4E2172FB1A001643D0 /* ConnectTab */,
+				FA270E382172FA48001643D0 /* InspirationTab */,
+				FA270ECE2173023A001643D0 /* MyListTab */,
+				FA270D9D2172F8B4001643D0 /* UserAuthentication */,
+				FA270EB8217301BC001643D0 /* Networking */,
+				D7A151E821757DD900520CEA /* Extensions */,
+				FA270EAD2173015A001643D0 /* Resources */,
+				FA270D952172F866001643D0 /* Info.plist */,
+				FA270D892172F82C001643D0 /* LaunchScreen.storyboard */,
+			);
+			path = BuckIt2;
+			sourceTree = "<group>";
+		};
+		FA270D752172F66D001643D0 /* BuckIt2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D762172F66D001643D0 /* BuckIt2Tests.swift */,
+				FA270D782172F66D001643D0 /* Info.plist */,
+			);
+			path = BuckIt2Tests;
+			sourceTree = "<group>";
+		};
+		FA270D9D2172F8B4001643D0 /* UserAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				FA270D992172F8AD001643D0 /* UserAuthentication.storyboard */,
+				FA270D972172F8AD001643D0 /* UserCreateAccountViewController.swift */,
+				FA270D982172F8AD001643D0 /* UserLoginViewController.swift */,
+			);
+			path = UserAuthentication;
+			sourceTree = "<group>";
+		};
+		FA270E382172FA48001643D0 /* InspirationTab */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E3A2172FA70001643D0 /* ViewControllers */,
+				FA270E3B2172FA80001643D0 /* Views */,
+				FA270E3C2172FA92001643D0 /* Layout */,
+				FA270E392172FA60001643D0 /* Storyboards */,
+			);
+			path = InspirationTab;
+			sourceTree = "<group>";
+		};
+		FA270E392172FA60001643D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E262172FA28001643D0 /* InspirationHome.storyboard */,
+				FA270E242172FA27001643D0 /* InspirationItemDetail.storyboard */,
+				FA270E272172FA28001643D0 /* InspirationSearch.storyboard */,
+				FA270E252172FA28001643D0 /* InspirationOtherUser.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA270E3A2172FA70001643D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E2E2172FA31001643D0 /* InspirationHomeViewController.swift */,
+				FA270E2D2172FA31001643D0 /* InspirationDetailViewController.swift */,
+				FA270E2C2172FA31001643D0 /* InspirationOtherUserViewController.swift */,
+				FA270E2F2172FA31001643D0 /* InspirationSearchViewController.swift */,
+				381ABCEA2179387400873190 /* InspirationAddToListViewController.swift */,
+				381ABCEC217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA270E3B2172FA80001643D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E342172FA39001643D0 /* InspirationCollectionViewCell.swift */,
+				3821021A2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift */,
+				38ACDD80217A90B30081D6D3 /* QuickAddButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA270E3C2172FA92001643D0 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E202172FA1A001643D0 /* InspirationLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		FA270E4C2172FAFF001643D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E402172FAE8001643D0 /* MessageList.storyboard */,
+				FA270E3F2172FAE8001643D0 /* MessageSearchandCompose.storyboard */,
+				FA270E3E2172FAE8001643D0 /* MessageCompose.storyboard */,
+				FA270E412172FAE9001643D0 /* MessageSearchUser.storyboard */,
+				D711BE5B217BDE3000F70341 /* MessageChat.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA270E4D2172FB0E001643D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E482172FAF0001643D0 /* MessageComposeViewController.swift */,
+				FA270E462172FAEF001643D0 /* MessageListViewController.swift */,
+				FA270E472172FAEF001643D0 /* MessageSearchUserViewController.swift */,
+				D7E0805221766504006A8076 /* ChatViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA270E4E2172FB1A001643D0 /* ConnectTab */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E4C2172FAFF001643D0 /* Storyboards */,
+				FA270E4D2172FB0E001643D0 /* ViewControllers */,
+				D7A151E721757DB900520CEA /* View */,
+			);
+			path = ConnectTab;
+			sourceTree = "<group>";
+		};
+		FA270E5F2173007C001643D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E552173006F001643D0 /* BucketList.swift */,
+				FA270E502173006D001643D0 /* BucketListItem.swift */,
+				FA270E542173006F001643D0 /* BucketListItemComment.swift */,
+				FA270E522173006D001643D0 /* guatambuToDo.swift */,
+				FA270E562173006F001643D0 /* Message.swift */,
+				D74FD8C92177E81600A4965F /* Conversation.swift */,
+				D7A151EB2175856C00520CEA /* MockDataMessages.swift */,
+				FA270E532173006E001643D0 /* MockDataBucketListItems.swift */,
+				FA270E4F2173006D001643D0 /* MockDataUsers.swift */,
+				FA270E512173006D001643D0 /* User.swift */,
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		FA270E632173010F001643D0 /* Mock Data Images */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E642173010F001643D0 /* Bucket List Items */,
+				FA270E7E2173010F001643D0 /* Users */,
+			);
+			path = "Mock Data Images";
+			sourceTree = "<group>";
+		};
+		FA270E642173010F001643D0 /* Bucket List Items */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E652173010F001643D0 /* food_cart.jpg */,
+				FA270E662173010F001643D0 /* palm_read.jpg */,
+				FA270E672173010F001643D0 /* milk_cow.jpg */,
+				FA270E682173010F001643D0 /* seaplane.jpg */,
+				FA270E692173010F001643D0 /* message_bottle.jpg */,
+				FA270E6A2173010F001643D0 /* dalai_lama.jpg */,
+				FA270E6B2173010F001643D0 /* sleep_yurt.jpg */,
+				FA270E6C2173010F001643D0 /* make_perfume.jpg */,
+				FA270E6D2173010F001643D0 /* snowboard.jpg */,
+				FA270E6E2173010F001643D0 /* charter_yacht.jpg */,
+				FA270E6F2173010F001643D0 /* see_eclipse.jpg */,
+				FA270E702173010F001643D0 /* polar_plunge.jpg */,
+				FA270E712173010F001643D0 /* nude_beach.jpg */,
+				FA270E722173010F001643D0 /* improv_class.jpg */,
+				FA270E732173010F001643D0 /* feed_homeless.jpg */,
+				FA270E742173010F001643D0 /* color_run.jpg */,
+				FA270E752173010F001643D0 /* fire_eat.jpg */,
+				FA270E762173010F001643D0 /* trapeze.jpg */,
+				FA270E772173010F001643D0 /* see_indycar.jpg */,
+				FA270E782173010F001643D0 /* opera.jpg */,
+				FA270E792173010F001643D0 /* hang_glide.jpg */,
+				FA270E7A2173010F001643D0 /* molecular_gastronomy.jpg */,
+				FA270E7B2173010F001643D0 /* meet_leader.jpg */,
+				FA270E7C2173010F001643D0 /* kids_book.jpg */,
+				FA270E7D2173010F001643D0 /* ted_talk.jpg */,
+			);
+			path = "Bucket List Items";
+			sourceTree = "<group>";
+		};
+		FA270E7E2173010F001643D0 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E7F2173010F001643D0 /* park.jpg */,
+				FA270E802173010F001643D0 /* rodrigo.jpg */,
+				FA270E812173010F001643D0 /* sangita.jpg */,
+				FA270E822173010F001643D0 /* maggie.jpg */,
+				FA270E832173010F001643D0 /* luisa.jpg */,
+				FA270E842173010F001643D0 /* dylon.jpg */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		FA270E8721730110001643D0 /* Mock Data Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E8821730110001643D0 /* Users Images */,
+				FA270E8F21730110001643D0 /* Bucket List Items Images */,
+			);
+			path = "Mock Data Files";
+			sourceTree = "<group>";
+		};
+		FA270E8821730110001643D0 /* Users Images */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E8921730110001643D0 /* park.jpg */,
+				FA270E8A21730110001643D0 /* rodrigo.jpg */,
+				FA270E8B21730110001643D0 /* sangita.jpg */,
+				FA270E8C21730110001643D0 /* maggie.jpg */,
+				FA270E8D21730110001643D0 /* luisa.jpg */,
+				FA270E8E21730110001643D0 /* dylon.jpg */,
+			);
+			path = "Users Images";
+			sourceTree = "<group>";
+		};
+		FA270E8F21730110001643D0 /* Bucket List Items Images */ = {
+			isa = PBXGroup;
+			children = (
+				FA270E9021730110001643D0 /* food_cart.jpg */,
+				FA270E9121730110001643D0 /* palm_read.jpg */,
+				FA270E9221730110001643D0 /* milk_cow.jpg */,
+				FA270E9321730110001643D0 /* seaplane.jpg */,
+				FA270E9421730110001643D0 /* message_bottle.jpg */,
+				FA270E9521730110001643D0 /* dalai_lama.jpg */,
+				FA270E9621730110001643D0 /* sleep_yurt.jpg */,
+				FA270E9721730110001643D0 /* make_perfume.jpg */,
+				FA270E9821730110001643D0 /* snowboard.jpg */,
+				FA270E9921730110001643D0 /* charter_yacht.jpg */,
+				FA270E9A21730110001643D0 /* see_eclipse.jpg */,
+				FA270E9B21730110001643D0 /* polar_plunge.jpg */,
+				FA270E9C21730110001643D0 /* nude_beach.jpg */,
+				FA270E9D21730110001643D0 /* improv_class.jpg */,
+				FA270E9E21730110001643D0 /* feed_homeless.jpg */,
+				FA270E9F21730110001643D0 /* color_run.jpg */,
+				FA270EA021730110001643D0 /* fire_eat.jpg */,
+				FA270EA121730110001643D0 /* trapeze.jpg */,
+				FA270EA221730110001643D0 /* see_indycar.jpg */,
+				FA270EA321730110001643D0 /* opera.jpg */,
+				FA270EA421730110001643D0 /* hang_glide.jpg */,
+				FA270EA521730110001643D0 /* molecular_gastronomy.jpg */,
+				FA270EA621730110001643D0 /* meet_leader.jpg */,
+				FA270EA721730110001643D0 /* kids_book.jpg */,
+				FA270EA821730110001643D0 /* ted_talk.jpg */,
+			);
+			path = "Bucket List Items Images";
+			sourceTree = "<group>";
+		};
+		FA270EA921730110001643D0 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				FA270EAA21730110001643D0 /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		FA270EAD2173015A001643D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA270EAE217301A0001643D0 /* AppDelegate.swift */,
+				D7A151E3217522D400520CEA /* Assets.xcassets */,
+				FA270EA921730110001643D0 /* Base.lproj */,
+				D758FDD62173EC3600A3B11D /* GoogleService-Info.plist */,
+				FA270E8721730110001643D0 /* Mock Data Files */,
+				FA270E852173010F001643D0 /* whatevs.png */,
+				FA270E632173010F001643D0 /* Mock Data Images */,
+			);
+			name = Resources;
+			path = "New Group/Resources";
+			sourceTree = "<group>";
+		};
+		FA270EB8217301BC001643D0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FA270EB2217301B1001643D0 /* AuthManager.swift */,
+				FA270EB1217301B0001643D0 /* DatabaseManager.swift */,
+				FA270EB0217301B0001643D0 /* Endpoint.swift */,
+				FA270EB3217301B1001643D0 /* StorageManager.swift */,
+			);
+			name = Networking;
+			path = "New Group1/Networking";
+			sourceTree = "<group>";
+		};
+		FA270ECE2173023A001643D0 /* MyListTab */ = {
+			isa = PBXGroup;
+			children = (
+				FA270ECF2173024E001643D0 /* ViewControllers */,
+				FA270ED021730262001643D0 /* Storyboards */,
+			);
+			name = MyListTab;
+			path = "New Group2";
+			sourceTree = "<group>";
+		};
+		FA270ECF2173024E001643D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */,
+				FA270EC021730221001643D0 /* MyBucketViewController.swift */,
+				FA270EC421730223001643D0 /* MyListViewController.swift */,
+				FA270EC221730222001643D0 /* MyListDetailItemViewController.swift */,
+				FA270EC321730222001643D0 /* MyListNewItemViewController.swift */,
+				FA270EC121730222001643D0 /* MyListPhotoPickerViewController.swift */,
+				FA270EC521730223001643D0 /* MyListSettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA270ED021730262001643D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA270EBC21730215001643D0 /* MyList.storyboard */,
+				FA270EBB21730214001643D0 /* MyListDetailItem.storyboard */,
+				FA270EBF21730216001643D0 /* MyListNewItem.storyboard */,
+				FA270EBE21730216001643D0 /* MyListSettings.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FEA2C744C91B8B24223C4355 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87A748D75CF9C3308139B6CE /* Pods_BuckIt2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA270D5A2172F66B001643D0 /* BuckIt2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA270D7B2172F66D001643D0 /* Build configuration list for PBXNativeTarget "BuckIt2" */;
+			buildPhases = (
+				97E4A6C2EFE37AE2B9793CAE /* [CP] Check Pods Manifest.lock */,
+				FA270D572172F66B001643D0 /* Sources */,
+				FA270D582172F66B001643D0 /* Frameworks */,
+				FA270D592172F66B001643D0 /* Resources */,
+				A4B4BCB532A66AA469C3E3C4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuckIt2;
+			productName = BuckIt2;
+			productReference = FA270D5B2172F66B001643D0 /* BuckIt2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA270D712172F66D001643D0 /* BuckIt2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA270D7E2172F66D001643D0 /* Build configuration list for PBXNativeTarget "BuckIt2Tests" */;
+			buildPhases = (
+				FA270D6E2172F66D001643D0 /* Sources */,
+				FA270D6F2172F66D001643D0 /* Frameworks */,
+				FA270D702172F66D001643D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA270D742172F66D001643D0 /* PBXTargetDependency */,
+			);
+			name = BuckIt2Tests;
+			productName = BuckIt2Tests;
+			productReference = FA270D722172F66D001643D0 /* BuckIt2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA270D532172F66B001643D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "DunDak, LLC";
+				TargetAttributes = {
+					FA270D5A2172F66B001643D0 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					FA270D712172F66D001643D0 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = FA270D5A2172F66B001643D0;
+					};
+				};
+			};
+			buildConfigurationList = FA270D562172F66B001643D0 /* Build configuration list for PBXProject "BuckIt2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA270D522172F66B001643D0;
+			productRefGroup = FA270D5C2172F66B001643D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA270D5A2172F66B001643D0 /* BuckIt2 */,
+				FA270D712172F66D001643D0 /* BuckIt2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA270D592172F66B001643D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA270E452172FAE9001643D0 /* MessageSearchUser.storyboard in Resources */,
+				FA270E442172FAE9001643D0 /* MessageList.storyboard in Resources */,
+				3821021C2177A74C00F6A361 /* InspirationItemDetail.storyboard in Resources */,
+				384F2B4421751320003DC49B /* MyList.storyboard in Resources */,
+				384F2B4721751328003DC49B /* MyListSettings.storyboard in Resources */,
+				FA270D8A2172F82C001643D0 /* LaunchScreen.storyboard in Resources */,
+				D711BE5C217BDE3000F70341 /* MessageChat.storyboard in Resources */,
+				D7A151E4217522D400520CEA /* Assets.xcassets in Resources */,
+				FA270E292172FA28001643D0 /* InspirationOtherUser.storyboard in Resources */,
+				384F2B4621751326003DC49B /* MyListNewItem.storyboard in Resources */,
+				384F2B4521751323003DC49B /* MyListDetailItem.storyboard in Resources */,
+				FA270E422172FAE9001643D0 /* MessageCompose.storyboard in Resources */,
+				D758FDD72173EC3600A3B11D /* GoogleService-Info.plist in Resources */,
+				FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */,
+				FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */,
+				FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */,
+				38ABCCFD21754B7300608F0F /* (null) in Resources */,
+				FA270D9C2172F8AD001643D0 /* UserAuthentication.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA270D702172F66D001643D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		97E4A6C2EFE37AE2B9793CAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BuckIt2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4B4BCB532A66AA469C3E3C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BuckIt2/Pods-BuckIt2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA270D572172F66B001643D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA270E5D21730070001643D0 /* BucketList.swift in Sources */,
+				FA270ECB21730224001643D0 /* MyListViewController.swift in Sources */,
+				FA270D9B2172F8AD001643D0 /* UserLoginViewController.swift in Sources */,
+				D711BE5A217BB36000F70341 /* UIViewController+Alert.swift in Sources */,
+				FA270E322172FA32001643D0 /* InspirationHomeViewController.swift in Sources */,
+				FA270E5721730070001643D0 /* MockDataUsers.swift in Sources */,
+				FA270E5B21730070001643D0 /* MockDataBucketListItems.swift in Sources */,
+				FA270EB5217301B1001643D0 /* DatabaseManager.swift in Sources */,
+				FA270EB7217301B1001643D0 /* StorageManager.swift in Sources */,
+				FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */,
+				FA270E5E21730070001643D0 /* Message.swift in Sources */,
+				D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */,
+				FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */,
+				FA270E5821730070001643D0 /* BucketListItem.swift in Sources */,
+				FA270EB4217301B1001643D0 /* Endpoint.swift in Sources */,
+				FA270E4B2172FAF0001643D0 /* MessageComposeViewController.swift in Sources */,
+				FA270D9A2172F8AD001643D0 /* UserCreateAccountViewController.swift in Sources */,
+				FA270ECD21730224001643D0 /* MyBucketNewItemViewController.swift in Sources */,
+				D7A151EC2175856C00520CEA /* MockDataMessages.swift in Sources */,
+				FA270E332172FA32001643D0 /* InspirationSearchViewController.swift in Sources */,
+				FA270E492172FAF0001643D0 /* MessageListViewController.swift in Sources */,
+				D7E0805321766504006A8076 /* ChatViewController.swift in Sources */,
+				D7A151EA21757DF300520CEA /* ReuseIdentifiable.swift in Sources */,
+				D7A151E621757DA900520CEA /* MessageListCell.swift in Sources */,
+				FA270E5921730070001643D0 /* User.swift in Sources */,
+				FA270E4A2172FAF0001643D0 /* MessageSearchUserViewController.swift in Sources */,
+				381ABCED217947F600873190 /* InspirationPersonalizeAddedItemViewController.swift in Sources */,
+				FA270E312172FA32001643D0 /* InspirationDetailViewController.swift in Sources */,
+				FA270E5C21730070001643D0 /* BucketListItemComment.swift in Sources */,
+				3821021B2176A6FA00F6A361 /* InspirationItemDetailPhotosCollectionViewCell.swift in Sources */,
+				FA270E212172FA1A001643D0 /* InspirationLayout.swift in Sources */,
+				FA270EC921730224001643D0 /* MyListDetailItemViewController.swift in Sources */,
+				FA270EC721730224001643D0 /* MyBucketViewController.swift in Sources */,
+				FA270E5A21730070001643D0 /* guatambuToDo.swift in Sources */,
+				FA270E302172FA32001643D0 /* InspirationOtherUserViewController.swift in Sources */,
+				FA270E362172FA3A001643D0 /* InspirationCollectionViewCell.swift in Sources */,
+				38ACDD81217A90B30081D6D3 /* QuickAddButton.swift in Sources */,
+				FA270ECA21730224001643D0 /* MyListNewItemViewController.swift in Sources */,
+				FA270EC821730224001643D0 /* MyListPhotoPickerViewController.swift in Sources */,
+				FA270EB6217301B1001643D0 /* AuthManager.swift in Sources */,
+				381ABCEB2179387400873190 /* InspirationAddToListViewController.swift in Sources */,
+				FA270EAF217301A0001643D0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA270D6E2172F66D001643D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA270D772172F66D001643D0 /* BuckIt2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA270D742172F66D001643D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA270D5A2172F66B001643D0 /* BuckIt2 */;
+			targetProxy = FA270D732172F66D001643D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA270EAA21730110001643D0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA270EAB21730110001643D0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA270D792172F66D001643D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA270D7A2172F66D001643D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA270D7C2172F66D001643D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38AA51781FEA7F40F4A55524 /* Pods-BuckIt2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				INFOPLIST_FILE = BuckIt2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dundak.BuckIt2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA270D7D2172F66D001643D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 337F76051CD56D4F0C968831 /* Pods-BuckIt2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				INFOPLIST_FILE = BuckIt2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dundak.BuckIt2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA270D7F2172F66D001643D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BuckIt2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dundak.BuckIt2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuckIt2.app/BuckIt2";
+			};
+			name = Debug;
+		};
+		FA270D802172F66D001643D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BuckIt2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dundak.BuckIt2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuckIt2.app/BuckIt2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA270D562172F66B001643D0 /* Build configuration list for PBXProject "BuckIt2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA270D792172F66D001643D0 /* Debug */,
+				FA270D7A2172F66D001643D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA270D7B2172F66D001643D0 /* Build configuration list for PBXNativeTarget "BuckIt2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA270D7C2172F66D001643D0 /* Debug */,
+				FA270D7D2172F66D001643D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA270D7E2172F66D001643D0 /* Build configuration list for PBXNativeTarget "BuckIt2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA270D7F2172F66D001643D0 /* Debug */,
+				FA270D802172F66D001643D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA270D662172F66B001643D0 /* BuckIt2.xcdatamodel */,
+			);
+			currentVersion = FA270D662172F66B001643D0 /* BuckIt2.xcdatamodel */;
+			path = BuckIt2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA270D532172F66B001643D0 /* Project object */;
+}
