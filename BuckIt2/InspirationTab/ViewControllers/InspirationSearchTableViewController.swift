@@ -8,17 +8,17 @@
 
 import UIKit
 
-class InspirationSearchTableViewController: UITableViewController, UISearchResultsUpdating {
+class InspirationSearchTableViewController: UIViewController, UISearchResultsUpdating {
     
     // MockData
-    static let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
+    let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
                 "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
                 "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
                 "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
                 "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
     
     var searching = false
-    static var filteredData: [String] = []
+    var filteredData: [String] = []
 
     
     override func viewDidLoad() {
@@ -30,72 +30,89 @@ class InspirationSearchTableViewController: UITableViewController, UISearchResul
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-//        let bundle = Bundle(for: AnyClass.self as! AnyClass)
-        let nib = UINib(nibName: "InspirationSearchResultsTableViewCell", bundle: Bundle.main)
-        tableView.register(nib, forCellReuseIdentifier: "inspirationSearchCell")
+        setupTableview()
     }
     
     
     func updateSearchResults(for searchController: UISearchController) {
         
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-            InspirationSearchTableViewController.filteredData.removeAll()
-            for item in InspirationSearchTableViewController.data {
+            filteredData.removeAll()
+            for item in data {
                 if item.lowercased().contains(searchText.lowercased()) {
-                    InspirationSearchTableViewController.filteredData.append(item)
+                    filteredData.append(item)
                 }
             }
             searching = true
             print(searchText)
-            print(InspirationSearchTableViewController.filteredData)
+            print(filteredData)
         } else {
             searching = false
         }
         
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.resultsTableView.reloadData()
         }
+    }
+    
+    
+    // MARK: - Search Results Controller
+    lazy var resultsTableView: UITableView = {
+        let view = UITableView()
+        view.dataSource = self
+        view.delegate = self
+        view.register(UITableViewCell.self, forCellReuseIdentifier: "inspirationResultsCell")
+        return view
+    }()
+    
+    fileprivate func setupTableview() {
+        view.addSubview(resultsTableView)
+        resultsTableView.translatesAutoresizingMaskIntoConstraints = false
+        resultsTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        resultsTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        resultsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        resultsTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
 }
 
-extension InspirationSearchTableViewController {
+extension InspirationSearchTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(InspirationSearchTableViewController.filteredData)
-        return searching ? InspirationSearchTableViewController.filteredData.count : InspirationSearchTableViewController.data.count
+        print(filteredData)
+        return searching ? filteredData.count : data.count
 //        return filteredData.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "inspirationSearchCell", for: indexPath) as? InspirationSearchResultsTableViewCell
-        let filteredDataItem = InspirationSearchTableViewController.filteredData[indexPath.row]
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "inspirationResultsCell", for: indexPath)
+        let filteredDataItem = searching ? filteredData[indexPath.row] : data[indexPath.row]
         
         // Configure the cell...
-//        cell.textLabel?.text = filteredDataItem
-//        print(cell.textLabel?.text)
+        cell.textLabel?.text = filteredDataItem
+        print(cell.textLabel?.text)
         
-        cell?.titleLabel.text = filteredDataItem
-        cell?.subtitleLabel.text = filteredDataItem
-        cell?.profileIcon.image = #imageLiteral(resourceName: "defaultPhoto")
-        return cell ?? UITableViewCell()
+//        cell?.titleLabel.text = filteredDataItem
+//        cell?.subtitleLabel.text = filteredDataItem
+//        cell?.profileIcon.image = #imageLiteral(resourceName: "defaultPhoto")
+        return cell
     }
     
     // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
     
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -105,12 +122,12 @@ extension InspirationSearchTableViewController {
     }
     
     // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         
     }
     
     // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }

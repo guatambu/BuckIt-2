@@ -36,6 +36,19 @@ class InspirationHomeViewController: UIViewController {
         setupScopeBar()
         setUPUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationItem.hidesSearchBarWhenScrolling = true
+    }
 
 }
 
@@ -48,9 +61,8 @@ extension InspirationHomeViewController: UISearchBarDelegate {
         let searchController = UISearchController(searchResultsController: searchResultsTableVC)
         searchController.searchBar.delegate = self
         self.navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-//        searchController.searchBar.scopeButtonTitles = ["ideas", "people"]
-        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.scopeButtonTitles = ["ideas", "people"]
+        searchController.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
         searchController.searchResultsUpdater = searchResultsTableVC
     }
@@ -98,29 +110,10 @@ extension InspirationHomeViewController: UICollectionViewDelegate, UICollectionV
                 let indexPath = inspirationCollectionView.indexPath(for: cell) else { return }
             let bucketListItem = MockDataBucketListItems.shared.mockDataItems()[indexPath.row] as BucketListItem
             destinationVC?.bucketListItem = bucketListItem
+            
+            destinationVC?.view.translatesAutoresizingMaskIntoConstraints = true
             navigationItem.backBarButtonItem = UIBarButtonItem(customView: UIImageView(image: #imageLiteral(resourceName: "back")))
+            navigationItem.backBarButtonItem?.tintColor = .white
         }
     }
 }
-
-//class SearchContainerVC: UISearchContainerViewController {
-//
-//    // Init
-//    init() {
-//        let searchResultsTableVC = InspirationSearchTableViewController()
-//        let searchVC = UISearchController(searchResultsController: searchResultsTableVC)
-//        searchVC.searchBar.searchBarStyle = .minimal
-//        searchVC.searchBar.showsCancelButton = true
-//        searchVC.searchBar.delegate = searchResultsTableVC as? UISearchBarDelegate
-//        searchVC.searchResultsUpdater = searchResultsTableVC as? UISearchResultsUpdating
-//
-//        let searchBar = searchVC.searchBar
-//        searchBar.delegate = searchResultsTableVC as? UISearchBarDelegate
-//
-//        super.init(searchController: searchVC)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//}

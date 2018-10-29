@@ -35,7 +35,7 @@
                                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="PkP-Q3-J9Y">
                                                             <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Title" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cz2-aD-JFm">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Title" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Cz2-aD-JFm">
                                                             <rect key="frame" x="8" y="180" width="164" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="dUL-sc-gbd"/>
@@ -87,7 +87,6 @@
                     <navigationItem key="navigationItem" id="wDF-oa-y4I"/>
                     <connections>
                         <outlet property="inspirationCollectionView" destination="Gh1-P6-Hiw" id="Vjt-hO-ju2"/>
-                        <segue destination="BaC-fA-vaT" kind="show" identifier="" id="jWr-EZ-6X2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1U-8V-9aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -100,7 +99,7 @@
                 <viewControllerPlaceholder storyboardName="InspirationItemDetail" id="Hsd-Sw-aIO" userLabel="Inspiration Item Detail" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yK2-Bn-WEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1834" y="1201"/>
+            <point key="canvasLocation" x="1773" y="1000"/>
         </scene>
         <!--Inspiration-->
         <scene sceneID="hFa-yf-1r6">
@@ -120,14 +119,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVl-CL-9Mx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="205.59999999999999" y="1121.2893553223389"/>
-        </scene>
-        <!--InspirationSearch-->
-        <scene sceneID="U4b-ck-icj">
-            <objects>
-                <viewControllerPlaceholder storyboardName="InspirationSearch" id="BaC-fA-vaT" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FOy-Av-m2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1854" y="1043"/>
         </scene>
     </scenes>
     <resources>

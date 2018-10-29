@@ -15,11 +15,10 @@ class QuickAddButton: UIButton {
         
         if imageView != nil {
             imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: (bounds.width - 35))
-            titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: -(bounds.width - 35), bottom: 0, right: 0)
         } else {
             imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     }
-
 }
