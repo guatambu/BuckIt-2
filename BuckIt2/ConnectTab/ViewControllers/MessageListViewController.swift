@@ -10,6 +10,12 @@ import UIKit
 
 class MessageListViewController: UIViewController {
     
+    override var title: String? {
+        didSet{
+            tabBarItem.title = "Messages"
+        }
+    }
+    
     private let cellId = MessageListCell.reuseIdentifier
     var dataSource = MockConversation.currentConversations
     
@@ -24,6 +30,8 @@ class MessageListViewController: UIViewController {
         
         messageListTableView.dataSource = self
         messageListTableView.delegate = self
+        
+        navigationItem.title = "Messages"
         
         updateView()
     }

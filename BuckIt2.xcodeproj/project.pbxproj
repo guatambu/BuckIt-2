@@ -27,6 +27,10 @@
 		D765AD5C2180C4A30072864E /* MyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD592180C4A20072864E /* MyListTableViewController.swift */; };
 		D765AD5D2180C4A30072864E /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD5A2180C4A30072864E /* MyListViewController.swift */; };
 		D765AD5F2180CFF40072864E /* MyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD5E2180CFF40072864E /* MyListTableViewCell.swift */; };
+		D765AD622180E5ED0072864E /* MyListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD612180E5ED0072864E /* MyListHeaderView.swift */; };
+		D765AD66218110120072864E /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765AD65218110120072864E /* Stylesheet.swift */; };
+		D765AD692181658B0072864E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D765AD682181658B0072864E /* Main.storyboard */; };
+		D77F78932183A76E00B8DFFE /* VisibilityToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77F78922183A76E00B8DFFE /* VisibilityToggleView.swift */; };
 		D78FA665218018C0009B94A8 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78FA664218018C0009B94A8 /* UserAuthentication.storyboard */; };
 		D78FA66A218018E6009B94A8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA666218018E4009B94A8 /* ForgotPasswordViewController.swift */; };
 		D78FA66B218018E6009B94A8 /* FinishUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA667218018E5009B94A8 /* FinishUserProfileViewController.swift */; };
@@ -34,6 +38,7 @@
 		D78FA66D218018E6009B94A8 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA669218018E6009B94A8 /* UserLoginViewController.swift */; };
 		D78FA66F2180193D009B94A8 /* IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA66E2180193D009B94A8 /* IBDesignables.swift */; };
 		D78FA67321801A64009B94A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FA67221801A64009B94A8 /* User.swift */; };
+		D795EF9F21829FEB007D2747 /* VisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795EF9E21829FEB007D2747 /* VisibilityView.swift */; };
 		D7A151E4217522D400520CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A151E3217522D400520CEA /* Assets.xcassets */; };
 		D7A151E621757DA900520CEA /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E521757DA900520CEA /* MessageListCell.swift */; };
 		D7A151EA21757DF300520CEA /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */; };
@@ -107,6 +112,10 @@
 		D765AD592180C4A20072864E /* MyListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListTableViewController.swift; sourceTree = "<group>"; };
 		D765AD5A2180C4A30072864E /* MyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		D765AD5E2180CFF40072864E /* MyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewCell.swift; sourceTree = "<group>"; };
+		D765AD612180E5ED0072864E /* MyListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListHeaderView.swift; sourceTree = "<group>"; };
+		D765AD65218110120072864E /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
+		D765AD682181658B0072864E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D77F78922183A76E00B8DFFE /* VisibilityToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityToggleView.swift; sourceTree = "<group>"; };
 		D78FA664218018C0009B94A8 /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuthentication.storyboard; sourceTree = "<group>"; };
 		D78FA666218018E4009B94A8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		D78FA667218018E5009B94A8 /* FinishUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishUserProfileViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +123,7 @@
 		D78FA669218018E6009B94A8 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		D78FA66E2180193D009B94A8 /* IBDesignables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignables.swift; sourceTree = "<group>"; };
 		D78FA67221801A64009B94A8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D795EF9E21829FEB007D2747 /* VisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityView.swift; sourceTree = "<group>"; };
 		D7A151E3217522D400520CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A151E521757DA900520CEA /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
 		D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
@@ -279,8 +289,35 @@
 			isa = PBXGroup;
 			children = (
 				D765AD5E2180CFF40072864E /* MyListTableViewCell.swift */,
+				D77F78922183A76E00B8DFFE /* VisibilityToggleView.swift */,
+				D795EF9E21829FEB007D2747 /* VisibilityView.swift */,
+				D765AD612180E5ED0072864E /* MyListHeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D765AD67218110190072864E /* Stylesheet */ = {
+			isa = PBXGroup;
+			children = (
+				D765AD65218110120072864E /* Stylesheet.swift */,
+			);
+			path = Stylesheet;
+			sourceTree = "<group>";
+		};
+		D765AD6A218166BF0072864E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D765AD682181658B0072864E /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D77F78942184F4B500B8DFFE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		D7A151E721757DB900520CEA /* View */ = {
@@ -295,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				D78FA66E2180193D009B94A8 /* IBDesignables.swift */,
-				D7A151E921757DF300520CEA /* ReuseIdentifiable.swift */,
 				D711BE59217BB36000F70341 /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
@@ -333,12 +369,15 @@
 			isa = PBXGroup;
 			children = (
 				FA270D652172F66B001643D0 /* BuckIt2.xcdatamodeld */,
+				D765AD6A218166BF0072864E /* Main */,
+				D765AD67218110190072864E /* Stylesheet */,
 				FA270E5F2173007C001643D0 /* Models */,
 				FA270E4E2172FB1A001643D0 /* ConnectTab */,
 				FA270E382172FA48001643D0 /* InspirationTab */,
 				FA270ECE2173023A001643D0 /* MyListTab */,
 				FA270D9D2172F8B4001643D0 /* UserAuthentication */,
 				FA270EB8217301BC001643D0 /* Networking */,
+				D77F78942184F4B500B8DFFE /* Protocols */,
 				D7A151E821757DD900520CEA /* Extensions */,
 				FA270EAD2173015A001643D0 /* Resources */,
 				FA270D952172F866001643D0 /* Info.plist */,
@@ -633,11 +672,11 @@
 			children = (
 				D765AD592180C4A20072864E /* MyListTableViewController.swift */,
 				D765AD5A2180C4A30072864E /* MyListViewController.swift */,
+				FA270EC321730222001643D0 /* MyListNewItemViewController.swift */,
 				D765AD582180C4A20072864E /* UserProfileDetailViewController.swift */,
 				FA270EC621730223001643D0 /* MyBucketNewItemViewController.swift */,
 				FA270EC021730221001643D0 /* MyBucketViewController.swift */,
 				FA270EC221730222001643D0 /* MyListDetailItemViewController.swift */,
-				FA270EC321730222001643D0 /* MyListNewItemViewController.swift */,
 				FA270EC121730222001643D0 /* MyListPhotoPickerViewController.swift */,
 				FA270EC521730223001643D0 /* MyListSettingsViewController.swift */,
 			);
@@ -755,6 +794,7 @@
 				FA270E2B2172FA28001643D0 /* InspirationSearch.storyboard in Resources */,
 				FA270E432172FAE9001643D0 /* MessageSearchandCompose.storyboard in Resources */,
 				FA270E2A2172FA28001643D0 /* InspirationHome.storyboard in Resources */,
+				D765AD692181658B0072864E /* Main.storyboard in Resources */,
 				38ABCCFD21754B7300608F0F /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -848,7 +888,9 @@
 				FA270ECC21730224001643D0 /* MyListSettingsViewController.swift in Sources */,
 				FA270E5E21730070001643D0 /* Message.swift in Sources */,
 				D74FD8CA2177E81600A4965F /* Conversation.swift in Sources */,
+				D765AD66218110120072864E /* Stylesheet.swift in Sources */,
 				FA270D672172F66B001643D0 /* BuckIt2.xcdatamodeld in Sources */,
+				D765AD622180E5ED0072864E /* MyListHeaderView.swift in Sources */,
 				FA270E5821730070001643D0 /* BucketListItem.swift in Sources */,
 				FA270EB4217301B1001643D0 /* Endpoint.swift in Sources */,
 				D78FA66B218018E6009B94A8 /* FinishUserProfileViewController.swift in Sources */,
@@ -878,11 +920,13 @@
 				38ACDD81217A90B30081D6D3 /* QuickAddButton.swift in Sources */,
 				FA270ECA21730224001643D0 /* MyListNewItemViewController.swift in Sources */,
 				FA270EC821730224001643D0 /* MyListPhotoPickerViewController.swift in Sources */,
+				D77F78932183A76E00B8DFFE /* VisibilityToggleView.swift in Sources */,
 				D78FA66D218018E6009B94A8 /* UserLoginViewController.swift in Sources */,
 				D765AD5B2180C4A30072864E /* UserProfileDetailViewController.swift in Sources */,
 				FA270EB6217301B1001643D0 /* AuthManager.swift in Sources */,
 				381ABCEB2179387400873190 /* InspirationAddToListViewController.swift in Sources */,
 				FA270EAF217301A0001643D0 /* AppDelegate.swift in Sources */,
+				D795EF9F21829FEB007D2747 /* VisibilityView.swift in Sources */,
 				D78FA66F2180193D009B94A8 /* IBDesignables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

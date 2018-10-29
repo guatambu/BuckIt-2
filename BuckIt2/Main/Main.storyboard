@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eSg-yV-ISt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mOf-kg-uvX">
+            <objects>
+                <tabBarController id="eSg-yV-ISt" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uS7-sB-vyb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.99215686274509807" green="0.36078431372549019" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bmr-Un-L7b" kind="relationship" relationship="viewControllers" id="YMk-om-xKn"/>
+                        <segue destination="Boq-y0-k5s" kind="relationship" relationship="viewControllers" id="cLe-m3-PPB"/>
+                        <segue destination="VzO-Ri-K7o" kind="relationship" relationship="viewControllers" id="dJE-0m-RFv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3P-Bq-Ey4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="37"/>
+        </scene>
+        <!--MyList-->
+        <scene sceneID="hfD-Au-awh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyList" id="VzO-Ri-K7o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My List" image="myListUnselected" selectedImage="myListSelected" id="Fku-jr-Xzu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HXU-c9-739" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="514"/>
+        </scene>
+        <!--MessageList-->
+        <scene sceneID="0n4-x6-L1V">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MessageList" id="Boq-y0-k5s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Messages" image="messagesUnselected" selectedImage="messagesSelected" id="dkt-r1-l10"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tzE-BX-Trc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="514"/>
+        </scene>
+        <!--InspirationHome-->
+        <scene sceneID="BUs-yl-Ang">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InspirationHome" id="bmr-Un-L7b" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ideas" image="ideasUnselected" id="li6-DE-d8V"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WgS-p2-yIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362" y="514"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ideasUnselected" width="30" height="24"/>
+        <image name="messagesSelected" width="28" height="22"/>
+        <image name="messagesUnselected" width="28" height="22"/>
+        <image name="myListSelected" width="20" height="25"/>
+        <image name="myListUnselected" width="20" height="25"/>
+    </resources>
+    <color key="tintColor" red="0.99215686270000003" green="0.36078431370000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+</document>
